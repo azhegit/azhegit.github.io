@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 15 Aug 2023 19:59:56 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>6.etl_demo</title>
-      <link>http://localhost:1313/2023/08/6.etl_demo/</link>
+      <title>airflow_etl_demo</title>
+      <link>http://localhost:1313/2023/08/airflow_etl_demo/</link>
       <pubDate>Tue, 15 Aug 2023 19:59:56 +0800</pubDate>
-      <guid>http://localhost:1313/2023/08/6.etl_demo/</guid>
+      <guid>http://localhost:1313/2023/08/airflow_etl_demo/</guid>
       <description>&lt;h2 id=&#34;步骤一准备数据目录及数据文件建表及加载数据&#34;&gt;步骤一：准备数据目录及数据文件，建表及加载数据&lt;/h2&gt;&#xA;&lt;p&gt;gavin_demo_database&lt;/p&gt;</description>
     </item>
     <item>
@@ -23,10 +23,10 @@
       <description>&lt;ol&gt;&#xA;&lt;li&gt;安装 docker&lt;/li&gt;&#xA;&lt;li&gt;安装 docker-compose&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
     <item>
-      <title>5.airflow</title>
-      <link>http://localhost:1313/2023/07/5.airflow/</link>
+      <title>airflow</title>
+      <link>http://localhost:1313/2023/07/airflow/</link>
       <pubDate>Sat, 15 Jul 2023 19:59:58 +0800</pubDate>
-      <guid>http://localhost:1313/2023/07/5.airflow/</guid>
+      <guid>http://localhost:1313/2023/07/airflow/</guid>
       <description>&lt;p&gt;pip 依赖安装&#xA;pip install apache-airflow -i &lt;a href=&#34;https://pypi.douban.com/simple&#34;&gt;https://pypi.douban.com/simple&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>

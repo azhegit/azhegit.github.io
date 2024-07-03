@@ -23,7 +23,7 @@
     <loc>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2024-07-03T20:11:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/2023/08/6.etl_demo/</loc>
+    <loc>http://localhost:1313/2023/08/airflow_etl_demo/</loc>
     <lastmod>2023-08-15T19:59:56+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
@@ -38,7 +38,7 @@
     <loc>http://localhost:1313/2023/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2023-07-23T19:59:56+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/2023/07/5.airflow/</loc>
+    <loc>http://localhost:1313/2023/07/airflow/</loc>
     <lastmod>2023-07-15T19:59:58+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/2023/07/4.-lambda%E5%AF%B9%E6%8E%A5kinesis/</loc>
