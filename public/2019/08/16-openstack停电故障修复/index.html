@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e集群物理机停电重启，部分虚拟机启动失败\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2019\/08\/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="集群物理机停电重启，部分虚拟机启动失败">
+
+
+<meta property="og:description" content="集群物理机停电重启，部分虚拟机启动失败">
+<meta property="og:type" content="article">
+<meta property="og:title" content="16-openstack停电故障修复">
+<meta name="twitter:title" content="16-openstack停电故障修复">
+<meta property="og:url" content="http://localhost:1313/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/">
+<meta property="twitter:url" content="http://localhost:1313/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="集群物理机停电重启，部分虚拟机启动失败">
+<meta name="twitter:description" content="集群物理机停电重启，部分虚拟机启动失败">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-08-09T13:53:03">
+  
+  
+    <meta property="article:modified_time" content="2019-08-09T13:53:03">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="虚拟化&amp;云计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="openStack">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
+  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
+
+
+    <title>16-openstack停电故障修复</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      16-openstack停电故障修复
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-08-09T13:53:03&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 八月 9 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>集群物理机停电重启，部分虚拟机启动失败</p>
+<h2 id="修复openstack集群重启导致虚拟机启动失败">修复OpenStack集群重启，导致虚拟机启动失败</h2>
+<h3 id="问题描述">问题描述</h3>
+<p>宿主机停电，OpenStack集群down掉。集群重启，OpenStack集群自动恢复，但是虚拟机重启失败，启动日志如下：</p>
+<pre tabindex="0"><code>[[32m  OK  [0m] Found device /dev/disk/by-uuid/f41e390f-835b-4223-a9bb-9b45984ddf8d.
+[[32m  OK  [0m] Started dracut initqueue hook.
+[[32m  OK  [0m] Reached target Remote File Systems (Pre).
+[[32m  OK  [0m] Reached target Remote File Systems.
+         Starting File System Check on /dev/...f-835b-4223-a9bb-9b45984ddf8d...
+[[32m  OK  [0m] Started File System Check on /dev/d...90f-835b-4223-a9bb-9b45984ddf8d.
+         Mounting /sysroot...
+[    3.108998] SGI XFS with ACLs, security attributes, no debug enabled
+[    3.116360] XFS (vda1): Mounting V5 Filesystem
+[    3.138137] blk_update_request: I/O error, dev vda, sector 8403339
+[    3.140523] blk_update_request: I/O error, dev vda, sector 8404363
+[    3.142606] blk_update_request: I/O error, dev vda, sector 8405371
+[    3.157300] blk_update_request: I/O error, dev vda, sector 8406395
+[    3.159398] blk_update_request: I/O error, dev vda, sector 8407419
+[    3.161713] XFS (vda1): xfs_do_force_shutdown(0x1) called from line 1266 of file fs/xfs/xfs_buf.c.  Return address = 0xffffffffc04608cc
+[    3.165808] XFS (vda1): I/O Error Detected. Shutting down filesystem
+[    3.167948] XFS (vda1): Please umount the filesystem and rectify the problem(s)
+[    3.170751] XFS (vda1): metadata I/O error: block 0x80318b (&#34;xlog_bwrite&#34;) error 5 numblks 8192
+[    3.174063] XFS (vda1): failed to locate log tail
+[    3.175778] XFS (vda1): log mount/recovery failed: error -5
+[    3.177831] XFS (vda1): log mount failed
+[    3.185537] blk_update_request: I/O error, dev vda, sector 0
+[[1;31mFAILED[0m] Failed to mount /sysroot.
+See &#39;systemctl status sysroot.mount&#39; for details.
+[[1;33mDEPEND[0m] Dependency failed for Initrd Root File System.
+[[1;33mDEPEND[0m] Dependency failed for Reload Configuration from the Real Root.
+[[32m  OK  [0m] Reached target Initrd File Systems.
+[[32m  OK  [0m] Stopped target Basic System.
+[[32m  OK  [0m] Stopped target System Initialization.
+         Starting Setup Virtual Console...
+[[32m  OK  [0m] Stopped dracut initqueue hook.
+[[32m  OK  [0m] Stopped dracut pre-trigger hook.
+[[32m  OK  [0m] Stopped dracut pre-udev hook.
+[[32m  OK  [0m] Stopped dracut cmdline hook.
+[[32m  OK  [0m] Started Setup Virtual Console.
+[] Started Emergency Shell.
+[[32m  OK  [0m] Reached target Emergency Mode.
+</code></pre><p>是虚拟机的系统盘损坏导致系统启动不了</p>
+<h3 id="解决办法">解决办法</h3>
+<p>此集群存储用的是ceph，把系统盘从ceph集群映射到宿主机，在宿主机通过磁盘修复，把系统盘修复好，虚拟机就可以恢复。</p>
+<h3 id="解决步骤">解决步骤</h3>
+<ol>
+<li>宿主机下载ceph客户端
+yum install ceph-common</li>
+<li>查看卷列表
+rbd list -p volumes</li>
+</ol>
+<pre tabindex="0"><code>volume-02242532-24da-40e8-b9a0-239792791883
+volume-4119a5a0-b2f0-489d-8e24-d76a6e8796aa
+volume-6fbd8049-1506-4acb-b41e-6139720c2bb8
+volume-b354bdc6-3ea3-4d68-8d73-671ae7ac2bf0
+volume-c71fce73-5840-4eaf-afaf-d043bdb77272
+volume-d51d7ed9-adad-4ed5-aabb-10318b57bdcf
+volume-ee585a9f-87bf-4757-af20-131319b78eee
+volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c
+</code></pre><ol start="3">
+<li>
+<p>在页面控制台找到要修复OpenStack实例的卷id，ff53a61f-377d-4cfc-bd14-e1864b5cc78c</p>
+</li>
+<li>
+<p>把要修复的卷映射到宿主机
+rbd map volume-02242532-24da-40e8-b9a0-239792791883 -p volumes
+rbd map volume-4119a5a0-b2f0-489d-8e24-d76a6e8796aa -p volumes
+rbd map volume-6fbd8049-1506-4acb-b41e-6139720c2bb8 -p volumes
+rbd map volume-b354bdc6-3ea3-4d68-8d73-671ae7ac2bf0 -p volumes
+rbd map volume-c71fce73-5840-4eaf-afaf-d043bdb77272 -p volumes
+rbd map volume-d51d7ed9-adad-4ed5-aabb-10318b57bdcf -p volumes
+rbd map volume-ee585a9f-87bf-4757-af20-131319b78eee -p volumes
+rbd map volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -p volumes</p>
+</li>
+<li>
+<p>映射失败</p>
+</li>
+</ol>
+<pre tabindex="0"><code>rbd: sysfs write failed
+RBD image feature set mismatch. You can disable features unsupported by the kernel with &#34;rbd feature disable&#34;.
+In some cases useful info is found in syslog - try &#34;dmesg | tail&#34; or so.
+rbd: map failed: (6) No such device or address
+</code></pre><ol start="6">
+<li>查看卷feature
+rbd info volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -p volumes</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rbd image <span style="color:#e6db74">&#39;volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c&#39;</span>:
+</span></span><span style="display:flex;"><span>	size <span style="color:#ae81ff">51200</span> MB in <span style="color:#ae81ff">12800</span> objects
+</span></span><span style="display:flex;"><span>	order <span style="color:#ae81ff">22</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">4096</span> kB objects<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>	block_name_prefix: rbd_data.17a8c6b8b4567
+</span></span><span style="display:flex;"><span>	format: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	features: layering, exclusive-lock, object-map, fast-diff, deep-flatten
+</span></span><span style="display:flex;"><span>	flags:
+</span></span></code></pre></div><ol start="7">
+<li>关闭卷的高级feature
+rbd feature disable exclusive-lock object-map fast-diff deep-flatten &ndash;image volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -p volumes</li>
+<li>重新映射</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>root@o15 ~<span style="color:#f92672">]</span><span style="color:#75715e"># rbd map volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -p volumes</span>
+</span></span><span style="display:flex;"><span>/dev/rbd1
+</span></span></code></pre></div><ol start="9">
+<li>磁盘修复
+xfs_repair -L /dev/rbd0p1
+xfs_repair -L /dev/rbd1p1
+xfs_repair -L /dev/rbd2p1
+xfs_repair -L /dev/rbd3p1
+xfs_repair -L /dev/rbd4p1
+xfs_repair -L /dev/rbd5p1
+xfs_repair -L /dev/rbd6p1
+xfs_repair -L /dev/rbd7p1</li>
+<li>查看ceph映射列表</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>root@o15 ~<span style="color:#f92672">]</span><span style="color:#75715e"># rbd showmapped</span>
+</span></span><span style="display:flex;"><span>id pool    image                                       snap device
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>  volumes volume-02242532-24da-40e8-b9a0-239792791883 -    /dev/rbd0
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  volumes volume-4119a5a0-b2f0-489d-8e24-d76a6e8796aa -    /dev/rbd1
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>  volumes volume-6fbd8049-1506-4acb-b41e-6139720c2bb8 -    /dev/rbd2
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>  volumes volume-b354bdc6-3ea3-4d68-8d73-671ae7ac2bf0 -    /dev/rbd3
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>  volumes volume-c71fce73-5840-4eaf-afaf-d043bdb77272 -    /dev/rbd4
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>  volumes volume-d51d7ed9-adad-4ed5-aabb-10318b57bdcf -    /dev/rbd5
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>  volumes volume-ee585a9f-87bf-4757-af20-131319b78eee -    /dev/rbd6
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span>  volumes volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -    /dev/rbd7
+</span></span></code></pre></div><ol start="11">
+<li>取消映射</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rbd unmap volume-02242532-24da-40e8-b9a0-239792791883 -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-4119a5a0-b2f0-489d-8e24-d76a6e8796aa -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-6fbd8049-1506-4acb-b41e-6139720c2bb8 -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-b354bdc6-3ea3-4d68-8d73-671ae7ac2bf0 -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-c71fce73-5840-4eaf-afaf-d043bdb77272 -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-d51d7ed9-adad-4ed5-aabb-10318b57bdcf -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-ee585a9f-87bf-4757-af20-131319b78eee -p volumes
+</span></span><span style="display:flex;"><span>rbd unmap volume-ff53a61f-377d-4cfc-bd14-e1864b5cc78c -p volumes
+</span></span></code></pre></div><ol start="12">
+<li>重新启动虚拟机，虚拟机不再报错</li>
+</ol>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/openstack/">openStack</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/17-%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96/" data-tooltip="17-部署优化" aria-label="下一篇: 17-部署优化">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/07/15-openstack%E6%95%85%E9%9A%9C/" data-tooltip="15-openstack故障" aria-label="上一篇: 15-openstack故障">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/17-%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96/" data-tooltip="17-部署优化" aria-label="下一篇: 17-部署优化">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/07/15-openstack%E6%95%85%E9%9A%9C/" data-tooltip="15-openstack故障" aria-label="上一篇: 15-openstack故障">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

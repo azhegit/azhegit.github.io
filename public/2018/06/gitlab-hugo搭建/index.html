@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003egitab\u002bhugo搭建\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2018\/06\/gitlab-hugo%E6%90%AD%E5%BB%BA\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="gitab&#43;hugo搭建">
+
+
+<meta property="og:description" content="gitab&#43;hugo搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab&#43;hugo搭建">
+<meta name="twitter:title" content="gitlab&#43;hugo搭建">
+<meta property="og:url" content="http://localhost:1313/2018/06/gitlab-hugo%E6%90%AD%E5%BB%BA/">
+<meta property="twitter:url" content="http://localhost:1313/2018/06/gitlab-hugo%E6%90%AD%E5%BB%BA/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="gitab&#43;hugo搭建">
+<meta name="twitter:description" content="gitab&#43;hugo搭建">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-06-12T13:45:51">
+  
+  
+    <meta property="article:modified_time" content="2018-06-12T13:45:51">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="开发环境">
+    
+  
+  
+    
+      <meta property="article:tag" content="hugo">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20181113165255716.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20181113165255716.png">
+
+
+    <title>gitlab&#43;hugo搭建</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2018/06/gitlab-hugo%E6%90%AD%E5%BB%BA/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      gitlab&#43;hugo搭建
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-06-12T13:45:51&#43;08:00">
+        
+  
+  
+  
+  
+    2018 年 六月 12 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83">开发环境</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>gitab+hugo搭建</p>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#gitlabhugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2">gitlab+hugo搭建博客</a>
+<ul>
+<li><a href="#fork-examples">fork examples</a>
+<ul>
+<li><a href="#1-hugo-examplehttpsgitlabcompageshugo">1. hugo example：https://gitlab.com/pages/hugo</a></li>
+<li><a href="#2-fork">2. fork</a></li>
+<li><a href="#3-%E5%88%A0%E9%99%A4fork%E9%93%BE%E6%8E%A5settings-general-advanced-settings-remove-fork-relationship">3. 删除fork链接：Settings&ndash;&gt;General&ndash;&gt;Advanced settings&ndash;&gt;Remove fork relationship</a></li>
+<li><a href="#4-%E4%BF%AE%E6%94%B9%E4%BB%93%E5%BA%93%E5%90%8D%E7%A7%B0settings-general-advanced-settings-rename-repository">4. 修改仓库名称：Settings&ndash;&gt;General&ndash;&gt;Advanced settings&ndash;&gt;Rename repository</a></li>
+<li><a href="#5-%E5%9C%A8%E7%BA%BF%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6hugocontentpost2017-03-20-photoswipe-gallery-samplemd">5. 在线修改一个文件：hugo/content/post/2017-03-20-photoswipe-gallery-sample.md</a></li>
+<li><a href="#6-%E8%A7%81%E8%AF%81%E5%A5%87%E8%BF%B9%E7%9A%84%E6%97%B6%E5%80%99%E5%88%B0%E4%BA%86gitlab-ci%E4%BC%9A%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E4%BF%AE%E6%94%B9%E7%9A%84md%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%94%E9%83%A8%E7%BD%B2">6. 见证奇迹的时候到了，Gitlab CI会自动部署修改的md文件，生成静态页面并且部署</a></li>
+<li><a href="#7-%E6%9F%A5%E7%9C%8B%E7%94%9F%E6%88%90%E7%9A%84pages%E4%BD%8D%E7%BD%AEsettings-pages">7. 查看生成的pages位置：Settings&ndash;&gt;pages</a></li>
+<li><a href="#8-%E6%9F%A5%E7%9C%8B%E9%A1%B5%E9%9D%A2httpsazhegitgitlabiohugo">8. 查看页面：https://azhegit.gitlab.io/hugo</a></li>
+<li><a href="#9-%E4%BF%AE%E6%94%B9%E8%AE%BF%E9%97%AE%E8%B7%AF%E5%BE%84%E6%88%90httpsazhegitgitlabio">9. 修改访问路径成：https://azhegit.gitlab.io</a></li>
+<li><a href="#10-%E8%AE%BF%E9%97%AEhttpsazhegitgitlabio">10. 访问：https://azhegit.gitlab.io/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h1 id="gitlabhugo搭建博客">gitlab+hugo搭建博客</h1>
+<h2 id="fork-examples">fork examples</h2>
+<h3 id="1-hugo-examplehttpsgitlabcompageshugo">1. hugo example：https://gitlab.com/pages/hugo</h3>
+<!-- raw HTML omitted -->
+<h3 id="2-fork">2. fork</h3>
+<p><img src="https://www.azheimage.top/dfc52f2e8e7e053b640a2ea83d81cd09.png" alt="fork">
+选择fork位置
+<img src="https://www.azheimage.top/9502a5b220e88180c8268888d679bb03.png" alt="fork into"></p>
+<h3 id="3-删除fork链接settings--general--advanced-settings--remove-fork-relationship">3. 删除fork链接：Settings&ndash;&gt;General&ndash;&gt;Advanced settings&ndash;&gt;Remove fork relationship</h3>
+<p><img src="https://www.azheimage.top/abfa694fd1fdff3cc2d3aa10b33f519b.png" alt="remove fork relationship"></p>
+<h3 id="4-修改仓库名称settings--general--advanced-settings--rename-repository">4. 修改仓库名称：Settings&ndash;&gt;General&ndash;&gt;Advanced settings&ndash;&gt;Rename repository</h3>
+<p><img src="https://www.azheimage.top/71f1b001d460c7343d43ff47fdf9a8fc.png" alt="rename repository"></p>
+<h3 id="5-在线修改一个文件hugocontentpost2017-03-20-photoswipe-gallery-samplemd">5. 在线修改一个文件：hugo/content/post/2017-03-20-photoswipe-gallery-sample.md</h3>
+<p><img src="https://www.azheimage.top/623b22b997f927dc1b224b68f20048e2.png" alt="update 2017-03-20-photoswipe-gallery-sample.md"></p>
+<h3 id="6-见证奇迹的时候到了gitlab-ci会自动部署修改的md文件生成静态页面并且部署">6. 见证奇迹的时候到了，Gitlab CI会自动部署修改的md文件，生成静态页面并且部署</h3>
+<p>正在执行任务
+<img src="https://www.azheimage.top/9429651de6d03091147120e388b79a14.png" alt="ci">
+docker镜像执行过程
+<img src="https://www.azheimage.top/70c127de528d9fe226fd39718413348c.png" alt="make pages"></p>
+<h3 id="7-查看生成的pages位置settings--pages">7. 查看生成的pages位置：Settings&ndash;&gt;pages</h3>
+<p><img src="https://www.azheimage.top/54678af67c0347e5cb701e752729d713.png" alt="pages"></p>
+<h3 id="8-查看页面httpsazhegitgitlabiohugo">8. 查看页面：https://azhegit.gitlab.io/hugo</h3>
+<p><img src="https://www.azheimage.top/771e039f1b0214694c8918296b4fedb5.png" alt="修改页面"></p>
+<h3 id="9-修改访问路径成httpsazhegitgitlabio">9. 修改访问路径成：https://azhegit.gitlab.io</h3>
+<p><img src="https://www.azheimage.top/62f7f188d0b9b496d35b9d55122e93a8.png" alt="rename path"></p>
+<h3 id="10-访问httpsazhegitgitlabio">10. 访问：https://azhegit.gitlab.io/</h3>
+<p><img src="https://www.azheimage.top/94dfde229b81801450e4d36a5e84d2be.png" alt=""></p>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20181114111421841.png" alt=""></p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/hugo/">hugo</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85mysqlpremium%E4%B8%AD%E6%96%87%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3/" data-tooltip="安装MysqlPremium中文安装破解" aria-label="下一篇: 安装MysqlPremium中文安装破解">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" data-tooltip="cloudera-scm-agent启动报错" aria-label="上一篇: cloudera-scm-agent启动报错">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85mysqlpremium%E4%B8%AD%E6%96%87%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3/" data-tooltip="安装MysqlPremium中文安装破解" aria-label="下一篇: 安装MysqlPremium中文安装破解">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" data-tooltip="cloudera-scm-agent启动报错" aria-label="上一篇: cloudera-scm-agent启动报错">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

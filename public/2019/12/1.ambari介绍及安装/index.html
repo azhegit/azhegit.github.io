@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003ch2 id=\u00221-什么是ambari\u0022\u003e1. 什么是ambari？\u003c\/h2\u003e\n\u003cp\u003eApache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2019\/12\/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="1. 什么是ambari？
+Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。">
+
+
+<meta property="og:description" content="1. 什么是ambari？
+Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.ambari介绍及安装">
+<meta name="twitter:title" content="1.ambari介绍及安装">
+<meta property="og:url" content="http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/">
+<meta property="twitter:url" content="http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="1. 什么是ambari？
+Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。">
+<meta name="twitter:description" content="1. 什么是ambari？
+Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-12-11T17:31:15">
+  
+  
+    <meta property="article:modified_time" content="2019-12-11T17:31:15">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="ambari">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+
+
+    <title>1.ambari介绍及安装</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      1.ambari介绍及安装
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-12-11T17:31:15&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 十二月 11 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h2 id="1-什么是ambari">1. 什么是ambari？</h2>
+<p>Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。</p>
+<p>Apache Ambari 支持HDFS、MapReduce、Hive、Pig、Hbase、Zookeper、Sqoop和Hcatalog等的集中管理。也是5个顶级hadoop管理工具之一。Ambari能够安装安全的（基于Kerberos）Hadoop集群，以此实现了对Hadoop 安全的支持，提供了基于角色的用户认证、授权和审计功能，并为用户管理集成了LDAP和Active Directory。</p>
+<h2 id="2-为什么用ambari">2. 为什么用ambari？</h2>
+<p>Cloudera有免费版和企业版，企业版只有60天试用期，不过基本上免费版也满足生产环境的使用，监控工具为中文，不过Cloudera的代码不开源，只能通过产生本身的BUG修改补丁升级等，不支持hadoop2.7.x。
+所以选择Ambari部署hadoop而不是CDH，是因为CDH最新版本只支持Hadoop2.6.X，Ambari支持Hadoop2.7.3。
+100%开源的产品，HDP除了常见的项目外还包含了Ambari，一款开源的安装和管理系统。HCatalog，一个元数据管理系统。</p>
+<h2 id="3-ambari各版本兼容hdp版本对照">3. ambari各版本兼容hdp版本对照</h2>
+<p>ambari及hdp版本：https://supportmatrix.hortonworks.com/
+选择ambari版本2.6.2.2，选择对应的HDP版本是2.6.5
+<img src="https://www.azheimage.top/markdown-img-paste-20191115153825941.png" alt=""></p>
+<h2 id="4-hdp265与各组件对照">4. hdp2.6.5与各组件对照</h2>
+<p>hdp各组件版本：https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.5/bk_release-notes/content/comp_versions.html
+<img src="https://www.azheimage.top/markdown-img-paste-20191115154058872.png" alt=""></p>
+<h2 id="5-安装ambari">5. 安装ambari</h2>
+<ol>
+<li>下载ambari：https://docs.cloudera.com/HDPDocuments/Ambari-2.6.2.2/bk_ambari-installation/content/ambari_repositories.html
+<img src="https://www.azheimage.top/markdown-img-paste-20191115194011375.png" alt="">
+wget <a href="http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.2/ambari-2.6.2.2-centos7.tar.gz">http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.2/ambari-2.6.2.2-centos7.tar.gz</a></li>
+<li>下载HDP及HDP-UTILS：
+<a href="https://docs.cloudera.com/HDPDocuments/Ambari-2.6.2.2/bk_ambari-installation/content/hdp_26_repositories.html">https://docs.cloudera.com/HDPDocuments/Ambari-2.6.2.2/bk_ambari-installation/content/hdp_26_repositories.html</a>
+<img src="https://www.azheimage.top/markdown-img-paste-20191115194104308.png" alt="">
+wget <a href="http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/HDP-2.6.5.0-centos7-rpm.tar.gz">http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/HDP-2.6.5.0-centos7-rpm.tar.gz</a>
+wget <a href="http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz">http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz</a></li>
+<li>执行预CDH安装脚本：advance-cdh.sh</li>
+<li>安装jdk</li>
+<li>修改umask值（所有机器）：    sudo sh -c &ldquo;echo umask 0022 &raquo; /etc/profile&rdquo;</li>
+<li>永久设置(所有机器)
+vi /etc/security/limits.conf</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># End of file</span>
+</span></span><span style="display:flex;"><span>添加
+</span></span><span style="display:flex;"><span>* soft nofile <span style="color:#ae81ff">65536</span>
+</span></span><span style="display:flex;"><span>* hard nofile <span style="color:#ae81ff">65536</span>
+</span></span><span style="display:flex;"><span>* soft nproc <span style="color:#ae81ff">131072</span>
+</span></span><span style="display:flex;"><span>* hard nproc <span style="color:#ae81ff">131072</span>
+</span></span></code></pre></div><p>重新登录，ulimit -a
+7. 启动httpd，将上面下载的三个包放到/var/www/html/ambari目录下（主服务器）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /var/www/html
+</span></span><span style="display:flex;"><span>mkdir ambari
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#上传资源到此目录</span>
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ambari-2.6.2.2-centos7.tar.gz HDP-UTILS-1.1.0.22-centos7.tar.gz HDP-2.6.5.0-centos7-rpm.tar.gz</span>
+</span></span><span style="display:flex;"><span>tar zxvf ambari-2.6.2.2-centos7.tar.gz
+</span></span><span style="display:flex;"><span>tar zxvf HDP-2.6.5.0-centos7-rpm.tar.gz
+</span></span><span style="display:flex;"><span>mkdir HDP-UTILS
+</span></span><span style="display:flex;"><span>tar zxvf HDP-UTILS-1.1.0.22-centos7.tar.gz -C HDP-UTILS
+</span></span><span style="display:flex;"><span>rm -rf ./*.gz
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ambari  HDP  HDP-UTILS</span>
+</span></span></code></pre></div><ol start="8">
+<li>访问:http://cdh-01/ambari/ 验证是否能够访问
+<img src="https://www.azheimage.top/markdown-img-paste-2019111814281873.png" alt=""></li>
+</ol>
+<h3 id="制作本地源">制作本地源</h3>
+<ol>
+<li>安装yum源制作工具
+yum install yum-utils createrepo yum-plugin-priorities -y
+cd /var/www/html/ambari
+createrepo  ./</li>
+<li>制作本地源
+vim ambari/centos7/2.6.2.2-1/ambari.repo</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e">############修改前#################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#VERSION_NUMBER=2.6.2.2-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[ambari-2.6.2.2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">ambari Version - ambari-2.6.2.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.2/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#############修改后#################</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">VERSION_NUMBER</span><span style="color:#f92672">=</span><span style="color:#e6db74">2.6.2.2-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[ambari-2.6.2.2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">ambari Version - ambari-2.6.2.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/ambari/centos7/2.6.2.2-1/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/ambari/centos7/2.6.2.2-1/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span></code></pre></div><p>cp ambari/centos7/2.6.2.2-1/ambari.repo /etc/yum.repos.d/</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e">############修改前#################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#VERSION_NUMBER=2.6.5.0-292</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[HDP-2.6.5.0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">HDP Version - HDP-2.6.5.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[HDP-UTILS-1.1.0.22]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">HDP-UTILS Version - HDP-UTILS-1.1.0.22</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.5.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">############修改后#################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#VERSION_NUMBER=2.6.5.0-292</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[HDP-2.6.5.0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">HDP Version - HDP-2.6.5.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/HDP/centos7/2.6.5.0-292/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/HDP/centos7/2.6.5.0-292/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[HDP-UTILS-1.1.0.22]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">HDP-UTILS Version - HDP-UTILS-1.1.0.22</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/HDP-UTILS/HDP-UTILS/centos7/1.1.0.22/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgcheck</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpgkey</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://cdh-01/ambari/HDP-UTILS/HDP-UTILS/centos7/1.1.0.22/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span></code></pre></div><p>cp HDP/centos7/2.6.5.0-292/hdp.repo /etc/yum.repos.d/
+yum clean all
+yum makecache
+yum repolist</p>
+<blockquote>
+<p>源标识                       源名称                                              状态
+HDP-2.6.5.0                  HDP Version - HDP-2.6.5.0                                 238
+HDP-UTILS-1.1.0.22           HDP-UTILS Version - HDP-UTILS-1.1.0.22                     16
+ambari-2.6.2.2               ambari Version - ambari-2.6.2.2                            12</p>
+</blockquote>
+<ol start="3">
+<li>拷贝源文件到子节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /etc/yum.repos.d
+</span></span><span style="display:flex;"><span>scp ambari.repo hdp.repo cdh-02:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>scp ambari.repo hdp.repo cdh-03:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><h3 id="安装ambari">安装ambari</h3>
+<ol>
+<li>安装ambari
+yum install ambari-server -y</li>
+<li>登录mysql，执行下面语句</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> ambari;  
+</span></span><span style="display:flex;"><span>use ambari;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;ambarizk123&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;ambarizk123&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;ambarizk123&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;ambari&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span>;  
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">source</span> <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>lib<span style="color:#f92672">/</span>ambari<span style="color:#f92672">-</span>server<span style="color:#f92672">/</span>resources<span style="color:#f92672">/</span>Ambari<span style="color:#f92672">-</span>DDL<span style="color:#f92672">-</span>MySQL<span style="color:#f92672">-</span><span style="color:#66d9ef">CREATE</span>.<span style="color:#66d9ef">sql</span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> tables;  
+</span></span><span style="display:flex;"><span>use mysql;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">Host</span>,<span style="color:#66d9ef">User</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ambari&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> hive;  
+</span></span><span style="display:flex;"><span>use hive;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;hive&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;hive&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;hive&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;hive&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span>;  
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> oozie;  
+</span></span><span style="display:flex;"><span>use oozie;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;oozie&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;oozie&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;oozie&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;oozie&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;master&#39;</span>;  
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span></code></pre></div><ol start="3">
+<li>上传mysql连接驱动，并复制到目标文件夹
+mkdir /usr/share/java
+cp ~/mysql-connector-java-5.1.36.jar /usr/share/java/mysql-connector-java.jar
+cp /usr/share/java/mysql-connector-java.jar /var/lib/ambari-server/resources/mysql-jdbc-driver.jar</li>
+<li>初始化设置ambari-server并启动
+[root@cdh-01 ~]# ambari-server setup</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Using python  /usr/bin/python
+</span></span><span style="display:flex;"><span>Setup ambari-server
+</span></span><span style="display:flex;"><span>（1）检查防火墙是否关闭
+</span></span><span style="display:flex;"><span>Checking SELinux...
+</span></span><span style="display:flex;"><span>SELinux status is <span style="color:#e6db74">&#39;disabled&#39;</span>
+</span></span><span style="display:flex;"><span>（2）提示是否自定义设置。输入：y
+</span></span><span style="display:flex;"><span>Customize user account <span style="color:#66d9ef">for</span> ambari-server daemon <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>? y
+</span></span><span style="display:flex;"><span>（3）如果直接回车就是默认选择root用户
+</span></span><span style="display:flex;"><span>如果输入已经创建的用户就会显示：ambari
+</span></span><span style="display:flex;"><span>Enter user account <span style="color:#66d9ef">for</span> ambari-server daemon <span style="color:#f92672">(</span>root<span style="color:#f92672">)</span>:ambari
+</span></span><span style="display:flex;"><span>Adjusting ambari-server permissions and ownership...
+</span></span><span style="display:flex;"><span>Checking firewall status...
+</span></span><span style="display:flex;"><span>（4）设置JDK。输入：3
+</span></span><span style="display:flex;"><span>Checking JDK...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Oracle JDK 1.8 + Java Cryptography Extension <span style="color:#f92672">(</span>JCE<span style="color:#f92672">)</span> Policy Files <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Oracle JDK 1.7 + Java Cryptography Extension <span style="color:#f92672">(</span>JCE<span style="color:#f92672">)</span> Policy Files <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Custom JDK
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==============================================================================</span>
+</span></span><span style="display:flex;"><span>Enter choice <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>WARNING: JDK must be installed on all hosts and JAVA_HOME must be valid on all hosts.
+</span></span><span style="display:flex;"><span>WARNING: JCE Policy files are required <span style="color:#66d9ef">for</span> configuring Kerberos security. If you plan to use Kerberos,please make sure JCE Unlimited Strength Jurisdiction Policy Files are valid on all hosts.
+</span></span><span style="display:flex;"><span>如果上面选择3自定义JDK,则需要设置JAVA_HOME。输入：/usr/java/jdk1.8.0_161
+</span></span><span style="display:flex;"><span>Path to JAVA_HOME: /usr/local/jdk1.8.0_171
+</span></span><span style="display:flex;"><span>Validating JDK on Ambari Server...done.
+</span></span><span style="display:flex;"><span>Checking GPL software agreement...
+</span></span><span style="display:flex;"><span>GPL License <span style="color:#66d9ef">for</span> LZO: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+</span></span><span style="display:flex;"><span>（5）数据库配置。选择：y
+</span></span><span style="display:flex;"><span>Enable Ambari Server to download and install GPL Licensed LZO packages <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>? y
+</span></span><span style="display:flex;"><span>Completing setup...
+</span></span><span style="display:flex;"><span>Configuring database...
+</span></span><span style="display:flex;"><span>选择：y
+</span></span><span style="display:flex;"><span>Enter advanced database configuration <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>? y
+</span></span><span style="display:flex;"><span>Configuring database...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==============================================================================</span>
+</span></span><span style="display:flex;"><span>Choose one of the following options:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> - PostgreSQL <span style="color:#f92672">(</span>Embedded<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> - Oracle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> - MySQL / MariaDB
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> - PostgreSQL
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>5<span style="color:#f92672">]</span> - Microsoft SQL Server <span style="color:#f92672">(</span>Tech Preview<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>6<span style="color:#f92672">]</span> - SQL Anywhere
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>7<span style="color:#f92672">]</span> - BDB
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==============================================================================</span>
+</span></span><span style="display:flex;"><span>（6）选择数据库类型。输入：3
+</span></span><span style="display:flex;"><span>Enter choice <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>（7）设置数据库的具体配置信息，根据实际情况输入，如果和括号内相同，则可以直接回车。如果想重命名，就输入。
+</span></span><span style="display:flex;"><span>Hostname <span style="color:#f92672">(</span>localhost<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Port <span style="color:#f92672">(</span>3306<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Database name <span style="color:#f92672">(</span>ambari<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Username <span style="color:#f92672">(</span>ambari<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Enter Database Password <span style="color:#f92672">(</span>bigdata<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Re-enter password:
+</span></span><span style="display:flex;"><span>Configuring ambari database...
+</span></span><span style="display:flex;"><span>Configuring remote database connection properties...
+</span></span><span style="display:flex;"><span>WARNING: Before starting Ambari Server, you must run the following DDL against the database to create the schema: /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
+</span></span><span style="display:flex;"><span>（8）将Ambari数据库脚本导入到数据库
+</span></span><span style="display:flex;"><span>Proceed with configuring remote database connection properties <span style="color:#f92672">[</span>y/n<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>y<span style="color:#f92672">)</span>? y
+</span></span><span style="display:flex;"><span>Extracting system views...
+</span></span><span style="display:flex;"><span>ambari-admin-2.6.2.2.1.jar
+</span></span><span style="display:flex;"><span>...........
+</span></span><span style="display:flex;"><span>Adjusting ambari-server permissions and ownership...
+</span></span><span style="display:flex;"><span>Ambari Server <span style="color:#e6db74">&#39;setup&#39;</span> completed successfully.
+</span></span></code></pre></div><ol start="5">
+<li>启动ambari
+ambari-server start</li>
+</ol>
+<h3 id="安装安装配置部署hdp集群">安装安装配置部署HDP集群</h3>
+<h4 id="1-访问页面httpcdh-018080">1. 访问页面：http://cdh-01:8080/</h4>
+<p>登录界面，默认管理员账户登录， 账户：admin 密码：admin
+<img src="https://www.azheimage.top/markdown-img-paste-2019111817122783.png" alt=""></p>
+<h4 id="2-安装向导">2. 安装向导</h4>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20191118171554942.png" alt=""></p>
+<ol>
+<li>配置集群的名字为hadoop
+<img src="https://www.azheimage.top/markdown-img-paste-20191118171727152.png" alt=""></li>
+<li>选择版本并修改为本地源地址
+http://cdh-01/ambari/HDP/centos7/2.6.5.0-292/
+http://cdh-01/ambari/HDP-UTILS/HDP-UTILS/centos7/1.1.0.22/</li>
+</ol>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20191118172112793.png" alt="">
+3. 安装配置
+填写需要安装的主机名；
+选择要安装的服务器和上传上面教程所拷贝出来的秘钥文件/root/.ssh/id_rsa
+<img src="https://www.azheimage.top/markdown-img-paste-20191118172757693.png" alt="">
+确认
+<img src="https://www.azheimage.top/markdown-img-paste-20191118172836707.png" alt="">
+4. 安装ambari的agent，同时检查系统问题
+<img src="https://www.azheimage.top/markdown-img-paste-20191118172918420.png" alt="">
+等待检查，状态变化：Installing-&gt;Registering-&gt;Success，然后做一些与检查
+<img src="https://www.azheimage.top/markdown-img-paste-2019111817574142.png" alt="">
+检查结果查看，没有错误，接着下一步
+<img src="https://www.azheimage.top/markdown-img-paste-20191118175808264.png" alt="">
+5. 选择要安装的服务，默认会全装，此次安装只选择hdfs，yarn，zookeeper
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180028606.png" alt="">
+6. 会自动选择增加ambari监控
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180119617.png" alt="">
+7. 调整组件分配
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180445191.png" alt="">
+8. 选择
+建议nodemanager、regionserver、client全都勾选上，第一个datanode根据主机的磁盘容量选择。
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180629551.png" alt="">
+9. 根据提示修改一些错误，注意hive和oozie的数据库配置问题。如果最开始初始化ambari-server的时候使用的是默认配置，这里就最好使用new的方式，如果使用的是New MySQL Database ，这需要选择Existing MySQL / MariaDB Database ，然后测试一下是否能连接上
+添加grafana及Activity Explorer的密码为admin，admin
+10. 接着下一步安装
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180906839.png" alt="">
+11. 自动安装
+<img src="https://www.azheimage.top/markdown-img-paste-20191118180955264.png" alt="">
+12. 部署完成
+<img src="https://www.azheimage.top/markdown-img-paste-20191118200158430.png" alt="">
+13.</p>
+<h2 id="报错">报错</h2>
+<ol>
+<li>mysql</li>
+<li>页面安装hdp的时候，注册失败</li>
+</ol>
+<blockquote>
+<p>NetUtil.py:96 - EOF occurred in violation of protocol (_ssl.c:579)
+NetUtil.py:97 - SSLError: Failed to connect. Please check openssl library versions.</p>
+</blockquote>
+<p>解决办法：
+在ambari-agent的配置文件ambari-agent.ini 在 ［security］增加一项
+<code>sed -i '/ssl_ver/a\force_https_protocol=PROTOCOL_TLSv1_2' /etc/ambari-agent/conf/ambari-agent.ini</code>
+<img src="https://www.azheimage.top/markdown-img-paste-20191118174844244.png" alt="">
+增加好之后重试
+<img src="https://www.azheimage.top/markdown-img-paste-20191118174937802.png" alt=""></p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/ambari/">ambari</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/" data-tooltip="0-hadoop安装" aria-label="下一篇: 0-hadoop安装">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/" data-tooltip="1-flink部署" aria-label="上一篇: 1-flink部署">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/" data-tooltip="0-hadoop安装" aria-label="下一篇: 0-hadoop安装">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/" data-tooltip="1-flink部署" aria-label="上一篇: 1-flink部署">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

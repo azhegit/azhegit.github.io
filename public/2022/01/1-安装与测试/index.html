@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e[toc]\n本篇主要安装及测试以下组件\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eFE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。\u003c\/li\u003e\n\u003c\/ul\u003e",
+  "url":"http:\/\/localhost:1313\/2022\/01\/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="[toc]
+本篇主要安装及测试以下组件
+
+FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。
+">
+
+
+<meta property="og:description" content="[toc]
+本篇主要安装及测试以下组件
+
+FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-安装与测试">
+<meta name="twitter:title" content="1-安装与测试">
+<meta property="og:url" content="http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/">
+<meta property="twitter:url" content="http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="[toc]
+本篇主要安装及测试以下组件
+
+FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。
+">
+<meta name="twitter:description" content="[toc]
+本篇主要安装及测试以下组件
+
+FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。
+">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2022-01-26T10:16:37">
+  
+  
+    <meta property="article:modified_time" content="2022-01-26T10:16:37">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="StarRocks">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180716211900993.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180716211900993.png">
+
+
+    <title>1-安装与测试</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      1-安装与测试
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-01-26T10:16:37&#43;08:00">
+        
+  
+  
+  
+  
+    2022 年 一月 26 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>[toc]
+本篇主要安装及测试以下组件</p>
+<ul>
+<li>FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。</li>
+</ul>
+<ul>
+<li>BE：BackEnd简称BE，是StarRocks的后端节点，负责数据存储，计算执行，以及compaction，副本管理等工作。</li>
+<li>MySQL-client：MySQL 命令行客户端，可以在服务器连接登录支持mysql协议的DB，StarRocks支持MySQL协议，所以也可以使用</li>
+<li>SSB：Star schema benchmark（以下简称SSB）是学术界和工业界广泛使用的一个星型模型测试集，通过这个测试集合也可以容易的和其他OLAP产品进行性能对比。</li>
+</ul>
+<h2 id="一部署准备">一、部署准备</h2>
+<p>部署环境：
+测试时候单机只用到最多8C，内存不超过16G</p>
+<table>
+<thead>
+<tr>
+<th>ip</th>
+<th>机器配置</th>
+<th>FE</th>
+<th>BE</th>
+<th>MySQL-client</th>
+<th>SSB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.16.11.110</td>
+<td>32C60G</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>172.16.11.111</td>
+<td>32C60G</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>172.16.11.112</td>
+<td>32C60G</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>172.16.11.113</td>
+<td>32C60G</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>部署环境：
+测试时候单机只用到最多8C，内存不超过16G</p>
+<table>
+<thead>
+<tr>
+<th>部署组件</th>
+<th>部署路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FE</td>
+<td>部署目录：/opt/StarRocks-2.0.0-GA/fe<!-- raw HTML omitted -->日志目录：/opt/StarRocks-2.0.0-GA/fe/log<!-- raw HTML omitted -->数据目录：/data/disk01/starrocks/storage</td>
+</tr>
+<tr>
+<td>BE</td>
+<td>部署目录：/opt/StarRocks-2.0.0-GA/be<!-- raw HTML omitted -->日志目录：/opt/StarRocks-2.0.0-GA/be/log<!-- raw HTML omitted -->数据存储目录：/data/disk01/starrocks/storage</td>
+</tr>
+<tr>
+<td>ssb</td>
+<td>部署目录：/data/disk01/ssb-poc/<!-- raw HTML omitted -->操作目录：/data/disk01/ssb-poc/output<!-- raw HTML omitted -->mock数据目录：/data/disk01/ssb-poc/output/mock_data</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>下载资源包
+<code>wget https://www.starrocks.com/zh-CN/download/request-download/11</code></li>
+<li>解压到/opt
+<code>tar zxvf StarRocks-2.0.0-GA.tar.gz -C /opt</code></li>
+</ol>
+<h2 id="二部署fe">二、部署FE</h2>
+<ol>
+<li>创建元数据目录</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt/StarRocks-2.0.0-GA/fe/
+</span></span><span style="display:flex;"><span>mkdir -p meta
+</span></span></code></pre></div><ol start="2">
+<li>启动FE进程
+<code>bin/start_fe.sh --daemon</code></li>
+<li>查看日志是否成功启动</li>
+</ol>
+<ul>
+<li>如果FE启动失败，可能是由于端口号被占用，修改配置文件conf/fe.conf中的端口号http_port。</li>
+<li>使用jps命令查看java进程确认&quot;StarRocksFe&quot;存在。</li>
+</ul>
+<ol start="4">
+<li>也可以使用浏览器访问8030端口, 打开StarRocks的WebUI, 用户名为root, 密码为空
+<img src="https://www.azheimage.top/markdown-img-paste-20220210112453490.png" alt=""></li>
+</ol>
+<h2 id="三mysql客户端访问fe">三、MySQL客户端访问FE</h2>
+<ol>
+<li>安装mysql-client（如果本机有mysql-client可以忽略此步骤）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rpm -ivh https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm
+</span></span><span style="display:flex;"><span>yum install mysql-community-client.x86_64 -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#安装失败GPG Key</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改mysql-community.repogpgcheck=0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#再重新安装</span>
+</span></span></code></pre></div><ol start="2">
+<li>连接starrocks
+<code>mysql -h 127.0.0.1 -P9030 -uroot</code></li>
+<li>查看FE状态：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SHOW PROC <span style="color:#e6db74">&#39;/frontends&#39;</span><span style="color:#ae81ff">\G</span>
+</span></span><span style="display:flex;"><span>*************************** 1. row ***************************
+</span></span><span style="display:flex;"><span>             Name: 172.16.11.113_9010_1643166244538
+</span></span><span style="display:flex;"><span>               IP: 172.16.11.113
+</span></span><span style="display:flex;"><span>         HostName: cdh-node8
+</span></span><span style="display:flex;"><span>      EditLogPort: <span style="color:#ae81ff">9010</span>
+</span></span><span style="display:flex;"><span>         HttpPort: <span style="color:#ae81ff">8030</span>
+</span></span><span style="display:flex;"><span>        QueryPort: <span style="color:#ae81ff">9030</span>
+</span></span><span style="display:flex;"><span>          RpcPort: <span style="color:#ae81ff">9020</span>
+</span></span><span style="display:flex;"><span>             Role: FOLLOWER
+</span></span><span style="display:flex;"><span>         IsMaster: true
+</span></span><span style="display:flex;"><span>        ClusterId: <span style="color:#ae81ff">350656662</span>
+</span></span><span style="display:flex;"><span>             Join: true
+</span></span><span style="display:flex;"><span>            Alive: true
+</span></span><span style="display:flex;"><span>ReplayedJournalId: <span style="color:#ae81ff">663</span>
+</span></span><span style="display:flex;"><span>    LastHeartbeat: 2022-01-26 11:40:51
+</span></span><span style="display:flex;"><span>         IsHelper: true
+</span></span><span style="display:flex;"><span>           ErrMsg: 
+</span></span><span style="display:flex;"><span>        StartTime: 2022-01-26 11:04:17
+</span></span><span style="display:flex;"><span>          Version: 2.0.0-GA-2ffdf30
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> row in set <span style="color:#f92672">(</span>0.01 sec<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Role为FOLLOWER说明这是一个能参与选主的FE；IsMaster为true，说明该FE当前为主节点。</p>
+<h2 id="四部署be">四、部署BE</h2>
+<ol>
+<li>创建数据目录</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt/StarRocks-2.0.0-GA/be/
+</span></span><span style="display:flex;"><span>mkdir -p /data/disk01/starrocks/storage
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改be配置,添加配置</span>
+</span></span><span style="display:flex;"><span>storage_root_path <span style="color:#f92672">=</span> /data/disk01/starrocks/storage
+</span></span></code></pre></div><ol start="2">
+<li>通过mysql客户端添加BE节点</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt;ALTER SYSTEM ADD BACKEND <span style="color:#e6db74">&#34;172.16.11.113:9050&#34;</span>;
+</span></span><span style="display:flex;"><span>mysql&gt;ALTER SYSTEM ADD BACKEND <span style="color:#e6db74">&#34;172.16.11.112:9050&#34;</span>;
+</span></span><span style="display:flex;"><span>mysql&gt;ALTER SYSTEM ADD BACKEND <span style="color:#e6db74">&#34;172.16.11.111:9050&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里IP地址为和priority_networks设置匹配的IP，portheartbeat_service_port，默认为9050</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#如出现错误，需要删除BE节点，应用下列命令：</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#alter system decommission backend &#34;be_host:be_heartbeat_service_port&#34;;</span>
+</span></span></code></pre></div><ol start="3">
+<li>启动BE：
+<code> /opt/StarRocks-2.0.0-GA/be/bin/start_be.sh --daemon</code></li>
+<li>查看BE状态, 确认BE就绪</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SHOW PROC <span style="color:#e6db74">&#39;/backends&#39;</span><span style="color:#ae81ff">\G</span>
+</span></span><span style="display:flex;"><span>*************************** 1. row ***************************
+</span></span><span style="display:flex;"><span>            BackendId: <span style="color:#ae81ff">10003</span>
+</span></span><span style="display:flex;"><span>              Cluster: default_cluster
+</span></span><span style="display:flex;"><span>                   IP: 172.16.11.113
+</span></span><span style="display:flex;"><span>             HostName: cdh-node8
+</span></span><span style="display:flex;"><span>        HeartbeatPort: <span style="color:#ae81ff">9050</span>
+</span></span><span style="display:flex;"><span>               BePort: <span style="color:#ae81ff">9060</span>
+</span></span><span style="display:flex;"><span>             HttpPort: <span style="color:#ae81ff">8040</span>
+</span></span><span style="display:flex;"><span>             BrpcPort: <span style="color:#ae81ff">8060</span>
+</span></span><span style="display:flex;"><span>        LastStartTime: 2022-01-26 11:49:21
+</span></span><span style="display:flex;"><span>        LastHeartbeat: 2022-01-26 11:49:46
+</span></span><span style="display:flex;"><span>                Alive: true
+</span></span><span style="display:flex;"><span> SystemDecommissioned: false
+</span></span><span style="display:flex;"><span>ClusterDecommissioned: false
+</span></span><span style="display:flex;"><span>            TabletNum: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>     DataUsedCapacity: .000 
+</span></span><span style="display:flex;"><span>        AvailCapacity: 930.853 GB
+</span></span><span style="display:flex;"><span>        TotalCapacity: 984.179 GB
+</span></span><span style="display:flex;"><span>              UsedPct: 5.42 %
+</span></span><span style="display:flex;"><span>       MaxDiskUsedPct: 5.42 %
+</span></span><span style="display:flex;"><span>               ErrMsg: 
+</span></span><span style="display:flex;"><span>              Version: 2.0.0-GA-2ffdf30
+</span></span><span style="display:flex;"><span>               Status: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;lastSuccessReportTabletsTime&#34;</span>:<span style="color:#e6db74">&#34;2022-01-26 11:49:21&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    DataTotalCapacity: 930.853 GB
+</span></span><span style="display:flex;"><span>          DataUsedPct: 0.00 %
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> row in set <span style="color:#f92672">(</span>0.00 sec<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>如果isAlive为true，则说明BE正常接入集群。如果BE没有正常接入集群，请查看log目录下的be.WARNING日志文件确定原因。</p>
+<h2 id="五性能测试">五、性能测试</h2>
+<ol>
+<li>下载ssb-poc工具包并编译</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://starrocks-public.oss-cn-zhangjiakou.aliyuncs.com/ssb-poc-0.9.3.zip
+</span></span><span style="display:flex;"><span>unzip ssb-poc-0.9.3.zip
+</span></span><span style="display:flex;"><span>mv ssb-poc-0.9.3 /data/disk01
+</span></span><span style="display:flex;"><span>cd /data/disk01/ssb-poc-0.9.3/ssb-poc
+</span></span><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make install  
+</span></span></code></pre></div><p>所有相关工具都会安装到output目录</p>
+<ol start="2">
+<li>生成100G数据脚本</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd output
+</span></span><span style="display:flex;"><span>chmod +x bin/*.sh
+</span></span><span style="display:flex;"><span>bin/gen-ssb.sh <span style="color:#ae81ff">100</span> mock_data
+</span></span></code></pre></div><ol start="3">
+<li>执行建表语句</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 测试100G数据</span>
+</span></span><span style="display:flex;"><span>bin/create_db_table.sh ddl_100
+</span></span></code></pre></div><p>完成后我们创建了6张表：lineorder, supplier, dates, customer, part, lineorder_flat
+<img src="https://www.azheimage.top/markdown-img-paste-20220209163542488.png" alt="">
+数量最大的表6亿条
+<img src="https://www.azheimage.top/markdown-img-paste-20220210140852408.png" alt=""></p>
+<ol start="4">
+<li>通过stream load导入数据<code>sudo sh bin/stream_load.sh mock_data</code></li>
+<li>首先在客户端执行命令，修改并行度(类似clickhouse set max_threads = 8)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 设置并行度，建议是每个集群节点逻辑核数的一半,以下以8为例</span>
+</span></span><span style="display:flex;"><span>set global parallel_fragment_exec_instance_num <span style="color:#f92672">=</span> 8;
+</span></span></code></pre></div><p>修改配置文件：ssb-poc/output/conf/starrocks.conf</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>starrocks<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for mysql cmd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 从test1改为FE的ip或者host</span>
+</span></span><span style="display:flex;"><span>mysql_host: 172.16.11.113
+</span></span></code></pre></div><ol start="6">
+<li>测试ssb多表查询 (SQL 参见 share/ssb_test/sql/ssb/):<code>bin/benchmark.sh -p -d ssb</code></li>
+<li>测试结果
+<img src="https://www.azheimage.top/markdown-img-paste-20220210110322579.png" alt=""></li>
+<li>向宽表中插入数据:<code>bin/flat_insert.sh</code></li>
+<li>测试宽表性能:<code>bin/benchmark.sh -p -d ssb-flat</code>
+<img src="https://www.azheimage.top/markdown-img-paste-20220210110546353.png" alt=""></li>
+</ol>
+<h2 id="六问题">六、问题</h2>
+<h4 id="多网卡导致启动失败">多网卡导致启动失败</h4>
+<blockquote>
+<p>wait catalog to be ready. FE type: UNKNOWN. is ready: false</p>
+</blockquote>
+<ol>
+<li>第一次启动失败，因为存在多网卡，解决办法，修改fe.conf，增加priority_networks = 172.16.11.0/24</li>
+<li>如果还是启动不了，查看日志,FOLLOWER and node name: 依然是原来网卡地址</li>
+<li>删除mete目录下的文件，再次重启，用新网卡配置启动成功</li>
+</ol>
+<h4 id="no-module-named-pymysql">No module named &lsquo;PyMySQL&rsquo;</h4>
+<p>在执行导入测试表，python3或者PyMySQL依赖库找不到</p>
+<ol>
+<li>云主机一般都带有python3，通过<code>python3 -v</code>、<code>pip3 list</code>验证是否安装，如果没有安装安装一下即可</li>
+<li>安装好python3之后用，pip3安装pymysql</li>
+</ol>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/starrocks/">StarRocks</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试" aria-label="下一篇: 2-容灾测试">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/" data-tooltip="4-kafka监控模板" aria-label="上一篇: 4-kafka监控模板">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试" aria-label="下一篇: 2-容灾测试">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/" data-tooltip="4-kafka监控模板" aria-label="上一篇: 4-kafka监控模板">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

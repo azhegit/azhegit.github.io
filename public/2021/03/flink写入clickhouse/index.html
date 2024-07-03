@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003eflink写入clickhouse\u003c\/p\u003e\n\u003cp\u003eflink及clickhouse官方都是没有提供flink写clickhouse的SQL API\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2021\/03\/flink%E5%86%99%E5%85%A5clickhouse\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="flink写入clickhouse
+flink及clickhouse官方都是没有提供flink写clickhouse的SQL API">
+
+
+<meta property="og:description" content="flink写入clickhouse
+flink及clickhouse官方都是没有提供flink写clickhouse的SQL API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flink写入clickhouse">
+<meta name="twitter:title" content="flink写入clickhouse">
+<meta property="og:url" content="http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/">
+<meta property="twitter:url" content="http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="flink写入clickhouse
+flink及clickhouse官方都是没有提供flink写clickhouse的SQL API">
+<meta name="twitter:description" content="flink写入clickhouse
+flink及clickhouse官方都是没有提供flink写clickhouse的SQL API">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-03-11T20:41:31">
+  
+  
+    <meta property="article:modified_time" content="2021-03-11T20:41:31">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="flink">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+
+
+    <title>flink写入clickhouse</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      flink写入clickhouse
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-03-11T20:41:31&#43;08:00">
+        
+  
+  
+  
+  
+    2021 年 三月 11 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>flink写入clickhouse</p>
+<p>flink及clickhouse官方都是没有提供flink写clickhouse的SQL API</p>
+<h2 id="flink-写入clickhouse">Flink 写入clickhouse</h2>
+<h3 id="clickhouse-建表">ClickHouse 建表</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> dev.person_score;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> dev.person_score
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>pid<span style="color:#f92672">`</span> UInt8, 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> String, 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>age<span style="color:#f92672">`</span> UInt8,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>score<span style="color:#f92672">`</span> UInt8,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>create_time<span style="color:#f92672">`</span> datetime <span style="color:#66d9ef">DEFAULT</span> now()
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>ENGINE <span style="color:#f92672">=</span> TinyLog();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> person_score(<span style="color:#f92672">`</span>pid<span style="color:#f92672">`</span>,<span style="color:#f92672">`</span>name<span style="color:#f92672">`</span>,<span style="color:#f92672">`</span>age<span style="color:#f92672">`</span>,<span style="color:#f92672">`</span>score<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#39;test&#39;</span>,<span style="color:#ae81ff">66</span>,<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> person_score;
+</span></span></code></pre></div><h4 id="sql-client-datagen建表语句">SQL-Client DataGen建表语句</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- 删除表定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> person_score_datagen;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 创建表定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">exists</span> person_score_datagen (
+</span></span><span style="display:flex;"><span>	id INT, 
+</span></span><span style="display:flex;"><span>	name STRING, 
+</span></span><span style="display:flex;"><span>	age INT,
+</span></span><span style="display:flex;"><span>	score INT,
+</span></span><span style="display:flex;"><span>	ts <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">LOCALTIMESTAMP</span>, 
+</span></span><span style="display:flex;"><span>	WATERMARK <span style="color:#66d9ef">FOR</span> ts <span style="color:#66d9ef">AS</span> ts ) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;connector&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;datagen&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 	每秒生成的行数：2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#39;rows-per-second&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 	字段id选用序列生成器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#39;fields.id.kind&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sequence&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;fields.id.start&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;fields.id.end&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;20&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 	随机生成器生成字符的长度：6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#39;fields.name.length&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;6&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;fields.age.min&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;20&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#39;fields.age.max&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;30&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 	随机生成器的最小值：1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#39;fields.score.min&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;60&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 	随机生成器的最大值：100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#39;fields.score.max&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;100&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> person_score_datagen;
+</span></span></code></pre></div><h3 id="flink-sql-client">Flink sql-client</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> person_score_ck;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">exists</span> person_score_ck (
+</span></span><span style="display:flex;"><span>    pid INT,
+</span></span><span style="display:flex;"><span>    name VARCHAR,
+</span></span><span style="display:flex;"><span>    age INT,
+</span></span><span style="display:flex;"><span>    score INT
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">WITH</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;connector&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;jdbc&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;url&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;jdbc:clickhouse://hadoop-dev-3:8123/dev&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;table-name&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;person_score&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;driver&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ru.yandex.clickhouse.ClickHouseDriver&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;username&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;default&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;password&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ck_pwd&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;lookup.cache.max-rows&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;lookup.cache.ttl&#39;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10s&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="flink-sql-支持-写-clickhouse">Flink SQL 支持 写 ClickHouse</h3>
+<p>flink及clickhouse官方都是没有提供flink写clickhouse的SQL API，对于DataStream API是可以通过clickhouse-jdbc，自定义SourceFunction、RichSinkFunction去读写clickhouse，相对比较简单。</p>
+<h4 id="datastream-api">DataStream API</h4>
+<ul>
+<li>SourceFunction
+自己实现了一个数据模拟生成器的SourceFunction</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.streaming.api.functions.source.SourceFunction;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Created by azhe on 2021-03-09 15:42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerSource</span> <span style="color:#66d9ef">implements</span> SourceFunction<span style="color:#f92672">&lt;</span>DefaultEntity<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> List list;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CustomerSource</span>(<span style="color:#66d9ef">int</span> recordSize) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> MockEntitys.<span style="color:#a6e22e">mockDefault</span>(recordSize);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>  Boolean isRunning <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>(SourceContext<span style="color:#f92672">&lt;</span>DefaultEntity<span style="color:#f92672">&gt;</span> ctx) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (isRunning<span style="color:#f92672">&amp;&amp;</span>index<span style="color:#f92672">&lt;</span>list.<span style="color:#a6e22e">size</span>()) {
+</span></span><span style="display:flex;"><span>      DefaultEntity obj <span style="color:#f92672">=</span> (DefaultEntity)list.<span style="color:#a6e22e">get</span>(index);
+</span></span><span style="display:flex;"><span>      ctx.<span style="color:#a6e22e">collect</span>(obj);
+</span></span><span style="display:flex;"><span>      index <span style="color:#f92672">+=</span> 1;
+</span></span><span style="display:flex;"><span>      Thread.<span style="color:#a6e22e">sleep</span>(1000);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cancel</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    isRunning <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>RichSinkFunction
+实现SinkFunction将DataStream数据输出到clickhouse，数据格式没有做通用的，需要根据数据格式定制化编写，不够灵活。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.sql.Connection;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.sql.PreparedStatement;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.configuration.Configuration;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Created by azhe on 2021-03-09 17:40
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClickHouseSink</span> <span style="color:#66d9ef">extends</span> RichSinkFunction<span style="color:#f92672">&lt;</span>DefaultEntity<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  Connection connection <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  String sql;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ClickHouseSink</span>(String sql) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sql</span> <span style="color:#f92672">=</span> sql;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">open</span>(Configuration parameters) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">open</span>(parameters);
+</span></span><span style="display:flex;"><span>    connection <span style="color:#f92672">=</span> ClickHouseUtil.<span style="color:#a6e22e">getConn</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">close</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (connection <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>      connection.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">invoke</span>(DefaultEntity defaultEntity, Context context) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>    PreparedStatement preparedStatement <span style="color:#f92672">=</span> connection.<span style="color:#a6e22e">prepareStatement</span>(sql);
+</span></span><span style="display:flex;"><span>    preparedStatement.<span style="color:#a6e22e">setLong</span>(1, defaultEntity.<span style="color:#a6e22e">getId</span>());
+</span></span><span style="display:flex;"><span>    preparedStatement.<span style="color:#a6e22e">setString</span>(2, defaultEntity.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>    preparedStatement.<span style="color:#a6e22e">addBatch</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">long</span> startTime <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ints <span style="color:#f92672">=</span> preparedStatement.<span style="color:#a6e22e">executeBatch</span>();
+</span></span><span style="display:flex;"><span>    connection.<span style="color:#a6e22e">commit</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">long</span> endTime <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>();
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;批量插入完毕用时：&#34;</span> <span style="color:#f92672">+</span> (endTime <span style="color:#f92672">-</span> startTime) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; -- 插入数据 = &#34;</span> <span style="color:#f92672">+</span> ints.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="sql-api">SQL API</h4>
+<p>根据官方提供的JDBC连接器改造，修改源码，支持Clickhouse，目前是根据flink_2.11-1.12.0版本重新编译</p>
+<ul>
+<li>ClickHouseDialect</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> org.apache.flink.connector.jdbc.dialect;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.connector.jdbc.internal.converter.ClickHouseRowConverter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.connector.jdbc.internal.converter.JdbcRowConverter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.table.types.logical.LogicalTypeRoot;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.table.types.logical.RowType;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Optional;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** JDBC dialect for ClickHouse Created by azhe on 2021-03-10 20:43 . */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClickHouseDialect</span> <span style="color:#66d9ef">extends</span> AbstractDialect {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 1L;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Define MAX/MIN precision of TIMESTAMP type according to Mysql docs:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// https://dev.mysql.com/doc/refman/8.0/en/fractional-seconds.html</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MAX_TIMESTAMP_PRECISION <span style="color:#f92672">=</span> 6;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MIN_TIMESTAMP_PRECISION <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Define MAX/MIN precision of DECIMAL type according to Mysql docs:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// https://dev.mysql.com/doc/refman/8.0/en/fixed-point-types.html</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MAX_DECIMAL_PRECISION <span style="color:#f92672">=</span> 65;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MIN_DECIMAL_PRECISION <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxDecimalPrecision</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> MAX_DECIMAL_PRECISION;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minDecimalPrecision</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> MIN_DECIMAL_PRECISION;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxTimestampPrecision</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> MAX_TIMESTAMP_PRECISION;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minTimestampPrecision</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> MIN_TIMESTAMP_PRECISION;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">dialectName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ClickHouse&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">canHandle</span>(String url) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> url.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#34;jdbc:clickhouse:&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> JdbcRowConverter <span style="color:#a6e22e">getRowConverter</span>(RowType rowType) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ClickHouseRowConverter(rowType);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">defaultDriverName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">of</span>(<span style="color:#e6db74">&#34;ru.yandex.clickhouse.ClickHouseDriver&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">quoteIdentifier</span>(String identifier) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;`&#34;</span> <span style="color:#f92672">+</span> identifier <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;`&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUpsertStatement</span>(
+</span></span><span style="display:flex;"><span>            String tableName, String<span style="color:#f92672">[]</span> fieldNames, String<span style="color:#f92672">[]</span> uniqueKeyFields) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">of</span>(getInsertIntoStatement(tableName, fieldNames));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>LogicalTypeRoot<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">unsupportedTypes</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// The data types used in Mysql are list at:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// https://dev.mysql.com/doc/refman/8.0/en/data-types.html</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: We can&#39;t convert BINARY data type to</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//  PrimitiveArrayTypeInfo.BYTE_PRIMITIVE_ARRAY_TYPE_INFO in</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// LegacyTypeInfoDataTypeConverter.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">BINARY</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">TIMESTAMP_WITH_LOCAL_TIME_ZONE</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">TIMESTAMP_WITH_TIME_ZONE</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">INTERVAL_YEAR_MONTH</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">INTERVAL_DAY_TIME</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">ARRAY</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">MULTISET</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">MAP</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">ROW</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">DISTINCT_TYPE</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">STRUCTURED_TYPE</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">NULL</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">RAW</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">SYMBOL</span>,
+</span></span><span style="display:flex;"><span>                LogicalTypeRoot.<span style="color:#a6e22e">UNRESOLVED</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>JdbcDialects</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> org.apache.flink.connector.jdbc.dialect;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Optional;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Default JDBC dialects. */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JdbcDialects</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> List<span style="color:#f92672">&lt;</span>JdbcDialect<span style="color:#f92672">&gt;</span> DIALECTS <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>            Arrays.<span style="color:#a6e22e">asList</span>(
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> DerbyDialect(),
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> MySQLDialect(),
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> PostgresDialect(),
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">//  增加ClickHouseDialect</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">new</span> ClickHouseDialect());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/** Fetch the JdbcDialect class corresponding to a given database url. */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Optional<span style="color:#f92672">&lt;</span>JdbcDialect<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">get</span>(String url) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (JdbcDialect dialect : DIALECTS) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (dialect.<span style="color:#a6e22e">canHandle</span>(url)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">of</span>(dialect);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">empty</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>ClickHouseRowConverter</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> org.apache.flink.connector.jdbc.internal.converter;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.flink.table.types.logical.RowType;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Created by azhe on 2021-03-10 21:04 . */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClickHouseRowConverter</span> <span style="color:#66d9ef">extends</span> AbstractJdbcRowConverter {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 1L;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">converterName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ClickHouse&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ClickHouseRowConverter</span>(RowType rowType) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(rowType);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>然后就是编译运行。</p>
+<h3 id="sql-client-插入数据到clickhouse">SQL-Client 插入数据到ClickHouse</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> person_score_ck <span style="color:#66d9ef">SELECT</span> <span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;test2&#39;</span>,<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> person_score_ck
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> id <span style="color:#66d9ef">as</span> pid, name, age, score <span style="color:#66d9ef">FROM</span> person_score_datagen;
+</span></span></code></pre></div>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/flink/">flink</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/" data-tooltip="flink sql写入iceberg" aria-label="下一篇: flink sql写入iceberg">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/" data-tooltip="8-flink sql client使用" aria-label="上一篇: 8-flink sql client使用">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/" data-tooltip="flink sql写入iceberg" aria-label="下一篇: flink sql写入iceberg">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/" data-tooltip="8-flink sql client使用" aria-label="上一篇: 8-flink sql client使用">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

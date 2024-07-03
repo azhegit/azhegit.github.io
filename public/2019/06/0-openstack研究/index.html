@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e研究OpenStack云平台\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2019\/06\/0-openstack%E7%A0%94%E7%A9%B6\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="研究OpenStack云平台">
+
+
+<meta property="og:description" content="研究OpenStack云平台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0-OpenStack研究">
+<meta name="twitter:title" content="0-OpenStack研究">
+<meta property="og:url" content="http://localhost:1313/2019/06/0-openstack%E7%A0%94%E7%A9%B6/">
+<meta property="twitter:url" content="http://localhost:1313/2019/06/0-openstack%E7%A0%94%E7%A9%B6/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="研究OpenStack云平台">
+<meta name="twitter:description" content="研究OpenStack云平台">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-06-05T13:36:03">
+  
+  
+    <meta property="article:modified_time" content="2019-06-05T13:36:03">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="虚拟化&amp;云计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="openStack">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191033396.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191033396.png">
+
+
+    <title>0-OpenStack研究</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2019/06/0-openstack%E7%A0%94%E7%A9%B6/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      0-OpenStack研究
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-05T13:36:03&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 六月 5 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>研究OpenStack云平台</p>
+<hr>
+<h1 id="openstack研究">OpenStack研究</h1>
+<!-- raw HTML omitted -->
+<h2 id="1-架构图">1. 架构图</h2>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20190530163441933.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-2019053016351624.png" alt=""></p>
+<h2 id="2-包含组件">2. 包含组件</h2>
+<h3 id="共享服务项目3个">共享服务项目3个</h3>
+<ol>
+<li>认证服务
+服务名：认证服务
+项目名：Keystone
+功能：为访问openstack各组件提供认证和授权功能，认证通过后，提供一个服务列表（存放你有权访问的服务），可以通过该列表访问各个组件。</li>
+<li>镜像服务
+服务名：镜像服务
+项目名：Glance
+功能：为云主机安装操作系统提供不同的镜像选择</li>
+<li>计费服务
+服务名：计费服务
+项目名：Ceilometer
+功能：收集云平台资源使用数据，用来计费或者性能监控</li>
+</ol>
+<h3 id="核心项目3个">核心项目3个</h3>
+<ol>
+<li>
+<p>控制台
+服务名：Dashboard
+项目名：Horizon
+功能：web方式管理云平台，建云主机，分配网络，配安全组，加云盘</p>
+</li>
+<li>
+<p>计算
+服务名：计算
+项目名：Nova
+功能：负责响应虚拟机创建请求、调度、销毁云主机</p>
+</li>
+<li>
+<p>网络
+服务名：网络
+项目名：Neutron
+功能：实现SDN（软件定义网络），提供一整套API,用户可以基于该API实现自己定义专属网络，不同厂商可以基于此API提供自己的产品实现</p>
+</li>
+</ol>
+<h3 id="存储项目2个">存储项目2个</h3>
+<ol>
+<li>对象存储
+服务名：对象存储
+项目名：Swift
+功能：REST风格的接口和扁平的数据组织结构。RESTFUL HTTP API来保存和访问任意非结构化数据，ring环的方式实现数据自动复制和高度可以扩展架构，保证数据的高度容错和可靠性</li>
+<li>块存储
+服务名：块存储
+项目名：Cinder
+功能：提供持久化块存储，即为云主机提供附加云盘。</li>
+</ol>
+<h3 id="高层服务项目1个">高层服务项目1个</h3>
+<ol>
+<li>编排服务
+服务名：编排服务
+项目名：Heat
+功能：自动化部署应用，自动化管理应用的整个生命周期.主要用于Paas</li>
+</ol>
+<h2 id="3-创建虚拟机过程">3. 创建虚拟机过程</h2>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20190530164052193.png" alt=""></p>
+<ol>
+<li>界面或命令行通过RESTful API向keystone获取认证信息。</li>
+<li>keystone通过用户请求认证信息，并生成auth-token返回给对应的认证请求。</li>
+<li>界面或命令行通过RESTful API向nova-api发送一个boot instance的请求（携带auth-token），包含需要创建的虚拟机信息，如CPU、内存、硬盘、网络等。</li>
+<li>nova-api接受请求后向keystone发送认证请求，查看token是否为有效用户和token。</li>
+<li>keystone验证token是否有效，如有效则返回有效的认证和对应的角色（注：有些操作需要有角色权限才能操作）。</li>
+<li>通过认证后nova-api和数据库通讯。</li>
+<li>初始化新建虚拟机的数据库记录。</li>
+<li>nova-api通过rpc.call向nova-scheduler请求是否有创建虚拟机的资源(Host ID)。</li>
+<li>nova-scheduler进程侦听消息队列，获取nova-api的请求。</li>
+<li>nova-scheduler通过查询nova数据库中计算资源的情况，并通过调度算法计算符合虚拟机创建需要的主机。</li>
+<li>对于有符合虚拟机创建的主机，nova-scheduler更新数据库中虚拟机对应的物理主机信息。</li>
+<li>nova-scheduler通过rpc.cast向nova-compute发送对应的创建虚拟机请求的消息（调度到选定的nova-compute上创建VM）。</li>
+<li>nova-compute会从对应的消息队列中获取创建虚拟机请求的消息（新版的openstack，不允许Nova-compute直接连接数据库，只能通过nova-conductor去调用），有多个nova-compute节点）</li>
+<li>nova-compute通过rpc.call向nova-conductor请求获取虚拟机消息。（Flavor）</li>
+<li>nova-conductor从消息队队列中拿到nova-compute请求消息。</li>
+<li>nova-conductor根据消息查询虚拟机对应的信息。</li>
+<li>nova-conductor从数据库中获得虚拟机对应信息。</li>
+<li>nova-conductor把虚拟机信息通过消息的方式发送到消息队列中。</li>
+<li>nova-compute从对应的消息队列中获取虚拟机信息消息。</li>
+<li>nova-compute通过keystone的RESTfull API拿到认证的token，并通过HTTP请求glance-api获取创建虚拟机所需要镜像。</li>
+<li>glance-api向keystone认证token是否有效，并返回验证结果。</li>
+<li>token验证通过，nova-compute获得虚拟机镜像信息(URL)。</li>
+<li>nova-compute通过keystone的RESTfull API拿到认证k的token，并通过HTTP请求neutron-server获取创建虚拟机所需要的网络信息。</li>
+<li>neutron-server向keystone认证token是否有效，并返回验证结果。</li>
+<li>token验证通过，nova-compute获得虚拟机网络信息。</li>
+<li>nova-compute通过keystone的RESTfull API拿到认证的token，并通过HTTP请求cinder-api获取创建虚拟机所需要的持久化存储信息。</li>
+<li>cinder-api向keystone认证token是否有效，并返回验证结果。</li>
+<li>token验证通过，nova-compute获得虚拟机持久化存储信息。</li>
+<li>nova-compute根据instance的信息调用配置的虚拟化驱动来创建虚拟机。</li>
+</ol>
+<h2 id="4-工作任务及计划">4. 工作任务及计划</h2>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20190530162415784.png" alt=""></p>
+<h2 id="5-访问地址">5. 访问地址</h2>
+<p>1. 手动安装版本（集群）：http://10.57.30.57
+2. kolla安装版本（单机）：http://10.57.30.15</p>
+<h2 id="6-问题难点">6. 问题难点：</h2>
+<p>1. 手动安装部署困难
+2. 架构比较复杂，涉及运维技术比较多，学习门槛比较高
+3. 系统不熟悉，维护难度比较大</p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/openstack/">openStack</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/06/1-%E8%99%9A%E6%8B%9F%E6%9C%BAopenstack%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" data-tooltip="1-虚拟机OpenStack手动安装部署" aria-label="下一篇: 1-虚拟机OpenStack手动安装部署">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/04/spark-graphx%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E%E5%8F%82%E6%95%B0/" data-tooltip="spark graphx计算引擎参数" aria-label="上一篇: spark graphx计算引擎参数">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/06/1-%E8%99%9A%E6%8B%9F%E6%9C%BAopenstack%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" data-tooltip="1-虚拟机OpenStack手动安装部署" aria-label="下一篇: 1-虚拟机OpenStack手动安装部署">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/04/spark-graphx%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E%E5%8F%82%E6%95%B0/" data-tooltip="spark graphx计算引擎参数" aria-label="上一篇: spark graphx计算引擎参数">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

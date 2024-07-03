@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ☀️哲の小窝☀️</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on ☀️哲の小窝☀️</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 07 Feb 2023 17:23:26 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>欢迎来到 ☀️哲の小窝☀️</title>
+      <link>http://localhost:1313/2023/02/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</link>
+      <pubDate>Tue, 07 Feb 2023 17:23:26 +0800</pubDate>
+      <guid>http://localhost:1313/2023/02/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</guid>
+      <description>&lt;p&gt;这个小窝就是用来记录平时工作，学习，随笔的地方！&lt;/p&gt;&#xA;&lt;p&gt;有问题联系可以加我微信👇&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>电商风控</title>
+      <link>http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</link>
+      <pubDate>Tue, 20 Dec 2022 14:18:16 +0800</pubDate>
+      <guid>http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</guid>
+      <description>&lt;p&gt;风控技术体系&lt;/p&gt;&#xA;&lt;p&gt;设备指纹、风险数据画像、决策引擎、指标平台、智能业务模型、关联图谱、全链路分析&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17-本机docker搭建集群</title>
+      <link>http://localhost:1313/2022/06/17-%E6%9C%AC%E6%9C%BAdocker%E6%90%AD%E5%BB%BA%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Thu, 23 Jun 2022 16:42:49 +0800</pubDate>
+      <guid>http://localhost:1313/2022/06/17-%E6%9C%AC%E6%9C%BAdocker%E6%90%AD%E5%BB%BA%E9%9B%86%E7%BE%A4/</guid>
+      <description>&lt;p&gt;docker-compose.yml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>多层信息传递模型</title>
+      <link>http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Thu, 16 Jun 2022 16:48:11 +0800</pubDate>
+      <guid>http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</guid>
+      <description>&lt;p&gt;一、 多层信息传递模型&lt;/p&gt;&#xA;&lt;p&gt;库存同步、价格同步本质上都是多层信息传递模型，在供应链这类有关联关系的业务场景中还是比较常见的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>16-linux优化</title>
+      <link>http://localhost:1313/2022/06/16-linux%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Tue, 14 Jun 2022 20:53:06 +0800</pubDate>
+      <guid>http://localhost:1313/2022/06/16-linux%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;p&gt;Aerospike 数据库Linux优化&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15- 加速同步</title>
+      <link>http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Wed, 08 Jun 2022 11:39:18 +0800</pubDate>
+      <guid>http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/</guid>
+      <description>&lt;p&gt;加速数据同步：https://docs.aerospike.com/server/operations/manage/migration&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>14-aerospike 监控</title>
+      <link>http://localhost:1313/2022/04/14-aerospike-%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Mon, 18 Apr 2022 16:18:39 +0800</pubDate>
+      <guid>http://localhost:1313/2022/04/14-aerospike-%E7%9B%91%E6%8E%A7/</guid>
+      <description>&lt;p&gt;prometheus跟grafana已经安装好，此篇忽略，重点讲Aerospike监控安装及配置。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13-创建索引</title>
+      <link>http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Tue, 15 Mar 2022 13:53:19 +0800</pubDate>
+      <guid>http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/</guid>
+      <description>&lt;p&gt;manage sindex create string l_id_index ns large set logistic bin lId&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12-Aerospike机器新增</title>
+      <link>http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/</link>
+      <pubDate>Fri, 04 Mar 2022 10:11:41 +0800</pubDate>
+      <guid>http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/</guid>
+      <description>&lt;h2 id=&#34;linux-优化&#34;&gt;linux 优化&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1min_free_kbytes优化&#34;&gt;1.min_free_kbytes优化&lt;/h3&gt;&#xA;&lt;p&gt;min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（Kbytes），如果系统可用内存低于该值，默认会启用oom killer 或者强制重启，当耗尽内存直至系统最低保存内存时会有两种现象，根据内核参数vm.panic_on_\oom 设置值的不同而有不同的行为。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2-容灾测试</title>
+      <link>http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 10 Feb 2022 14:58:47 +0800</pubDate>
+      <guid>http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;容灾高可用测试&lt;/p&gt;&#xA;&lt;p&gt;核心就是：多节点集群，单表多副本，宕某一个节点，副本还在，该表就可以正常运转。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1-安装与测试</title>
+      <link>http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 26 Jan 2022 10:16:37 +0800</pubDate>
+      <guid>http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;[toc]&#xA;本篇主要安装及测试以下组件&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;FE：FrontEnd简称FE，是StarRocks的前端节点，负责管理元数据，管理客户端连接，进行查询规划，查询调度等工作。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>4-kafka监控模板</title>
+      <link>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 07 Jan 2022 10:18:16 +0800</pubDate>
+      <guid>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</guid>
+      <description>&lt;h2 id=&#34;实例规格&#34;&gt;实例规格&lt;/h2&gt;&#xA;&lt;p&gt;集群流量 = 业务流量 + 集群内副本复制流量，该规格实际业务读流量处理峰值为 240 MB/s，业务写流量处理峰值为 80 MB/s。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SSL证书过期处理</title>
+      <link>http://localhost:1313/2021/11/ssl%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 15 Nov 2021 10:35:15 +0800</pubDate>
+      <guid>http://localhost:1313/2021/11/ssl%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E5%A4%84%E7%90%86/</guid>
+      <description>&lt;p&gt;证书过期处理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>11-AQL操作格式与TTL</title>
+      <link>http://localhost:1313/2021/10/11-aql%E6%93%8D%E4%BD%9C%E6%A0%BC%E5%BC%8F%E4%B8%8Ettl/</link>
+      <pubDate>Wed, 27 Oct 2021 20:47:17 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/11-aql%E6%93%8D%E4%BD%9C%E6%A0%BC%E5%BC%8F%E4%B8%8Ettl/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;record_ttl   设置默认 TTL   time to live&lt;/li&gt;&#xA;&lt;li&gt;RECORD_PRINT_METADATA    显示元数据（TTL gen）  记录存活时间 记录更新次数&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>9-aerospike升级</title>
+      <link>http://localhost:1313/2021/10/9-aerospike%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Wed, 27 Oct 2021 20:19:27 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/9-aerospike%E5%8D%87%E7%BA%A7/</guid>
+      <description>&lt;p&gt;特殊升级参考：https://docs.aerospike.com/server/operations/upgrade/special_upgrades&lt;/p&gt;&#xA;&lt;p&gt;nohup asbackup -n large -l 172.16.20.79:3000 -z zstd -d large_79_zstd  &amp;gt; asbackup_large_0628.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10-AS备份</title>
+      <link>http://localhost:1313/2021/10/10-as%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Wed, 27 Oct 2021 11:37:10 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/10-as%E5%A4%87%E4%BB%BD/</guid>
+      <description>&lt;h1 id=&#34;as备份&#34;&gt;AS备份&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>8-ACT认证</title>
+      <link>http://localhost:1313/2021/10/8-act%E8%AE%A4%E8%AF%81/</link>
+      <pubDate>Tue, 26 Oct 2021 16:53:06 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/8-act%E8%AE%A4%E8%AF%81/</guid>
+      <description>&lt;h2 id=&#34;act-测试过程&#34;&gt;ACT 测试过程&lt;/h2&gt;&#xA;&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;&#xA;&lt;p&gt;安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7-Aerospike集群安装</title>
+      <link>http://localhost:1313/2021/10/7-aerospike%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 25 Oct 2021 13:45:53 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/7-aerospike%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;h2 id=&#34;机器环境&#34;&gt;机器环境&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>6-优化</title>
+      <link>http://localhost:1313/2021/10/6-%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Fri, 15 Oct 2021 19:33:20 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/6-%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ttl更新数据不更新ttl&#xA;aspClient.writePolicyDefault.expiration= -2&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;generation 更新次数&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>5-ASP存储配置</title>
+      <link>http://localhost:1313/2021/10/5-asp%E5%AD%98%E5%82%A8%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 12 Oct 2021 10:06:12 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/5-asp%E5%AD%98%E5%82%A8%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;h4 id=&#34;ssd-存储引擎的秘诀&#34;&gt;SSD 存储引擎的秘诀&lt;/h4&gt;</description>
+    </item>
+    <item>
+      <title>4-ssd故障</title>
+      <link>http://localhost:1313/2021/10/4-ssd%E6%95%85%E9%9A%9C/</link>
+      <pubDate>Mon, 11 Oct 2021 19:16:33 +0800</pubDate>
+      <guid>http://localhost:1313/2021/10/4-ssd%E6%95%85%E9%9A%9C/</guid>
+      <description>&lt;p&gt;[toc]&#xA;aerospike 选用SSD，格式故障&lt;/p&gt;&#xA;&lt;h3 id=&#34;第一种方式直接配置&#34;&gt;第一种方式，直接配置&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>3-asadm</title>
+      <link>http://localhost:1313/2021/09/3-asadm/</link>
+      <pubDate>Tue, 28 Sep 2021 12:15:25 +0800</pubDate>
+      <guid>http://localhost:1313/2021/09/3-asadm/</guid>
+      <description>&lt;p&gt;管理工具&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;创建索引&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;删除索引&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>1-Centos7 部署Aerospike</title>
+      <link>http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/</link>
+      <pubDate>Wed, 22 Sep 2021 11:20:55 +0800</pubDate>
+      <guid>http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/</guid>
+      <description>&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;机器：newcdh-node5&lt;/li&gt;&#xA;&lt;li&gt;操作系统版本查看:&lt;code&gt;uname -a&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>2-AQL</title>
+      <link>http://localhost:1313/2021/09/2-aql/</link>
+      <pubDate>Fri, 17 Sep 2021 15:42:09 +0800</pubDate>
+      <guid>http://localhost:1313/2021/09/2-aql/</guid>
+      <description>&lt;h2 id=&#34;aql---aerospike的语法httpsdocsaerospikecomdocstoolsaqlrecord_operationshtml&#34;&gt;AQL - &lt;a href=&#34;https://docs.aerospike.com/docs/tools/aql/record_operations.html&#34;&gt;aerospike的语法&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;数据插入&#34;&gt;数据插入&lt;/h3&gt;&#xA;&lt;p&gt;命令&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Redis优化</title>
+      <link>http://localhost:1313/2021/09/redis%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Tue, 14 Sep 2021 11:13:04 +0800</pubDate>
+      <guid>http://localhost:1313/2021/09/redis%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;p&gt;Redis优化&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;key设置ttl并且调整删除策略为volatile-ttl&#xA;set maxmemory_policy allkeys-lru :volatile-ttl&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Flink监控搭建</title>
+      <link>http://localhost:1313/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Tue, 03 Aug 2021 14:37:41 +0800</pubDate>
+      <guid>http://localhost:1313/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;[toc]&#xA;利用Apache Flink的内置指标系统以及如何使用Prometheus来高效地监控流式应用程序.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>kafka-flink-iceberg</title>
+      <link>http://localhost:1313/2021/04/kafka-flink-iceberg/</link>
+      <pubDate>Tue, 06 Apr 2021 18:53:56 +0800</pubDate>
+      <guid>http://localhost:1313/2021/04/kafka-flink-iceberg/</guid>
+      <description>&lt;p&gt;kafka-flink-iceberg&#xA;模拟生成数据发送到kafka，读取kafka数据，通过flink写入iceberg&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>flink sql写入iceberg</title>
+      <link>http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</link>
+      <pubDate>Tue, 06 Apr 2021 18:52:02 +0800</pubDate>
+      <guid>http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</guid>
+      <description>&lt;p&gt;Flink SQL写入iceberg&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>flink写入clickhouse</title>
+      <link>http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</link>
+      <pubDate>Thu, 11 Mar 2021 20:41:31 +0800</pubDate>
+      <guid>http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</guid>
+      <description>&lt;p&gt;flink写入clickhouse&lt;/p&gt;&#xA;&lt;p&gt;flink及clickhouse官方都是没有提供flink写clickhouse的SQL API&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8-flink sql client使用</title>
+      <link>http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 10 Mar 2021 17:18:05 +0800</pubDate>
+      <guid>http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;p&gt;SQL 客户端&lt;/p&gt;&#xA;&lt;p&gt;Flink 的 Table &amp;amp; SQL API 可以处理 SQL 语言编写的查询语句，但是这些查询需要嵌入用 Java 或 Scala 编写的表程序中。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>clickhouse部署</title>
+      <link>http://localhost:1313/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 08 Mar 2021 16:21:31 +0800</pubDate>
+      <guid>http://localhost:1313/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;clickhouse 离线安装&lt;/p&gt;&#xA;&lt;p&gt;单机版及集群版&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7-flink日志输出</title>
+      <link>http://localhost:1313/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</link>
+      <pubDate>Sat, 12 Sep 2020 14:29:08 +0800</pubDate>
+      <guid>http://localhost:1313/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</guid>
+      <description>&lt;p&gt;flink日志输出冲突&lt;/p&gt;&#xA;&lt;p&gt;解决flink项目中日志输出有冲突，或者是日志输出配置文件没有生效&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>6-flink提交offset源码</title>
+      <link>http://localhost:1313/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Fri, 11 Sep 2020 14:28:21 +0800</pubDate>
+      <guid>http://localhost:1313/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</guid>
+      <description>&lt;p&gt;Flink提交kafka offset源码&lt;/p&gt;&#xA;&lt;p&gt;flink 消费 kafka 数据，提交消费组 offset方式 有三种类型&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hive安装(2.3.6 on hadoop2.8.5)</title>
+      <link>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</link>
+      <pubDate>Thu, 27 Aug 2020 18:20:35 +0800</pubDate>
+      <guid>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</guid>
+      <description>&lt;p&gt;对接hadoop2.8.5，选择Apache开源版本，下载&lt;a href=&#34;http://archive.apache.org/dist/hive/hive-2.3.6/apache-hive-2.3.6-bin.tar.gz&#34;&gt;hive-2.3.6&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ansible离线部署</title>
+      <link>http://localhost:1313/2020/08/ansible%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 26 Aug 2020 12:23:52 +0800</pubDate>
+      <guid>http://localhost:1313/2020/08/ansible%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;通过ansible构建加密kafka集群,实现一键部署及一键卸载。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5-flinkSQL参数</title>
+      <link>http://localhost:1313/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sun, 26 Jul 2020 14:25:31 +0800</pubDate>
+      <guid>http://localhost:1313/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</guid>
+      <description>&lt;p&gt;FlinkSQL 参数理解&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4-flink1.11.1对接hive2.3.4</title>
+      <link>http://localhost:1313/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</link>
+      <pubDate>Thu, 23 Jul 2020 14:23:50 +0800</pubDate>
+      <guid>http://localhost:1313/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</guid>
+      <description>&lt;p&gt;flink对接hive&lt;/p&gt;&#xA;&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MacOS&lt;/li&gt;&#xA;&lt;li&gt;flink1.11.1&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>0-mac安装flink</title>
+      <link>http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</link>
+      <pubDate>Thu, 16 Jul 2020 11:52:07 +0800</pubDate>
+      <guid>http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</guid>
+      <description>&lt;p&gt;Mac环境部署flink&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3-监控grafana&#43;prometheus</title>
+      <link>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</link>
+      <pubDate>Thu, 18 Jun 2020 14:47:05 +0800</pubDate>
+      <guid>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</guid>
+      <description>&lt;p&gt;配置kafka集群监控，及服务器相关信息监控&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2-kafka权限测试</title>
+      <link>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 16 Jun 2020 15:50:46 +0800</pubDate>
+      <guid>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;测试kafka权限验证&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1-kafka权限调研</title>
+      <link>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</link>
+      <pubDate>Mon, 01 Jun 2020 14:51:29 +0800</pubDate>
+      <guid>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</guid>
+      <description>&lt;p&gt;调研kafka权限相关，并验证，生产级别&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0-kafka需求</title>
+      <link>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</link>
+      <pubDate>Sat, 09 May 2020 16:27:50 +0800</pubDate>
+      <guid>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</guid>
+      <description>&lt;p&gt;根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3-flink平台调研</title>
+      <link>http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</link>
+      <pubDate>Fri, 10 Apr 2020 14:21:41 +0800</pubDate>
+      <guid>http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</guid>
+      <description>&lt;p&gt;flink相关平台调研&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2-水印watermark</title>
+      <link>http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</link>
+      <pubDate>Sat, 28 Dec 2019 18:30:02 +0800</pubDate>
+      <guid>http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</guid>
+      <description>&lt;p&gt;watermark代码测试&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0-hadoop安装</title>
+      <link>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 28 Dec 2019 18:13:32 +0800</pubDate>
+      <guid>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;Apache原生hadoop部署&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1.ambari介绍及安装</title>
+      <link>http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 11 Dec 2019 17:31:15 +0800</pubDate>
+      <guid>http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;h2 id=&#34;1-什么是ambari&#34;&gt;1. 什么是ambari？&lt;/h2&gt;&#xA;&lt;p&gt;Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1-flink部署</title>
+      <link>http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Fri, 22 Nov 2019 15:17:47 +0800</pubDate>
+      <guid>http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;flink 部署&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>22-centos设置默认网关</title>
+      <link>http://localhost:1313/2019/08/22-centos%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%BD%91%E5%85%B3/</link>
+      <pubDate>Mon, 26 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/22-centos%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%BD%91%E5%85%B3/</guid>
+      <description>&lt;p&gt;默认网关设置.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>21-kolla对接ceph(all-in-one)</title>
+      <link>http://localhost:1313/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/</link>
+      <pubDate>Sun, 18 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/</guid>
+      <description>&lt;p&gt;kolla 对接ceph&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20-kolla搭建ceph集群</title>
+      <link>http://localhost:1313/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Wed, 14 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>19-ceph-deploy安装ceph</title>
+      <link>http://localhost:1313/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/</link>
+      <pubDate>Tue, 13 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>18-问题汇总</title>
+      <link>http://localhost:1313/2019/08/18-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Mon, 12 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/18-%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>&lt;p&gt;记录一些OpenStack部署运维中的一些坑&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>17-部署优化</title>
+      <link>http://localhost:1313/2019/08/17-%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Mon, 12 Aug 2019 08:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/17-%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;p&gt;部署优化&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>16-openstack停电故障修复</title>
+      <link>http://localhost:1313/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/</link>
+      <pubDate>Fri, 09 Aug 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/</guid>
+      <description>&lt;p&gt;集群物理机停电重启，部分虚拟机启动失败&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>15-openstack故障</title>
+      <link>http://localhost:1313/2019/07/15-openstack%E6%95%85%E9%9A%9C/</link>
+      <pubDate>Mon, 29 Jul 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/15-openstack%E6%95%85%E9%9A%9C/</guid>
+      <description>&lt;p&gt;OpenStack故障&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>14-suse镜像制作</title>
+      <link>http://localhost:1313/2019/07/14-suse%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/</link>
+      <pubDate>Sun, 28 Jul 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/14-suse%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/</guid>
+      <description>&lt;p&gt;suse镜像制作，qcow2格式，提供给OpenStack使用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13-帮助文档</title>
+      <link>http://localhost:1313/2019/07/13-%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Wed, 24 Jul 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/13-%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</guid>
+      <description>&lt;p&gt;用gitbook编辑好的帮助文档，替换&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12-安装ceph</title>
+      <link>http://localhost:1313/2019/07/12-%E5%AE%89%E8%A3%85ceph/</link>
+      <pubDate>Sat, 20 Jul 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/12-%E5%AE%89%E8%A3%85ceph/</guid>
+      <description>&lt;p&gt;kolla安装ceph&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5-快学presto</title>
+      <link>http://localhost:1313/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</link>
+      <pubDate>Mon, 15 Jul 2019 20:03:37 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</guid>
+      <description>&lt;p&gt;为数据中台新人进行培训，培训内容presto&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4-快学spark</title>
+      <link>http://localhost:1313/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</link>
+      <pubDate>Mon, 15 Jul 2019 20:01:21 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</guid>
+      <description>&lt;p&gt;为数据中台新人进行培训，培训内容spark&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3-快学hadoop</title>
+      <link>http://localhost:1313/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</link>
+      <pubDate>Mon, 15 Jul 2019 19:56:53 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</guid>
+      <description>&lt;p&gt;为数据中台新人进行培训，培训内容hadoop&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2-快学python</title>
+      <link>http://localhost:1313/2019/07/2-%E5%BF%AB%E5%AD%A6python/</link>
+      <pubDate>Mon, 15 Jul 2019 11:08:44 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/2-%E5%BF%AB%E5%AD%A6python/</guid>
+      <description>&lt;p&gt;为数据中台新人进行培训，培训内容python&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1-快学Scala</title>
+      <link>http://localhost:1313/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</link>
+      <pubDate>Mon, 15 Jul 2019 11:06:57 +0800</pubDate>
+      <guid>http://localhost:1313/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</guid>
+      <description>&lt;p&gt;为数据中台新人进行培训，培训内容scala&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>11-Kolla环境部署命令</title>
+      <link>http://localhost:1313/2019/06/11-kolla%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 15 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/11-kolla%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;kolla部署OpenStack，常用部署运维命令&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10-制作centos7镜像</title>
+      <link>http://localhost:1313/2019/06/10-%E5%88%B6%E4%BD%9Ccentos7%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Fri, 14 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/10-%E5%88%B6%E4%BD%9Ccentos7%E9%95%9C%E5%83%8F/</guid>
+      <description>&lt;p&gt;centos7镜像制作，qcow2格式，提供给OpenStack使用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>9-windows镜像制作</title>
+      <link>http://localhost:1313/2019/06/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/</link>
+      <pubDate>Thu, 13 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/</guid>
+      <description>&lt;p&gt;windows镜像制作，qcow2格式，提供给OpenStack使用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>8-自动化部署kolla</title>
+      <link>http://localhost:1313/2019/06/8-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2kolla/</link>
+      <pubDate>Wed, 12 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/8-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2kolla/</guid>
+      <description>&lt;p&gt;离线环境，自动化部署&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>7-kolla离线仓库制作</title>
+      <link>http://localhost:1313/2019/06/7-kolla%E7%A6%BB%E7%BA%BF%E4%BB%93%E5%BA%93%E5%88%B6%E4%BD%9C/</link>
+      <pubDate>Tue, 11 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/7-kolla%E7%A6%BB%E7%BA%BF%E4%BB%93%E5%BA%93%E5%88%B6%E4%BD%9C/</guid>
+      <description>&lt;p&gt;准备OpenStack的docker镜像，以便新环境无网络环境移植&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>6-kolla新增节点</title>
+      <link>http://localhost:1313/2019/06/6-kolla%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Mon, 10 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/6-kolla%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9/</guid>
+      <description>&lt;p&gt;已安装好的环境，通过kolla新增机器节点&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>5-kolla多节点安装</title>
+      <link>http://localhost:1313/2019/06/5-kolla%E5%A4%9A%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 09 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/5-kolla%E5%A4%9A%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;通过kolla多节点安装部署&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4-kolla安装单节点</title>
+      <link>http://localhost:1313/2019/06/4-kolla%E5%AE%89%E8%A3%85%E5%8D%95%E8%8A%82%E7%82%B9/</link>
+      <pubDate>Sat, 08 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/4-kolla%E5%AE%89%E8%A3%85%E5%8D%95%E8%8A%82%E7%82%B9/</guid>
+      <description>&lt;p&gt;kolla是基于自动化运维工具ansible，对OpenStack进行一键安装与部署，极大简化了部署流程，各组件是通多docker启动。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3-openstack操作</title>
+      <link>http://localhost:1313/2019/06/3-openstack%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 07 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/3-openstack%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;环境部署好了，界面操作&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2-测试机手动安装</title>
+      <link>http://localhost:1313/2019/06/2-%E6%B5%8B%E8%AF%95%E6%9C%BA%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Thu, 06 Jun 2019 13:53:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/2-%E6%B5%8B%E8%AF%95%E6%9C%BA%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;在测试机上手动部署安装&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1-虚拟机OpenStack手动安装部署</title>
+      <link>http://localhost:1313/2019/06/1-%E8%99%9A%E6%8B%9F%E6%9C%BAopenstack%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 05 Jun 2019 13:53:04 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/1-%E8%99%9A%E6%8B%9F%E6%9C%BAopenstack%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;在虚拟中部署OpenStack&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0-OpenStack研究</title>
+      <link>http://localhost:1313/2019/06/0-openstack%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Wed, 05 Jun 2019 13:36:03 +0800</pubDate>
+      <guid>http://localhost:1313/2019/06/0-openstack%E7%A0%94%E7%A9%B6/</guid>
+      <description>&lt;p&gt;研究OpenStack云平台&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>spark graphx计算引擎参数</title>
+      <link>http://localhost:1313/2019/04/spark-graphx%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Thu, 04 Apr 2019 14:18:54 +0800</pubDate>
+      <guid>http://localhost:1313/2019/04/spark-graphx%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E%E5%8F%82%E6%95%B0/</guid>
+      <description>&lt;p&gt;为图挖掘及相关的图应用场景提供图算法及模型，用Spark生态圈分布式计算提供OLAP服务&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>spark初始化建网测试报告</title>
+      <link>http://localhost:1313/2019/01/spark%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Tue, 22 Jan 2019 10:25:21 +0800</pubDate>
+      <guid>http://localhost:1313/2019/01/spark%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid>
+      <description>&lt;p&gt;spark 初始化建网及图计算算法测试&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gitee&#43;hugo方式搭建网站http改为https</title>
+      <link>http://localhost:1313/2019/01/gitee-hugo%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99http%E6%94%B9%E4%B8%BAhttps/</link>
+      <pubDate>Thu, 10 Jan 2019 15:25:51 +0800</pubDate>
+      <guid>http://localhost:1313/2019/01/gitee-hugo%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99http%E6%94%B9%E4%B8%BAhttps/</guid>
+      <description>&lt;p&gt;最近博客经常再打开的时候出现错乱。困扰了很久，终于找到解决的办法了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>spark建网测试</title>
+      <link>http://localhost:1313/2019/01/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 10 Jan 2019 10:37:49 +0800</pubDate>
+      <guid>http://localhost:1313/2019/01/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>信息修复算法</title>
+      <link>http://localhost:1313/2018/12/%E4%BF%A1%E6%81%AF%E4%BF%AE%E5%A4%8D%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 24 Dec 2018 15:06:27 +0800</pubDate>
+      <guid>http://localhost:1313/2018/12/%E4%BF%A1%E6%81%AF%E4%BF%AE%E5%A4%8D%E7%AE%97%E6%B3%95/</guid>
+      <description>&lt;p&gt;失联信息修复功能设计&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker部署实施方案</title>
+      <link>http://localhost:1313/2018/11/docker%E9%83%A8%E7%BD%B2%E5%AE%9E%E6%96%BD%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Fri, 02 Nov 2018 13:50:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/11/docker%E9%83%A8%E7%BD%B2%E5%AE%9E%E6%96%BD%E6%96%B9%E6%A1%88/</guid>
+      <description>&lt;p&gt;Docker部署实施方案&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>docker离线安装</title>
+      <link>http://localhost:1313/2018/11/docker%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 02 Nov 2018 13:45:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/11/docker%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;docker离线安装&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker实践指南03-制作镜像及自动化启动</title>
+      <link>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9703-%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E5%8F%8A%E8%87%AA%E5%8A%A8%E5%8C%96%E5%90%AF%E5%8A%A8/</link>
+      <pubDate>Fri, 02 Nov 2018 13:40:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9703-%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E5%8F%8A%E8%87%AA%E5%8A%A8%E5%8C%96%E5%90%AF%E5%8A%A8/</guid>
+      <description>&lt;p&gt;Docker实践指南03-制作镜像及启动&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker实践指南02-常用命令</title>
+      <link>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9702-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 02 Nov 2018 13:35:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9702-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;Docker实践指南02-常用命令&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker实践指南01-介绍及原理</title>
+      <link>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9701-%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 02 Nov 2018 13:30:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9701-%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86/</guid>
+      <description>&lt;p&gt;Docker实践指南01-介绍及原理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>单机版spark搭建</title>
+      <link>http://localhost:1313/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 11 Oct 2018 15:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;h3 id=&#34;单机版spark安装&#34;&gt;单机版spark安装&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>neo4j数据备份-恢复流程</title>
+      <link>http://localhost:1313/2018/08/neo4j%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD-%E6%81%A2%E5%A4%8D%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Thu, 30 Aug 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/08/neo4j%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD-%E6%81%A2%E5%A4%8D%E6%B5%81%E7%A8%8B/</guid>
+      <description>&lt;p&gt;neo4j数据备份流程&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>neo4j-数据导入例子</title>
+      <link>http://localhost:1313/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/</link>
+      <pubDate>Tue, 14 Aug 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/</guid>
+      <description>&lt;p&gt;Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>新增机器到cdh集群</title>
+      <link>http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Mon, 13 Aug 2018 15:34:37 +0800</pubDate>
+      <guid>http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</guid>
+      <description>背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。&#xA;10.57.16.207 10.57.16.168&#xA;一、准备工作 1. admin用户准备工作 添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin 增加sudo权限 vi /etc/sudoers ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen 2. 磁盘挂载 查看系统中磁盘信息 sudo fdisk -l Disk /dev/vdb: 536.9 GB&#xA;格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh 3.</description>
+    </item>
+    <item>
+      <title>如何正确下线CDH机器</title>
+      <link>http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</link>
+      <pubDate>Mon, 13 Aug 2018 15:34:13 +0800</pubDate>
+      <guid>http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</guid>
+      <description>背景 CDH集群有2台机器因为底层存储损坏，无法恢复，机器脱离cdh的管理，数据也没办法再找回来。 所以需要在CDH管理剔除。&#xA;登录cdh管理平台，主机列表。 执行停止主机上的角色，由于机器宕机，此处跳过 选中要删除的主机，进入维护模式 4. 保持默认选项 5. 点击进入维护模式，会解除授权 6. 此步骤应该是停止cdh-agent，但是由于机器已经宕机，所以此处跳过 7. 选择主机，从cloudera manager删除 另一种方式： 停止主机上的角色-&amp;gt;从集群中删除-&amp;gt;关闭agent-&amp;gt;remove from cloudera manager </description>
+    </item>
+    <item>
+      <title>mysql修改初始化密码</title>
+      <link>http://localhost:1313/2018/08/mysql%E4%BF%AE%E6%94%B9%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Sun, 05 Aug 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/08/mysql%E4%BF%AE%E6%94%B9%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%86%E7%A0%81/</guid>
+      <description>&lt;p&gt;msyql自动修改初始化密码&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ansible依赖</title>
+      <link>http://localhost:1313/2018/07/ansible%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Tue, 24 Jul 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/ansible%E4%BE%9D%E8%B5%96/</guid>
+      <description>&lt;p&gt;安装ansible以及其他安装为cdh安装所准备的软件安装&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mysql安装</title>
+      <link>http://localhost:1313/2018/07/mysql%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Tue, 24 Jul 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/mysql%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;在centos7上离线包安装安装，以及mysql包的依赖关系&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux中shell递归安装软件及依赖包</title>
+      <link>http://localhost:1313/2018/07/linux%E4%B8%ADshell%E9%80%92%E5%BD%92%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%8C%85/</link>
+      <pubDate>Tue, 24 Jul 2018 14:20:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/linux%E4%B8%ADshell%E9%80%92%E5%BD%92%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8F%8A%E4%BE%9D%E8%B5%96%E5%8C%85/</guid>
+      <description>&lt;p&gt;Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>安装虚拟机</title>
+      <link>http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 19 Jul 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>&lt;p&gt;VMware Fusion 8 Mac版是Mac 平台的著名虚拟机软件VMware推出的最新版本，VMware Fusion 8 Mac版可以完整支持 Windows 10、OS X El Capitan 和最新的 Retina Mac 产品，当然还支持微软的 Cortana&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Janusgraph学习--3(Greemlin查询语言)</title>
+      <link>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--3greemlin%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Mon, 16 Jul 2018 19:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--3greemlin%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/</guid>
+      <description>&lt;p&gt;Gremlin是JanusGraph的查询语言，用于从图中检索数据和修改数据。Gremlin是一种面向路径的语言，它简洁地表达了复杂的图形遍历和变异操作。Gremlin是一种函数式语言，遍历运算符被链接在一起形成类似路径的表达式。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Janusgraph学习--2(Janusgraph配置)</title>
+      <link>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--2janusgraph%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 16 Jul 2018 09:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--2janusgraph%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Janusgraph学习--1(Janusgraph安装)</title>
+      <link>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--1janusgraph%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 14 Jul 2018 09:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/janusgraph%E5%AD%A6%E4%B9%A0--1janusgraph%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hbase安装--单机版</title>
+      <link>http://localhost:1313/2018/07/hbase%E5%AE%89%E8%A3%85--%E5%8D%95%E6%9C%BA%E7%89%88/</link>
+      <pubDate>Fri, 13 Jul 2018 16:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/hbase%E5%AE%89%E8%A3%85--%E5%8D%95%E6%9C%BA%E7%89%88/</guid>
+      <description>&lt;p&gt;HBase是列式数据库，HBase的历史由来 HBase是一个开源的非关系型分布式数据库（NoSQL）,基于谷歌的BigTable建模，是一个高可靠性、高性能、高伸缩的分布式存储系统，使用HBase技术可在廉价PC Server上搭建起大规模结构化存储集群&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>elasticsearch安装</title>
+      <link>http://localhost:1313/2018/07/elasticsearch%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 13 Jul 2018 15:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/elasticsearch%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;Elasticsearch 是一个分布式的 RESTful 风格的搜索和数据分析引擎，能够解决不断涌现出的各种用例。作为 Elastic Stack 的核心，它集中存储您的数据，帮助您发现意料之中以及意料之外的情况。&lt;/p&gt;&#xA;&lt;p&gt;ES Logo：&#xA;&lt;img src=&#34;https://www.azheimage.top/markdown-img-paste-20180713202251257.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>react学习</title>
+      <link>http://localhost:1313/2018/07/react%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 11 Jul 2018 15:18:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/react%E5%AD%A6%E4%B9%A0/</guid>
+      <description>&lt;p&gt;React 是一个用于构建用户界面的 JAVASCRIPT 库。&#xA;React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。&#xA;React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。&#xA;React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>多个git配置</title>
+      <link>http://localhost:1313/2018/07/%E5%A4%9A%E4%B8%AAgit%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 05 Jul 2018 16:35:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/%E5%A4%9A%E4%B8%AAgit%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;一个客户端多个git账号&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>安装MysqlPremium中文安装破解</title>
+      <link>http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85mysqlpremium%E4%B8%AD%E6%96%87%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3/</link>
+      <pubDate>Thu, 05 Jul 2018 14:20:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/07/%E5%AE%89%E8%A3%85mysqlpremium%E4%B8%AD%E6%96%87%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3/</guid>
+      <description>&lt;p&gt;Navicat Premium 12 for Mac是一款强大的数据库管理软件，使用它可以轻松连接到MySQL、SQLite、Oracle、MariaDB、Mssql、及PostgreSQL数据库，让管理不同类型的数据库更加的方便。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gitlab&#43;hugo搭建</title>
+      <link>http://localhost:1313/2018/06/gitlab-hugo%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Tue, 12 Jun 2018 13:45:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/06/gitlab-hugo%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;p&gt;gitab+hugo搭建&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cloudera-scm-agent启动报错</title>
+      <link>http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Fri, 08 Jun 2018 13:30:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>&lt;p&gt;CDH报错信息处理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>安装GitBook</title>
+      <link>http://localhost:1313/2018/06/%E5%AE%89%E8%A3%85gitbook/</link>
+      <pubDate>Fri, 08 Jun 2018 13:30:51 +0800</pubDate>
+      <guid>http://localhost:1313/2018/06/%E5%AE%89%E8%A3%85gitbook/</guid>
+      <description> 查看本机node环境：node -v localhost:~ azhe$ node -v v10.5.0&#xA;安装gitbook:sudo npm install gitbook-cli -g 查看gitbook版本:gitbook -V localhost:~ azhe$ gitbook -V CLI version: 2.3.2 GitBook version: 3.2.3&#xA;初始化gitbook目录:gitbook init 启动:gitbook serve -p 8080 </description>
+    </item>
+    <item>
+      <title>cassandra笔记</title>
+      <link>http://localhost:1313/2018/06/cassandra%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 06 Jun 2018 18:53:27 +0800</pubDate>
+      <guid>http://localhost:1313/2018/06/cassandra%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;Cassandra学习笔记&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>第一篇博客</title>
+      <link>http://localhost:1313/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 04 Jun 2018 22:48:38 +0800</pubDate>
+      <guid>http://localhost:1313/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;第一篇博客&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

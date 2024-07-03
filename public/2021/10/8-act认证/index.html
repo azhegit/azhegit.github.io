@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003ch2 id=\u0022act-测试过程\u0022\u003eACT 测试过程\u003c\/h2\u003e\n\u003ch3 id=\u0022安装\u0022\u003e安装\u003c\/h3\u003e\n\u003cp\u003e安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2021\/10\/8-act%E8%AE%A4%E8%AF%81\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="ACT 测试过程
+安装
+安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。">
+
+
+<meta property="og:description" content="ACT 测试过程
+安装
+安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-ACT认证">
+<meta name="twitter:title" content="8-ACT认证">
+<meta property="og:url" content="http://localhost:1313/2021/10/8-act%E8%AE%A4%E8%AF%81/">
+<meta property="twitter:url" content="http://localhost:1313/2021/10/8-act%E8%AE%A4%E8%AF%81/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="ACT 测试过程
+安装
+安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。">
+<meta name="twitter:description" content="ACT 测试过程
+安装
+安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-10-26T16:53:06">
+  
+  
+    <meta property="article:modified_time" content="2021-10-26T16:53:06">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="Aerospike">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110153448285.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110153448285.png">
+
+
+    <title>8-ACT认证</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2021/10/8-act%E8%AE%A4%E8%AF%81/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      8-ACT认证
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-10-26T16:53:06&#43;08:00">
+        
+  
+  
+  
+  
+    2021 年 十月 26 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h2 id="act-测试过程">ACT 测试过程</h2>
+<h3 id="安装">安装</h3>
+<p>安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。</p>
+<p>yum install sysstat</p>
+<p><a href="https://github.com/aerospike/act">ACT git地址</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://github.com/aerospike/act/archive/refs/heads/master.zip
+</span></span><span style="display:flex;"><span>unzip master.zip
+</span></span><span style="display:flex;"><span>cd act-master/
+</span></span><span style="display:flex;"><span>yum install make gcc
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>dd if=/dev/zero of=/dev/vdb bs=128K &amp;
+dd if=/dev/zero of=/dev/vdc bs=128K &amp;
+dd if=/dev/zero of=/dev/vdd bs=128K &amp;
+dd if=/dev/zero of=/dev/vde bs=128K &amp;</p>
+<p>while [ 1 ]
+do kill -USR1 3816
+sleep 60
+done</p>
+<p>1919850381312 bytes (1.9 TB) copied, 1700.97 s, 1.1 GB/s</p>
+<h3 id="测试">测试</h3>
+<ol>
+<li>
+<p>使用 act_prep 准备驱动器 - 仅限第一次，预写数据
+此可执行文件通过在磁盘的每个扇区上写入零，然后用随机数据填充它（加盐）来为 ACT 准备设备。这模拟了正常的生产状态。
+./target/bin/act_prep /dev/vdb &amp;
+./target/bin/act_prep /dev/vdc &amp;
+./target/bin/act_prep /dev/vdd &amp;
+./target/bin/act_prep /dev/vde &amp;</p>
+</li>
+<li>
+<p>修改配置文件
+cp config/act_storage.conf</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">cp config/act_storage.conf actconfig.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">vim actconfig.conf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">device-names</span>: <span style="color:#ae81ff">/dev/vdb,/dev/vdc,/dev/vdd,/dev/vde</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#read-reqs-per-sec: 2000 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 30x</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">read-reqs-per-sec</span>: <span style="color:#ae81ff">240000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#write-reqs-per-sec: 1000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 30x</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">write-reqs-per-sec</span>: <span style="color:#ae81ff">120000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># replication-factor: 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">replication-factor</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#update-pct: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">update-pct</span>: <span style="color:#ae81ff">40</span>
+</span></span></code></pre></div><ol start="3">
+<li>启动测试
+./target/bin/act_storage actconfig.conf &gt; output30x.txt &amp;</li>
+<li>分析 ACT 输出
+运行 /analysis/act_latency.py 以处理 ACT 日志文件并制表数据。请注意，您可以在测试尚未完成时运行脚本，您将看到部分结果。</li>
+</ol>
+<p>例如：
+./analysis/act_latency.py -l output15x.txt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>act_latency.py -l output128k15x.txt
+</span></span><span style="display:flex;"><span>output128k15x.txt is ACT version 6.2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ACT-STORAGE CONFIGURATION
+</span></span><span style="display:flex;"><span>device-names: /dev/vdb /dev/vdc /dev/vdd /dev/vde
+</span></span><span style="display:flex;"><span>num-devices: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>service-threads: <span style="color:#ae81ff">160</span>
+</span></span><span style="display:flex;"><span>test-duration-sec: <span style="color:#ae81ff">86400</span>
+</span></span><span style="display:flex;"><span>report-interval-sec: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>microsecond-histograms: no
+</span></span><span style="display:flex;"><span>read-reqs-per-sec: <span style="color:#ae81ff">120000</span>
+</span></span><span style="display:flex;"><span>write-reqs-per-sec: <span style="color:#ae81ff">60000</span>
+</span></span><span style="display:flex;"><span>record-bytes: <span style="color:#ae81ff">1536</span>
+</span></span><span style="display:flex;"><span>record-bytes-range-max: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>large-block-op-kbytes: <span style="color:#ae81ff">128</span>
+</span></span><span style="display:flex;"><span>replication-factor: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>update-pct: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>defrag-lwm-pct: <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>compress-pct: <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>disable-odsync: no
+</span></span><span style="display:flex;"><span>commit-to-device: no
+</span></span><span style="display:flex;"><span>commit-min-bytes: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>tomb-raider: no
+</span></span><span style="display:flex;"><span>tomb-raider-sleep-usec: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>max-lag-sec: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>scheduler-mode: noop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DERIVED CONFIGURATION
+</span></span><span style="display:flex;"><span>record-stored-bytes: <span style="color:#ae81ff">1536</span> ... <span style="color:#ae81ff">1536</span>
+</span></span><span style="display:flex;"><span>internal-read-reqs-per-sec: <span style="color:#ae81ff">120000</span>
+</span></span><span style="display:flex;"><span>internal-write-reqs-per-sec: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>large-block-reads-per-sec: 1411.76
+</span></span><span style="display:flex;"><span>large-block-writes-per-sec: 1411.76
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTOGRAM NAMES
+</span></span><span style="display:flex;"><span>reads
+</span></span><span style="display:flex;"><span>/dev/vdb-reads
+</span></span><span style="display:flex;"><span>/dev/vdc-reads
+</span></span><span style="display:flex;"><span>/dev/vdd-reads
+</span></span><span style="display:flex;"><span>/dev/vde-reads
+</span></span><span style="display:flex;"><span>large-block-reads
+</span></span><span style="display:flex;"><span>large-block-writes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        reads                                           
+</span></span><span style="display:flex;"><span>        %&gt;<span style="color:#f92672">(</span>ms<span style="color:#f92672">)</span>                                          
+</span></span><span style="display:flex;"><span>slice        <span style="color:#ae81ff">1</span>      <span style="color:#ae81ff">2</span>      <span style="color:#ae81ff">4</span>      <span style="color:#ae81ff">8</span>     <span style="color:#ae81ff">16</span>     <span style="color:#ae81ff">32</span>     <span style="color:#ae81ff">64</span>
+</span></span><span style="display:flex;"><span>-----   ------ ------ ------ ------ ------ ------ ------
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>    40.43  21.31   2.29   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">2</span>    30.83  13.74   0.94   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">3</span>    33.02  15.17   1.11   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span>    32.47  14.83   1.07   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">5</span>    32.51  14.83   1.06   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">6</span>    32.71  14.87   1.04   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>    32.63  14.85   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">8</span>    32.68  14.87   1.04   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">9</span>    32.73  14.91   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">10</span>    32.79  14.95   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">11</span>    32.77  14.93   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">12</span>    32.77  14.92   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">13</span>    32.75  14.92   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">14</span>    32.75  14.92   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">15</span>    32.81  14.96   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">16</span>    32.82  14.93   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">17</span>    32.84  14.97   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">18</span>    32.80  14.93   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">19</span>    32.93  14.99   1.06   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">20</span>    32.83  14.96   1.06   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">21</span>    32.79  14.94   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">22</span>    32.82  14.95   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">23</span>    32.79  14.89   1.04   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">24</span>    32.79  14.95   1.05   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>-----   ------ ------ ------ ------ ------ ------ ------
+</span></span><span style="display:flex;"><span>  avg    33.00  15.15   1.10   0.01   0.01   0.00   0.00
+</span></span><span style="display:flex;"><span>  max    40.43  21.31   2.29   0.01   0.01   0.00   0.00
+</span></span></code></pre></div><p>通过<code>iostate -x 3</code>查看磁盘负载</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+</span></span><span style="display:flex;"><span>vda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+</span></span><span style="display:flex;"><span>vdb               0.00     0.00    0.00 9425.33     0.00 1206442.67   256.00     7.86    0.84    0.00    0.84   0.11 100.00
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+</span></span><span style="display:flex;"><span>           0.08    0.00    1.09   13.70    0.00   85.12
+</span></span></code></pre></div>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/aerospike/">Aerospike</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/10-as%E5%A4%87%E4%BB%BD/" data-tooltip="10-AS备份" aria-label="下一篇: 10-AS备份">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/7-aerospike%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/" data-tooltip="7-Aerospike集群安装" aria-label="上一篇: 7-Aerospike集群安装">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/10-as%E5%A4%87%E4%BB%BD/" data-tooltip="10-AS备份" aria-label="下一篇: 10-AS备份">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/7-aerospike%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85/" data-tooltip="7-Aerospike集群安装" aria-label="上一篇: 7-Aerospike集群安装">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

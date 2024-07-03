@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e管理工具\u003c\/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e创建索引\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e删除索引\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e",
+  "url":"http:\/\/localhost:1313\/2021\/09\/3-asadm\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="管理工具
+
+
+创建索引
+
+
+删除索引
+
+">
+
+
+<meta property="og:description" content="管理工具
+
+
+创建索引
+
+
+删除索引
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3-asadm">
+<meta name="twitter:title" content="3-asadm">
+<meta property="og:url" content="http://localhost:1313/2021/09/3-asadm/">
+<meta property="twitter:url" content="http://localhost:1313/2021/09/3-asadm/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="管理工具
+
+
+创建索引
+
+
+删除索引
+
+">
+<meta name="twitter:description" content="管理工具
+
+
+创建索引
+
+
+删除索引
+
+">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-09-28T12:15:25">
+  
+  
+    <meta property="article:modified_time" content="2021-09-28T12:15:25">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="Aerospike">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180725102054110.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180725102054110.png">
+
+
+    <title>3-asadm</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2021/09/3-asadm/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      3-asadm
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-09-28T12:15:25&#43;08:00">
+        
+  
+  
+  
+  
+    2021 年 九月 28 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>管理工具</p>
+<ol>
+<li>
+<p>创建索引</p>
+</li>
+<li>
+<p>删除索引</p>
+</li>
+</ol>
+<p>查看配置信息： show config</p>
+<p>Aerospike Admin</p>
+<ul>
+<li>enable:
+Enters privileged mode, which allows a you to issue manage
+and asinfo commands.
+Options:
+&ndash;warn:    Use this option to receive a prompt to confirm
+that you want to run the command.</li>
+<li>exit:
+Terminate session</li>
+<li>help:
+Displays the documentation for the specified command.
+For example, to see the documentation for the &lsquo;info&rsquo; command,
+use the command &lsquo;help info&rsquo;.</li>
+<li>watch:
+Runs a command for a specified pause and iterations.
+Usage: watch [pause] [iterations] [&ndash;no-diff] command
+pause:      The duration between executions.
+[default: 2 seconds]
+iterations: Number of iterations to execute command.
+[default: until keyboard interrupt]
+Options:
+&ndash;no-diff:  Do not highlight differences
+Example 1: Show &lsquo;info network&rsquo; 3 times and pause for 1 second each time.
+watch 1 3 info network
+Example 2: Show &ldquo;info namespace&rdquo; with 5 seconds pause until
+interrupted
+watch 5 info namespace</li>
+<li>summary:
+Displays summary of Aerospike cluster.
+Options:
+-l                        - Enable to display namespace output in List view. Default: Table view
+&ndash;enable-ssh              - Enables the collection of system statistics from a remote server.
+&ndash;ssh-user   <!-- raw HTML omitted -->     - Default user ID for remote servers. This is the ID of a user of the
+system, not the ID of an Aerospike user.
+&ndash;ssh-pwd    <!-- raw HTML omitted -->     - Default password or passphrase for key for remote servers. This is the
+user&rsquo;s password for logging into the system, not a password for logging
+into Aerospike.
+&ndash;ssh-port   <!-- raw HTML omitted -->        - Default SSH port for remote servers. Default: 22
+&ndash;ssh-key    <!-- raw HTML omitted -->     - Default SSH key (file path) for remote servers.
+&ndash;ssh-cf     <!-- raw HTML omitted -->     - Remote System Credentials file path.
+If the server credentials are not in the credentials file, then
+authentication is attempted with the default credentials.
+File format : each line should contain &lt;IP[:PORT]&gt;,&lt;USER_ID&gt;,
+<!-- raw HTML omitted -->,&lt;SSH_KEY&gt;
+Example:  1.2.3.4,uid,pwd
+1.2.3.4:3232,uid,pwd
+1.2.3.4:3232,uid,,key_path
+1.2.3.4:3232,uid,passphrase,key_path
+[2001::1234:10],uid,pwd
+[2001::1234:10]:3232,uid,,key_path
+Modifiers: with</li>
+<li>features:
+Lists the features in use in a running Aerospike cluster.
+Modifiers: like, with</li>
+<li>pager:
+Set pager for output
+<ul>
+<li>off:
+Removes pager and prints output normally</li>
+<li>on:
+Displays output with vertical and horizontal paging for each output table same as linux &rsquo;less&rsquo;
+command.
+Use arrow keys to scroll output and &lsquo;q&rsquo; to end page for table.
+All linux less commands can work in this pager option.</li>
+<li>scroll:
+Display output in scrolling mode</li>
+</ul>
+</li>
+<li>collectinfo:
+&ldquo;collectinfo&rdquo; is used to collect cluster info, aerospike conf file and system stats.
+Modifiers: with
+Default: Collects cluster info, aerospike conf file for local node and system stats from all nodes if
+remote server credentials provided. If credentials are not available then it will collect system
+stats from
+local node only.
+Options:
+-n              <!-- raw HTML omitted -->        - Number of snapshots. Default: 1
+-s              <!-- raw HTML omitted -->        - Sleep time in seconds between each snapshot. Default: 5 sec
+&ndash;enable-ssh                 - Enables the collection of system statistics from the remote server.
+&ndash;ssh-user      <!-- raw HTML omitted -->     - Default user ID for remote servers. This is the ID of a user of the
+system not the ID of an Aerospike user.
+&ndash;ssh-pwd       <!-- raw HTML omitted -->     - Default password or passphrase for key for remote servers. This is
+the user&rsquo;s password for logging into the system, not a password for
+logging into Aerospike.
+&ndash;ssh-port      <!-- raw HTML omitted -->        - Default SSH port for remote servers. Default: 22
+&ndash;ssh-key       <!-- raw HTML omitted -->     - Default SSH key (file path) for remote servers.
+&ndash;ssh-cf        <!-- raw HTML omitted -->     - Remote System Credentials file path.
+If the server credentials are not in the credentials file, then
+authentication is attempted with the default credentials.
+File format : each line must contain &lt;IP[:PORT]&gt;,&lt;USER_ID&gt;
+<!-- raw HTML omitted -->,&lt;SSH_KEY&gt;
+Example:  1.2.3.4,uid,pwd
+1.2.3.4:3232,uid,pwd
+1.2.3.4:3232,uid,,key_path
+1.2.3.4:3232,uid,passphrase,key_path
+[2001::1234:10],uid,pwd
+[2001::1234:10]:3232,uid,,key_path
+&ndash;output-prefix <!-- raw HTML omitted -->     - Output directory name prefix.
+&ndash;asconfig-file <!-- raw HTML omitted -->     - Aerospike config file path to collect.
+Default: /etc/aerospike/aerospike.conf</li>
+<li>asinfo:
+&ldquo;asinfo&rdquo; provides raw access to the info protocol.
+Options:
+-v <!-- raw HTML omitted -->   - The command to execute
+-p <!-- raw HTML omitted -->      - Port to use in the case of an XDR info command and XDR is
+not in asd
+-l             - Replace semicolons &ldquo;;&rdquo; with newlines. If output does
+not contain semicolons &ldquo;-l&rdquo; will attempt to use
+colons &ldquo;:&rdquo; followed by commas &ldquo;,&rdquo;.
+&ndash;no_node_name - Force to display output without printing node names.
+Modifiers: like, with
+Default: Executes an info command.</li>
+<li>manage:
+&ldquo;manage&rdquo; is used for administrative tasks like managing users, roles, udf, and sindexes
+<ul>
+<li>acl:
+&ldquo;manage acl&rdquo; is used to manage users and roles.
+<ul>
+<li>create:
+<ul>
+<li>user:
+Usage: create user <!-- raw HTML omitted --> [password <!-- raw HTML omitted -->] [roles <!-- raw HTML omitted --> <!-- raw HTML omitted --> &hellip;]
+username        - Name of the new user.
+password        - Password for the new user. User will be prompted if no
+password is provided.
+roles           - Roles to be granted to the user.
+[default: None]
+Modifiers: password, roles</li>
+<li>role:
+Usage: create role <!-- raw HTML omitted --> priv <!-- raw HTML omitted --> [ns <!-- raw HTML omitted --> [set <!-- raw HTML omitted -->]] [allow <!-- raw HTML omitted --> [<!-- raw HTML omitted --> [&hellip;]]] [read <!-- raw HTML omitted -->] [write <!-- raw HTML omitted -->]
+role-name     - Name of the new role.
+priv          - Privilege for the new role. Some privileges are not
+limited to a global scope. Scopes are either global, per
+namespace, or per namespace and set. For more
+information:
+<a href="https://www.aerospike.com/docs/operations/configure/security/access-control/#privileges-permissions-and-scopes">https://www.aerospike.com/docs/operations/configure/security/access-control/#privileges-permissions-and-scopes</a>
+[default: None]
+ns            - Namespace scope of privilege.
+[default: None]
+set           - Set scope of privilege. Namespace scope is required.
+[default: None]
+allow         - Addresses of nodes that a role will be allowed to connect
+to a cluster from.
+[default: None]
+read          - Quota for read transaction (TPS).
+write         - Quota for write transaction (TPS).
+Required: priv
+Modifiers: allow, ns, read, set, write</li>
+</ul>
+</li>
+<li>delete:
+<ul>
+<li>user:
+Usage: delete user <!-- raw HTML omitted -->
+username           - User to delete.</li>
+<li>role:
+Usage: delete role <!-- raw HTML omitted -->
+role-name     - Role to delete.</li>
+</ul>
+</li>
+<li>grant:
+<ul>
+<li>user:
+Usage: grant user <!-- raw HTML omitted --> roles <!-- raw HTML omitted --> [<!-- raw HTML omitted --> [&hellip;]]
+username        - User to have roles granted.
+roles           - Roles to add to the user.
+Required: roles</li>
+<li>role:
+Usage: grant role <!-- raw HTML omitted --> priv <!-- raw HTML omitted --> [ns <!-- raw HTML omitted --> [set <!-- raw HTML omitted -->]]&gt;
+role-name     - Role to have the privilege granted.
+priv          - Privilege to be added to the role.
+ns            - Namespace scope of privilege.
+[default: None]
+set           - Set scope of privilege. Namespace scope is required.
+[default: None]
+Required: priv
+Modifiers: ns, set</li>
+</ul>
+</li>
+<li>revoke:
+<ul>
+<li>user:
+Usage: revoke user <!-- raw HTML omitted --> roles <!-- raw HTML omitted --> [<!-- raw HTML omitted --> [&hellip;]]
+username        - User to have roles revoked.
+roles           - Roles to delete from the user.
+Required: roles</li>
+<li>role:
+Usage: revoke role <!-- raw HTML omitted --> priv <!-- raw HTML omitted --> [ns <!-- raw HTML omitted --> [set <!-- raw HTML omitted -->]]&gt;
+role-name     - Role to have privilege revoked.
+priv          - Privilege to delete from the role.
+ns            - Namespace scope of privilege
+[default: None]
+set           - Set scope of privilege. Namespace scope is required.
+[default: None]
+Required: priv
+Modifiers: ns, set</li>
+</ul>
+</li>
+<li>set-password:
+Usage: set-password user <!-- raw HTML omitted --> [password <!-- raw HTML omitted -->]
+username           - User to have password set.
+password           - Password for the user.  A prompt will appear if no
+password is provided.
+Modifiers: password</li>
+<li>change-password:
+Usage: change-password user <!-- raw HTML omitted --> [old <!-- raw HTML omitted -->] [new <!-- raw HTML omitted -->]
+username           - User that needs a new password.
+old                - Current password for the user. User will be
+prompted if no password is provided.
+new                - New password for the user. User will be prompted
+if no password is provided.
+Required: user
+Modifiers: new, old</li>
+<li>allowlist:
+Usage: allowlist role <!-- raw HTML omitted --> allow <!-- raw HTML omitted --> [<!-- raw HTML omitted --> [&hellip;]]
+role-name     - Role that will have the new allowlist.
+allow         - Addresses of nodes that a role will be allowed to connect
+from. This command erases and re-assigns the allowlist
+Usage: allowlist role <!-- raw HTML omitted --> clear
+role-name     - Role that will have the allowlist cleared.
+clear         - Clears allowlist from the role. Either &lsquo;allow&rsquo; or &lsquo;clear&rsquo; is
+required.
+Required: role
+Modifiers: allow, clear</li>
+<li>quotas:
+Usage: quotas role <!-- raw HTML omitted --> [read <!-- raw HTML omitted -->]|[write <!-- raw HTML omitted -->]
+role-name     - Role to assign a quota
+read          - Quota for read transaction (TPS). To give a role
+an unlimited quota enter 0
+write         - Quota for write transaction (TPS).
+Note: A read or write quota is required. Not providing a quota will
+leave it unchanged.
+Required: role
+Modifiers: read, write</li>
+</ul>
+</li>
+<li>udfs:
+&ldquo;manage udfs&rdquo; is used to add and remove user defined functions.
+<ul>
+<li>add:
+Usage: add <!-- raw HTML omitted --> path <!-- raw HTML omitted -->
+module-name   - Name of module to be stored in the server.  Can be different
+from file in path but must end with an extension.
+path          - Path to the udf module.  Can be either absolute or relative
+to the current working directory.
+Required: path</li>
+<li>remove:
+Usage: remove <!-- raw HTML omitted -->
+module-name   - Name of module to remove as stored in the server.</li>
+</ul>
+</li>
+<li>sindex:
+&ldquo;manage sindex&rdquo; is used to create and delete secondary indexes.
+<ul>
+<li>create:
+Usage: create <!-- raw HTML omitted --> <!-- raw HTML omitted --> ns <!-- raw HTML omitted --> [set <!-- raw HTML omitted -->] bin <!-- raw HTML omitted --> [in <!-- raw HTML omitted -->]
+bin-type    - The bin type of the provided <!-- raw HTML omitted -->. Should be one of the following values:
+numeric, string, or geo2dsphere
+index-name    - Name of the secondary index to be created. Should be 20 characters
+or less and not contain &ldquo;:&rdquo; or &ldquo;;&rdquo;.
+ns            - Name of namespace to create the secondary index on.
+set           - Name of set to create the secondary index on.
+bin           - Name of bin to create secondary index on.
+in            - Specifies how the secondary index is to collect keys:
+list: Specifies to use the elements of a list as keys.
+mapkeys: Specifies to use the keys of a map as keys.
+mapvalues: Specifies to use the values of a map as keys.
+[default: Specifies to use the contents of a bin as keys.]
+Required: bin, ns
+Modifiers: in, set</li>
+<li>delete:
+Usage: delete <!-- raw HTML omitted --> ns <!-- raw HTML omitted --> [set <!-- raw HTML omitted -->]
+index-name    - Name of the secondary index to be deleted.
+ns            - Namespace where the sindex resides.
+set           - Set where the sindex resides.
+Required: ns
+Modifiers: set</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>show:
+&ldquo;show&rdquo; is used to display Aerospike Statistics configuration.
+<ul>
+<li>config:
+&ldquo;show config&rdquo; is used to display Aerospike configuration settings
+Modifiers: diff, for, like, with
+Default: Displays service, network, and namespace configuration
+Options:
+-r           - Repeat output table title and row header after every <!-- raw HTML omitted --> columns.
+[default: False, no repetition]
+-flip        - Flip output table to show Nodes on Y axis and config on X axis.
+<ul>
+<li>cluster:
+Displays Cluster configuration</li>
+<li>dc:
+Displays datacenter configuration.
+Replaced by &ldquo;show config xdr&rdquo; for server &gt;= 5.0.</li>
+<li>namespace:
+Displays namespace configuration</li>
+<li>network:
+Displays network configuration</li>
+<li>service:
+Displays service configuration</li>
+<li>xdr:
+Displays XDR configuration</li>
+</ul>
+</li>
+<li>statistics:
+&ldquo;show statistics&rdquo; is used to display statistics for Aerospike components.
+Modifiers: for, like, with
+Default: Displays bin, set, service, and namespace statistics
+Options:
+-t           - Set to show total column at the end. It contains node wise sum for statistics.
+-r           - Repeat output table title and row header after every <!-- raw HTML omitted --> columns.
+[default: False, no repetition]
+-flip        - Flip output table to show Nodes on Y axis and stats on X axis.
+<ul>
+<li>bins:
+Displays bin statistics</li>
+<li>dc:
+Displays datacenter statistics.
+Replaced by &ldquo;show statistics xdr&rdquo; for server &gt;= 5.0.</li>
+<li>namespace:
+Displays namespace statistics</li>
+<li>service:
+Displays service statistics</li>
+<li>sets:
+Displays set statistics</li>
+<li>sindex:
+Displays sindex statistics</li>
+<li>xdr:
+Displays XDR statistics</li>
+</ul>
+</li>
+<li>latencies:
+&ldquo;show latencies&rdquo; is used to show the server latency histograms
+Modifiers: for, like, with
+Default: Displays latency information for the Aerospike cluster.
+Options:
+-e           - Exponential increment of latency buckets, i.e. 2^0 2^(e) &hellip; 2^(e * i)
+[default: 3]
+-b           - Number of latency buckets to display.
+[default: 3]
+-v           - Set to display verbose output of optionally configured histograms.</li>
+<li>distribution:
+&ldquo;show distribution&rdquo; is used to show the distribution of object sizes
+and time to live for node and a namespace.
+Modifiers: for, with
+Default: Shows the distributions of Time to Live and Object Size
+<ul>
+<li>eviction:
+Shows the distribution of namespace Eviction TTLs for server version 3.7.5 and below</li>
+<li>object_size:
+Shows the distribution of Object sizes for namespaces
+Options:
+-b               - Force to show byte wise distribution of Object Sizes.
+Default is rblock wise distribution in percentage
+-k <!-- raw HTML omitted -->     - Maximum number of buckets to show if -b is set.
+It distributes objects in same size k buckets and
+displays only buckets that have objects in them.
+[default is 5].</li>
+<li>time_to_live:
+Shows the distribution of TTLs for namespaces</li>
+</ul>
+</li>
+<li>mapping:
+&ldquo;show mapping&rdquo; is used to display Aerospike mapping from IP to Node_id and Node_id to IPs
+Modifiers: like
+Default: Displays mapping IPs to Node_id and Node_id to IPs
+<ul>
+<li>ip:
+Displays IP to Node_id mapping</li>
+<li>node:
+Displays Node_id to IPs mapping</li>
+</ul>
+</li>
+<li>pmap:
+&ldquo;show pmap&rdquo; displays partition map analysis of the Aerospike cluster.</li>
+<li>users:
+&ldquo;show users&rdquo; displays users and their assigned roles, connections, and quota metrics
+for the Aerospike cluster.
+Modifiers: like</li>
+<li>roles:
+&ldquo;show roles&rdquo; displays roles and their assigned privileges, allowlist, and quotas
+for the Aerospike cluster.
+Modifiers: like</li>
+<li>udfs:
+&ldquo;show udfs&rdquo; displays UDF modules along with metadata.
+Modifiers: like</li>
+<li>sindex:
+&ldquo;show sindex&rdquo; displays secondary indexes and static metadata.
+Modifiers: like</li>
+</ul>
+</li>
+<li>info:
+The &ldquo;info&rdquo; command provides summary tables for various aspects
+of Aerospike functionality.
+Modifiers: for, with
+Default: Displays network, namespace, and XDR summary information.
+<ul>
+<li>dc:
+&ldquo;info dc&rdquo; displays summary information for each datacenter.
+Replaced by &ldquo;info xdr&rdquo; for server &gt;= 5.0.</li>
+<li>network:
+&ldquo;info network&rdquo; displays network information for Aerospike.</li>
+<li>set:
+&ldquo;info set&rdquo; displays summary information for each set.</li>
+<li>sindex:
+&ldquo;info sindex&rdquo; displays summary information for Secondary Indexes (SIndex).</li>
+<li>xdr:
+&ldquo;info xdr&rdquo; displays summary information for each datacenter.</li>
+<li>namespace:
+&ldquo;info namespace&rdquo; command provides summary tables for various aspects
+of Aerospike namespaces.
+Modifiers: with
+Default: Displays usage and objects information for namespaces
+<ul>
+<li>object:
+Displays object information for each namespace.</li>
+<li>usage:
+Displays usage information for each namespace.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/aerospike/">Aerospike</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/4-ssd%E6%95%85%E9%9A%9C/" data-tooltip="4-ssd故障" aria-label="下一篇: 4-ssd故障">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/" data-tooltip="1-Centos7 部署Aerospike" aria-label="上一篇: 1-Centos7 部署Aerospike">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/10/4-ssd%E6%95%85%E9%9A%9C/" data-tooltip="4-ssd故障" aria-label="下一篇: 4-ssd故障">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/" data-tooltip="1-Centos7 部署Aerospike" aria-label="上一篇: 1-Centos7 部署Aerospike">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

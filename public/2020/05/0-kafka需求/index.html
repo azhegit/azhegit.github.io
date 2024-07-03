@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2020\/05\/0-kafka%E9%9C%80%E6%B1%82\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求">
+
+
+<meta property="og:description" content="根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0-kafka需求">
+<meta name="twitter:title" content="0-kafka需求">
+<meta property="og:url" content="http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/">
+<meta property="twitter:url" content="http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求">
+<meta name="twitter:description" content="根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-05-09T16:27:50">
+  
+  
+    <meta property="article:modified_time" content="2020-05-09T16:27:50">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="kafka">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
+
+
+    <title>0-kafka需求</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+  
+
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      0-kafka需求
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2020-05-09T16:27:50&#43;08:00">
+        
+  
+  
+  
+  
+    2020 年 五月 9 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求</p>
+<h2 id="数据总线">数据总线</h2>
+<h3 id="一-需求">一、 需求</h3>
+<p>需求如下：目前沪杭甬这边kafka集群对接外部厂商比较多，需要对所有消费厂商和消费数据进行管理和监控
+1.厂商管理，包括厂商管理，消费用户和密码设置
+2.每个厂商分配固定的group，可以查看每个厂商的订阅数据情况
+3.对于每个厂商的订阅数据进行监控，厂商的权限控制
+4.kafka offset是否越界的判断接口</p>
+<h3 id="二-目标">二、 目标</h3>
+<p>针对客户提出来的进行梳理并且提出技术解决方案，并将方案落地。
+一期先按照手动控制与管理，二期做web应用管理。</p>
+<h3 id="三-技术方案">三、 技术方案</h3>
+<ol>
+<li>原有kafka集群不做调整</li>
+<li>新建1个kafka集群，开启sasl验证，并且选择性的将某些数据同步</li>
+<li>新集群的kafka的topic数据被消费的时候都需要使用密钥，才能够消费。</li>
+<li>按照之前kafka metric获取办法，进行统计新的指标</li>
+</ol>
+<h3 id="四-功能点">四、 功能点</h3>
+<p>针对不同的消费者，在消费不同的Topic消息的时候的进行权限校验，阻止没有权限的用户可以消费kafka集群当中的任意topic。</p>
+<ol>
+<li>对外服务kafka集群
+二级kafka集群，开启权限验证，对外提供数据服务。</li>
+<li>权限管理
+SASL权限控制，控制级别topic，支持读写权限校验</li>
+</ol>
+<ul>
+<li>密钥添加</li>
+<li>密钥删除</li>
+<li>支持动态授权</li>
+</ul>
+<ol start="3">
+<li>数据同步
+mirror maker数据同步</li>
+<li>阻断消费</li>
+</ol>
+<ul>
+<li>方案一：一个topic，多个密钥，支持多个消费组
+<ul>
+<li>优点：便于管理</li>
+<li>缺点：
+<ul>
+<li>权限收回没有办法阻断已连接的消费者，重连接校验生效，不能很好阻断数据消费</li>
+<li>消费组监控信息不好收集</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>方案二：一个topic对应一个密钥，支持一个消费组
+<ul>
+<li>优点：及时阻断消费在生产端控制数据</li>
+<li>缺点：增加管理成本</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>最终选择方案一！</p>
+</blockquote>
+<ol start="5">
+<li>metrics
+统计不同消费者消费的消息条数、消息数据量字节数大小,数据量保存7天</li>
+</ol>
+<h3 id="任务拆解">任务拆解</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 1. 集群搭建</li>
+<li><input checked="" disabled="" type="checkbox"> 2. 权限管理，操作方式,脚本操作，密码记录</li>
+<li><input checked="" disabled="" type="checkbox"> 3. 数据同步，方案二，mirror maker 需要改代码</li>
+<li><input checked="" disabled="" type="checkbox"> 4. 数据量，机器资源评估</li>
+<li><input checked="" disabled="" type="checkbox"> 5. 阻断消费，验证</li>
+<li><input checked="" disabled="" type="checkbox"> 6. zk保护，iptables</li>
+</ul>
+<!-- raw HTML omitted -->
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/kafka/">kafka</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/" data-tooltip="1-kafka权限调研" aria-label="下一篇: 1-kafka权限调研">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/" data-tooltip="3-flink平台调研" aria-label="上一篇: 3-flink平台调研">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/" data-tooltip="1-kafka权限调研" aria-label="下一篇: 1-kafka权限调研">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/" data-tooltip="3-flink平台调研" aria-label="上一篇: 3-flink平台调研">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+
