@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ambari on ☀️哲の小窝☀️</title>
+    <link>https://azhegit.gitee.io/tags/ambari/</link>
+    <description>Recent content in ambari on ☀️哲の小窝☀️</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Dec 2019 17:31:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://azhegit.gitee.io/tags/ambari/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1.ambari介绍及安装</title>
+      <link>https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 11 Dec 2019 17:31:15 +0800</pubDate>
+      
+      <guid>https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;h2 id=&#34;1-什么是ambari&#34;&gt;1. 什么是ambari？&lt;/h2&gt;
+&lt;p&gt;Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

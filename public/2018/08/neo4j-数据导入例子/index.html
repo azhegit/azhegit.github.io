@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。">
+
+
+<meta property="og:description" content="Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="neo4j-数据导入例子">
+<meta name="twitter:title" content="neo4j-数据导入例子">
+<meta property="og:url" content="https://azhegit.gitee.io/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。">
+<meta name="twitter:description" content="Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-08-14T19:18:38">
+  
+  
+    <meta property="article:modified_time" content="2018-08-14T19:18:38">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="图计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="neo4j">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>neo4j-数据导入例子</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      neo4j-数据导入例子
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-08-14T19:18:38&#43;08:00">
+        
+  
+  
+  
+  
+    2018 年 八月 14 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%9b%be%e8%ae%a1%e7%ae%97">图计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Northwind Graph演示了如何从关系数据库迁移到Neo4j。 转换是迭代和有意识的，强调从关系表到图的节点和关系的概念转变。</p>
+<p>本指南将向您展示如何：</p>
+<ol>
+<li>加载：从外部CSV文件创建数据</li>
+<li>索引：基于标签的索引节点</li>
+<li>相关：将外键引用转换为数据关系</li>
+<li>提升：将记录转换为关系</li>
+</ol>
+<h3 id="1-打开样例">1. 打开样例</h3>
+<p>:play northwind-graph</p>
+<h5 id="导入商品品类供应商">导入商品，品类，供应商</h5>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180814103043168.png" alt=""></p>
+<h3 id="2-从网络导入csv格式数据创建product标签">2. 从网络导入csv格式数据，创建Product标签</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/products.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">CREATE</span> (n:Product)
+<span style="color:#66d9ef">SET</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>,
+  n.unitPrice <span style="color:#f92672">=</span> toFloat(<span style="color:#66d9ef">row</span>.unitPrice),
+  n.unitsInStock <span style="color:#f92672">=</span> toInteger(<span style="color:#66d9ef">row</span>.unitsInStock), n.unitsOnOrder <span style="color:#f92672">=</span> toInteger(<span style="color:#66d9ef">row</span>.unitsOnOrder),
+  n.reorderLevel <span style="color:#f92672">=</span> toInteger(<span style="color:#66d9ef">row</span>.reorderLevel), n.discontinued <span style="color:#f92672">=</span> (<span style="color:#66d9ef">row</span>.discontinued <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;0&#34;</span>)
+</code></pre></div><h5 id="商品数据样例">商品数据样例：</h5>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180814102642146.png" alt=""></p>
+<h4 id="查询product相关的数据并且以商品id正序返回结果">查询product相关的数据，并且以商品id正序返回结果</h4>
+<p>match (p:Product) return p order by p.productID</p>
+<h3 id="3-导入品类数据">3. 导入品类数据</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/categories.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">CREATE</span> (n:Category)
+<span style="color:#66d9ef">SET</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>
+</code></pre></div><h5 id="品类数据样例">品类数据样例:</h5>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180814103338144.png" alt=""></p>
+<h3 id="4-导入供应商数据">4. 导入供应商数据</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/suppliers.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">CREATE</span> (n:Supplier)
+<span style="color:#66d9ef">SET</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>
+</code></pre></div><h5 id="供应商数据类型">供应商数据类型：</h5>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180814103746887.png" alt=""></p>
+<h3 id="5-创建索引">5. 创建索引</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> :Product(productID)
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> :Category(categoryID)
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> :Supplier(supplierID)
+</code></pre></div><p><em>索引删除<code>drop INDEX ON :Product(productID)</code></em></p>
+<h3 id="6-产品目录图">6. 产品目录图</h3>
+<p>产品，类别和供应商都是通过外键关联，让我们来创建他们之间的关系（relationships），并且构成图
+<img src="https://www.azheimage.top/markdown-img-paste-20180814104321571.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> (p:Product),(<span style="color:#66d9ef">c</span>:Category)
+<span style="color:#66d9ef">WHERE</span> p.categoryID <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>.categoryID <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建商品跟品类的关系</span>
+<span style="color:#66d9ef">CREATE</span> (p)<span style="color:#f92672">-</span>[:PART_OF]<span style="color:#f92672">-&gt;</span>(<span style="color:#66d9ef">c</span>)
+</code></pre></div><p>查看PART_OF的关系：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> p<span style="color:#f92672">=</span>()<span style="color:#f92672">-</span>[r:PART_OF]<span style="color:#f92672">-&gt;</span>() <span style="color:#66d9ef">RETURN</span> p
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814110934213.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> (p:Product),(s:Supplier)
+<span style="color:#66d9ef">WHERE</span> p.supplierID <span style="color:#f92672">=</span> s.supplierID <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建商品跟供应商的关系</span>
+<span style="color:#66d9ef">CREATE</span> (s)<span style="color:#f92672">-</span>[:SUPPLIES]<span style="color:#f92672">-&gt;</span>(p)
+</code></pre></div><p>查询SUPPLIES的关系:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> p<span style="color:#f92672">=</span>()<span style="color:#f92672">-</span>[r:SUPPLIES]<span style="color:#f92672">-&gt;</span>() <span style="color:#66d9ef">RETURN</span> p
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814111423317.png" alt=""></p>
+<h3 id="7-查询产品目录图">7. 查询产品目录图</h3>
+<p>列出每个供应商提供的产品类别</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MATCH</span> (s:Supplier)<span style="color:#75715e">--&gt;(:Product)--&gt;(c:Category)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">RETURN</span> s.companyName <span style="color:#66d9ef">as</span> Company, collect(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">c</span>.categoryName) <span style="color:#66d9ef">as</span> Categories
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814181635203.png" alt="">
+找到农产品供应商</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> (<span style="color:#66d9ef">c</span>:Category <span style="color:#960050;background-color:#1e0010">{</span>categoryName:<span style="color:#e6db74">&#34;Produce&#34;</span><span style="color:#960050;background-color:#1e0010">}</span>)<span style="color:#f92672">&lt;</span><span style="color:#75715e">--(:Product)&lt;--(s:Supplier)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">RETURN</span> <span style="color:#66d9ef">DISTINCT</span> s.companyName <span style="color:#66d9ef">as</span> ProduceSuppliers
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814181623418.png" alt=""></p>
+<h3 id="8-导入客户订单">8. 导入客户、订单</h3>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180814181903723.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/customers.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">CREATE</span> (n:Customer)
+<span style="color:#66d9ef">SET</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814182325166.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/orders.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">CREATE</span> (n:<span style="color:#66d9ef">Order</span>)
+<span style="color:#66d9ef">SET</span> n <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814182446902.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建索引</span>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> :Customer(customerID)
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> :<span style="color:#66d9ef">Order</span>(orderID)
+<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建数据关系</span>
+
+<span style="color:#66d9ef">MATCH</span> (<span style="color:#66d9ef">c</span>:Customer),(o:<span style="color:#66d9ef">Order</span>) <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">c</span>.customerID <span style="color:#f92672">=</span> o.customerID <span style="color:#66d9ef">CREATE</span> (<span style="color:#66d9ef">c</span>)<span style="color:#f92672">-</span>[:PURCHASED]<span style="color:#f92672">-&gt;</span>(o)
+<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">请注意，首次创建关系时，您只需要比较这样的属性值</span>
+</code></pre></div><h3 id="9-客户订单图">9. 客户订单图</h3>
+<p>请注意，订单明细始终是订单的一部分，并且它们将订单与产品相关联 - 它们是连接表。 连接表始终是数据关系的标志，表示两个其他记录之间的共享信息。
+在这里，我们将直接将每个OrderDetail记录提升为图中的关系
+<img src="https://www.azheimage.top/markdown-img-paste-20180814182822713.png" alt=""></p>
+<h3 id="10-建立关系">10. 建立关系</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> CSV <span style="color:#66d9ef">WITH</span> HEADERS <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;http://data.neo4j.com/northwind/order-details.csv&#34;</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">row</span>
+<span style="color:#66d9ef">MATCH</span> (p:Product), (o:<span style="color:#66d9ef">Order</span>)
+<span style="color:#66d9ef">WHERE</span> p.productID <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>.productID <span style="color:#66d9ef">AND</span> o.orderID <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>.orderID
+<span style="color:#66d9ef">CREATE</span> (o)<span style="color:#f92672">-</span>[details:ORDERS]<span style="color:#f92672">-&gt;</span>(p)
+<span style="color:#66d9ef">SET</span> details <span style="color:#f92672">=</span> <span style="color:#66d9ef">row</span>,
+  details.quantity <span style="color:#f92672">=</span> toInteger(<span style="color:#66d9ef">row</span>.quantity)
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814182947370.png" alt=""></p>
+<h3 id="11-使用模式查询">11. 使用模式查询</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">MATCH</span> (cust:Customer)<span style="color:#f92672">-</span>[:PURCHASED]<span style="color:#f92672">-&gt;</span>(:<span style="color:#66d9ef">Order</span>)<span style="color:#f92672">-</span>[o:ORDERS]<span style="color:#f92672">-&gt;</span>(p:Product),
+      (p)<span style="color:#f92672">-</span>[:PART_OF]<span style="color:#f92672">-&gt;</span>(<span style="color:#66d9ef">c</span>:Category <span style="color:#960050;background-color:#1e0010">{</span>categoryName:<span style="color:#e6db74">&#34;Produce&#34;</span><span style="color:#960050;background-color:#1e0010">}</span>)
+<span style="color:#66d9ef">RETURN</span> <span style="color:#66d9ef">DISTINCT</span> cust.contactName <span style="color:#66d9ef">as</span> CustomerName, <span style="color:#66d9ef">SUM</span>(o.quantity) <span style="color:#66d9ef">AS</span> TotalProductsPurchased
+</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20180814183140281.png" alt=""></p>
+<p>
+<strong>本偏是根据neo4j官方的例子导入数据测试</strong></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/neo4j/">neo4j</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/neo4j%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD-%E6%81%A2%E5%A4%8D%E6%B5%81%E7%A8%8B/" data-tooltip="neo4j数据备份-恢复流程">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/" data-tooltip="新增机器到cdh集群">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/neo4j%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD-%E6%81%A2%E5%A4%8D%E6%B5%81%E7%A8%8B/" data-tooltip="neo4j数据备份-恢复流程">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/" data-tooltip="新增机器到cdh集群">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2018\/08\/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90\/';
+          
+            this.page.identifier = '\/2018\/08\/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

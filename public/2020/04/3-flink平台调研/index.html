@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="flink相关平台调研">
+
+
+<meta property="og:description" content="flink相关平台调研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3-flink平台调研">
+<meta name="twitter:title" content="3-flink平台调研">
+<meta property="og:url" content="https://azhegit.gitee.io/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="flink相关平台调研">
+<meta name="twitter:description" content="flink相关平台调研">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-04-10T14:21:41">
+  
+  
+    <meta property="article:modified_time" content="2020-04-10T14:21:41">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="flink">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>3-flink平台调研</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      3-flink平台调研
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-04-10T14:21:41&#43;08:00">
+        
+  
+  
+  
+  
+    2020 年 四月 10 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>flink相关平台调研</p>
+<h3 id="1-袋鼠云-flinkx">1. 袋鼠云-flinkx</h3>
+<p>袋鼠云数据同步的插件，提供json配置化的交换任务</p>
+<h4 id="功能">功能</h4>
+<ul>
+<li>增量同步、断点续传</li>
+<li>异构数据源数据同步</li>
+<li>脏数据管理</li>
+<li>实时采集</li>
+</ul>
+<h4 id="特点">特点：</h4>
+<ul>
+<li>任务构建</li>
+<li>多通道</li>
+<li>数据分片</li>
+<li>流控限速(guava ratelimiter)</li>
+<li>断点续传</li>
+</ul>
+<h4 id="未来规划">未来规划</h4>
+<ul>
+<li>元数据采集</li>
+<li>实时采集插件丰富</li>
+<li>实时采集数据归档</li>
+</ul>
+<h3 id="2-网易云-实时数仓">2. 网易云-实时数仓</h3>
+<h4 id="功能-1">功能</h4>
+<ul>
+<li>codegen生成任务</li>
+<li>元数据中心(metahub参考Netflix的Metacat)</li>
+<li>实时数仓建设（catalog API转换）（ODS-DWD-DWS-ADS）</li>
+<li>ABTest实时化</li>
+</ul>
+<h3 id="3-有赞-flinksql应用">3. 有赞-flinkSQL应用</h3>
+<h4 id="功能-2">功能</h4>
+<ul>
+<li>实时数仓命名规范</li>
+<li>自定义UDF</li>
+<li>kafka消费组检测机制</li>
+<li>元数据落库</li>
+<li>SQL语法支持标准输出</li>
+<li>自定义Connector</li>
+</ul>
+<h4 id="规划">规划：</h4>
+<ul>
+<li>
+<p>flink on k8s</p>
+<ul>
+<li>任务逻辑</li>
+<li>docker打包镜像</li>
+<li>docker镜像仓库</li>
+<li>k8s创建jobmanager</li>
+<li>k8s创建taskmanager</li>
+<li>k8s创建service</li>
+</ul>
+</li>
+<li>
+<p>血缘采集自动化，强化实时数仓及数据图</p>
+</li>
+<li>
+<p>k8s开源项目：</p>
+</li>
+</ul>
+<ol>
+<li>lyft/flinkk8soperator</li>
+<li>googlecloudplatform/flink-on-k8s-operator</li>
+</ol>
+<ul>
+<li>基于Ingress controller解决Flink REST API访问喝WebUI查看问题</li>
+</ul>
+<h3 id="4-阿里-flink-in-ai">4. 阿里-flink in AI</h3>
+<h4 id="功能-3">功能</h4>
+<ul>
+<li>在线训练</li>
+<li>Ai Flow</li>
+</ul>
+<h3 id="5-小米-实时数仓">5. 小米-实时数仓</h3>
+<h4 id="产品架构">产品架构：</h4>
+<ul>
+<li>自定义source</li>
+<li>SQL管理
+<ul>
+<li>WebIDE</li>
+<li>schema探查</li>
+<li>UDF/维表join</li>
+<li>自动构建DDL</li>
+<li>SQL编译</li>
+<li>SQL存储</li>
+</ul>
+</li>
+<li>Job管理
+<ul>
+<li>多版本支持</li>
+<li>编译/部署</li>
+<li>配置与Jar分离</li>
+<li>作业状态管理</li>
+</ul>
+</li>
+<li>日志检索:talos+flink+ES</li>
+<li>监控报警:talos+flink+faicon</li>
+<li>metric展示:talos+flink+druid+grafana</li>
+</ul>
+<h4 id="规划-1">规划：</h4>
+<ul>
+<li>平台化建设</li>
+<li>数据血缘分析与展示</li>
+<li>资源优化+动态调度</li>
+<li>Flink社区参与</li>
+</ul>
+<h3 id="6-贝壳找房-基于flink实时平台建设hermes">6. 贝壳找房-基于flink实时平台建设（hermes）</h3>
+<h4 id="功能-4">功能</h4>
+<ul>
+<li>任务类型：
+<ul>
+<li>自定义任务</li>
+<li>模板任务</li>
+<li>场景任务</li>
+</ul>
+</li>
+<li>资源管理：
+<ul>
+<li>模板管理</li>
+<li>项目管理</li>
+<li>连接管理</li>
+<li>数据源管理</li>
+</ul>
+</li>
+<li>监控：
+<ul>
+<li>自定义report</li>
+<li>java agent</li>
+<li>心跳报警</li>
+<li>延时报警</li>
+</ul>
+</li>
+<li>数据血缘</li>
+<li>checkpoint恢复</li>
+<li>解析SQL：
+<ul>
+<li>create function</li>
+<li>create table</li>
+<li>create view</li>
+<li>insert table</li>
+</ul>
+</li>
+<li>建表语句
+<ul>
+<li>source：kafka</li>
+<li>dim：hbase redis http</li>
+<li>sink： redis hbase http clickhouse druid</li>
+</ul>
+</li>
+<li>SQL引擎架构
+<ul>
+<li>core：SQL解析，SQLcontext，逻辑执行计划</li>
+<li>factory：序列化，sink，source</li>
+<li>tableAPI</li>
+</ul>
+</li>
+</ul>
+<h4 id="整体架构">整体架构：</h4>
+<ul>
+<li>平台层：SQLIDE，任务管控，监控报警，血缘关系，诊断体系</li>
+<li>引擎层：flink</li>
+<li>基础层：kafka，yarn，hdfs，离线/实时存储</li>
+</ul>
+<h4 id="未来规划-1">未来规划：</h4>
+<ul>
+<li>streamSQL：实时ETL、实时大盘监控、实时数仓、实时指标</li>
+<li>streamCEP（事件驱动）：实时监控报警、实时风控、实时营销、OLEP、实时推荐、微服务整合</li>
+<li>datastream： 借助API实时处理流式数据</li>
+<li>streamML：基于流计算的机器学习平台</li>
+</ul>
+<h3 id="7-菜鸟-实时数据技术架构">7. 菜鸟-实时数据技术架构</h3>
+<h4 id="功能-5">功能</h4>
+<ul>
+<li>autoscaling</li>
+<li>天工，统一数据服务</li>
+<li>跨数据源查询：
+<ul>
+<li>SQL Parser</li>
+<li>AST Visit</li>
+<li>Optimizer</li>
+<li>SQL Rewrite</li>
+<li>QueryPlan</li>
+</ul>
+</li>
+<li>实时压测</li>
+<li>过程监控</li>
+<li>资源管理</li>
+<li>数据质量</li>
+</ul>
+<h4 id="规划-2">规划</h4>
+<p>流+批+AI</p>
+<h3 id="8-oppo-基于flink的实时数仓">8. OPPO-基于flink的实时数仓</h3>
+<h4 id="功能-6">功能</h4>
+<ul>
+<li>离线到实时数仓的平滑迁移
+<ul>
+<li>实现：hdfs-hive kafka-flink</li>
+<li>抽象：
+<ul>
+<li>结构：层级，主题</li>
+<li>开发：SQL，UDF</li>
+<li>管理：元数据系统，权限系统，监控系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实时数仓的层级划分：（ODS-DWD-ADS）</li>
+</ul>
+<h4 id="数仓架构">数仓架构</h4>
+<pre><code class="language-mermaid" data-lang="mermaid">graph TB
+元数据系统--create--&gt;Table;
+开发系统--submit--&gt;Job;
+Table--persist--&gt;MySQL;
+Job--persist--&gt;MySQL;
+MySQL--load--&gt;Flink_ExternalCatalog;
+MySQL--load--&gt;AthenaX_JobStore;
+Flink_ExternalCatalog--convert--&gt;Flink_Table;
+Flink_Table--register--&gt;Flink_TableEnvironment;
+Flink_TableEnvironment--compile--&gt;Flink_JobGraph;
+AthenaX_JobStore--execute--&gt;Flink_TableEnvironment;
+Flink_JobGraph--&gt;YARN_Client;
+YARN_Client--submit--&gt;YARN;
+</code></pre><ul>
+<li>改写streamgraph，合并冗余DataSource</li>
+<li>数据链路自动化</li>
+</ul>
+<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+Kafak_Table--&gt;FlinkSQL;
+FlinkSQL--旧版--&gt;KafkaTable;
+FlinkSQL--新版--&gt;ReportTable;
+ReportTable--&gt;维度字段;
+ReportTable--&gt;指标字段;
+KafkaTable--&gt;Druid;
+维度字段--&gt;Druid;
+指标字段--&gt;Druid;
+Druid--&gt;BI系统;
+</code></pre><ul>
+<li>延迟监控</li>
+<li>多租户管理
+<ul>
+<li>kafka租户，消费速率，生产速率</li>
+<li>yarn资源</li>
+</ul>
+</li>
+</ul>
+<h4 id="展望">展望：</h4>
+<ul>
+<li>表达能力</li>
+<li>连接类型</li>
+<li>开发模板</li>
+<li>开发规范</li>
+<li>更细粒度资源监控</li>
+<li>自动化参数配置
+<ul>
+<li>Operator Parallelism</li>
+<li>StateBackend</li>
+<li>Watermark Interval</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-趣头条-flinkclickhouse-实时数据分析平台">9. 趣头条-flink+clickhouse 实时数据分析平台</h3>
+<h4 id="功能-7">功能</h4>
+<ul>
+<li>flink To hive</li>
+<li>flink with clickhouse</li>
+</ul>
+<h4 id="规划-3">规划：</h4>
+<ul>
+<li>connectors SQL</li>
+<li>delta lake（流批存储）</li>
+</ul>
+<h3 id="10-b站-实时平台架构与实践">10. B站-实时平台架构与实践</h3>
+<h4 id="功能-8">功能</h4>
+<ul>
+<li>SQL化编程</li>
+<li>DAG拖拽编程</li>
+<li>一体化托管运维</li>
+<li>元数据、血缘、权限管理</li>
+<li>作业运维管理</li>
+<li>作业调试</li>
+</ul>
+<h4 id="架构设计准则">架构设计准则</h4>
+<ul>
+<li>streaming workflows：语义抽象过程，规范化，json结构</li>
+<li>让数据说话，输入输出schema化</li>
+<li>streaming SQL通用语法解析层</li>
+<li>工程效率，IDE开发、运维、监控、告警</li>
+</ul>
+<h4 id="未来规划-2">未来规划</h4>
+<ul>
+<li>完善SQLIDE开发</li>
+<li>丰富作业运维</li>
+<li>模型训练工程化</li>
+<li>实施特征工程化</li>
+</ul>
+<h3 id="11-美团-flink-实时数据分析平台">11. 美团-flink 实时数据分析平台</h3>
+<h4 id="功能-9">功能</h4>
+<ul>
+<li>作业配置
+<ul>
+<li>作业设置</li>
+<li>运行时设置</li>
+<li>拓扑结构</li>
+</ul>
+</li>
+<li>作业发布
+<ul>
+<li>版本管理</li>
+<li>编译、发布、回滚</li>
+</ul>
+</li>
+<li>作业状态
+<ul>
+<li>运行时状态</li>
+<li>自定义指标、报警</li>
+<li>命令</li>
+</ul>
+</li>
+<li>资源管理
+<ul>
+<li>多租户隔离</li>
+<li>资源交付/部署</li>
+</ul>
+</li>
+</ul>
+<h4 id="实时数仓与传统数仓对比">实时数仓与传统数仓对比</h4>
+<ul>
+<li>分层方式：更简单</li>
+<li>数据加工过程</li>
+<li>实时数据存储</li>
+<li>维度数据存储</li>
+</ul>
+<h4 id="未来规划-3">未来规划</h4>
+<ul>
+<li>资源自动调优</li>
+<li>推动实时数仓建设方式升级</li>
+</ul>
+<h3 id="12-字节跳动-flink-实践及优化">12. 字节跳动-flink 实践及优化</h3>
+<h4 id="功能-10">功能</h4>
+<ul>
+<li>SQL扩展：
+<ul>
+<li>Source/Sink</li>
+<li>Dimension：Redis/MySQL</li>
+<li>Format： Json/protobuf/binlog</li>
+<li>create：function/view/resource</li>
+<li>自定义watermark</li>
+<li>计算列</li>
+</ul>
+</li>
+<li>Task 调度优化</li>
+<li>flink docker 化</li>
+<li>checkpoint使用优化：
+<ul>
+<li>默认从上一个chk启动</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-爱奇艺-flink-实时计算平台">13. 爱奇艺-flink 实时计算平台</h3>
+<h4 id="需求">需求</h4>
+<ul>
+<li>业务赋能</li>
+<li>平台化建设</li>
+<li>统一SQL引擎</li>
+<li>FLink增强</li>
+</ul>
+<h4 id="功能-11">功能</h4>
+<ul>
+<li>监控及报警
+<ul>
+<li>flink作业数据</li>
+<li>Job级别指标</li>
+<li>operator级别</li>
+<li>task级别</li>
+</ul>
+</li>
+<li>状态管理
+<ul>
+<li>rocksDB做增量checkpoint</li>
+</ul>
+</li>
+<li>StreamingSQL
+<ul>
+<li>SQL化</li>
+<li>DDL：流表、临时表、维度表、结果表</li>
+<li>UDF</li>
+<li>SQL IDE</li>
+</ul>
+</li>
+<li>文件管理：任务jar包、依赖库</li>
+<li>函数管理：系统函数，自动以UDF</li>
+<li>版本管理：任务、文件版本对比及回滚</li>
+<li>监控大盘、报警订阅、资源审计、异常诊断</li>
+<li>实时数仓</li>
+</ul>
+<h4 id="未来规划-4">未来规划</h4>
+<ul>
+<li>流批一体</li>
+<li>SQL化升级</li>
+<li>基于flink机器学习</li>
+<li>资源调整</li>
+<li>flink on k8s</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/flink/">flink</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2020\/04\/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94\/';
+          
+            this.page.identifier = '\/2020\/04\/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="Cassandra学习笔记">
+
+
+<meta property="og:description" content="Cassandra学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cassandra笔记">
+<meta name="twitter:title" content="cassandra笔记">
+<meta property="og:url" content="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="Cassandra学习笔记">
+<meta name="twitter:description" content="Cassandra学习笔记">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-06-06T18:53:27">
+  
+  
+    <meta property="article:modified_time" content="2018-06-06T18:53:27">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="cassandra">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>cassandra笔记</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      cassandra笔记
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-06-06T18:53:27&#43;08:00">
+        
+  
+  
+  
+  
+    2018 年 六月 6 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Cassandra学习笔记</p>
+<!-- raw HTML omitted -->
+<h1 id="cassandra笔记">cassandra笔记</h1>
+<hr>
+<h2 id="横向比较nosql数据库">横向比较nosql数据库</h2>
+<h3 id="nosql数据库not-only-sql分布式">nosql数据库（not only sql），分布式</h3>
+<h3 id="使用nosql的改变需求点">使用nosql的改变需求点</h3>
+<ul>
+<li>高并发读写请求</li>
+<li>高容量和高效的存储需求</li>
+<li>高扩展性和高可用性需求</li>
+</ul>
+<h5 id="传统关系型数据库量大瓶颈第一数据横向扩展能力低下第二数据的高效路存储和访问的需求满足能力低">传统关系型数据库量大瓶颈，第一数据横向扩展能力低下，第二数据的高效路存储和访问的需求满足能力低</h5>
+<h3 id="nosql数据库特点">nosql数据库特点：</h3>
+<ul>
+<li>易扩展</li>
+<li>灵活的数据模型</li>
+<li>高可用</li>
+<li>大数据量高性能</li>
+</ul>
+<h3 id="nosql根据数据模型4类">nosql根据数据模型4类：</h3>
+<ul>
+<li>键值存储（key-value) redis</li>
+<li>面向表(table-oriented) hbase cassandra</li>
+<li>面向文本(document-oriented) mongodb</li>
+<li>面向图(graph-oriented) neo4j</li>
+</ul>
+<h3 id="nosql趋势">nosql趋势</h3>
+<p><img src="https://www.azheimage.top/8fbd6f21cfde00c12a5ab3b787e449bd.png" alt="nosql趋势"></p>
+<h3 id="nosql用户量">nosql用户量</h3>
+<p><img src="https://www.azheimage.top/9792cbb72dc2c9d33500e406a4267cd0.png" alt="nosql用户"></p>
+<h3 id="2018年最新的所有数据库排名前20">2018年最新的所有数据库排名前20</h3>
+<p><img src="https://www.azheimage.top/3b5fbab314e54aa17d8f07ac2b0fd957.png" alt="top20"></p>
+<h2 id="cassandra快速入门">Cassandra快速入门</h2>
+<ul>
+<li>发展简史
+两位从Amazon跳槽到Facebook的dynamo工程师完成的，Java语言编写。2009年1月成为Apache孵化项目</li>
+<li>Cassandra优点：
+<ol>
+<li>高度可扩展性</li>
+<li>高度可用性，无单点故障，p2p去中心化处理</li>
+<li>nosql列簇实现</li>
+<li>非常高的写入吞吐量和良好的读取吞吐量</li>
+<li>cql查询语言（0.8版本开始支持）</li>
+<li>范围查询（键的范围）</li>
+<li>可调节的一致性</li>
+<li>灵活的模式</li>
+</ol>
+</li>
+<li>Cassandra的应用场景（目前Apple，Facebook，ebay，360，饿了么,taobao）：
+<ol>
+<li>待处理的数据量很大</li>
+<li>数据量超过关系型数据库的承载能力</li>
+<li>大量集群</li>
+</ol>
+</li>
+</ul>
+<h2 id="cassandra安装与运行">Cassandra安装与运行</h2>
+<p>Cassandra目录结构</p>
+<ul>
+<li>bin 可执行脚本</li>
+<li>conf 配置
+Cassandra.yml 常用的配置参数：
+<ul>
+<li>cluster_name 集群的名字，默认Test Cluster</li>
+<li>listen_address 监听的IP或主机，默认localhost</li>
+<li>commitlog_directory commitlog的保存路径，压缩包方式保存</li>
+<li>data_file_directories 数据文件的存放目录</li>
+<li>save_caches_directory 缓存存放目录</li>
+<li>commit_failure_policy(stop,stop_commit,ignore) 提交失败是的策略</li>
+<li>disk_failure_policy(stop,stop_paranoid,best_offert,ignore) 磁盘故障</li>
+<li>endpoint_snitch 定位节点喝路由请求</li>
+<li>rpc_address 监听客户端链接的地址</li>
+<li>seed_provider 需要联系的节点地址</li>
+<li>compaction_throughput_mb_per_sec 限定特定吞吐量下的压缩速率，推荐16-32</li>
+<li>memtable_total_space_in_mb 最大使用内存空间数量</li>
+<li>concurrent_reads 并发读取数量</li>
+<li>concurrent_writes 并发写数量</li>
+<li>incremental_backuos 是否增量备份</li>
+<li>snapshot_before_compaction 压缩前执行快照</li>
+</ul>
+</li>
+<li>interface 接口</li>
+<li>Javadoc 帮助文档</li>
+<li>lib 依赖的jar包</li>
+</ul>
+<h2 id="cassandra数据模型与cql查询语言">Cassandra数据模型与CQL查询语言</h2>
+<h3 id="cassandra数据模型">Cassandra数据模型</h3>
+<ul>
+<li>列(Column)
+<img src="https://www.azheimage.top/6f537d0eb1b0e7340613136d919ae3a2.png" alt="column">
+<img src="https://www.azheimage.top/cdffe51ce2a178214238bc0aefb7d19a.png" alt="column2"></li>
+<li>超级列(Super Column)
+<img src="https://www.azheimage.top/290c5c344f0ccdf753260f4dd0f6b0c5.png" alt="superColumn1">
+<img src="https://www.azheimage.top/752662de706a80558209b886e9b5001a.png" alt="superColumn2"></li>
+<li>列族(Column Familes)
+<img src="https://www.azheimage.top/b0f0446c49ddea3b885d1fd8039c5527.png" alt="columnFamilies"></li>
+<li>键空间(Keyspaces)
+<img src="https://www.azheimage.top/03df71bc011d793cff9f83a6b7ce1cd2.png" alt="keyspaces"></li>
+<li>集群(Cluster)
+<img src="https://www.azheimage.top/75bab28b0ee0fd7c3ec2ee0d5a58110e.png" alt="cluster"></li>
+<li>复合键(Composite Keys)
+<img src="https://www.azheimage.top/ca2eb7e5591368e7d5126534329b7547.png" alt="fuhejian"></li>
+<li>Cassandra与传统关系数据库差别
+<img src="https://www.azheimage.top/3f14721605f8e87d5f87520693f741d3.png" alt="chabie"></li>
+<li>Cassandra的排序规则</li>
+<li>Cassandra数据设计实例
+<img src="https://www.azheimage.top/acc8292fa808115138a5abbcf19d0b2f.png" alt="chabie"></li>
+</ul>
+<h3 id="cql查询语言">CQL查询语言</h3>
+<ul>
+<li>CQL的概念
+<ul>
+<li>CQL基本含义</li>
+</ul>
+<h5 id="概念cql是cassandra-query-language的简称cql由类似sql的语句组成包括修改查询爆粗变更数据的存储方式等等功能每一行语句由结束">概念：CQL是Cassandra Query Language的简称，CQL由类似SQL的语句组成，包括修改，查询，爆粗，变更数据的存储方式等等功能。每一行语句由（；）结束</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> mytable;
+<span style="color:#66d9ef">update</span> mytable <span style="color:#66d9ef">set</span> someColumn<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Some Value&#39;</span> <span style="color:#66d9ef">where</span> columnName<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Something Else&#39;</span>;
+</code></pre></div><ul>
+<li>大小写不敏感</li>
+</ul>
+<h5 id="忽略大小写在cql里可以spacecolumn和table的名称是忽略大小写的除非用双引号括起来才是大小写敏感的如果不用双引号括起来即使cql携程大小写也会被保存位小写">忽略大小写：在CQL里，可以space，column和table的名称是忽略大小写的，除非用双引号”括起来，才是大小写敏感的。如果不用双引号括起来，即使CQL携程大小写，也会被保存位小写</h5>
+<h5 id="cql关键字是忽略大小写的例如关键字select和select是等价的用双引号引起来就变成大小写严格区分了">CQL关键字是忽略大小写的，例如，关键字SELECT和select是等价的。用双引号引起来就变成大小写严格区分了</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+  Foo int <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+  <span style="color:#e6db74">&#34;Bar&#34;</span> int
+)
+</code></pre></div><ul>
+<li>常用数据类型
+<img src="https://www.azheimage.top/aa08ff827b620e1461730ea7d3c83663.png" alt="leixing"></li>
+<li>CQL命名规则</li>
+</ul>
+<h5 id="需要字母或数字开头满足正则表达式a-za-z0-9_">需要字母或数字开头，满足正则表达式[a-zA-Z0-9_]*</h5>
+<ul>
+<li>CQL注释规则</li>
+</ul>
+<h5 id="单行注释使用--或者注释内容">单行注释：使用&ndash;或者//注释内容</h5>
+<h5 id="多行注释使用注释内容">多行注释：使用/**注释内容**/</h5>
+<ul>
+<li>CQL保留字</li>
+</ul>
+<h5 id="正常不使用保留字如果要使用可以用括起来">正常不使用保留字，如果要使用，可以用“”括起来</h5>
+<p><img src="https://www.azheimage.top/ae91ca547e4e53026d9ea6c897cbdf1e.png" alt="baoliuzi"></p>
+</li>
+<li>CQL数据定义语句
+<img src="https://www.azheimage.top/453ba01ed1a4c1019da7a39174550381.png" alt="ddl1">
+<ul>
+<li>CREATE keyspace(创建keyspacce)
+语法：CREATE keyspace (if not exists)? <!-- raw HTML omitted --> with <!-- raw HTML omitted -->
+注意：ID恩替反而长度需要小鱼等于32，大小写敏感，可以使用双引号定义大小写敏感的名字
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> keyspace excelsior <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;simplestrategy&#39;</span>,<span style="color:#e6db74">&#39;replication_factor&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#66d9ef">create</span> keyspace excalibur <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;networktopoligystrategy&#39;</span>,<span style="color:#e6db74">&#39;DC1&#39;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;DC2&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">and</span> durable_writes<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>;
+</code></pre></div><p><img src="https://www.azheimage.top/d559cfcfa9f77ce0396849d3568287fb.png" alt="ddl2"></p>
+</li>
+<li>use keyspace(切换键空间)</li>
+<li>alter keyspace(修改键空间)
+<code>alter keyspace &lt;identifer&gt; with &lt;proteries&gt;</code>
+<blockquote>
+<p>alter keyspace excelsior with replication={&lsquo;class&rsquo;:&lsquo;simplestrategy&rsquo;,&lsquo;replication_factor&rsquo;:4}</p>
+</blockquote>
+</li>
+<li>drop keyspace(删除键空间)
+语法：<code>drop keyspace (if not exists)? &lt;identifer&gt;</code>
+<blockquote>
+<p>drop keyspace excelsior;</p>
+</blockquote>
+</li>
+<li>触发器
+<img src="https://www.azheimage.top/db4ee2491de5f400a0eedfeab66bff21.png" alt="chufaqi">
+<ul>
+<li>自定义类型使用</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> KEYSPACE complex
+<span style="color:#66d9ef">WITH</span> replication <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span> : <span style="color:#e6db74">&#39;SimpleStrategy&#39;</span>, <span style="color:#e6db74">&#39;replication_factor&#39;</span> :
+
+<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>;
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.phone (
+
+<span style="color:#66d9ef">alias</span> text,
+
+number text
+
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.address (
+
+street text,
+
+city text,
+
+zip_code int,
+
+phones list<span style="color:#f92672">&lt;</span>frozen<span style="color:#f92672">&lt;</span>phone<span style="color:#f92672">&gt;&gt;</span>
+
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> complex.accounts (
+
+email text <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+
+name text,
+
+addr frozen<span style="color:#f92672">&lt;</span>address<span style="color:#f92672">&gt;</span>
+
+);
+
+<span style="color:#75715e">-- 自定义类型：phone和address。
+</span></code></pre></div><pre><code></code></pre></li>
+</ul>
+</li>
+<li>CQL数据操作语句
+<h5 id="cql数据操作语句主要是insertupdatedelete具体包括">CQL数据操作语句主要是INSERT,UPDATE,DELETE,具体包括</h5>
+<ul>
+<li>INSTERT
+<img src="https://www.azheimage.top/80cc933039cd2cb80d72f5648bb89214.png" alt="insert"></li>
+<li>UPDATE
+<img src="https://www.azheimage.top/b6bc65d554d34dbbaf47bc76da3fc0e0.png" alt="update"></li>
+<li>DELETE
+<img src="https://www.azheimage.top/6318f5c5d7bb8e98b0a01169dc52f94c.png" alt="delete"></li>
+<li>BATCH（原子性的操作，要么都执行成功，否则回滚）
+<img src="https://www.azheimage.top/7ef5fcbf45da55c154e2e31986d2f818.png" alt="batch"></li>
+<li>cql操作演示
+<img src="https://www.azheimage.top/f64471ed3d0cc46d42e78b7f1d5566e8.png" alt="cql"></li>
+</ul>
+</li>
+<li>CQL数据查询语句
+<img src="https://www.azheimage.top/f416ff49add26d070121ed50a174b6a5.png" alt="select">
+<ul>
+<li>语法：</li>
+</ul>
+<pre><code>&lt;select-stmt&gt; ::= SELECT ( JSON )? &lt;select-clause&gt;
+                  FROM &lt;tablename&gt;
+                  ( WHERE &lt;where-clause&gt; )?
+                  ( ORDER BY &lt;order-by&gt; )?
+                  ( PER PARTITION LIMIT &lt;integer&gt; )?
+                  ( LIMIT &lt;integer&gt; )?
+                  ( ALLOW FILTERING )?
+
+&lt;select-clause&gt; ::= DISTINCT? &lt;selection-list&gt;
+
+&lt;selection-list&gt; ::= &lt;selector&gt; (AS &lt;identifier&gt;)? ( ',' &lt;selector&gt; (AS &lt;identifier&gt;)? )*
+                   | '*'
+
+&lt;selector&gt; ::= &lt;identifier&gt;
+             | &lt;term&gt;
+             | WRITETIME '(' &lt;identifier&gt; ')'
+             | COUNT '(' '*' ')'
+             | TTL '(' &lt;identifier&gt; ')'
+             | CAST '(' &lt;selector&gt; AS &lt;type&gt; ')'
+             | &lt;function&gt; '(' (&lt;selector&gt; (',' &lt;selector&gt;)*)? ')'
+
+&lt;where-clause&gt; ::= &lt;relation&gt; ( AND &lt;relation&gt; )*
+
+&lt;relation&gt; ::= &lt;identifier&gt; &lt;op&gt; &lt;term&gt;
+             | '(' &lt;identifier&gt; (',' &lt;identifier&gt;)* ')' &lt;op&gt; &lt;term-tuple&gt;
+             | &lt;identifier&gt; IN '(' ( &lt;term&gt; ( ',' &lt;term&gt;)* )? ')'
+             | '(' &lt;identifier&gt; (',' &lt;identifier&gt;)* ')' IN '(' ( &lt;term-tuple&gt; ( ',' &lt;term-tuple&gt;)* )? ')'
+             | TOKEN '(' &lt;identifier&gt; ( ',' &lt;identifer&gt;)* ')' &lt;op&gt; &lt;term&gt;
+
+&lt;op&gt; ::= '=' | '&lt;' | '&gt;' | '&lt;=' | '&gt;=' | CONTAINS | CONTAINS KEY
+&lt;order-by&gt; ::= &lt;ordering&gt; ( ',' &lt;odering&gt; )*
+&lt;ordering&gt; ::= &lt;identifer&gt; ( ASC | DESC )?
+&lt;term-tuple&gt; ::= '(' &lt;term&gt; (',' &lt;term&gt;)* ')'
+</code></pre><ul>
+<li>例子：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">207</span>);
+
+<span style="color:#66d9ef">SELECT</span> JSON name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#f92672">=</span> <span style="color:#ae81ff">199</span>;
+
+<span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">AS</span> user_name, occupation <span style="color:#66d9ef">AS</span> user_occupation <span style="color:#66d9ef">FROM</span> users;
+
+<span style="color:#66d9ef">SELECT</span> time, value
+<span style="color:#66d9ef">FROM</span> events
+<span style="color:#66d9ef">WHERE</span> event_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;myEvent&#39;</span>
+  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2011-02-03&#39;</span>
+  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2012-01-01&#39;</span>
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> users;
+
+<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> user_count <span style="color:#66d9ef">FROM</span> users;
+</code></pre></div><h5 id="第一索引查询">第一：索引查询</h5>
+<p>cassandra是支持创建二级索引的，索引可以创建在除了第一个主键之外所有的列上，当然有些类型除外，例如集合类型。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+a INT,
+b INT,
+<span style="color:#66d9ef">c</span> INT,
+d INT,
+e INT,
+m INT,
+<span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>));
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(<span style="color:#66d9ef">c</span>);
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(e);
+</code></pre></div><p>在第一主键a上创建索引是不可以的：
+<code>CREATE INDEX ON test(a) //X</code>
+索引列只可以用=号查询，所以</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">是可以</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">就不行了。</span>
+</code></pre></div><p>如果你的查询条件里，有一个是根据索引查询，那其它非索引非主键字段，可以通过加一个ALLOW FILTERING来过滤实现、
+例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">AND</span> m<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">2</span> ALLOW FILTERING;
+</code></pre></div><p>第二：排序
+cassandra也是支持排序的，order by。 当然它的排序也是有条件的，</p>
+<ol>
+<li>必须有第一主键的=号查询。cassandra的第一主键是决定记录分布在哪台机器上，也就是说cassandra只支持单台机器上的记录排序。</li>
+<li>那就是只能根据第二、三、四…主键进行有序的，相同的排序。</li>
+<li>不能有索引查询</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>;
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>;
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>;
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>;
+</code></pre></div><p>以上都是可以的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">没有第一主键</span> <span style="color:#960050;background-color:#1e0010">不行</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">必须以第二主键开始排序</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不是相同的排序。</span>
+<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不能有索引。</span>
+</code></pre></div><p>其实cassandra的任何查询，最后的结果都是有序的，默认的是b asc, c asc，因为它内部就是这样存储的。
+当然这个默认存储排序方式，是可以在建表的时候指定的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+    a INT,
+    b INT,
+    <span style="color:#66d9ef">c</span> INT,
+    d INT,
+    e INT,
+    m INT,
+    <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>))
+<span style="color:#66d9ef">WITH</span> CLUSTERING <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> (b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>);
+</code></pre></div></li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/cassandra/">cassandra</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2018\/06\/cassandra%E7%AC%94%E8%AE%B0\/';
+          
+            this.page.identifier = '\/2018\/06\/cassandra%E7%AC%94%E8%AE%B0\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

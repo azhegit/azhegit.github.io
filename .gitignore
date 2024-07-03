@@ -1,0 +1,9 @@
+config.toml.backup
+/data
+/archetypes
+themes/*
+!themes/readme*
+/layouts
+/static
+.idea
+.DS_Store

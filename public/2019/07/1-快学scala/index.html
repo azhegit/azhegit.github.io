@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="为数据中台新人进行培训，培训内容scala">
+
+
+<meta property="og:description" content="为数据中台新人进行培训，培训内容scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-快学Scala">
+<meta name="twitter:title" content="1-快学Scala">
+<meta property="og:url" content="https://azhegit.gitee.io/2019/07/1-%E5%BF%AB%E5%AD%A6scala/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2019/07/1-%E5%BF%AB%E5%AD%A6scala/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="为数据中台新人进行培训，培训内容scala">
+<meta name="twitter:description" content="为数据中台新人进行培训，培训内容scala">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-07-15T11:06:57">
+  
+  
+    <meta property="article:modified_time" content="2019-07-15T11:06:57">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="train">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>1-快学Scala</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2019/07/1-%E5%BF%AB%E5%AD%A6scala/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      1-快学Scala
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-07-15T11:06:57&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 七月 15 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>为数据中台新人进行培训，培训内容scala</p>
+<p>[toc]</p>
+<h2 id="1-scala是什么">1. Scala是什么？</h2>
+<p>Scala(Scalable Language)是一种多范式的编程语言，其设计的初衷是要集成面向对象编程和函数式编程的各种特性。
+Scala运行于Java平台(java虚拟机上)，并兼容现有的Java程序。
+面向对象(将对象当作参数传来传去) + 面向函数(方法，可以将函数当作参数传来传去)</p>
+<h4 id="特点">特点</h4>
+<ul>
+<li>
+<p>优雅简洁：这是框架设计师第一个要考虑的问题，框架的用户是应用开发程序员，API是否优雅直接影响用户体验，Scala程序员曾报告说与Java比起来代码行数可以减少到1/10。</p>
+</li>
+<li>
+<p>速度快：Scala语言表达能力强，一行代码抵得上Java多行，开发速度快；Scala是静态编译的，所以和JRuby,Groovy比起来速度会快很多。</p>
+</li>
+<li>
+<p>与spark关系紧密：天然的分布式理念，Spark的开发代码就是scala语言，相对于其他语言，scala支持的组件全面，pyspark就没有GraphX的集成。</p>
+</li>
+</ul>
+<h2 id="2-scala能为我们做什么">2. scala能为我们做什么？</h2>
+<ul>
+<li>大数据分析：Spark的原生语言是Scala，因此入门Scala是学习Spark的第一步。</li>
+<li>web应用：基于scala的特性，可以替换一些java代码，更简洁，更快速。</li>
+<li>中间件开发：kafka等中间件也是由scala和java编写。</li>
+</ul>
+<h2 id="3-快速入门">3. 快速入门</h2>
+<h3 id="1-开发环境准备">1. 开发环境准备</h3>
+<ol>
+<li>java环境（版本1.8.0_171）</li>
+<li>scala二进制包下载地址（版本2.11.8）：http://distfiles.macports.org/scala2.11/</li>
+<li>安装包解压，配置环境变量</li>
+<li>开发工具使用idea，需要安装插件</li>
+<li>maven</li>
+</ol>
+<h3 id="2-相关介绍">2. 相关介绍</h3>
+<h4 id="1-第一个程序">1. 第一个程序</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+    println<span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span> <span style="color:#f92672">)</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h6 id="注意">注意：</h6>
+<ul>
+<li>跟java语法块后面必须加&rdquo;;&ldquo;是不一样的，scala语句末尾的分号通常是可写可不写的。
+- &ldquo;:&ldquo;是类型表达式分隔符，后面是推断的或者指定类型。</li>
+<li>Scala将行的结尾视为表达式的结尾，除非它可以推断表达式继续到下一行。</li>
+<li>Scala程序处理从主方法开始，这是每个Scala程序的一个强制性部分。</li>
+<li>main方法未标记为静态，main方法是对自动实例化的单例对象的实例方法。</li>
+<li>main没有返回类型。实际上有Unit，这是类似于void，但它是由编译器推断。</li>
+<li>我们可以通过在参数后面加一个冒号和类型来显式地指定返回类型：</li>
+<li>Scala使用def关键字告诉编译器这是一个方法。</li>
+<li>在Scala中没有访问级别修改器。</li>
+<li>Scala未指定公用修饰符，因为默认访问级别为public。</li>
+<li>object是scala的单例对象</li>
+</ul>
+<h4 id="2-相关概念">2. 相关概念</h4>
+<h5 id="1-scala变量">1. Scala变量</h5>
+<p>在Scala中，有三种方法可以定义变量：val，var和lazy(延迟加载) val。
+Scala允许您在声明它时决定变量是否是不可变的（只读）</p>
+<ul>
+<li>
+<p>val
+使用关键字val声明不可变变量，相当于java中的final。</p>
+</li>
+<li>
+<p>var
+现在让我们声明一个可变变量。</p>
+</li>
+<li>
+<p>lazy val
+延迟val变量计算一次，第一次访问变量。</p>
+</li>
+</ul>
+<h6 id="注意-1">注意：</h6>
+<p>val定义的变量的时候必须赋值</p>
+<ul>
+<li><code>val age:Int</code> ❌</li>
+<li><code>val age = 18</code> ✅ 可以不声明类型，scala的类型推断会根据值来自动推断</li>
+<li><code>val age:Int = 18</code> ✅</li>
+</ul>
+<p>var变量可以使用默认初始化,既用下划线对变量赋值,不同的初始值不一样</p>
+<ul>
+<li><code>var age = _</code> ❌ 使用_必须定义初始类型</li>
+<li><code>var age:Int = _</code> ✅ 初始化值为0</li>
+<li><code>var name:String = _</code> ✅ 初始化值为null</li>
+</ul>
+<h5 id="2-代码块注释字符串插值">2. 代码块、注释、字符串插值</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">CodeBlock</span> <span style="color:#f92672">{</span>
+  <span style="color:#75715e">//  方法和变量也可以在用大括号{}表示的代码块中定义。
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> name <span style="color:#66d9ef">=</span> <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;Lily&#34;</span>
+  <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">val</span> age <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">18</span>
+  <span style="color:#66d9ef">val</span> province<span style="color:#f92672">,</span> city <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;北京&#34;</span>
+
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">  代码块的结果是在代码块中计算的最后一行，如以下示例所示。
+</span><span style="color:#75715e">  变量定义也可以是代码块。
+</span><span style="color:#75715e">  */</span>
+  <span style="color:#66d9ef">var</span> sex <span style="color:#66d9ef">=</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">val</span> flag <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Random</span><span style="color:#f92672">.</span>nextInt<span style="color:#f92672">(</span><span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>flag <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;男&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;女&#34;</span>
+  <span style="color:#f92672">}</span>
+  
+  <span style="color:#75715e">//  字符串插值是一种将字符串中的值与变量组合的机制。
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">def</span> introduction<span style="color:#f92672">()</span> <span style="color:#66d9ef">=</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;Hello,I`m </span><span style="color:#e6db74">$name</span><span style="color:#e6db74">, sex is </span><span style="color:#e6db74">$sex</span><span style="color:#e6db74"> ,from </span><span style="color:#e6db74">$province</span><span style="color:#e6db74">,</span><span style="color:#e6db74">$city</span><span style="color:#e6db74"> 市 &#34;</span><span style="color:#f92672">)</span>
+
+  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Unit</span> <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+    introduction<span style="color:#f92672">()</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><h5 id="3-scala数据类型">3. Scala数据类型</h5>
+<p>Scala中的数据数据类型构成了Float和Double类型以及诸如Byte，Short，Int，Long和Char等整数数据类型。</p>
+<h5 id="下表显示scala的数值数据类型">下表显示Scala的数值数据类型。</h5>
+<table>
+<thead>
+<tr>
+<th>常用的引用数据结构</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td>定长数组： 有序，可变类型，长度不可变。</td>
+</tr>
+<tr>
+<td>ArrayBuffer</td>
+<td>不定长数组：有序，可变类型，长度可以扩展。</td>
+</tr>
+<tr>
+<td>List</td>
+<td>列表：有序，不可变类型。</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>集合：无序，不可变类型。</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>映射：无序，不可变类型。</td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td>元组：有序，不可变类型，可以存放不同数据类型元素。</td>
+</tr>
+<tr>
+<td>Option</td>
+<td>选项：表示有可能包含值的容器，也可能不包含值。</td>
+</tr>
+<tr>
+<td>Iterator</td>
+<td>迭代器：不属于容器，但是提供了遍历容器的方法。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>常用的基本数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Byte</td>
+<td>从-128到127范围内的整数</td>
+</tr>
+<tr>
+<td>Short</td>
+<td>从-32768到32767范围内的整数</td>
+</tr>
+<tr>
+<td>Int</td>
+<td>从-2147483648到2147483647范围内的整数</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>从-9223372036854775808到9223372036854775807范围内的整数</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>最大正有限浮点是3.4028235 * 1038，最小正有限非零浮点是1.40 * 10-45</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>最大正有限双是1.7976931348623157 * 10308，最小正有限非零双是4.9 * 10-324</td>
+</tr>
+</tbody>
+</table>
+<p>Scala可以按顺序自动将数字从一种类型转换为另一种类型。
+Byte-&gt;Short-&gt;Int-&gt;Long-&gt;Float-&gt;Double.
+<code>val x: Byte = 30</code>
+<code>val y: Short = x</code></p>
+<h5 id="4-整数常量">4. 整数常量</h5>
+<p>整数常量可以用十进制，十六进制或八进制表示。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>格式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decimal</td>
+<td>0或非零数字后跟零或多个数字（0-9）</td>
+<td>0, 1, 321</td>
+</tr>
+<tr>
+<td>Hexadecimal</td>
+<td>0x后跟一个或多个十六进制数字（0-9，A-F，a-f）</td>
+<td>0xFF, 0x1a3b</td>
+</tr>
+<tr>
+<td>Octal</td>
+<td>0后跟一个或多个八进制数字（0-7）a</td>
+<td>013, 077</td>
+</tr>
+</tbody>
+</table>
+<h5 id="5-布尔常量">5. 布尔常量</h5>
+<p>布尔常量是true和false。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">false</span>
+res5<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Boolean</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><h5 id="6-字符常量">6. 字符常量</h5>
+<p>字符常量是可打印的Unicode字符或转义序列，写在单引号之间。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;\u0041&#34;</span>
+res4<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> A
+scala<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;\t&#34;</span>
+res6<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;        &#34;</span>
+</code></pre></div><p>有效的转义序列如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\b</td>
+<td>退格(BS)</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表(HT)</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行(LT)</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页(FF)</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车(CR)&hellip;</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>双引号(“)</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>单引号(“)</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠()</td>
+</tr>
+<tr>
+<td>Unicode值介于0和255之间的字符可以由八进制转义表示，即反斜杠（\）后跟最多三个八进制字符的序列。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="7-元组常量">7. 元组常量</h5>
+<p>Scala库包括用于将N个项分组的TupleN类（例如，Tuple2），以及括号内的项的逗号分隔列表的文字语法。
+对于1到22之间的N，有单独的TupleN类。
+例如，val tup =（“Hi”，2014）定义了一个Tuple2实例，其中第一个元素推断String，第二个元素Int推断。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> t <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2.3</span><span style="color:#f92672">)</span>
+t<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Double</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#a6e22e">Hello</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2.3</span><span style="color:#f92672">)</span>
+
+scala<span style="color:#f92672">&gt;</span> println<span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;Print the whole tuple: &#34;</span> <span style="color:#f92672">+</span> t <span style="color:#f92672">)</span>
+<span style="color:#a6e22e">Print</span> the whole tuple<span style="color:#66d9ef">:</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">Hello</span><span style="color:#f92672">,</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2.3</span><span style="color:#f92672">)</span>
+
+scala<span style="color:#f92672">&gt;</span> println<span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;Print the first item:  &#34;</span> <span style="color:#f92672">+</span> t<span style="color:#f92672">.</span>_1 <span style="color:#f92672">)</span>
+<span style="color:#a6e22e">Print</span> the first item<span style="color:#66d9ef">:</span>  <span style="color:#66d9ef">Hello</span>
+
+scala<span style="color:#f92672">&gt;</span> println<span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;Print the second item: &#34;</span> <span style="color:#f92672">+</span> t<span style="color:#f92672">.</span>_2 <span style="color:#f92672">)</span>
+<span style="color:#a6e22e">Print</span> the second item<span style="color:#66d9ef">:</span> <span style="color:#960050;background-color:#1e0010">1</span>
+
+<span style="color:#66d9ef">scala&gt;</span> <span style="color:#66d9ef">println</span><span style="color:#f92672">(</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#66d9ef">Print</span> <span style="color:#66d9ef">the</span> <span style="color:#66d9ef">third</span> <span style="color:#66d9ef">item:</span>  <span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#66d9ef">+</span> <span style="color:#66d9ef">t.</span><span style="color:#66d9ef">_</span><span style="color:#960050;background-color:#1e0010">3</span> <span style="color:#f92672">)</span>
+<span style="color:#66d9ef">Print</span> <span style="color:#66d9ef">the</span> <span style="color:#66d9ef">third</span> <span style="color:#66d9ef">item:</span>  <span style="color:#960050;background-color:#1e0010">2</span><span style="color:#66d9ef">.</span><span style="color:#960050;background-color:#1e0010">3</span>
+
+<span style="color:#66d9ef">scala&gt;</span> <span style="color:#66d9ef">val</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">t1</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">t2</span><span style="color:#f92672">,</span> t3<span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;World&#34;</span><span style="color:#f92672">,</span>  <span style="color:#e6db74">&#34;!&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0x22</span><span style="color:#f92672">)</span>
+t1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">World</span>
+t2<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span>
+t3<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+
+scala<span style="color:#f92672">&gt;</span> println<span style="color:#f92672">(</span> t1 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> t2 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> t3 <span style="color:#f92672">)</span>
+<span style="color:#a6e22e">World</span><span style="color:#f92672">,</span> <span style="color:#f92672">!,</span> <span style="color:#ae81ff">34</span>
+
+scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> <span style="color:#f92672">(</span>t4<span style="color:#f92672">,</span> t5<span style="color:#f92672">,</span> t6<span style="color:#f92672">)</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Tuple3</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;World&#34;</span><span style="color:#f92672">,</span>  <span style="color:#e6db74">&#34;!&#34;</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0x22</span><span style="color:#f92672">)</span>
+t4<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">World</span>
+t5<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span>
+t6<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">34</span>
+
+scala<span style="color:#f92672">&gt;</span> println<span style="color:#f92672">(</span> t4 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> t5 <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> t6 <span style="color:#f92672">)</span>
+<span style="color:#a6e22e">World</span><span style="color:#f92672">,</span> <span style="color:#f92672">!,</span> <span style="color:#ae81ff">34</span>
+</code></pre></div><h5 id="8-函数常量">8. 函数常量</h5>
+<p>(i:Int，s:String)=&gt; s + i 是Function2类型的函数文本[Int，String，String]（返回String）。
+你甚至可以使用常量语法作为类型声明。
+以下声明是等效的：
+val f1: (Int,String) =&gt; String       = (i, s) =&gt; s+i
+val f2: Function2[Int,String,String] = (i, s) =&gt; s+i</p>
+<h5 id="9-anynullnullnothingnonenilunit理解">9. Any、Null、null、Nothing、None、Nil、Unit理解</h5>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20190711202315983.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20190711202214682.png" alt=""></p>
+<h6 id="1-any">1. Any</h6>
+<p>在scala中，Any类是所有类的超类。Any有两个子类：AnyVal和AnyRef
+AnyVal是所有值类的基类。
+AnyRef是所有引用类型的基类,除了值类型，所有类型都继承自AnyRef。</p>
+<h6 id="2-null">2. Null</h6>
+<p>Null是所有AnyRef的子类，是所有继承了Object的类的子类，所以Null可以赋值给所有的引用类型(AnyRef)，不能赋值给值类型(AnyVal)，这个java的语义是相同的。null是Null的唯一对象。</p>
+<blockquote>
+<p>val x = null         // x: Null
+val y: String = null // y: String = null
+val z: Int = null    // error: type mismatch
+val u: Unit = null   // u: Unit = ()</p>
+</blockquote>
+<h6 id="3-nothing">3. Nothing</h6>
+<p>Nothing是所有类的子类，是一个类。Nothing没有对象，但是可以用来定义类型。
+Nothing的用处是什么呢？</p>
+<ul>
+<li>用于标记不正常的停止或者中断</li>
+<li>一个空的collection</li>
+</ul>
+<blockquote>
+<p>scala&gt; def foo = throw new RuntimeException
+foo: Nothing
+scala&gt; val l:List[Int] = List<a href="">Nothing</a>
+l: List[Int] = List()</p>
+</blockquote>
+<h6 id="4-none">4. None</h6>
+<p>这是Option的一个子类，没有值的时候，使用None。如果有值可以引用，就使用Some来包含这个值。Some也是Option的子类。</p>
+<blockquote>
+<p>scala&gt; val m = Map(&ldquo;a&rdquo;-&gt;1,&ldquo;b&rdquo;-&gt;2)
+m: scala.collection.immutable.Map[String,Int] = Map(a -&gt; 1, b -&gt; 2)
+scala&gt; m.get(&ldquo;a&rdquo;)
+res37: Option[Int] = Some(1)
+scala&gt; m.get(&ldquo;a&rdquo;).get
+res38: Int = 1
+scala&gt; m.get(&ldquo;c&rdquo;)
+res39: Option[Int] = None
+scala&gt; m.get(&ldquo;c&rdquo;).get
+java.util.NoSuchElementException: None.get
+at scala.None$.get(Option.scala:347)
+at scala.None$.get(Option.scala:345)
+&hellip; 32 elided
+scala&gt; m.get(&ldquo;c&rdquo;).isEmpty
+res41: Boolean = true</p>
+</blockquote>
+<h6 id="4-nil">4. Nil</h6>
+<p>Nil是空List</p>
+<blockquote>
+<p>scala&gt; Nil
+res44: scala.collection.immutable.Nil.type = List()</p>
+</blockquote>
+<h6 id="5-unit">5. Unit</h6>
+<p>表示无值，和其他语言中void等同。用作不返回任何结果的方法的结果类型。Unit只有一个实例值，写成()。</p>
+<h5 id="10-输入输出">10. 输入输出</h5>
+<p>输出：println,print,printf
+输入：scala.io.StdIn
+写文件：java.io.PrintWriter
+读文件：scala.io.Source</p>
+<h5 id="11-选择结构">11. 选择结构</h5>
+<p>Scala的选择结构主要通过if语句以及match语句实现。
+match 语句相当于多分支结构，可以使用模式匹配。</p>
+<h5 id="12-循环结构">12. 循环结构</h5>
+<p>Scala循环结构主要是 for循环和while循环,此外还可以使用for推导式。</p>
+<h5 id="13-异常捕获">13. 异常捕获</h5>
+<p>异常捕获的语句是 try&hellip;catch&hellip;finally&hellip;
+此外还可以用throw抛出异常。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">ExceptionDemo</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">def</span> main<span style="color:#f92672">(</span>args<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">val</span> f <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileReader</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input.txt&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">case</span> ex<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">FileNotFoundException</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">{</span>
+        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Missing file exception&#34;</span><span style="color:#f92672">)</span>
+      <span style="color:#f92672">}</span>
+      <span style="color:#66d9ef">case</span> ex<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">IOException</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">{</span>
+        println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;IO Exception&#34;</span><span style="color:#f92672">)</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+      println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Exiting finally...&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//Missing file exception
+</span><span style="color:#75715e">//Exiting finally...
+</span></code></pre></div><h5 id="13-函数定义">13. 函数定义</h5>
+<p>Scala中的函数可以通过关键字def定义或者使用匿名函数。
+此处介绍def定义函数的语法。</p>
+<p>def functionName(args list) :[return type] = {
+function body
+}
+当函数的输出类型可以推断时，可以省去“ :[return type]= “。</p>
+<h5 id="14-匿名函数">14. 匿名函数</h5>
+<p>Scala中的函数是一等公民，可以像变量一样定义和使用。
+和变量一样，函数具有类型和值。</p>
+<h5 id="15-高阶函数">15. 高阶函数</h5>
+<p>高阶函数即可以传入函数作为其参数的函数。
+Scala支持非常强大的函数式编程风格。
+map,flatMap,forech,reduce</p>
+<h5 id="16-类对象特质">16. 类、对象、特质</h5>
+<p>Scala中用关键字class定义普通类,用abstract class定义抽象类，用case class定义样例类, 用object定义单例对象，用trait定义特征。</p>
+<ul>
+<li>
+<p>case class
+case类本来设计用来进行模式匹配，自带apply和unapply方法，实例化时可以不用new关键字。除了做了优化用于模式匹配，其它方面和普通类没有什么区别。</p>
+</li>
+<li>
+<p>abstract class
+抽象类，它定义了一些方法但没有实现他们。取而代之的是有扩展抽象类的子类定义这些方法，用关键字extends继承。
+Scala每个类只能继承一个超类。
+abstract class不能创建抽象类的实例</p>
+</li>
+<li>
+<p>object
+object相当于class的单个实例，类似于Java中的static，通常在里面放一些静态的field和method。
+ 
+第一次调用object中的方法时，会执行object的constructor，也就是object内部不在method或者代码块中的所有代码，但是object不能定义接受参数的constructor</p>
+</li>
+<li>
+<p>伴生对象和伴生类
+当单例对象和类同名的时候，而且在同一个文件中，互为伴生。
+这个时候伴生对象和伴生类可以访问彼此的私有成员。</p>
+</li>
+<li>
+<p>trait
+Scala每个类只能继承一个超类。
+为了实现多继承的功能，在指定一个超类的同时可以指定若干个trait特征进行继承。
+抽象类与特质的选择：
+1.优先使用特质。一个类扩展多个特质是很方便的，但却只能扩展一个抽象类。
+2.如果你需要构造函数参数，使用抽象类。因为抽象类可以定义带参数的构造函数，而特质不行。</p>
+</li>
+</ul>
+<h3 id="3-demo">3. Demo</h3>
+<p>gitee链接：https://gitee.com/azhegit/ScalaDemo</p>
+<h3 id="4-预期任务">4. 预期任务</h3>
+<h4 id="1-用scala编写99乘法表">1. 用scala编写99乘法表</h4>
+<h4 id="2-编写一个算法">2. 编写一个算法</h4>
+<h5 id="输入">输入：</h5>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>速度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019-7-12 10:00:00</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2019-7-12 10:00:10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:00:20</td>
+<td>34</td>
+</tr>
+<tr>
+<td>2019-7-12 10:00:30</td>
+<td>32</td>
+</tr>
+<tr>
+<td>2019-7-12 10:00:40</td>
+<td>19</td>
+</tr>
+<tr>
+<td>2019-7-12 10:00:50</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:10</td>
+<td>26</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:20</td>
+<td>38</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:30</td>
+<td>38</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:40</td>
+<td>28</td>
+</tr>
+<tr>
+<td>2019-7-12 10:01:50</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:10</td>
+<td>18</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:20</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:30</td>
+<td>16</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:40</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2019-7-12 10:02:50</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:00</td>
+<td>25</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:20</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:30</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:40</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2019-7-12 10:03:50</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2019-7-12 10:04:00</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<h5 id="输出">输出：</h5>
+<ol>
+<li>计算起步速冻为0加速的最高速度的平均速度（橙色线）</li>
+<li>计算最高速度到减速到0的平均速度（绿色线）</li>
+</ol>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20190712162402655.png" alt=""></p>
+<h3 id="5-学习资料">5. 学习资料</h3>
+<ol>
+<li>runoob上的Scala 教程:https://www.runoob.com/scala/scala-tutorial.html</li>
+<li>官网：https://www.scala-lang.org/</li>
+<li>一个比较好的博客：http://hongjiang.info/scala/</li>
+<li>Twitter Scala School：http://twitter.github.io/scala_school/index.html</li>
+</ol>
+<h3 id="6-scala语言的设计哲学">6. Scala语言的设计哲学</h3>
+<h4 id="1-一切皆对象">1. 一切皆对象</h4>
+<p>从整数，字符串，函数，类到各种数据结构，Scala中一切皆为对象，Any是它们的超类。</p>
+<h4 id="2-一切皆表达式">2. 一切皆表达式</h4>
+<p>Scala中书写的每条语句都可以看成是一条表达式。
+表达式的基本格式是 name:type = {&hellip;}
+name是对象标识符，type是它的类型，{}括起来的作用域部分都是它的值。
+从变量的定义，函数的定义，判断语句，循环语句到类的定义，都可以看成是这个格式省去某些部分的特例或语法糖等价书写形式。</p>
+<h4 id="3-简洁而富有表现力">3. 简洁而富有表现力</h4>
+<p>同样的功能，Scala的代码量可能不到Java的五分之一。
+并且Scala的许多特性设计非常有表现力。
+简洁范例：强大的自动类型推断，隐含类型转换，匿名函数，case类，字符串插值器。
+表现力范例：集合的&amp;和|运算,函数定义的=&gt;符号,for循环&lt;-的符号，Map的 -&gt;符号，以及生成range的 1 to 100等表达。</p>
+<h4 id="4-函数式编程">4. 函数式编程</h4>
+<p>函数的特点是操作无副作用，唯一的作用的生成函数值。
+把一个函数作用到一些参数上，不会对输入参数造成改变。
+为了逼近这个目标，scala设计的默认数据结构绝大部分是不可变的。
+并且在一个良好风格的scala程序中，只需要使用val不可变变量而无需使用var可变变量。
+显式的for或者while循环是不可取的，让我们用更多的高阶函数吧。</p>
+<h4 id="5-多范式编程">5. 多范式编程</h4>
+<p>尽管函数式编程是Scala的推荐编程范式，但Scala同时混合了强大的命令式编程的功能。
+你可以使用强大的for循环，for推导式，使用可变的变量和数据类型实现命令式编程。
+你还可以使用强大的模式匹配，基于模式匹配完成复杂的变换操作，实现模式化编程。</p>
+<p>最后，正如同它的名字的蕴意，Scala是一门可以伸缩的语言。通过编写扩展类和对象，或继承各种Trait生成新数据结构，Scala可以很容易地成为某个领域的&quot;专业语言&rdquo;。新增加的那些特性就好像是Scala语法本身的一部分。</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/train/">train</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/07/2-%E5%BF%AB%E5%AD%A6python/" data-tooltip="2-快学python">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/11-kolla%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/" data-tooltip="11-Kolla环境部署命令">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/07/2-%E5%BF%AB%E5%AD%A6python/" data-tooltip="2-快学python">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/11-kolla%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/" data-tooltip="11-Kolla环境部署命令">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/07\/1-%E5%BF%AB%E5%AD%A6scala\/';
+          
+            this.page.identifier = '\/2019\/07\/1-%E5%BF%AB%E5%AD%A6scala\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

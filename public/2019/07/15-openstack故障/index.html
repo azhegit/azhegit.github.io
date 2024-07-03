@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="OpenStack故障">
+
+
+<meta property="og:description" content="OpenStack故障">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15-openstack故障">
+<meta name="twitter:title" content="15-openstack故障">
+<meta property="og:url" content="https://azhegit.gitee.io/2019/07/15-openstack%E6%95%85%E9%9A%9C/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2019/07/15-openstack%E6%95%85%E9%9A%9C/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="OpenStack故障">
+<meta name="twitter:description" content="OpenStack故障">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-07-29T13:53:03">
+  
+  
+    <meta property="article:modified_time" content="2019-07-29T13:53:03">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="虚拟化&amp;云计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="openStack">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20181113164516536.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20181113164516536.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>15-openstack故障</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2019/07/15-openstack%E6%95%85%E9%9A%9C/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      15-openstack故障
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-07-29T13:53:03&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 七月 29 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>OpenStack故障</p>
+<h3 id="1-openstack集群中mariadb集群容器启动失败">1. OpenStack集群中mariadb集群容器启动失败</h3>
+<p>用kolla部署的带有高可用的openstack环境中，服务器断电之后，mariadb启动失败问题解决：</p>
+<ol>
+<li>ssh到无法启动mariadb容器的控制节点，停止mariadb容器。
+docker stop mariadb.</li>
+<li>备份mariadb的配置文件。
+cp /etc/kolla/mariadb/config.json /etc/kolla/mariadb/config.json.bck</li>
+<li>将mariadb容器启动的命令修改成sleep 3600
+vim /etc/kolla/mariadb/config.json,将“command”:&quot;/usr/bin/mysqld_safe&quot;改为“command”：“sleep 3600”</li>
+<li>启动mariadb容器。
+docker start mariadb</li>
+<li>进入mariadb容器。
+docker exec -it mariadb bash</li>
+<li>执行mysqld_safe,查看日志
+验证是否出现Found 1 prepared transactions! It means that mysqld was not shut down properly last time and critical recovery information (last binlog or tc.log file)
+was manually deleted after a crash.You have to start mysqld with &ndash;tc-heuristic-recover switch to commit or rollback pending transactions的错误。</li>
+<li>执行回滚
+mysqld_safe &ndash;tc-heuristic-revocer rollback.</li>
+<li>若第7步回滚失败，执行
+rm -rf /var/lib/mysql/galera.cache
+rm -rf /var/lib/mysql/grastate.dat
+mysqld_safe &ndash;wsrep-new-cluster</li>
+<li>数据库回滚完成后，将/etc/kolla/mariadb/config.json恢复为原来配置，重启docker，问题解决！</li>
+</ol>
+<h3 id="2-预检查报错">2. 预检查报错</h3>
+<p><code>kolla-ansible -i add-compute prechecks</code></p>
+<blockquote>
+<p>[nova : Checking that libvirt is not running]</p>
+</blockquote>
+<p>libvirt 已经启动，把libvurt关闭，然后再执行检查
+service libvirtd stop</p>
+<h3 id="3-openstack重启有问题">3. OpenStack重启有问题</h3>
+<p>kolla-ansible -i add-compute deploy</p>
+<h4 id="问题1">问题1：</h4>
+<blockquote>
+<p>fatal: [dataocean-d-030019]: FAILED! =&gt; {&ldquo;changed&rdquo;: true, &ldquo;msg&rdquo;: &ldquo;&lsquo;Traceback (most recent call last):\n  File &quot;/tmp/ansible_kolla_docker_payload_GOiF32/<strong>main</strong>.py&quot;, line 909, in main\n    result = bool(getattr(dw, module.params.get(\&lsquo;action\'))())\n  File &quot;/tmp/ansible_kolla_docker_payload_GOiF32/<strong>main</strong>.py&quot;, line 679, in recreate_or_restart_container\n    self.start_container()\n  File &quot;/tmp/ansible_kolla_docker_payload_GOiF32/<strong>main</strong>.py&quot;, line 692, in start_container\n    self.pull_image()\n  File &quot;/tmp/ansible_kolla_docker_payload_GOiF32/<strong>main</strong>.py&quot;, line 532, in pull_image\n    repository=image, tag=tag, stream=True\n  File &quot;/usr/lib/python2.7/site-packages/docker/api/image.py&quot;, line 414, in pull\n    self._raise_for_status(response)\n  File &quot;/usr/lib/python2.7/site-packages/docker/api/client.py&quot;, line 263, in _raise_for_status\n    raise create_api_error_from_http_exception(e)\n  File &quot;/usr/lib/python2.7/site-packages/docker/errors.py&quot;, line 31, in create_api_error_from_http_exception\n    raise cls(e, response=response, explanation=explanation)\nAPIError: 500 Server Error: Internal Server Error (&quot;Get https://10.57.30.16:4000/v1/_ping: http: error connecting to proxy http://10.57.22.8:3128/: dial tcp 10.57.22.8:3128: i/o timeout&quot;)\n&rsquo;&quot;}</p>
+</blockquote>
+<p>问题原因是代理不通，删除docker代理
+rm -rf /etc/systemd/system/docker.service.d/http-proxy.conf</p>
+<h4 id="问题2">问题2：</h4>
+<blockquote>
+<p>fatal: [dataocean-d-030018]: FAILED! =&gt; {&ldquo;changed&rdquo;: true, &ldquo;msg&rdquo;: &ldquo;&lsquo;Traceback (most recent call last):\n  File &quot;/tmp/ansible_kolla_docker_payload_eefO8O/<strong>main</strong>.py&quot;, line 909, in main\n    result = bool(getattr(dw, module.params.get(\&lsquo;action\'))())\n  File &quot;/tmp/ansible_kolla_docker_payload_eefO8O/<strong>main</strong>.py&quot;, line 679, in recreate_or_restart_container\n    self.start_container()\n  File &quot;/tmp/ansible_kolla_docker_payload_eefO8O/<strong>main</strong>.py&quot;, line 692, in start_container\n    self.pull_image()\n  File &quot;/tmp/ansible_kolla_docker_payload_eefO8O/<strong>main</strong>.py&quot;, line 532, in pull_image\n    repository=image, tag=tag, stream=True\n  File &quot;/usr/lib/python2.7/site-packages/docker/api/image.py&quot;, line 414, in pull\n    self._raise_for_status(response)\n  File &quot;/usr/lib/python2.7/site-packages/docker/api/client.py&quot;, line 263, in _raise_for_status\n    raise create_api_error_from_http_exception(e)\n  File &quot;/usr/lib/python2.7/site-packages/docker/errors.py&quot;, line 31, in create_api_error_from_http_exception\n    raise cls(e, response=response, explanation=explanation)\nAPIError: 500 Server Error: Internal Server Error (&quot;Get https://10.57.30.16:4000/v1/_ping: http: server gave HTTP response to HTTPS client&quot;)\n&rsquo;&quot;}</p>
+</blockquote>
+<p>问题原因是docker私有仓库连接配置错误
+vim /etc/docker/daemon.json
+{
+&ldquo;insecure-registries&rdquo;:[&ldquo;10.57.30.15:4000&rdquo;]
+}
+修改为
+cat /etc/docker/daemon.json
+{
+&ldquo;insecure-registries&rdquo;:[&ldquo;10.57.30.16:4000&rdquo;]
+}</p>
+<h4 id="问题3">问题3：</h4>
+<p>实例一直卡在重启状态，该实例做不了其他操作</p>
+<blockquote>
+<p><img src="https://www.azheimage.top/markdown-img-paste-2019101616221118.png" alt=""></p>
+</blockquote>
+<ol>
+<li>进入nova容器</li>
+<li>source 环境变量</li>
+<li>nova list查看实例列表</li>
+</ol>
+<pre><code>+--------------------------------------+--------------+---------+------------+-------------+---------------------+
+| ID                                   | Name         | Status  | Task State | Power State | Networks            |
++--------------------------------------+--------------+---------+------------+-------------+---------------------+
+| c3f301de-0e6d-4b84-80bf-c7d8fdebe7f8 | cdh-01       | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.13 |
+| 2d5cd48b-8ac1-4898-8652-f255928c5b78 | cdh-02       | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.26 |
+| 9cdc5ab5-a6a3-4426-815f-de7c534f2eb8 | cdh-03       | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.29 |
+| acc4b887-cb6d-4a5e-997e-434537e353d4 | cdh-04       | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.17 |
+| cc6dec1e-d70c-42d0-90dd-3da0964dfd8f | cirros_1     | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.14 |
+| 1d217483-35d7-43f7-8c17-a0e70d533f5d | databi-01    | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.10 |
+| db36a334-987a-484b-a853-03bea189a449 | databi-02    | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.39 |
+| 6b93ad22-ef9a-45e6-8b16-b1daeda4a35f | databi-03    | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.40 |
+| e83e2923-c2cf-49f6-9f8b-379ec7fb8cc1 | dataocean_01 | ACTIVE  | -          | Running     | vlan_26=10.57.26.5  |
+| 78c45430-a49f-4383-b8fd-e83910387000 | dataocean_02 | REBOOT  | rebooting  | Running     | vlan_26=10.57.26.9  |
+| ed318929-d1bf-4f0e-8bb9-c85c66a27123 | suse-01      | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.19 |
+| d69650f5-d40c-4cc0-84e4-d2b174f18237 | windows_1    | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.4  |
+| c2f3aca9-a05c-48f5-aa4a-6c65e186156c | yinlian      | SHUTOFF | -          | Shutdown    | vlan_26=10.57.26.20 |
++--------------------------------------+--------------+---------+------------+-------------+---------------------+
+</code></pre><ol start="4">
+<li>执行重启nova reboot 78c45430-a49f-4383-b8fd-e83910387000
+Cannot &lsquo;stop&rsquo; instance 78c45430-a49f-4383-b8fd-e83910387000 while it is in task_state rebooting (HTTP 409) (Request-ID: req-ad8a13e5-f895-4f79-9d82-0fd988553cf6)</li>
+<li>执行硬重启，问题解决，机器启动了
+nova reboot &ndash;hard 78c45430-a49f-4383-b8fd-e83910387000</li>
+</ol>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/openstack/">openStack</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/" data-tooltip="16-openstack停电故障修复">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/07/14-suse%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/" data-tooltip="14-suse镜像制作">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/16-openstack%E5%81%9C%E7%94%B5%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/" data-tooltip="16-openstack停电故障修复">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/07/14-suse%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/" data-tooltip="14-suse镜像制作">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/07\/15-openstack%E6%95%85%E9%9A%9C\/';
+          
+            this.page.identifier = '\/2019\/07\/15-openstack%E6%95%85%E9%9A%9C\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

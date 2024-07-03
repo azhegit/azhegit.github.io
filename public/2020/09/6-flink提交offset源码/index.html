@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="Flink提交kafka offset源码
+flink 消费 kafka 数据，提交消费组 offset方式 有三种类型">
+
+
+<meta property="og:description" content="Flink提交kafka offset源码
+flink 消费 kafka 数据，提交消费组 offset方式 有三种类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6-flink提交offset源码">
+<meta name="twitter:title" content="6-flink提交offset源码">
+<meta property="og:url" content="https://azhegit.gitee.io/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="Flink提交kafka offset源码
+flink 消费 kafka 数据，提交消费组 offset方式 有三种类型">
+<meta name="twitter:description" content="Flink提交kafka offset源码
+flink 消费 kafka 数据，提交消费组 offset方式 有三种类型">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-09-11T14:28:21">
+  
+  
+    <meta property="article:modified_time" content="2020-09-11T14:28:21">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="flink">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-2018111316510833.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>6-flink提交offset源码</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      6-flink提交offset源码
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-09-11T14:28:21&#43;08:00">
+        
+  
+  
+  
+  
+    2020 年 九月 11 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Flink提交kafka offset源码</p>
+<p>flink 消费 kafka 数据，提交消费组 offset方式 有三种类型</p>
+<ul>
+<li>DISABLED 关闭offset自动提交</li>
+<li>ON_CHECKPOINTS 完成checkpoint时提交offset</li>
+<li>KAFKA_PERIODIC 使用内部Kafka客户机的自动提交功能，定期将偏移量提交回Kafka</li>
+</ul>
+<p>四种情况
+checkpoint|checkpoint提交|kafka client设置提交|是否提交offset
+-|-|-|-
+开启checkpoint<!-- raw HTML omitted --><code>env.enableCheckpointing(1000)</code>|默认开启checkpoint提交|是否开启不起作用|在 checkpoint 完成后提交✅
+开启 checkpoint<!-- raw HTML omitted --><code>env.enableCheckpointing(1000)</code>|禁用 checkpoint 提交<!-- raw HTML omitted --><code>consumer.setCommitOffsetsOnCheckpoints(false)</code>|是否开启不起作用|不提交offset❌
+默认不开启 checkpoint|是否开启不起作用|开启kafka client的自动提交<!-- raw HTML omitted --> <code>prop.setProperty(&quot;enable.auto.commit&quot;, &quot;true&quot;)</code><!-- raw HTML omitted --><code>prop.setProperty(&quot;auto.commit.interval.ms&quot;, &quot;100&quot;)</code>|kafka client周期性自动提交✅
+默认不开启 checkpoint|是否开启不起作用|kafka client的自动提交<!-- raw HTML omitted --> <code>prop.setProperty(&quot;enable.auto.commit&quot;, &quot;true&quot;)</code><!-- raw HTML omitted --><code>prop.setProperty(&quot;auto.commit.interval.ms&quot;, &quot;100&quot;)</code>|不提交offset❌</p>
+<p>核心判断代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> org.apache.flink.streaming.connectors.kafka.config<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> org.apache.flink.annotation.Internal<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Utilities for {@link OffsetCommitMode}.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#a6e22e">@Internal</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OffsetCommitModes</span> <span style="color:#f92672">{</span>
+
+	<span style="color:#75715e">/**
+</span><span style="color:#75715e">	 * Determine the offset commit mode using several configuration values.
+</span><span style="color:#75715e">	 *
+</span><span style="color:#75715e">	 * @param enableAutoCommit whether or not auto committing is enabled in the provided Kafka properties.
+</span><span style="color:#75715e">	 * @param enableCommitOnCheckpoint whether or not committing on checkpoints is enabled.
+</span><span style="color:#75715e">	 * @param enableCheckpointing whether or not checkpoint is enabled for the consumer.
+</span><span style="color:#75715e">	 *
+</span><span style="color:#75715e">	 * @return the offset commit mode to use, based on the configuration values.
+</span><span style="color:#75715e">	 */</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> OffsetCommitMode <span style="color:#a6e22e">fromConfiguration</span><span style="color:#f92672">(</span>
+			<span style="color:#66d9ef">boolean</span> enableAutoCommit<span style="color:#f92672">,</span>
+			<span style="color:#66d9ef">boolean</span> enableCommitOnCheckpoint<span style="color:#f92672">,</span>
+			<span style="color:#66d9ef">boolean</span> enableCheckpointing<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>enableCheckpointing<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// if checkpointing is enabled, the mode depends only on whether committing on checkpoints is enabled
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>enableCommitOnCheckpoint<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> OffsetCommitMode<span style="color:#f92672">.</span><span style="color:#a6e22e">ON_CHECKPOINTS</span> <span style="color:#f92672">:</span> OffsetCommitMode<span style="color:#f92672">.</span><span style="color:#a6e22e">DISABLED</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// else, the mode depends only on whether auto committing is enabled in the provided Kafka properties
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>enableAutoCommit<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> OffsetCommitMode<span style="color:#f92672">.</span><span style="color:#a6e22e">KAFKA_PERIODIC</span> <span style="color:#f92672">:</span> OffsetCommitMode<span style="color:#f92672">.</span><span style="color:#a6e22e">DISABLED</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/flink/">flink</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/" data-tooltip="7-flink日志输出">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/" data-tooltip="hive安装(2.3.6 on hadoop2.8.5)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/" data-tooltip="7-flink日志输出">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/" data-tooltip="hive安装(2.3.6 on hadoop2.8.5)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2020\/09\/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81\/';
+          
+            this.page.identifier = '\/2020\/09\/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

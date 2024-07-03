@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on ☀️哲の小窝☀️</title>
+    <link>https://azhegit.gitee.io/tags/redis/</link>
+    <description>Recent content in redis on ☀️哲の小窝☀️</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 Sep 2021 11:13:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://azhegit.gitee.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis优化</title>
+      <link>https://azhegit.gitee.io/2021/09/redis%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Tue, 14 Sep 2021 11:13:04 +0800</pubDate>
+      
+      <guid>https://azhegit.gitee.io/2021/09/redis%E4%BC%98%E5%8C%96/</guid>
+      <description>&lt;p&gt;Redis优化&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;key设置ttl并且调整删除策略为volatile-ttl
+set maxmemory_policy allkeys-lru :volatile-ttl&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

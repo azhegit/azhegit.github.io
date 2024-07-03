@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
+10.57.16.207 10.57.16.168
+ 一、准备工作 1. admin用户准备工作  添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin  增加sudo权限 vi /etc/sudoers  ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen  2. 磁盘挂载  查看系统中磁盘信息 sudo fdisk -l   Disk /dev/vdb: 536.9 GB
+ 格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh  3.">
+
+
+<meta property="og:description" content="背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
+10.57.16.207 10.57.16.168
+ 一、准备工作 1. admin用户准备工作  添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin  增加sudo权限 vi /etc/sudoers  ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen  2. 磁盘挂载  查看系统中磁盘信息 sudo fdisk -l   Disk /dev/vdb: 536.9 GB
+ 格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh  3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新增机器到cdh集群">
+<meta name="twitter:title" content="新增机器到cdh集群">
+<meta property="og:url" content="https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
+10.57.16.207 10.57.16.168
+ 一、准备工作 1. admin用户准备工作  添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin  增加sudo权限 vi /etc/sudoers  ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen  2. 磁盘挂载  查看系统中磁盘信息 sudo fdisk -l   Disk /dev/vdb: 536.9 GB
+ 格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh  3.">
+<meta name="twitter:description" content="背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
+10.57.16.207 10.57.16.168
+ 一、准备工作 1. admin用户准备工作  添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin  增加sudo权限 vi /etc/sudoers  ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen  2. 磁盘挂载  查看系统中磁盘信息 sudo fdisk -l   Disk /dev/vdb: 536.9 GB
+ 格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh  3.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-08-13T15:34:37">
+  
+  
+    <meta property="article:modified_time" content="2018-08-13T15:34:37">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="cdh">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191033396.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191033396.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>新增机器到cdh集群</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      新增机器到cdh集群
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-08-13T15:34:37&#43;08:00">
+        
+  
+  
+  
+  
+    2018 年 八月 13 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="背景">背景</h2>
+<p>新增2台机器，没有挂磁盘，需要添加到已有cdh集群。</p>
+<p>10.57.16.207
+10.57.16.168</p>
+<hr>
+<h3 id="一准备工作">一、准备工作</h3>
+<h3 id="1-admin用户准备工作">1. admin用户准备工作</h3>
+<ol>
+<li>添加用户
+<code>useradd -d /home/admin admin -m</code></li>
+<li>修改密码
+<code>passwd admin</code> <!-- raw HTML omitted --></li>
+<li>增加sudo权限
+<code>vi /etc/sudoers</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Allows people in group wheel to run all commands</span>
+%wheel  ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span>       ALL
+admin    ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> NOPASSWD:ALL
+</code></pre></div><ol start="4">
+<li>到admin生成密钥
+<code>ssh-keygen</code></li>
+</ol>
+<h3 id="2-磁盘挂载">2. 磁盘挂载</h3>
+<ol>
+<li>查看系统中磁盘信息
+<code>sudo fdisk -l</code></li>
+</ol>
+<blockquote>
+<p>Disk /dev/vdb: 536.9 GB</p>
+</blockquote>
+<ol start="2">
+<li>格式化磁盘
+<code>sudo mkfs -t xfs /dev/vdb</code></li>
+<li>创建数据目录
+<code>sudo mkdir /data02</code></li>
+<li>修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：<code>sudo vim /etc/fstab</code> 回车在其中添加一行
+<code>/dev/vdb               /data02             xfs    defaults        0 0</code></li>
+<li>挂载
+<code>sudo mount -a</code></li>
+<li>查看磁盘挂载情况
+<code>df -lh</code></li>
+</ol>
+<h3 id="3-安装cdh">3. 安装cdh</h3>
+<ol>
+<li>添加2台机器的ip到原有集群的hosts文件</li>
+<li>从manager节点做到这2台机器的免密</li>
+<li>关闭selinux
+<code>sudo sed -i s/^SELINUX=.*/SELINUX=disabled/ /etc/selinux/config;</code></li>
+<li>关闭防火墙</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl stop firewalld.service;
+sudo systemctl disable firewalld.service;
+</code></pre></div><ol start="5">
+<li>配置ntp时间同步</li>
+<li>安装tng-tools</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install -y rng-tools;
+sudo systemctl enable rngd.service;
+sudo systemctl start rngd.service;
+</code></pre></div><ol start="7">
+<li>修改主机名
+<code>sudo hostnamectl set-hostname cdh168</code></li>
+<li>配置java环境</li>
+<li>上传cdh安装包，并解压
+<code>sudo tar zxvf cloudera-manager-centos7-cm5.14.3_x86_64.tar.gz -C /opt/</code></li>
+<li>重启服务器
+<code>sudo init 6</code></li>
+<li>修改目标主机中agent配置文件中的server_host={改成cm-server的ip}
+<code>sudo vim /opt/cm-5.14.3/etc/cloudera-scm-agent/config.ini</code></li>
+<li>启动agent
+<code>sudo /opt/cm-5.14.3/etc/init.d/cloudera-scm-agent start</code></li>
+<li>启动之后，查看所有主机，发现新启动的机器已经发现，但是此时还没有真正添加到集群
+<img src="https://www.azheimage.top/markdown-img-paste-20200813151203370.png" alt=""></li>
+<li>点击向集群添加新主机
+<img src="https://www.azheimage.top/markdown-img-paste-20200813151456899.png" alt=""></li>
+<li>勾选继续
+<img src="https://www.azheimage.top/markdown-img-paste-20200813151536917.png" alt=""></li>
+<li>添加相应角色。</li>
+</ol>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/cdh/">cdh</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/" data-tooltip="neo4j-数据导入例子">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/" data-tooltip="如何正确下线CDH机器">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/neo4j-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%BE%8B%E5%AD%90/" data-tooltip="neo4j-数据导入例子">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/" data-tooltip="如何正确下线CDH机器">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2018\/08\/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4\/';
+          
+            this.page.identifier = '\/2018\/08\/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

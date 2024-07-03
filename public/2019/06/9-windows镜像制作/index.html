@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="windows镜像制作，qcow2格式，提供给OpenStack使用">
+
+
+<meta property="og:description" content="windows镜像制作，qcow2格式，提供给OpenStack使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9-windows镜像制作">
+<meta name="twitter:title" content="9-windows镜像制作">
+<meta property="og:url" content="https://azhegit.gitee.io/2019/06/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2019/06/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="windows镜像制作，qcow2格式，提供给OpenStack使用">
+<meta name="twitter:description" content="windows镜像制作，qcow2格式，提供给OpenStack使用">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-06-13T13:53:03">
+  
+  
+    <meta property="article:modified_time" content="2019-06-13T13:53:03">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="虚拟化&amp;云计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="openStack">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>9-windows镜像制作</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2019/06/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      9-windows镜像制作
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-06-13T13:53:03&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 六月 13 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>windows镜像制作，qcow2格式，提供给OpenStack使用</p>
+<p>[toc]</p>
+<h2 id="windows镜像制作">windows镜像制作</h2>
+<h3 id="1-硬件及软件准备">1. 硬件及软件准备</h3>
+<h4 id="1-物理机一台">1. 物理机一台</h4>
+<p>要求支持硬件虚拟化，将centos7安装在物理机上</p>
+<h4 id="2-下载windows镜像">2. 下载windows镜像</h4>
+<p>下载地址：https://msdn.itellyou.cn/
+下载cn_windows_server_2012_r2_vl_x64_dvd_2979220.iso</p>
+<h4 id="3-下载virtio-winiso">3. 下载virtio-win.iso</h4>
+<p>下载地址
+<a href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso">https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso</a>
+或
+<a href="https://fedoraproject.org/wiki/Windows_Virtio_Drivers#Direct_download">https://fedoraproject.org/wiki/Windows_Virtio_Drivers#Direct_download</a>
+<a href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html">https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html</a>
+因为win默认不支持virtio驱动，而通过openstack管理虚拟机是需要virtio驱动的。需要两个virtio驱动，一个是硬盘的，一个是网卡 。
+备注：要求对虚拟机进行内存监控，故在模版制作过程中需要安装virtio-balloon驱动</p>
+<h4 id="4-下载cloudbase-init">4. 下载cloudbase-init</h4>
+<p><a href="https://cloudbase.it/cloudbase-init/#download">https://cloudbase.it/cloudbase-init/#download</a></p>
+<h4 id="5-mac操作环境">5. Mac操作环境</h4>
+<h4 id="6-mac安装vnc-viewer">6. Mac安装VNC viewer</h4>
+<p><a href="https://www.realvnc.com/en/connect/download/viewer/">https://www.realvnc.com/en/connect/download/viewer/</a></p>
+<h3 id="2-环境准备">2. 环境准备</h3>
+<h4 id="1-检查系统是否支持kvm">1. 检查系统是否支持kvm</h4>
+<p>egrep &ldquo;(vmx|svm)&rdquo; /proc/cpuinfo
+支持正常有回显：
+<img src="https://www.azheimage.top/markdown-img-paste-20190611120220539.png" alt=""></p>
+<h4 id="2-安装软件包">2. 安装软件包</h4>
+<p>yum install qemu-kvm qemu-img –y</p>
+<h4 id="3-创建链接">3. 创建链接</h4>
+<p>ln -s /usr/libexec/qemu-kvm /usr/bin/kvm
+ln -s /usr/bin/qemu-img /usr/bin/kvm-img</p>
+<h3 id="3-镜像制作">3. 镜像制作</h3>
+<h4 id="1-创建镜像目录仅windows的iso以及virito文件拷贝到该目录">1. 创建镜像目录，仅windows的iso以及virito文件拷贝到该目录</h4>
+<p>mkdir win2012
+把下载好的文件上传到服务器
+<img src="https://www.azheimage.top/markdown-img-paste-2019061113493969.png" alt=""></p>
+<h4 id="2-制作磁盘文件qcow2磁盘大小根据系统需求设定">2. 制作磁盘文件（.qcow2），磁盘大小根据系统需求设定</h4>
+<p>qemu-img create -f qcow2 win2012.qcow2 20G</p>
+<h4 id="3-给存放镜像及磁盘文件的目录赋权否则创建云主机时无法打开磁盘文件">3. 给存放镜像及磁盘文件的目录赋权，否则创建云主机时无法打开磁盘文件</h4>
+<p>chown -R qemu:qemu /root/win2012</p>
+<h4 id="4-启动基于windows7的kvm虚拟机映射驱动器到vfd软盘">4. 启动基于windows7的kvm虚拟机，映射驱动器到vfd软盘</h4>
+<p>kvm -name win-lh<br>
+-m 2048<br>
+-cdrom /root/win2012/cn_windows_server_2012_r2_vl_x64_dvd_2979220.iso<br>
+-drive file=/root/win2012/virtio-win-0.1.141.iso,media=cdrom,index=1<br>
+-drive file=win2012.qcow2,media=disk,index=1,if=virtio,format=qcow2<br>
+-fda /root/win2012/virtio-win_amd64.vfd<br>
+-boot order=dc,once=d<br>
+-net nic,model=virtio<br>
+-net user -boot c<br>
+-balloon virtio<br>
+-display vnc=:3</p>
+<blockquote>
+<p>选项解释：
+-fda file 使用file作为软盘镜像.我们也可以通过将/dev/fd0作为文件名来使用主机软盘.
+-cdrom file 使用文件作为CD-ROM镜像（IDE光盘镜像）
+-boot [a|c|d] 由软盘(a),硬盘(c)或是CD-ROM(d).在默认的情况下由硬盘启动
+-net nic[,vlan=n][,macaddr=addr] 创建一个新的网卡并与VLAN n
+-net user[,vlan=n]  使用用户模式网络堆栈,这样就不需要管理员权限来运行.如果没有指 定-	net选项,这将是默认的情况
+-balloon virtio  使用virtio balloon</p>
+</blockquote>
+<h4 id="5-使用vnc客户端连接kvm安装系统及驱动">5. 使用vnc客户端连接kvm安装系统及驱动</h4>
+<ol>
+<li>输入10.57.30.15:3地址及端口
+<img src="https://www.azheimage.top/markdown-img-paste-20190611140027583.png" alt=""></li>
+<li>回车，可以看到启动界面
+<img src="https://www.azheimage.top/markdown-img-paste-20190611135948427.png" alt=""></li>
+<li>continue
+<img src="https://www.azheimage.top/markdown-img-paste-20190611140201636.png" alt=""></li>
+<li>现在安装
+<img src="https://www.azheimage.top/markdown-img-paste-20190611140256840.png" alt=""></li>
+<li>选择Datacenter（带GUI）
+<img src="https://www.azheimage.top/markdown-img-paste-20190611141001437.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20190611141126246.png" alt=""></li>
+<li>选择自定义
+<img src="https://www.azheimage.top/markdown-img-paste-20190611141352623.png" alt=""></li>
+<li>默认识别不了硬件，点击加载驱动程序
+<img src="https://www.azheimage.top/markdown-img-paste-20190611141525649.png" alt=""></li>
+<li>确定
+<img src="https://www.azheimage.top/markdown-img-paste-20190611141604353.png" alt=""></li>
+<li>看到有很多驱动程序，通过浏览选择对应版本的驱动
+<img src="https://www.azheimage.top/markdown-img-paste-20190611142011642.png" alt=""></li>
+<li>选择对应版本，此次是用的win2012R2镜像安装，所以选择Win2012R2
+<img src="https://www.azheimage.top/markdown-img-paste-2019061114220867.png" alt="">
+11. 点击下一步
+<img src="https://www.azheimage.top/markdown-img-paste-20190611142820558.png" alt=""></li>
+<li>下一步，准备安装
+<img src="https://www.azheimage.top/markdown-img-paste-20190611142910902.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20190611143923508.png" alt=""></li>
+<li>设置用户名密码
+<img src="https://www.azheimage.top/markdown-img-paste-20190611144119766.png" alt=""></li>
+<li>发送Ctrl+Alt+delete
+<img src="https://www.azheimage.top/markdown-img-paste-20190611144313877.png" alt=""></li>
+<li>输入设置的密码登录
+<img src="https://www.azheimage.top/markdown-img-paste-20190611144222786.png" alt=""></li>
+<li>登录成功
+<img src="https://www.azheimage.top/markdown-img-paste-20190611144418452.png" alt=""></li>
+<li>打开设备管理器，查看磁盘驱动正确
+其他设备中有两个驱动需要更新安装
+进入“设备管理器” - “系统设备”，安装“以太网控制器”，选择浏览计算机上的设备，在CD中选择对应的windows版本</li>
+<li>进入“设备管理器” - “系统设备”，安装“以太网控制器”，选择浏览计算机上的设备，在CD中选择对应的windows版本
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113440429.png" alt=""></li>
+<li>进入“设备管理器” - “系统设备”，安装“PCI设备”为“Virtio Balloon Driver”
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113453116.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113506315.png" alt=""></li>
+<li>virtio-balloon驱动安装后balloon服务并未安装，需要手动安装：
+将virtio-win光驱中的WIN7/X86目录中的blnsvr.exe文件拷贝到“c:/”(系统盘的任意目录)
+以管理员身份使用cmd命令行进入上述目录
+执行“BLNSVR.exe -i”用以安装BLNSVR服务
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113538580.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113549375.png" alt=""></li>
+<li>此时查看balloon服务正常运行，且自启动
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113610594.png" alt=""></li>
+<li>关闭防火墙
+<img src="https://www.azheimage.top/markdown-img-paste-20190612113825687.png" alt=""></li>
+<li>开启远程连接
+<img src="https://www.azheimage.top/markdown-img-paste-2019061211374509.png" alt=""></li>
+<li>正常关机保存设置
+查看磁盘文件格式并进行格式转换
+qemu-img info win2012.qcow2
+qemu-img convert -f qcow2 -O qcow2 win2012.qcow2  windowns2012.qcow2</li>
+</ol>
+<h4 id="6-上传制作好的镜像并激活">6. 上传制作好的镜像并激活</h4>
+<ol>
+<li>OpenStack界面操作上传镜像好的镜像</li>
+<li>创建实例</li>
+<li>下载windowns2012激活工具激活
+在新建的实例中下载工具并激活，下载地址：http://www.itmop.com/downinfo/168095.html</li>
+<li>保存快照</li>
+<li>将快照变成镜像
+glance image-create &ndash;name &ldquo;windows_server_2012_1&rdquo; &ndash;file 8eb12b73-95ed-404f-89ce-939ff474569f &ndash;disk-format qcow2 &ndash;container-format bare &ndash;protected False &ndash;progress  &ndash;property visibility=&quot;public&rdquo;</li>
+</ol>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/openstack/">openStack</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/10-%E5%88%B6%E4%BD%9Ccentos7%E9%95%9C%E5%83%8F/" data-tooltip="10-制作centos7镜像">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/8-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2kolla/" data-tooltip="8-自动化部署kolla">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/10-%E5%88%B6%E4%BD%9Ccentos7%E9%95%9C%E5%83%8F/" data-tooltip="10-制作centos7镜像">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/06/8-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2kolla/" data-tooltip="8-自动化部署kolla">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/06\/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C\/';
+          
+            this.page.identifier = '\/2019\/06\/9-windows%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

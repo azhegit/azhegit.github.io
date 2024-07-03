@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="FlinkSQL 参数理解">
+
+
+<meta property="og:description" content="FlinkSQL 参数理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-flinkSQL参数">
+<meta name="twitter:title" content="5-flinkSQL参数">
+<meta property="og:url" content="https://azhegit.gitee.io/2020/07/5-flinksql%E5%8F%82%E6%95%B0/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2020/07/5-flinksql%E5%8F%82%E6%95%B0/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="FlinkSQL 参数理解">
+<meta name="twitter:description" content="FlinkSQL 参数理解">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-07-26T14:25:31">
+  
+  
+    <meta property="article:modified_time" content="2020-07-26T14:25:31">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="大数据">
+    
+  
+  
+    
+      <meta property="article:tag" content="flink">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20181113165255716.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20181113165255716.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>5-flinkSQL参数</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2020/07/5-flinksql%E5%8F%82%E6%95%B0/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      5-flinkSQL参数
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-07-26T14:25:31&#43;08:00">
+        
+  
+  
+  
+  
+    2020 年 七月 26 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>FlinkSQL 参数理解</p>
+<ul>
+<li>
+<p>&lsquo;sink.partition-commit.trigger'='partition-time&rsquo;</p>
+</li>
+<li>
+<p>&lsquo;sink.partition-commit.policy.kind'='metastore,success-file&rsquo;
+分区提交策略，可以理解为使分区对下游可见的附加操作。metastore表示更新Hive Metastore中的表元数据，success-file则表示在分区内创建_SUCCESS标记文件。</p>
+</li>
+<li>
+<p>&lsquo;sink.partition-commit.delay'='1 min&rsquo;
+触发分区提交的时间特征。默认为processing-time，即处理时间，很显然在有延迟的情况下，可能会造成数据分区错乱。所以这里使用partition-time，即按照分区时间戳（即分区内数据对应的事件时间）来提交</p>
+</li>
+<li>
+<p>&lsquo;partition.time-extractor.timestamp-pattern'='$dt $h:$m:00&rsquo;
+触发分区提交的延迟。在时间特征设为partition-time的情况下，当水印时间戳大于分区创建时间加上此延迟时，分区才会真正提交。此值最好与分区粒度相同，例如若Hive表按1小时分区，此参数可设为1 h，若按10分钟分区，可设为10 min。</p>
+</li>
+<li>
+<p>&lsquo;sink.rolling-policy.file-size'='100M&rsquo;
+滚动策略200M,分区文件的最大值，超过这个大小，将会启动一个新文件。</p>
+</li>
+<li>
+<p>&lsquo;sink.rolling-policy.check-interval'='1min&rsquo;
+滚动文件的时间间隔:参考TimeUtils，分区文件滚动的最大时间间隔，超过这个时间，将会新启动一个文件</p>
+</li>
+<li>
+<p>&lsquo;partition.time-extractor.kind'='default&rsquo;
+多久检查一次非活跃的bucket</p>
+</li>
+</ul>
+<h3 id="滚动策略">滚动策略</h3>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>default</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sink.rolling-policy.file-size</td>
+<td>128MB</td>
+<td>MemorySize</td>
+<td>分区文件的最大值，超过这个大小，将会启动一个新文件。</td>
+</tr>
+<tr>
+<td>sink.rolling-policy.rollover-interval</td>
+<td>30 m</td>
+<td>Duration</td>
+<td>分区文件滚动的最大时间间隔，超过这个时间，将会新启动一个文件</td>
+</tr>
+<tr>
+<td>sink.rolling-policy.check-interval</td>
+<td>1 m</td>
+<td>Duration</td>
+<td>一个时间间隔，定期去检查上面那个配置指定的策略下，文件是否应该滚动生成新文件.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在写入列格式（比如parquet、orc）的时候，上述的配置和checkpoint的间隔一起来控制滚动策略，也就是说sink.rolling-policy.file-size、sink.rolling-policy.rollover-interval、checkpoint间隔，这三个选项，只要有一个条件达到了，然后就会触发分区文件的滚动，结束上一个文件的写入，生成新文件。</li>
+<li>对于写入行格式的数据，比如json、csv，主要是靠sink.rolling-policy.file-size、sink.rolling-policy.rollover-interval，也就是文件的大小和时间来控制写入数据的滚动策略.</li>
+</ul>
+<h3 id="分区提交">分区提交</h3>
+<p>在往一个分区写完了数据之后，我们希望做一些工作来通知下游。比如在分区目录写一个SUCCESS文件，或者是对于hive来说，去更新metastore的数据，自动刷新一下分区等等。
+分区的提交主要依赖于触发器和提交的策略：</p>
+<ul>
+<li>触发器：即什么时候触发分区的提交</li>
+<li>提交策略：也就是分区写完之后我们做什么，目前系统提供了两种内置策略：
+<ol>
+<li>往分区目录写一个空SUCCESS文件；</li>
+<li>更新元数据.</li>
+</ol>
+</li>
+</ul>
+<h3 id="分区提交触发器">分区提交触发器</h3>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>default</th>
+<th>type</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sink.partition-commit.trigger</td>
+<td>process-time</td>
+<td>String</td>
+<td>触发器的类型，目前系统提供了两种：process-time 和 partition-time，如果选择了process-time，则当系统时间大于processtime的时候触发提交，如果选择了partition-time，则需要先从分区字段里面抽取分区时间的开始时间，然后当水印大于这个分区时间的时候触发分区的提交.</td>
+</tr>
+<tr>
+<td>sink.partition-commit.delay</td>
+<td>0 s</td>
+<td>Duration</td>
+<td>提交分区的延迟时间</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>process-time.  这种提交方式依赖于系统的时间，一旦遇到数据延迟等情况，会造成分区和分区的数据不一致。</li>
+<li>partition-time ：这种情况需要从分区字段里抽取出来相应的pattern，具体可参考下一个段落分区的抽取。</li>
+<li>sink.partition-commit.delay：一旦这个数值设置不为0，则在process-time情况下，当系统时间大于分区创建时间加上delay延迟，会触发分区提交； 如果是在partition-time 情况下，则需要水印大于分区创建时间加上delay时间，会触发分区提交.</li>
+</ol>
+<p>第一个参数process-time、partition-time，我们不用做过多的解释，就类似于flink中的processtime和eventtime。
+第二个参数sink.partition-commit.delay我们用实际案例解释下：
+比如我们配置的是分区是/yyyy-MM-dd/HH/,写入的是ORC列格式，checkpoint配置的间隔是一分钟，也就是默认情况下会每分钟生成一个orc文件，最终会在每个分区(/yyyy-MM-dd/HH/)下面生成60个orc文件。
+比如当前系统正在写入/day=2020-07-06/h=10/分区的数据，那么这个分区的创建时间是2020-07-06 10:00:00，如果这个delay配置采用的是默认值，也就是0s，这个时候当写完了一个ORC文件，也就是2020-07-06 10:01:00分钟的时候，就会触发分区提交，比如更新hive的元数据，这个时候我们去查询hive就能查到刚刚写入的文件；如果我们想/day=2020-07-06/h=10/这个分区的60个文件都写完了再更新分区，那么我们可以将这个delay设置成 1h，也就是等到2020-07-06 11:00:00的时候才会触发分区提交，我们才会看到/2020-07-06/10/分区下面的所有数据</p>
+<h3 id="分区时间的抽取">分区时间的抽取</h3>
+<p>从分区值里抽取分区时间，我们可以理解为上面触发器参数配置为partition-time的时候，分区的创建时间，当水印大于这个时间+delay的时候触发分区的提交.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Type</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>partition.time-extractor.kind</td>
+<td>default</td>
+<td>String</td>
+<td>抽取分区的方式，目前有default和custom两种，如果是default，需要配置partition.time-extractor.timestamp-pattern，如果是custom，需要配置自定义class</td>
+</tr>
+<tr>
+<td>partition.time-extractor.class</td>
+<td>null</td>
+<td>String</td>
+<td>自定义class</td>
+</tr>
+<tr>
+<td>partition.time-extractor.timestamp-pattern</td>
+<td>null</td>
+<td>String</td>
+<td>从分区值中抽取时间戳的模式，需要组织成yyyy-MM-dd HH:mm:ss格式，比如 对于上面我们提到的分区/yyyy-MM-dd/HH/，其中两个分区字段对应的字段名分为是dt和hour，那么我们这个timestamp-pattern 可以配置成&rsquo;hour:00:00&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<p>自定义抽取分区时间的话，需要实现PartitionTimeExtractor接口：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PartitionTimeExtractor</span> <span style="color:#66d9ef">extends</span> Serializable <span style="color:#f92672">{</span>
+
+ String DEFAULT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">;</span>
+ String CUSTOM <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;custom&#34;</span><span style="color:#f92672">;</span>
+
+ <span style="color:#75715e">/**
+</span><span style="color:#75715e">  * Extract time from partition keys and values.
+</span><span style="color:#75715e">  */</span>
+ LocalDateTime <span style="color:#a6e22e">extract</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> partitionKeys<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> partitionValues<span style="color:#f92672">);</span>
+    <span style="color:#f92672">...................</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="分区提交策略">分区提交策略</h3>
+<p>定义了分区提交的策略，也就是写完分区数据之后做什么事情，目前系统提供了以下行为：
+metastore，只支持hive table，也就是写完数据之后，更新hive的元数据.success file:  写完数据，往分区文件写一个success file.自定义</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Default</th>
+<th>Type</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sink.partition-commit.policy.kind</td>
+<td>null</td>
+<td>string</td>
+<td>可选：metastore,success-file,custom，这个可以写一个或者多个，比如可以这样，&lsquo;metastore,success-file&rsquo;</td>
+</tr>
+<tr>
+<td>sink.partition-commit.policy.class</td>
+<td>null</td>
+<td>string</td>
+<td>如果上述选择custom的话，这里指定相应的class</td>
+</tr>
+<tr>
+<td>sink.partition-commit.success-file.name</td>
+<td>null</td>
+<td>string</td>
+<td>如果上述选择的是success-file，这里可以指定写入的文件名，默认是 _SUCCESS。checkpoint 是用来切分文件的时间间隔。_SUCCESS delay+watermark&gt;分区时间就生成</td>
+</tr>
+<tr>
+<td>&lsquo;sink.partition-commit.success-file.name&rsquo;</td>
+<td>null</td>
+<td>string</td>
+<td>成功文件名称。默认_success。</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/flink/">flink</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/08/ansible%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2/" data-tooltip="ansible离线部署">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/" data-tooltip="4-flink1.11.1对接hive2.3.4">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/08/ansible%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2/" data-tooltip="ansible离线部署">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/" data-tooltip="4-flink1.11.1对接hive2.3.4">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2020\/07\/5-flinksql%E5%8F%82%E6%95%B0\/';
+          
+            this.page.identifier = '\/2020\/07\/5-flinksql%E5%8F%82%E6%95%B0\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

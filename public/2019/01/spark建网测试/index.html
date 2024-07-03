@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库">
+
+
+<meta property="og:description" content="neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spark建网测试">
+<meta name="twitter:title" content="spark建网测试">
+<meta property="og:url" content="https://azhegit.gitee.io/2019/01/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2019/01/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库">
+<meta name="twitter:description" content="neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-01-10T10:37:49">
+  
+  
+    <meta property="article:modified_time" content="2019-01-10T10:37:49">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="图计算">
+    
+  
+  
+    
+      <meta property="article:tag" content="neo4j">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>spark建网测试</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2019/01/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      spark建网测试
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-01-10T10:37:49&#43;08:00">
+        
+  
+  
+  
+  
+    2019 年 一月 10 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%9b%be%e8%ae%a1%e7%ae%97">图计算</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>neo4j初始化建网，通过MySQL，sparkSQL进行清洗，生成初始化neo4j需要库</p>
+<h1 id="初始化建网测试流程">初始化建网测试流程</h1>
+<p>[toc]</p>
+<h3 id="测试目标">测试目标</h3>
+<p>原始数据100万，1000万，1亿建网性能测试</p>
+<h3 id="测试流程">测试流程</h3>
+<h4 id="1-数据生成">1. 数据生成：</h4>
+<p>MockData模拟生成测试数据</p>
+<h5 id="数据格式">数据格式</h5>
+<pre><code>name,cardId,tel,road,companyAddr,email,date,fromBankCard,toBankCard,money
+张龙天,110110198611240000,13100006196,台西纬五路60号-2,吴兴大厦65号-13,g1ot@ask.com,2016-09-10 13:11:12,6228760705002779059,6228760705002776468,9206.00
+漆婷,110110198503300000,15600004433,鱼山广场102号-18,鱼山支街89号-11,4c@ask.com,2017-12-18 04:30:04,6228760705002777167,6228760705002771293,5025.00
+郭策中,110110199703190000,15100009007,沈阳支大厦114号-6,天台路123号-7,6nubl@263.net,2017-10-17 17:36:13,6228760705002776099,6228760705002776797,6093.00
+阳荣琼,110110198206200000,13600008908,宁国二支路107号-20,观海二广场83号-4,ap@sohu.com,2012-09-21 23:46:02,6228760705002772779,6228760705002776934,4466.00
+刘和,110110198902240000,15000004908,福建广场41号-3,湖北街105号-15,nrfz@0355.net,2013-11-09 17:03:12,6228760705002771812,6228760705002771578,5766.00
+</code></pre><h4 id="2-数据清洗">2. 数据清洗：</h4>
+<p>对生成的数据进行数据清洗，生成node跟link的数据(csv格式)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- 建网关系整理：
+</span><span style="color:#75715e">-- 节点：
+</span><span style="color:#75715e">--   6种节点 1-身份证号:cardId、4-手机号:tel、7-居住地址(road)、8-单位名称(companyAddr)、9-email，2-fromBankCard
+</span><span style="color:#75715e">-- 关系整理：
+</span><span style="color:#75715e">--   5种关系：身份证-手机号，身份证--&gt;居住地址，身份证--&gt;单位名称，身份证--&gt;邮箱，身份证--&gt;付款卡号
+</span></code></pre></div><h5 id="两种清洗方式">两种清洗方式</h5>
+<h6 id="1-利用mysql执行sql语句处理">1. 利用MySQL，执行sql语句处理</h6>
+<blockquote>
+<p>① 100万csv数据导入mysql，导入时间：5分钟
+② 执行节点清洗的sql，执行时间5分钟
+<img src="https://www.azheimage.top/markdown-img-paste-20181016173225147.png" alt="">
+③ 执行关系清洗的sql，执行时间5分钟
+<img src="https://www.azheimage.top/markdown-img-paste-20181016173501305.png" alt="">
+④ 节点，关系表数据导出成csv，4943344节点(16.30 sec)，4999998关系(16.30 sec)
+<strong>100万数据处理需要15分钟</strong></p>
+</blockquote>
+<h6 id="2-编写spark程序用sparksql处理">2. 编写spark程序，用SparkSQL处理</h6>
+<blockquote>
+<p>① 上传csv文件到hdfs
+② spark加载csv文件
+③ 清洗节点与关系
+④ 结果数据保存csv文件到hdfs
+<strong>1千万数据，spark执行时间：7分1秒213毫秒</strong>
+<strong>1亿数据，spark执行时间：执行时间：54分32秒262毫秒</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据量</th>
+<th>数据大小</th>
+<th>Spark资源</th>
+<th>Spark处理</th>
+<th>初始化库时间</th>
+<th>Node.csv</th>
+<th>link.csv</th>
+<th>初始化库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1千万</td>
+<td>1.6G</td>
+<td>24Core 80G</td>
+<td>7分1秒</td>
+<td>5m 12s</td>
+<td>1.3G (940万节点)</td>
+<td>8.5G (499万关系)</td>
+<td>16G (2940万属性)</td>
+</tr>
+<tr>
+<td>1亿</td>
+<td>16G</td>
+<td>27Core 126G</td>
+<td>54分32秒</td>
+<td>38m 33s</td>
+<td>6G (4665万节点)</td>
+<td>77G (4.48亿关系)</td>
+<td>129G (5.6亿属性)</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>比较两种数据处理方式：</strong></em></p>
+<ol>
+<li>mysql方式不需要依赖其组件，不需要编写程序来执行，可以写SQL进行数据探测，适合<strong>小批量</strong>数据量，但是处理时间<strong>较长</strong></li>
+<li>spark方式依赖大数据组件（hdfs，spark），处理性能对比mysql大幅度提升，推测用spark处理方式可以提升性能<strong>20倍</strong>左右，但是需要编写程序，适合相对稳定的处理逻辑</li>
+</ol>
+<h4 id="3-初始化neo4j库">3. 初始化NEO4J库：</h4>
+<p>把csv文件导入到neo4j，建立节点，关系，初始化图数据库</p>
+<h5 id="100万数据">100万数据：</h5>
+<blockquote>
+<p>IMPORT DONE in 1m 48s 893ms.
+Imported:
+2451960 nodes
+4992534 relationships
+29423520 properties
+Peak memory usage: 1.05 GB</p>
+</blockquote>
+<h5 id="1000万数据">1000万数据：</h5>
+<blockquote>
+<p>IMPORT DONE in 5m 12s 86ms.
+Imported:
+9418779 nodes
+49281340 relationships
+113025348 properties
+Peak memory usage: 1.12 GB</p>
+</blockquote>
+<h5 id="1亿数据">1亿数据：</h5>
+<blockquote>
+<p>IMPORT DONE in 38m 33s 714ms.
+Imported:
+46651360 nodes
+448118100 relationships
+559816320 properties
+Peak memory usage: 1.57 GB</p>
+</blockquote>
+<p>spark计算1亿条数据处理资源消耗截图
+<img src="https://www.azheimage.top/markdown-img-paste-20181016152003665.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20181016151740368.png" alt="">
+<img src="https://www.azheimage.top/markdown-img-paste-20181016152104739.png" alt=""></p>
+<p></p>
+<p></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/neo4j/">neo4j</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/01/gitee-hugo%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99http%E6%94%B9%E4%B8%BAhttps/" data-tooltip="gitee&#43;hugo方式搭建网站http改为https">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/12/%E4%BF%A1%E6%81%AF%E4%BF%AE%E5%A4%8D%E7%AE%97%E6%B3%95/" data-tooltip="信息修复算法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/01/gitee-hugo%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99http%E6%94%B9%E4%B8%BAhttps/" data-tooltip="gitee&#43;hugo方式搭建网站http改为https">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/12/%E4%BF%A1%E6%81%AF%E4%BF%AE%E5%A4%8D%E7%AE%97%E6%B3%95/" data-tooltip="信息修复算法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/01\/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95\/';
+          
+            this.page.identifier = '\/2019\/01\/spark%E5%BB%BA%E7%BD%91%E6%B5%8B%E8%AF%95\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

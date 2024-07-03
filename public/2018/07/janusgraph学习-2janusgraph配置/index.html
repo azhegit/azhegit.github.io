@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="阿·哲">
+<meta name="keywords" content="">
+<meta name="description" content="JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。">
+
+
+<meta property="og:description" content="JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Janusgraph学习--2(Janusgraph配置)">
+<meta name="twitter:title" content="Janusgraph学习--2(Janusgraph配置)">
+<meta property="og:url" content="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-2janusgraph%E9%85%8D%E7%BD%AE/">
+<meta property="twitter:url" content="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-2janusgraph%E9%85%8D%E7%BD%AE/">
+<meta property="og:site_name" content="☀️哲の小窝☀️">
+<meta property="og:description" content="JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。">
+<meta name="twitter:description" content="JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-07-16T09:18:38">
+  
+  
+    <meta property="article:modified_time" content="2018-07-16T09:18:38">
+  
+  
+  
+    
+      <meta property="article:section" content="技术">
+    
+      <meta property="article:section" content="数据库">
+    
+  
+  
+    
+      <meta property="article:tag" content="janusgraph">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180716213938138.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180716213938138.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+  <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+    <title>Janusgraph学习--2(Janusgraph配置)</title>
+
+    <link rel="icon" href="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+    
+
+    
+
+    <link rel="canonical" href="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-2janusgraph%E9%85%8D%E7%BD%AE/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://azhegit.gitee.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">阿·哲</h4>
+        
+          <h5 class="sidebar-profile-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Janusgraph学习--2(Janusgraph配置)
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-07-16T09:18:38&#43;08:00">
+        
+  
+  
+  
+  
+    2018 年 七月 16 号
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+    
+      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>JanusGraph是一个可扩展的图形数据库，专门用于存储和查询包含分布在多机群集中的数千亿个顶点和边缘的图形。JanusGraph是一个事务数据库，可以支持数千个并发用户实时执行复杂的图遍历。</p>
+<!-- raw HTML omitted -->
+<h1 id="本文讲述janusgraphe的配置信息">本文讲述JanusgraphE的配置信息：</h1>
+<p><em>初次接触￣□￣｜｜，学习记录一下</em></p>
+<h2 id="janusgraph-logo">Janusgraph Logo：</h2>
+<p><img src="https://www.azheimage.top/markdown-img-paste-20180713173354102.png" alt=""></p>
+<ul>
+<li>
+<h3 id="janusgraph配置">JanusGraph配置：</h3>
+</li>
+</ul>
+<p>JanusGraph图数据库集群由一个或多个JanusGraph实例组成。要打开JanusGraph实例，必须提供一个配置，指定如何设置JanusGraph。</p>
+<p>JanusGraph分为本地和全局配置. 本地配置适用于单独的JanusGraph实例. 全局配置适用于集群中的全部实例. JanusGraph有以下5个范围的配置:</p>
+<ul>
+<li>LOCAL 只适用于单独的JanusGraph实例, 而且需要在实例初始化时提供</li>
+<li>MASKABLE 用本地配置文件启动的单独实例, MASKABLE参数可以被覆盖. 如果本地配置文件没有提供参数, 会读取全局集群的配置.</li>
+<li>GLOBAL 从全局集群配置中读取, 而且不能被覆盖</li>
+<li>GLOBAL_OFFLINE 与GLOBAL类似, 但修改这类参数, 需要启动集群, 确保集群中获得同一个值</li>
+<li>FIXED 与GLOBAL类似, 但这些值不能被修改
+当集群中第一个实例启动, 全局配置便被从本地文件初始化了. 可以通过系统提供的API来修改全局配置参数. 调用实例g.getManagementSystem()方法,可以访问管理API.例如, 修改一个集群默认的缓存行为</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">gremlin<span style="color:#f92672">&gt;</span> graph <span style="color:#f92672">=</span> JanusGraphFactory.<span style="color:#66d9ef">open</span>(<span style="color:#e6db74">&#39;conf/janusgraph-hbase.properties&#39;</span>)
+<span style="color:#f92672">==&gt;</span>standardjanusgraph[hbase:[<span style="color:#ae81ff">127</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">1</span>]]
+gremlin<span style="color:#f92672">&gt;</span> mgmt <span style="color:#f92672">=</span> graph.openManagement()
+<span style="color:#f92672">==&gt;</span>org.janusgraph.graphdb.<span style="color:#66d9ef">database</span>.management.ManagementSystem<span style="color:#f92672">@</span><span style="color:#ae81ff">7</span>ed3df3b
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">get</span>(<span style="color:#e6db74">&#39;cache.db-cache&#39;</span>)
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">false</span>
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">set</span>(<span style="color:#e6db74">&#39;cache.db-cache&#39;</span>, <span style="color:#66d9ef">true</span>)
+<span style="color:#f92672">==&gt;</span>org.janusgraph.diskstorage.configuration.UserModifiableConfiguration<span style="color:#f92672">@</span><span style="color:#ae81ff">2</span>cd4e16a
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">get</span>(<span style="color:#e6db74">&#39;cache.db-cache&#39;</span>)
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">true</span>
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">commit</span>()
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">null</span>
+</code></pre></div><ul>
+<li>
+<h3 id="修改离线参数">修改离线参数</h3>
+</li>
+</ul>
+<p>修改配置参数不会影响运行着的实例, 只会对新启动的实例有作用. 修改GLOBAL_OFFLINE级别的配置, 需要重启集群, 让全部实例生效. 如下步骤:</p>
+<ul>
+<li>
+<p>集群仅留一个实例</p>
+</li>
+<li>
+<p>连接到该实例上</p>
+</li>
+<li>
+<p>确保全部业务都关闭</p>
+</li>
+<li>
+<p>确保没有新的业务被启动</p>
+</li>
+<li>
+<p>打开管理API</p>
+</li>
+<li>
+<p>修改配置参数</p>
+</li>
+<li>
+<p>调用commit方法, commit方法会自动将实例停止</p>
+</li>
+<li>
+<p>重启全部实例</p>
+</li>
+<li>
+<h3 id="边缘标签多样性">边缘标签多样性</h3>
+</li>
+</ul>
+<h5 id="多重性设置">多重性设置</h5>
+<ul>
+<li>MULTI：允许任意一对顶点之间的同一标签的多个边。换句话说，该图是关于这种边缘标签的多图。边缘多样性没有约束。</li>
+<li>SIMPLE：在任何一对顶点之间最多允许此类标签的一个边缘。换句话说，该图是关于标签的简单图。确保边缘对于给定标签和顶点对是唯一的。</li>
+<li>MANY2ONE：在图形中的任何顶点上最多允许此标签的一个输出边缘，但不对输入边缘施加约束。边缘标签mother是MANY2ONE多样性的一个例子，因为每个人最多只有一个母亲，但母亲可以有多个孩子。</li>
+<li>ONE2MANY：在图形中的任何顶点上最多允许此标签的一个传入边缘，但不对输出边缘施加约束。边缘标签winnerOf是ONE2MANY多样性的一个例子，因为每个比赛最多只赢一个人，但一个人可以赢得多个比赛。</li>
+<li>ONE2ONE：在图表的任何顶点上最多允许此标签的一个输入边和一个输出边。边缘标签结婚是ONE2ONE多样性的一个例子，因为一个人与另一个人结婚。
+默认的多重性是<strong>MULTI</strong>。通过调用make()构建器上的方法来完成边缘标签的定义，该构建器返回定义的边缘标签，如以下示例所示。
+sql</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">gremlin<span style="color:#f92672">&gt;</span> mgmt <span style="color:#f92672">=</span> graph.openManagement()
+<span style="color:#f92672">==&gt;</span>org.janusgraph.graphdb.<span style="color:#66d9ef">database</span>.management.ManagementSystem<span style="color:#f92672">@</span><span style="color:#ae81ff">76</span>ececd
+gremlin<span style="color:#f92672">&gt;</span> follow <span style="color:#f92672">=</span> mgmt.makeEdgeLabel(<span style="color:#e6db74">&#39;follow&#39;</span>).multiplicity(MULTI).make()
+<span style="color:#f92672">==&gt;</span>follow
+gremlin<span style="color:#f92672">&gt;</span> mother <span style="color:#f92672">=</span> mgmt.makeEdgeLabel(<span style="color:#e6db74">&#39;mother&#39;</span>).multiplicity(MANY2ONE).make()
+<span style="color:#f92672">==&gt;</span>mother
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">commit</span>()
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">null</span>
+</code></pre></div><ul>
+<li>
+<h3 id="property-key-cardinality">Property Key Cardinality</h3>
+</li>
+</ul>
+<p>使用cardinality(Cardinality)定义与在任何给定的顶点的键关联的值允许的基数。</p>
+<h5 id="基数设置">基数设置</h5>
+<ul>
+<li>SINGLE：对于此键，每个元素最多允许一个值。换句话说，键→值映射对于图中的所有元素都是唯一的。属性键birthDate是SINGLE基数的一个例子，因为每个人只有一个出生日期。</li>
+<li>LIST：允许每个元素的任意数量的值用于此类键。换句话说，密钥与允许重复值的值列表相关联。假设我们将传感器建模为图形中的顶点，则属性键sensorReading是具有LIST基数的示例，以允许记录大量（可能重复的）传感器读数。</li>
+<li>SET：允许多个值，但每个元素没有重复值用于此类键。换句话说，密钥与一组值相关联。name如果我们想要捕获个人的所有姓名（包括昵称，婚前姓名等），则属性键具有SET基数。
+默认基数设置为SINGLE。请注意，边和属性上使用的属性键具有基数SINGLE。不支持为边或属性上的单个键附加多个值。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">gremlin<span style="color:#f92672">&gt;</span> mgmt <span style="color:#f92672">=</span> graph.openManagement()
+<span style="color:#f92672">==&gt;</span>org.janusgraph.graphdb.<span style="color:#66d9ef">database</span>.management.ManagementSystem<span style="color:#f92672">@</span><span style="color:#ae81ff">20</span>ab76ee
+gremlin<span style="color:#f92672">&gt;</span> birthDate <span style="color:#f92672">=</span> mgmt.makePropertyKey(<span style="color:#e6db74">&#39;birthDate&#39;</span>).dataType(Long.<span style="color:#66d9ef">class</span>).<span style="color:#66d9ef">cardinality</span>(<span style="color:#66d9ef">Cardinality</span>.SINGLE).make()
+<span style="color:#f92672">==&gt;</span>birthDate
+gremlin<span style="color:#f92672">&gt;</span> name <span style="color:#f92672">=</span> mgmt.makePropertyKey(<span style="color:#e6db74">&#39;name&#39;</span>).dataType(String.<span style="color:#66d9ef">class</span>).<span style="color:#66d9ef">cardinality</span>(<span style="color:#66d9ef">Cardinality</span>.<span style="color:#66d9ef">SET</span>).make()
+<span style="color:#f92672">==&gt;</span>name
+gremlin<span style="color:#f92672">&gt;</span> sensorReading <span style="color:#f92672">=</span> mgmt.makePropertyKey(<span style="color:#e6db74">&#39;sensorReading&#39;</span>).dataType(Double.<span style="color:#66d9ef">class</span>).<span style="color:#66d9ef">cardinality</span>(<span style="color:#66d9ef">Cardinality</span>.LIST).make()
+<span style="color:#f92672">==&gt;</span>sensorReading
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">commit</span>()
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">null</span>
+</code></pre></div><ul>
+<li>
+<h3 id="关系类型">关系类型</h3>
+</li>
+</ul>
+<p>边标签和属性键共同称为关系类型。关系类型的名称在图形中必须是唯一的，这意味着属性键和边缘标签不能具有相同的名称。JanusGraph API中有一些方法可以查询是否存在或检索包含属性键和边缘标签的关系类型。</p>
+<pre><code class="language-sqlsql" data-lang="sqlsql">gremlin&gt; mgmt = graph.openManagement()
+==&gt;org.janusgraph.graphdb.database.management.ManagementSystem@294aba23
+gremlin&gt; if (mgmt.containsRelationType('name'))
+......1&gt;     name = mgmt.getPropertyKey('name')
+==&gt;name
+gremlin&gt; mgmt.getRelationTypes(EdgeLabel.class)
+==&gt;follow
+==&gt;mother
+gremlin&gt; mgmt.commit()
+==&gt;null
+</code></pre><ul>
+<li>
+<h3 id="像边一样顶点有标签与边缘标签不同顶点标签是可选的顶点标签可用于区分不同类型的顶点例如用户顶点和产品顶点">像边一样，顶点有标签。与边缘标签不同，顶点标签是可选的。顶点标签可用于区分不同类型的顶点，例如用户顶点和产品顶点。</h3>
+</li>
+</ul>
+<p>虽然标签在概念和数据模型级别是可选的，但JanusGraph会为所有顶点分配标签作为内部实现细节。由addVertex方法创建的顶点使用JanusGraph的默认标签。</p>
+<p>要创建标签，请调用makeVertexLabel(String).make()打开的图形或管理事务，并提供顶点标签的名称作为参数。顶点标签名称在图表中必须是唯一的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">gremlin<span style="color:#f92672">&gt;</span> mgmt <span style="color:#f92672">=</span> graph.openManagement()
+<span style="color:#f92672">==&gt;</span>org.janusgraph.graphdb.<span style="color:#66d9ef">database</span>.management.ManagementSystem<span style="color:#f92672">@</span><span style="color:#ae81ff">6</span>ec63f8
+gremlin<span style="color:#f92672">&gt;</span> person <span style="color:#f92672">=</span> mgmt.makeVertexLabel(<span style="color:#e6db74">&#39;person&#39;</span>).make()
+<span style="color:#f92672">==&gt;</span>person
+gremlin<span style="color:#f92672">&gt;</span> mgmt.<span style="color:#66d9ef">commit</span>()
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">null</span>
+<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建一个标记的顶点</span>
+gremlin<span style="color:#f92672">&gt;</span> person <span style="color:#f92672">=</span> graph.addVertex(label, <span style="color:#e6db74">&#39;person&#39;</span>)
+<span style="color:#f92672">==&gt;</span>v[<span style="color:#ae81ff">4136</span>]
+<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">创建一个未标记的顶点</span>
+gremlin<span style="color:#f92672">&gt;</span> v <span style="color:#f92672">=</span> graph.addVertex()
+<span style="color:#f92672">==&gt;</span>v[<span style="color:#ae81ff">4288</span>]
+gremlin<span style="color:#f92672">&gt;</span> graph.tx().<span style="color:#66d9ef">commit</span>()
+<span style="color:#f92672">==&gt;</span><span style="color:#66d9ef">null</span>
+</code></pre></div>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/janusgraph/">janusgraph</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-3greemlin%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/" data-tooltip="Janusgraph学习--3(Greemlin查询语言)">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-1janusgraph%E5%AE%89%E8%A3%85/" data-tooltip="Janusgraph学习--1(Janusgraph安装)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 阿·哲. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-3greemlin%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/" data-tooltip="Janusgraph学习--3(Greemlin查询语言)">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/07/janusgraph%E5%AD%A6%E4%B9%A0-1janusgraph%E5%AE%89%E8%A3%85/" data-tooltip="Janusgraph学习--1(Janusgraph安装)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
+    
+    <h4 id="about-card-name">阿·哲</h4>
+    
+      <div id="about-card-bio">从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        码农🙈
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        杭州
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://www.azheimage.top/markdown-img-paste-20200805172727209.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/azhegit.gitee.io\/2018\/07\/janusgraph%E5%AD%A6%E4%B9%A0-2janusgraph%E9%85%8D%E7%BD%AE\/';
+          
+            this.page.identifier = '\/2018\/07\/janusgraph%E5%AD%A6%E4%B9%A0-2janusgraph%E9%85%8D%E7%BD%AE\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
