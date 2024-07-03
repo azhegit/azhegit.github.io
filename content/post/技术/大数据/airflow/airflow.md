@@ -2,11 +2,11 @@
 categories:
   - 技术
   - 大数据
-date: "2024-07-03 19:59:56+08:00"
+date: "2023-07-15 19:59:58+08:00"
 tags:
   - aws
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180725101125909.png
-title: 5.airflow
+title: airflow
 ---
 
 pip 依赖安装

@@ -2,11 +2,11 @@
 categories:
   - 技术
   - 大数据
-date: "2024-07-03 19:59:56+08:00"
+date: "2023-08-15 19:59:56+08:00"
 tags:
   - aws
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20181113164516536.png
-title: 6.etl_demo
+title: airflow_etl_demo
 ---
 
 ## 步骤一：准备数据目录及数据文件，建表及加载数据
@@ -118,6 +118,3 @@ aws s3 mv s3://xxx/yyy/tmp_for_update s3://xxx/yyy/testtable/ --recursive
 drop table dw_rec_db.tmp_for_update;
 
 aws s3 rm s3://rec-collect/db/tmp_for_update/ --recursive
-————————————————
-版权声明：本文为 CSDN 博主「finalcj」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/finalcj/article/details/123067911

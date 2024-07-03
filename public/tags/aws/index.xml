@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on ☀️哲の小窝☀️</title>
+    <link>http://localhost:1313/tags/aws/</link>
+    <description>Recent content in Aws on ☀️哲の小窝☀️</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 15 Aug 2023 19:59:56 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6.etl_demo</title>
+      <link>http://localhost:1313/2023/08/6.etl_demo/</link>
+      <pubDate>Tue, 15 Aug 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/08/6.etl_demo/</guid>
+      <description>&lt;h2 id=&#34;步骤一准备数据目录及数据文件建表及加载数据&#34;&gt;步骤一：准备数据目录及数据文件，建表及加载数据&lt;/h2&gt;&#xA;&lt;p&gt;gavin_demo_database&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Airflow本机开发环境</title>
+      <link>http://localhost:1313/2023/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 23 Jul 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;安装 docker&lt;/li&gt;&#xA;&lt;li&gt;安装 docker-compose&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>5.airflow</title>
+      <link>http://localhost:1313/2023/07/5.airflow/</link>
+      <pubDate>Sat, 15 Jul 2023 19:59:58 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/5.airflow/</guid>
+      <description>&lt;p&gt;pip 依赖安装&#xA;pip install apache-airflow -i &lt;a href=&#34;https://pypi.douban.com/simple&#34;&gt;https://pypi.douban.com/simple&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>4. lambda对接kinesis</title>
+      <link>http://localhost:1313/2023/07/4.-lambda%E5%AF%B9%E6%8E%A5kinesis/</link>
+      <pubDate>Sat, 15 Jul 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/4.-lambda%E5%AF%B9%E6%8E%A5kinesis/</guid>
+      <description>&lt;p&gt;aws lambda create-function &amp;ndash;function-name ProcessKinesisRecords &lt;br&gt;&#xA;&amp;ndash;zip-file fileb://function.zip &amp;ndash;handler index.handler &amp;ndash;runtime nodejs18.x &lt;br&gt;&#xA;&amp;ndash;role arn:aws:iam::463517587431:role/lambda-kinesis-role-gavin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3. kinesis使用</title>
+      <link>http://localhost:1313/2023/07/3.-kinesis%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 13 Jul 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/3.-kinesis%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h2 id=&#34;amazon-kinesis-data-streams-数据流可以用-kafka-类比理解&#34;&gt;Amazon Kinesis Data Streams 数据流(可以用 kafka 类比理解)&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;创建数据流 StockTradeStream&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>2. glue使用</title>
+      <link>http://localhost:1313/2023/07/2.-glue%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 10 Jul 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/2.-glue%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;p&gt;创建 glue database&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1. S3使用</title>
+      <link>http://localhost:1313/2023/07/1.-s3%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 03 Jul 2023 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2023/07/1.-s3%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;p&gt;创建 S3 存储桶&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
