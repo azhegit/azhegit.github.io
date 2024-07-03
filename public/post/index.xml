@@ -6,14 +6,63 @@
     <description>Recent content in Posts on ☀️哲の小窝☀️</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 07 Feb 2023 17:23:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jul 2024 20:11:21 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>欢迎来到 ☀️哲の小窝☀️</title>
-      <link>http://localhost:1313/2023/02/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</link>
-      <pubDate>Tue, 07 Feb 2023 17:23:26 +0800</pubDate>
-      <guid>http://localhost:1313/2023/02/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</guid>
+      <link>http://localhost:1313/2024/07/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</link>
+      <pubDate>Wed, 03 Jul 2024 20:11:21 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-%EF%B8%8F%E5%93%B2%E3%81%AE%E5%B0%8F%E7%AA%9D%EF%B8%8F/</guid>
       <description>&lt;p&gt;这个小窝就是用来记录平时工作，学习，随笔的地方！&lt;/p&gt;&#xA;&lt;p&gt;有问题联系可以加我微信👇&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1. S3使用</title>
+      <link>http://localhost:1313/2024/07/1.-s3%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/1.-s3%E4%BD%BF%E7%94%A8/</guid>
+      <description>创建S3存储桶 部分参数，主要是存储桶名称，注意不能用下换线 建好了之后 </description>
+    </item>
+    <item>
+      <title>2. glue使用</title>
+      <link>http://localhost:1313/2024/07/2.-glue%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/2.-glue%E4%BD%BF%E7%94%A8/</guid>
+      <description>创建glue database 建好的库 上传文件&#xA;#文件内容 1,lili,12 2,susam,31 3,david,28 手动建表 创建表 定义表元数据 通过Athena查询表数据 爬网程序建表 准备数据，到新目录 添加爬网程序 配置数据源 配置调度 审查配置 爬网程序创建成功 执行爬网程序 问题处理 但是我们用Athena并没有查询到相关表，通过view run details，排查到相关权限不足&#xA;[b08f44f6-0ebb-45ad-a7b6-de40e0f5d0a4] ERROR : Not all read errors will be logged. com.amazonaws.services.s3.model.AmazonS3Exception: Access Denied (Service: Amazon S3; Status Code: 403; Error Code: AccessDenied; Request ID: ZNBVDKGA3RDD1BX8; S3 Extended Request ID: /D7xWVzGPZqFQtTxIimmWwJmlszKvUfNa0/IuV+DODaYy1ItbL/mk3HFmRFiQTKzcytI4B47dxlu7u+5DqQ+jA==; Proxy: null), S3 Extended Request ID: /D7xWVzGPZqFQtTxIimmWwJmlszKvUfNa0/IuV+DODaYy1ItbL/mk3HFmRFiQTKzcytI4B47dxlu7u+5DqQ+jA== IAM权限不够，创建新的IAM角色，参考连接&#xA;创建s3目录读写权限策略 添加ListBucket，PutObject，GetObject，DeleteObject，并指定arn路径：arn:aws:s3:::gavin-data-demo/database/* 修改策略名，检查权限 创建角色，添加该策略 修改爬网程序，指定新建的角色 重新执行成功 Athena查询成功 glue etl把csv转为json 创建glue etl作业，指定source为glue data catalog，target为S3 配置source 自动配置映射转换 配置target 配置Job Details 运行任务，查看详情 查看S3目录及下载后文件内容,同时设置了建表，所以也会新建gavin_demo_json这张表 通过crawler建表 </description>
+    </item>
+    <item>
+      <title>3. kinesis使用</title>
+      <link>http://localhost:1313/2024/07/3.-kinesis%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/3.-kinesis%E4%BD%BF%E7%94%A8/</guid>
+      <description>Amazon Kinesis Data Streams 数据流(可以用kafka类比理解) 创建数据流StockTradeStream 创建IAM，参考文档 本机KPL写入数据 本机KPL消费数据并计算 日志看不到，需要额外配置log4j.properties,以及增加slf4j-log4j12的jar包 排查日志，发现，需要额外需要dynamodb的读写建表权限&#xA;示例：&#xA;使用KPL（kinesis producer Library）1.x/2.x（不操作） 使用Flink（demo） 使用Lambda（demo） 共享数据流&#xA;数据写入：&#xA;KPL API kinesis agent AWS部分组件 第三方集成：flink、fluentd、debezium、kafka Connect 读取数据流：&#xA;AWS Lambda Kinesis Data Analytics Kinesis Data Firehose KCL（Kinesis Consumer Library）1.x/2.x EMR AWS Glue AWS Redshift EventBridge 第三方组件连接器，支持：Flink、Druid、Spark、Kafka、Kinesumer（Go语言消费客户端） Amazon Kinesis Data Analytics(AWS基于Flink封装的实时处理服务) 支持3种应用开发：&#xA;SQL应用程序（旧版） Studio笔记本（Apache flink + zeppelin） 流式传输应用程序（Flink Jar） 建议Flink DataStream API 开发使用流式传输应用，Flink SQL开发使用studio&#xA;Amazon Kinesis Data Firehose(输出流) 通过配置化的方式数据同步实时流到其他数据源&#xA;输入源 Direct PUT 选择此选项可创建 Kinesis Data Firehose 传输流，生产者应用程序可直接写入该传输流。目前，以下是AWS与 Kinesis Data Firehose 中的 Direct PUT 集成的服务和代理以及开源服务：</description>
+    </item>
+    <item>
+      <title>4. lambda对接kinesis</title>
+      <link>http://localhost:1313/2024/07/4.-lambda%E5%AF%B9%E6%8E%A5kinesis/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/4.-lambda%E5%AF%B9%E6%8E%A5kinesis/</guid>
+      <description>aws lambda create-function &amp;ndash;function-name ProcessKinesisRecords &amp;ndash;zip-file fileb://function.zip &amp;ndash;handler index.handler &amp;ndash;runtime nodejs18.x &amp;ndash;role arn:aws:iam::463517587431:role/lambda-kinesis-role-gavin&#xA;input.txt&#xA;aws lambda invoke &amp;ndash;function-name ProcessKinesisRecords &amp;ndash;cli-binary-format raw-in-base64-out &amp;ndash;payload file://input.txt outputfile.txt&#xA;创建kinesis data stream aws kinesis create-stream &amp;ndash;stream-name lambda-stream &amp;ndash;shard-count 1&#xA;查看 aws kinesis describe-stream &amp;ndash;stream-name lambda-stream&#xA;lamda 增加kinesis消费 aws lambda create-event-source-mapping &amp;ndash;function-name ProcessKinesisRecords &amp;ndash;event-source arn:aws:kinesis:eu-north-1:463517587431:stream/lambda-stream &amp;ndash;batch-size 100 &amp;ndash;starting-position LATEST&#xA;查看list-event-source-mappings aws lambda list-event-source-mappings &amp;ndash;function-name ProcessKinesisRecords &amp;ndash;event-source arn:aws:kinesis:eu-north-1:463517587431:stream/lambda-stream&#xA;发送数据 aws kinesis put-record &amp;ndash;stream-name lambda-stream &amp;ndash;partition-key 1 &amp;ndash;cli-binary-format raw-in-base64-out &amp;ndash;data &amp;ldquo;Hello, this is a test.</description>
+    </item>
+    <item>
+      <title>5.airflow</title>
+      <link>http://localhost:1313/2024/07/5.airflow/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/5.airflow/</guid>
+      <description>pip依赖安装 pip install apache-airflow -i https://pypi.douban.com/simple&#xA;pip install apache-airflow-providers-amazon&#xA;airflow 数据库初始化 初始化的Airflow 元数据数据库（如果您的 DAG 使用 XCom 等元数据数据库的元素）。Airflow 元数据数据库是在 Airflow 首次在环境中运行时创建的。您可以使用 检查它是否存在airflow db check并使用 初始化新数据库airflow db init。 airflow db init&#xA;Airflow本机安装 https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html&#xA;安装docker（省略） 在安装目录下载Airflow使用的docker-compose配置文件 curl -LfO &amp;lsquo;https://airflow.apache.org/docs/apache-airflow/2.6.3/docker-compose.yaml&#39; 在安装目录创建目录 mkdir -p ./dags ./logs ./plugins ./config 创建uid文件，手动修改为AIRFLOW_UID=50000 echo -e &amp;ldquo;AIRFLOW_UID=$(id -u)&amp;rdquo; &amp;gt; .env 初始化Airflow docker compose up airflow-init 启动Airflow docker compose up 查看Airflow情况命令 docker compose run airflow-worker airflow info 也可以下载执行脚本 curl -LfO &amp;lsquo;https://airflow.apache.org/docs/apache-airflow/2.6.3/airflow.sh&#39; chmod +x airflow.</description>
+    </item>
+    <item>
+      <title>6.etl_demo</title>
+      <link>http://localhost:1313/2024/07/6.etl_demo/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/6.etl_demo/</guid>
+      <description>步骤一：准备数据目录及数据文件，建表及加载数据 gavin_demo_database&#xA;下载hdfs文件 S3创建tmp目录：database/external/temp/temp_app_trace_log_new/ 上传已下载的文件到tmp目录 创建目录s3://gavin-data-demo/database/external/temp/temp_app_trace_log_new/ds=2023-07-19/hh=00/ 复制tmp文件到表分区目录下 Athena建表及相关查询语句 DROP TABLE IF EXISTS `temp_app_trace_log_new`; create external table IF NOT EXISTS gavin_demo_database.temp_app_trace_log_new( log_data string )PARTITIONED BY (ds string, hh string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &amp;#39;\001&amp;#39; location &amp;#39;s3://gavin-data-demo/database/external/temp/temp_app_trace_log_new/&amp;#39; TBLPROPERTIES (&amp;#39;has_encrypted_data&amp;#39;=&amp;#39;false&amp;#39;) ; msck repair table temp_app_trace_log_new ; select count(1) from gavin_demo_database.temp_app_trace_log_new; 步骤二：insert into 创建表 create external table IF NOT EXISTS gavin_demo_database.temp_app_trace_log_new_10( log_data string )PARTITIONED BY (ds string, hh string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &amp;#39;\001&amp;#39; location &amp;#39;s3://gavin-data-demo/database/temp_app_trace_log_new_10&amp;#39; TBLPROPERTIES (&amp;#39;has_encrypted_data&amp;#39;=&amp;#39;false&amp;#39;) ; 方案一： 2.</description>
+    </item>
+    <item>
+      <title>Airflow本机开发环境</title>
+      <link>http://localhost:1313/2024/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 03 Jul 2024 19:59:56 +0800</pubDate>
+      <guid>http://localhost:1313/2024/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>安装docker&#xA;安装docker-compose&#xA;下载docker-compose文件 curl -LfO &amp;lsquo;https://airflow.apache.org/docs/apache-airflow/2.2.2/docker-compose.yaml&#39;&#xA;创建文件夹 mkdir -p ./dags ./logs ./plugins ./config echo -e &amp;ldquo;AIRFLOW_UID=50000&amp;rdquo; &amp;gt; .env&#xA;初始化数据库 docker compose up airflow-init&#xA;环境清理（清除环境才需要） docker-compose down &amp;ndash;volumes &amp;ndash;remove-orphansdocker-compose.yaml&#xA;启动环境 docker compose up&#xA;数据库初始化 airflow db init&#xA;连接aws密钥创建，需要把.aws文件夹拷贝到docker容器中，并且权限改为Airflow</description>
     </item>
     <item>
       <title>电商风控</title>

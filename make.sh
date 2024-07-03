@@ -11,7 +11,7 @@ if [ ! -d "themes/$theme" ];then
   case $theme in
       "hugo-tranquilpeak-theme")
 	  echo_red "$theme 不存在，准备下载"
-      git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git themes/hugo-tranquilpeak-theme
+      git clone https://github.com/azhegit/hugo-tranquilpeak-theme.git themes/hugo-tranquilpeak-theme
           ;;
       *)
       echo "未知主题"

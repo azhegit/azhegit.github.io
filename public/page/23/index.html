@@ -200,21 +200,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/" aria-label="打开帖子: 新增机器到cdh集群">
+        <a class="link-unstyled" href="http://localhost:1313/2018/11/docker%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/" aria-label="打开帖子: docker离线安装">
       
-          新增机器到cdh集群
+          docker离线安装
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2018-08-13T15:34:37&#43;08:00">
+      <time datetime="2018-11-02T13:45:51&#43;08:00">
         
   
   
   
   
-    2018 年 八月 13 号
+    2018 年 十一月 2 号
   
 
       </time>
@@ -226,7 +226,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
     
   
 
@@ -235,23 +235,20 @@
     </div>
     <div class="postShorten-excerpt">
       
-        背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
-10.57.16.207 10.57.16.168
-一、准备工作 1. admin用户准备工作 添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin 增加sudo权限 vi /etc/sudoers ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen 2. 磁盘挂载 查看系统中磁盘信息 sudo fdisk -l Disk /dev/vdb: 536.9 GB
-格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh 3.
+        <p>docker离线安装</p>
       
       <p>
         
-          <a href="http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/" class="postShorten-excerpt_link link" aria-label="打开帖子: 新增机器到cdh集群">阅读全文</a>
+          <a href="http://localhost:1313/2018/11/docker%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/" class="postShorten-excerpt_link link" aria-label="打开帖子: docker离线安装">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/" aria-label="打开帖子: 新增机器到cdh集群">
+    <a href="http://localhost:1313/2018/11/docker%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/" aria-label="打开帖子: docker离线安装">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180831191033396.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20181113165255716.png"/>
       </div>
     </a>
   
@@ -272,21 +269,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/" aria-label="打开帖子: 如何正确下线CDH机器">
+        <a class="link-unstyled" href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9703-%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E5%8F%8A%E8%87%AA%E5%8A%A8%E5%8C%96%E5%90%AF%E5%8A%A8/" aria-label="打开帖子: Docker实践指南03-制作镜像及自动化启动">
       
-          如何正确下线CDH机器
+          Docker实践指南03-制作镜像及自动化启动
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2018-08-13T15:34:13&#43;08:00">
+      <time datetime="2018-11-02T13:40:51&#43;08:00">
         
   
   
   
   
-    2018 年 八月 13 号
+    2018 年 十一月 2 号
   
 
       </time>
@@ -298,7 +295,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
     
   
 
@@ -307,21 +304,20 @@
     </div>
     <div class="postShorten-excerpt">
       
-        背景 CDH集群有2台机器因为底层存储损坏，无法恢复，机器脱离cdh的管理，数据也没办法再找回来。 所以需要在CDH管理剔除。
-登录cdh管理平台，主机列表。 执行停止主机上的角色，由于机器宕机，此处跳过 选中要删除的主机，进入维护模式 4. 保持默认选项 5. 点击进入维护模式，会解除授权 6. 此步骤应该是停止cdh-agent，但是由于机器已经宕机，所以此处跳过 7. 选择主机，从cloudera manager删除 另一种方式： 停止主机上的角色-&gt;从集群中删除-&gt;关闭agent-&gt;remove from cloudera manager 
+        <p>Docker实践指南03-制作镜像及启动</p>
       
       <p>
         
-          <a href="http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/" class="postShorten-excerpt_link link" aria-label="打开帖子: 如何正确下线CDH机器">阅读全文</a>
+          <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9703-%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E5%8F%8A%E8%87%AA%E5%8A%A8%E5%8C%96%E5%90%AF%E5%8A%A8/" class="postShorten-excerpt_link link" aria-label="打开帖子: Docker实践指南03-制作镜像及自动化启动">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/" aria-label="打开帖子: 如何正确下线CDH机器">
+    <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9703-%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F%E5%8F%8A%E8%87%AA%E5%8A%A8%E5%8C%96%E5%90%AF%E5%8A%A8/" aria-label="打开帖子: Docker实践指南03-制作镜像及自动化启动">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180725100954649.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-2018111316510833.png"/>
       </div>
     </a>
   
@@ -342,21 +338,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2018/08/mysql%E4%BF%AE%E6%94%B9%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%86%E7%A0%81/" aria-label="打开帖子: mysql修改初始化密码">
+        <a class="link-unstyled" href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9702-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" aria-label="打开帖子: Docker实践指南02-常用命令">
       
-          mysql修改初始化密码
+          Docker实践指南02-常用命令
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2018-08-05T19:18:38&#43;08:00">
+      <time datetime="2018-11-02T13:35:51&#43;08:00">
         
   
   
   
   
-    2018 年 八月 5 号
+    2018 年 十一月 2 号
   
 
       </time>
@@ -368,7 +364,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
     
   
 
@@ -377,20 +373,20 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <p>msyql自动修改初始化密码</p>
+        <p>Docker实践指南02-常用命令</p>
       
       <p>
         
-          <a href="http://localhost:1313/2018/08/mysql%E4%BF%AE%E6%94%B9%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%86%E7%A0%81/" class="postShorten-excerpt_link link" aria-label="打开帖子: mysql修改初始化密码">阅读全文</a>
+          <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9702-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="postShorten-excerpt_link link" aria-label="打开帖子: Docker实践指南02-常用命令">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2018/08/mysql%E4%BF%AE%E6%94%B9%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AF%86%E7%A0%81/" aria-label="打开帖子: mysql修改初始化密码">
+    <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9702-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" aria-label="打开帖子: Docker实践指南02-常用命令">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180831191033396.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20181113164859849.png"/>
       </div>
     </a>
   
@@ -411,21 +407,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2018/07/ansible%E4%BE%9D%E8%B5%96/" aria-label="打开帖子: ansible依赖">
+        <a class="link-unstyled" href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9701-%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86/" aria-label="打开帖子: Docker实践指南01-介绍及原理">
       
-          ansible依赖
+          Docker实践指南01-介绍及原理
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2018-07-24T19:18:38&#43;08:00">
+      <time datetime="2018-11-02T13:30:51&#43;08:00">
         
   
   
   
   
-    2018 年 七月 24 号
+    2018 年 十一月 2 号
   
 
       </time>
@@ -437,7 +433,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83">开发环境</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
     
   
 
@@ -446,20 +442,20 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <p>安装ansible以及其他安装为cdh安装所准备的软件安装</p>
+        <p>Docker实践指南01-介绍及原理</p>
       
       <p>
         
-          <a href="http://localhost:1313/2018/07/ansible%E4%BE%9D%E8%B5%96/" class="postShorten-excerpt_link link" aria-label="打开帖子: ansible依赖">阅读全文</a>
+          <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9701-%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86/" class="postShorten-excerpt_link link" aria-label="打开帖子: Docker实践指南01-介绍及原理">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2018/07/ansible%E4%BE%9D%E8%B5%96/" aria-label="打开帖子: ansible依赖">
+    <a href="http://localhost:1313/2018/11/docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%9701-%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86/" aria-label="打开帖子: Docker实践指南01-介绍及原理">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180725102054110.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20181113164516536.png"/>
       </div>
     </a>
   
@@ -487,7 +483,7 @@
           </li>
         
       
-      <li class="pagination-number">第 23 页 共 27 页</li>
+      <li class="pagination-number">第 23 页 共 29 页</li>
     </ul>
   </div>
 

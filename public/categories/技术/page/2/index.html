@@ -203,21 +203,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" aria-label="打开帖子: 15- 加速同步">
+        <a class="link-unstyled" href="http://localhost:1313/2024/07/5.airflow/" aria-label="打开帖子: 5.airflow">
       
-          15- 加速同步
+          5.airflow
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-06-08T11:39:18&#43;08:00">
+      <time datetime="2024-07-03T19:59:56&#43;08:00">
         
   
   
   
   
-    2022 年 六月 8 号
+    2024 年 七月 3 号
   
 
       </time>
@@ -229,7 +229,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -238,20 +238,24 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <p>加速数据同步：https://docs.aerospike.com/server/operations/manage/migration</p>
+        pip依赖安装 pip install apache-airflow -i https://pypi.douban.com/simple
+pip install apache-airflow-providers-amazon
+airflow 数据库初始化 初始化的Airflow 元数据数据库（如果您的 DAG 使用 XCom 等元数据数据库的元素）。Airflow 元数据数据库是在 Airflow 首次在环境中运行时创建的。您可以使用 检查它是否存在airflow db check并使用 初始化新数据库airflow db init。 airflow db init
+Airflow本机安装 https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+安装docker（省略） 在安装目录下载Airflow使用的docker-compose配置文件 curl -LfO &lsquo;https://airflow.apache.org/docs/apache-airflow/2.6.3/docker-compose.yaml' 在安装目录创建目录 mkdir -p ./dags ./logs ./plugins ./config 创建uid文件，手动修改为AIRFLOW_UID=50000 echo -e &ldquo;AIRFLOW_UID=$(id -u)&rdquo; &gt; .env 初始化Airflow docker compose up airflow-init 启动Airflow docker compose up 查看Airflow情况命令 docker compose run airflow-worker airflow info 也可以下载执行脚本 curl -LfO &lsquo;https://airflow.apache.org/docs/apache-airflow/2.6.3/airflow.sh' chmod +x airflow.
       
       <p>
         
-          <a href="http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" class="postShorten-excerpt_link link" aria-label="打开帖子: 15- 加速同步">阅读全文</a>
+          <a href="http://localhost:1313/2024/07/5.airflow/" class="postShorten-excerpt_link link" aria-label="打开帖子: 5.airflow">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" aria-label="打开帖子: 15- 加速同步">
+    <a href="http://localhost:1313/2024/07/5.airflow/" aria-label="打开帖子: 5.airflow">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180725103847120.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180725101125909.png"/>
       </div>
     </a>
   
@@ -272,21 +276,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2022/04/14-aerospike-%E7%9B%91%E6%8E%A7/" aria-label="打开帖子: 14-aerospike 监控">
+        <a class="link-unstyled" href="http://localhost:1313/2024/07/6.etl_demo/" aria-label="打开帖子: 6.etl_demo">
       
-          14-aerospike 监控
+          6.etl_demo
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-04-18T16:18:39&#43;08:00">
+      <time datetime="2024-07-03T19:59:56&#43;08:00">
         
   
   
   
   
-    2022 年 四月 18 号
+    2024 年 七月 3 号
   
 
       </time>
@@ -298,7 +302,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -307,20 +311,21 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <p>prometheus跟grafana已经安装好，此篇忽略，重点讲Aerospike监控安装及配置。</p>
+        步骤一：准备数据目录及数据文件，建表及加载数据 gavin_demo_database
+下载hdfs文件 S3创建tmp目录：database/external/temp/temp_app_trace_log_new/ 上传已下载的文件到tmp目录 创建目录s3://gavin-data-demo/database/external/temp/temp_app_trace_log_new/ds=2023-07-19/hh=00/ 复制tmp文件到表分区目录下 Athena建表及相关查询语句 DROP TABLE IF EXISTS `temp_app_trace_log_new`; create external table IF NOT EXISTS gavin_demo_database.temp_app_trace_log_new( log_data string )PARTITIONED BY (ds string, hh string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;\001&#39; location &#39;s3://gavin-data-demo/database/external/temp/temp_app_trace_log_new/&#39; TBLPROPERTIES (&#39;has_encrypted_data&#39;=&#39;false&#39;) ; msck repair table temp_app_trace_log_new ; select count(1) from gavin_demo_database.temp_app_trace_log_new; 步骤二：insert into 创建表 create external table IF NOT EXISTS gavin_demo_database.temp_app_trace_log_new_10( log_data string )PARTITIONED BY (ds string, hh string) ROW FORMAT DELIMITED FIELDS TERMINATED BY &#39;\001&#39; location &#39;s3://gavin-data-demo/database/temp_app_trace_log_new_10&#39; TBLPROPERTIES (&#39;has_encrypted_data&#39;=&#39;false&#39;) ; 方案一： 2.
       
       <p>
         
-          <a href="http://localhost:1313/2022/04/14-aerospike-%E7%9B%91%E6%8E%A7/" class="postShorten-excerpt_link link" aria-label="打开帖子: 14-aerospike 监控">阅读全文</a>
+          <a href="http://localhost:1313/2024/07/6.etl_demo/" class="postShorten-excerpt_link link" aria-label="打开帖子: 6.etl_demo">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2022/04/14-aerospike-%E7%9B%91%E6%8E%A7/" aria-label="打开帖子: 14-aerospike 监控">
+    <a href="http://localhost:1313/2024/07/6.etl_demo/" aria-label="打开帖子: 6.etl_demo">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20190110143649189.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20181113164516536.png"/>
       </div>
     </a>
   
@@ -341,21 +346,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" aria-label="打开帖子: 13-创建索引">
+        <a class="link-unstyled" href="http://localhost:1313/2024/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" aria-label="打开帖子: Airflow本机开发环境">
       
-          13-创建索引
+          Airflow本机开发环境
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-15T13:53:19&#43;08:00">
+      <time datetime="2024-07-03T19:59:56&#43;08:00">
         
   
   
   
   
-    2022 年 三月 15 号
+    2024 年 七月 3 号
   
 
       </time>
@@ -367,7 +372,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -376,20 +381,28 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <p>manage sindex create string l_id_index ns large set logistic bin lId</p>
+        安装docker
+安装docker-compose
+下载docker-compose文件 curl -LfO &lsquo;https://airflow.apache.org/docs/apache-airflow/2.2.2/docker-compose.yaml'
+创建文件夹 mkdir -p ./dags ./logs ./plugins ./config echo -e &ldquo;AIRFLOW_UID=50000&rdquo; &gt; .env
+初始化数据库 docker compose up airflow-init
+环境清理（清除环境才需要） docker-compose down &ndash;volumes &ndash;remove-orphansdocker-compose.yaml
+启动环境 docker compose up
+数据库初始化 airflow db init
+连接aws密钥创建，需要把.aws文件夹拷贝到docker容器中，并且权限改为Airflow
       
       <p>
         
-          <a href="http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" class="postShorten-excerpt_link link" aria-label="打开帖子: 13-创建索引">阅读全文</a>
+          <a href="http://localhost:1313/2024/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="postShorten-excerpt_link link" aria-label="打开帖子: Airflow本机开发环境">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" aria-label="打开帖子: 13-创建索引">
+    <a href="http://localhost:1313/2024/07/airflow%E6%9C%AC%E6%9C%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" aria-label="打开帖子: Airflow本机开发环境">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-2018111316510833.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180716211711809.png"/>
       </div>
     </a>
   
@@ -410,21 +423,21 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" aria-label="打开帖子: 12-Aerospike机器新增">
+        <a class="link-unstyled" href="http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/" aria-label="打开帖子: 电商风控">
       
-          12-Aerospike机器新增
+          电商风控
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-04T10:11:41&#43;08:00">
+      <time datetime="2022-12-20T14:18:16&#43;08:00">
         
   
   
   
   
-    2022 年 三月 4 号
+    2022 年 十二月 20 号
   
 
       </time>
@@ -436,7 +449,7 @@
     
       <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -445,22 +458,21 @@
     </div>
     <div class="postShorten-excerpt">
       
-        <h2 id="linux-优化">linux 优化</h2>
-<h3 id="1min_free_kbytes优化">1.min_free_kbytes优化</h3>
-<p>min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（Kbytes），如果系统可用内存低于该值，默认会启用oom killer 或者强制重启，当耗尽内存直至系统最低保存内存时会有两种现象，根据内核参数vm.panic_on_\oom 设置值的不同而有不同的行为。</p>
+        <p>风控技术体系</p>
+<p>设备指纹、风险数据画像、决策引擎、指标平台、智能业务模型、关联图谱、全链路分析</p>
       
       <p>
         
-          <a href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" class="postShorten-excerpt_link link" aria-label="打开帖子: 12-Aerospike机器新增">阅读全文</a>
+          <a href="http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/" class="postShorten-excerpt_link link" aria-label="打开帖子: 电商风控">阅读全文</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" aria-label="打开帖子: 12-Aerospike机器新增">
+    <a href="http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/" aria-label="打开帖子: 电商风控">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180716212442829.png"/>
+        <img alt="" src="//www.azheimage.top/markdown-img-paste-20180716211900993.png"/>
       </div>
     </a>
   
@@ -488,7 +500,7 @@
           </li>
         
       
-      <li class="pagination-number">第 2 页 共 27 页</li>
+      <li class="pagination-number">第 2 页 共 29 页</li>
     </ul>
   </div>
 
