@@ -1,10 +1,11 @@
 ---
 categories:
-  - 技术
-  - 大数据
-date: "2023-07-23 19:59:56+08:00"
+- 技术
+- 大数据
+date: '2023-07-23 19:59:56+08:00'
 tags:
-  - aws
+- aws
+- airflow
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716211711809.png
 title: Airflow本机开发环境
 ---

@@ -59,9 +59,22 @@ def read_yaml(openfile, categ, tag, filename):
 
     # print(yaml.safe_dump(data))
 
+    content = add_more(md_context[1])
+
     with open(openfile, "w") as f:
         context = yaml.dump(data, allow_unicode=True)
-        f.write("---\n" + context + "---\n" + md_context[1])
+        f.write("---\n" + context + "---\n" + content)
+
+
+def add_more(content):
+    if "<!--more-->" in content:
+        return content
+    else:
+        return (
+            "\n".join(content.split("\n")[0:2])
+            + "\n<!--more-->\n"
+            + "\n".join(content.split("\n")[2:-1])
+        )
 
 
 def read_md(openfile):

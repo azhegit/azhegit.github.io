@@ -10,6 +10,7 @@ title: 新增机器到cdh集群
 ---
 ## 背景
 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
+<!--more-->
 
 10.57.16.207
 10.57.16.168
@@ -83,7 +84,6 @@ sudo systemctl start rngd.service;
 15. 勾选继续
 ![](https://www.azheimage.top/markdown-img-paste-20200813151536917.png)
 16. 添加相应角色。
-
 
 
 
