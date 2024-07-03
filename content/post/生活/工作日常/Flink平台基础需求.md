@@ -1,14 +1,14 @@
 ---
 categories:
-- 生活
-date: '2022-10-03 22:57:55+08:00'
+  - 生活
+date: "2022-10-03 22:57:55+08:00"
 tags:
-- 工作日常
+  - 工作日常
 thumbnailImage: //www.azheimage.top/markdown-img-paste-2019011014402315.png
 title: Flink平台基础需求
 ---
 
-## Flink 平台基础需求
+Flink 平台基础需求
 
 <!--more-->
 

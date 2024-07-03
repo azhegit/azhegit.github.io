@@ -1,21 +1,26 @@
 ---
 categories:
-- 技术
-- 数据库
-date: '2021-10-26 16:53:06+08:00'
+  - 技术
+  - 数据库
+date: "2021-10-26 16:53:06+08:00"
 tags:
-- Aerospike
+  - Aerospike
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20190110153448285.png
 title: 8-ACT认证
 ---
+
+ACT 认证
+
+<!--more-->
+
 ## ACT 测试过程
 
 ### 安装
-安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。
-<!--more-->
-yum install sysstat  
 
-[ACT git地址](https://github.com/aerospike/act)
+安装 iostat（Centos 安装示例）。需要安装包含 iostat 的 sysstat 包。
+yum install sysstat
+
+[ACT git 地址](https://github.com/aerospike/act)
 
 ```shell
 wget https://github.com/aerospike/act/archive/refs/heads/master.zip
@@ -24,7 +29,6 @@ cd act-master/
 yum install make gcc
 make
 ```
-
 
 dd if=/dev/zero of=/dev/vdb bs=128K &
 dd if=/dev/zero of=/dev/vdc bs=128K &
@@ -38,27 +42,24 @@ done
 
 1919850381312 bytes (1.9 TB) copied, 1700.97 s, 1.1 GB/s
 
-
-
-
 ### 测试
+
 1. 使用 act_prep 准备驱动器 - 仅限第一次，预写数据
-此可执行文件通过在磁盘的每个扇区上写入零，然后用随机数据填充它（加盐）来为 ACT 准备设备。这模拟了正常的生产状态。
-./target/bin/act_prep /dev/vdb &
-./target/bin/act_prep /dev/vdc &
-./target/bin/act_prep /dev/vdd &
-./target/bin/act_prep /dev/vde &
-
-
+   此可执行文件通过在磁盘的每个扇区上写入零，然后用随机数据填充它（加盐）来为 ACT 准备设备。这模拟了正常的生产状态。
+   ./target/bin/act_prep /dev/vdb &
+   ./target/bin/act_prep /dev/vdc &
+   ./target/bin/act_prep /dev/vdd &
+   ./target/bin/act_prep /dev/vde &
 
 2. 修改配置文件
-cp config/act_storage.conf
+   cp config/act_storage.conf
+
 ```yaml
 cp config/act_storage.conf actconfig.conf
 vim actconfig.conf
 
 device-names: /dev/vdb,/dev/vdc,/dev/vdd,/dev/vde
-#read-reqs-per-sec: 2000 
+#read-reqs-per-sec: 2000
 # 30x
 read-reqs-per-sec: 240000
 #write-reqs-per-sec: 1000
@@ -69,13 +70,15 @@ replication-factor: 2
 #update-pct: 0
 update-pct: 40
 ```
+
 3. 启动测试
-./target/bin/act_storage actconfig.conf > output30x.txt &
+   ./target/bin/act_storage actconfig.conf > output30x.txt &
 4. 分析 ACT 输出
-运行 /analysis/act_latency.py 以处理 ACT 日志文件并制表数据。请注意，您可以在测试尚未完成时运行脚本，您将看到部分结果。
+   运行 /analysis/act_latency.py 以处理 ACT 日志文件并制表数据。请注意，您可以在测试尚未完成时运行脚本，您将看到部分结果。
 
 例如：
 ./analysis/act_latency.py -l output15x.txt
+
 ```bash
 act_latency.py -l output128k15x.txt
 output128k15x.txt is ACT version 6.2
@@ -120,8 +123,8 @@ reads
 large-block-reads
 large-block-writes
 
-        reads                                           
-        %>(ms)                                          
+        reads
+        %>(ms)
 slice        1      2      4      8     16     32     64
 -----   ------ ------ ------ ------ ------ ------ ------
     1    40.43  21.31   2.29   0.01   0.01   0.00   0.00
@@ -153,9 +156,8 @@ slice        1      2      4      8     16     32     64
   max    40.43  21.31   2.29   0.01   0.01   0.00   0.00
 ```
 
-
-
 通过`iostate -x 3`查看磁盘负载
+
 ```bash
 Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
 vda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00

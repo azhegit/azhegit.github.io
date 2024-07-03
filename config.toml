@@ -32,7 +32,7 @@ canonifyurls = true
 
 [author]
   name = "阿·哲"
-  bio = "从事Java、Hadoop、Spark、Flink等大数据技术，离线实时解决方案！"
+  bio = "从事Java 3年、Hadoop、Spark、Flink等大数据技术8年，擅长大数据实时解决方案！"
   job = "码农🙈"
   location = "杭州"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog

@@ -1,16 +1,16 @@
 ---
 categories:
-- 技术
-- 大数据
-date: '2023-08-15 19:59:56+08:00'
+  - 技术
+  - 大数据
+date: "2023-08-15 19:59:56+08:00"
 tags:
-- aws
-- airflow
+  - aws
+  - airflow
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20181113164516536.png
 title: airflow_etl_demo
 ---
 
-## 步骤一：准备数据目录及数据文件，建表及加载数据
+步骤一：准备数据目录及数据文件，建表及加载数据
 
 gavin_demo_database
 
