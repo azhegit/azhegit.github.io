@@ -2,7 +2,7 @@
 categories:
 - 技术
 - 数据库
-date: '2022-06-22 16:42:49+08:00'
+date: '2022-06-23 16:42:49+08:00'
 tags:
 - Aerospike
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20190110153448285.png
