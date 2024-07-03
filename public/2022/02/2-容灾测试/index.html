@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e容灾高可用测试\u003c\/p\u003e\n\u003cp\u003e核心就是：多节点集群，单表多副本，宕某一个节点，副本还在，该表就可以正常运转。\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2022\/02\/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="容灾高可用测试
@@ -17,8 +37,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-容灾测试">
 <meta name="twitter:title" content="2-容灾测试">
-<meta property="og:url" content="https://azhegit.gitee.io/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
+<meta property="og:url" content="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
+<meta property="twitter:url" content="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="容灾高可用测试
 核心就是：多节点集群，单表多副本，宕某一个节点，副本还在，该表就可以正常运转。">
@@ -55,15 +75,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
 
 
     <title>2-容灾测试</title>
@@ -73,20 +93,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
+    <link rel="canonical" href="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -96,7 +119,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -105,7 +128,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -118,7 +141,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -128,7 +151,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -138,7 +161,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -148,7 +171,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -158,7 +181,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -185,19 +208,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       2-容灾测试
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2022-02-10T14:58:47&#43;08:00">
+      <time datetime="2022-02-10T14:58:47&#43;08:00">
         
   
   
@@ -213,9 +236,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
     
   
 
@@ -223,7 +246,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>容灾高可用测试</p>
 <p>核心就是：多节点集群，单表多副本，宕某一个节点，副本还在，该表就可以正常运转。</p>
@@ -238,43 +261,43 @@
 <p>性能测试已经导入6张表，并且都是单分区，单副本表。</p>
 <h2 id="手动停止be模拟存储节点失效">手动停止BE模拟存储节点失效</h2>
 <p>SSB工具中dates建表语句</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>dates<span style="color:#f92672">`</span> (
-  <span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_date<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_dayofweek<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_month<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_year<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_yearmonthnum<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_yearmonth<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_daynuminweek<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_daynuminmonth<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_daynuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_monthnuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_weeknuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_sellingseason<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">14</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_lastdayinweekfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_lastdayinmonthfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_holidayfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
-  <span style="color:#f92672">`</span>d_weekdayfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>
-) ENGINE<span style="color:#f92672">=</span>OLAP
-DUPLICATE <span style="color:#66d9ef">KEY</span>(<span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span>)
-<span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;OLAP&#34;</span>
-DISTRIBUTED <span style="color:#66d9ef">BY</span> HASH(<span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span>) BUCKETS <span style="color:#ae81ff">1</span>
-PROPERTIES (
-<span style="color:#e6db74">&#34;replication_num&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>,
-<span style="color:#e6db74">&#34;in_memory&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;false&#34;</span>,
-<span style="color:#e6db74">&#34;colocate_with&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;groupa3&#34;</span>,
-<span style="color:#e6db74">&#34;storage_format&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DEFAULT&#34;</span>
-);
-</code></pre></div><h3 id="1-先查看表信息">1. 先查看表信息</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SqL" data-lang="SqL">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">show</span> <span style="color:#66d9ef">data</span> <span style="color:#66d9ef">from</span> dates;
-<span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
-</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> TableName <span style="color:#f92672">|</span> IndexName <span style="color:#f92672">|</span> <span style="color:#66d9ef">Size</span>      <span style="color:#f92672">|</span> ReplicaCount <span style="color:#f92672">|</span> RowCount <span style="color:#f92672">|</span>
-<span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
-</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> dates     <span style="color:#f92672">|</span> dates     <span style="color:#f92672">|</span> <span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">409</span> KB <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>            <span style="color:#f92672">|</span> <span style="color:#ae81ff">2556</span>     <span style="color:#f92672">|</span>
-<span style="color:#f92672">|</span>           <span style="color:#f92672">|</span> Total     <span style="color:#f92672">|</span> <span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">409</span> KB <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>            <span style="color:#f92672">|</span>          <span style="color:#f92672">|</span>
-<span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
-</span></code></pre></div><h3 id="2-将单副本表副本数修改成2">2. 将单副本表副本数修改成2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>dates<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_date<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_dayofweek<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_month<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_year<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_yearmonthnum<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_yearmonth<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_daynuminweek<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_daynuminmonth<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_daynuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_monthnuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_weeknuminyear<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_sellingseason<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">14</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_lastdayinweekfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_lastdayinmonthfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_holidayfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>d_weekdayfl<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>) ENGINE<span style="color:#f92672">=</span>OLAP
+</span></span><span style="display:flex;"><span>DUPLICATE <span style="color:#66d9ef">KEY</span>(<span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#34;OLAP&#34;</span>
+</span></span><span style="display:flex;"><span>DISTRIBUTED <span style="color:#66d9ef">BY</span> HASH(<span style="color:#f92672">`</span>d_datekey<span style="color:#f92672">`</span>) BUCKETS <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>PROPERTIES (
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;replication_num&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;in_memory&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;false&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;colocate_with&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;groupa3&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;storage_format&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DEFAULT&#34;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="1-先查看表信息">1. 先查看表信息</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SqL" data-lang="SqL"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">show</span> <span style="color:#66d9ef">data</span> <span style="color:#66d9ef">from</span> dates;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> TableName <span style="color:#f92672">|</span> IndexName <span style="color:#f92672">|</span> <span style="color:#66d9ef">Size</span>      <span style="color:#f92672">|</span> ReplicaCount <span style="color:#f92672">|</span> RowCount <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> dates     <span style="color:#f92672">|</span> dates     <span style="color:#f92672">|</span> <span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">409</span> KB <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>            <span style="color:#f92672">|</span> <span style="color:#ae81ff">2556</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>           <span style="color:#f92672">|</span> Total     <span style="color:#f92672">|</span> <span style="color:#ae81ff">33</span>.<span style="color:#ae81ff">409</span> KB <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>            <span style="color:#f92672">|</span>          <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-----------+-----------+-----------+--------------+----------+
+</span></span></span></code></pre></div><h3 id="2-将单副本表副本数修改成2">2. 将单副本表副本数修改成2</h3>
 <p><code>ALTER TABLE ssb.dates SET (&quot;replication_num&quot; = &quot;2&quot;);</code>
 报错：ERROR 1064 (HY000): table dates is colocate table, cannot change replicationNum
 建表的时候是指定了<code>colocate_with</code>,该表为colocate表，在性能测试中，其实是不生效，更多<a href="https://docs.starrocks.com/zh-cn/main/using_starrocks/Colocation_join">colocate相关知识</a>
@@ -313,6 +336,8 @@ PROPERTIES (
 <li>副本会在节点故障自动转移，支持HA</li>
 </ol>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -323,145 +348,125 @@ PROPERTIES (
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/starrocks/">StarRocks</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/starrocks/">StarRocks</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" data-tooltip="12-Aerospike机器新增">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-tooltip="1-安装与测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" data-tooltip="12-Aerospike机器新增" aria-label="下一篇: 12-Aerospike机器新增">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-tooltip="1-安装与测试" aria-label="上一篇: 1-安装与测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" data-tooltip="12-Aerospike机器新增">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-tooltip="1-安装与测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/" data-tooltip="12-Aerospike机器新增" aria-label="下一篇: 12-Aerospike机器新增">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/01/1-%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/" data-tooltip="1-安装与测试" aria-label="上一篇: 1-安装与测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -479,7 +484,7 @@ PROPERTIES (
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -496,30 +501,16 @@ PROPERTIES (
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -532,33 +523,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2022\/02\/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95\/';
-          
-            this.page.identifier = '\/2022\/02\/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

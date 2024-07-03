@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"",
+  "url":"http:\/\/localhost:1313\/2019\/08\/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="20-kolla搭建ceph集群">
 <meta name="twitter:title" content="20-kolla搭建ceph集群">
-<meta property="og:url" content="https://azhegit.gitee.io/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
+<meta property="og:url" content="http://localhost:1313/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
+<meta property="twitter:url" content="http://localhost:1313/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180831191146955.png">
 
 
     <title>20-kolla搭建ceph集群</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
+    <link rel="canonical" href="http://localhost:1313/2019/08/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       20-kolla搭建ceph集群
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-08-14T13:53:03&#43;08:00">
+      <time datetime="2019-08-14T13:53:03&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e8%99%9a%e6%8b%9f%e5%8c%96%e4%ba%91%e8%ae%a1%e7%ae%97">虚拟化&amp;云计算</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <h3 id="1-安装docker及相关的环境所有节点">1. 安装docker及相关的环境（所有节点）</h3>
 <ol>
@@ -231,7 +254,7 @@
 10.57.26.51 openstack-ceph-01
 10.57.26.52 openstack-ceph-02
 10.57.26.53 openstack-ceph-03
-' &raquo; /etc/hosts</p>
+&rsquo; &raquo; /etc/hosts</p>
 <h3 id="2-配置kolla自动化部署openstack主节点">2. 配置kolla，自动化部署OpenStack（主节点）</h3>
 <p>配置免密
 ssh-keygen
@@ -243,67 +266,66 @@ vim /usr/share/kolla-ansible/ansible/roles/neutron/templates/ml2_conf.ini.j2
 <img src="https://www.azheimage.top/markdown-img-paste-20190603110933366.png" alt=""></p>
 <p>编辑 /etc/kolla/globals.yml 配置文件
 vim /etc/kolla/globals.yml</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#kolla_internal_vip_address 外部dashboard访问的地址</span>
-<span style="color:#75715e">#network_interface dashboard对应内部的网卡</span>
-<span style="color:#75715e">#neutron_external_interface 外部网卡</span>
-openstack_release: <span style="color:#e6db74">&#34;queens&#34;</span>
-kolla_internal_vip_address: <span style="color:#e6db74">&#34;10.57.26.51&#34;</span>
-network_interface: <span style="color:#e6db74">&#34;eth0&#34;</span>
-neutron_external_interface: <span style="color:#e6db74">&#34;eth1&#34;</span>
-docker_registry: <span style="color:#e6db74">&#34;10.57.30.16:4000&#34;</span>
-nova_compute_virt_type: <span style="color:#e6db74">&#34;qemu&#34;</span>
-
-enable_haproxy: <span style="color:#e6db74">&#34;no&#34;</span>
-<span style="color:#75715e"># 以下为ceph配置</span>
-enable_ceph: <span style="color:#e6db74">&#34;yes&#34;</span>
-enable_ceph_rgw: <span style="color:#e6db74">&#34;yes&#34;</span>
-enable_cinder: <span style="color:#e6db74">&#34;yes&#34;</span>
-
-<span style="color:#75715e">#如果是使用虚拟化实验环境，那么你需要把nova_compute_virt_type: &#34;qemu&#34; :</span>
-
-<span style="color:#75715e">#目前安装kolla-ansible默认使用bluestore得ceph。这里演示使用filestore。需修改文件</span>
-<span style="color:#75715e">#vim /usr/share/kolla-ansible/ansible/group_vars/all.yml</span>
-<span style="color:#75715e">#修改如下属性：</span>
-<span style="color:#75715e">#ceph_osd_store_type: &#34;filestore&#34;</span>
-
-ceph_osd_store_type: <span style="color:#e6db74">&#34;filestore&#34;</span>
-<span style="color:#75715e">#副本数</span>
-osd_pool_default_size: <span style="color:#ae81ff">2</span>
-
-<span style="color:#75715e">#Total PGs = ((Total_number_of_OSD * 100) / max_replication_count) / pool_count</span>
-
-
-ceph_pool_pg_num: <span style="color:#ae81ff">32</span>
-ceph_pool_pgp_num: <span style="color:#ae81ff">32</span>
-<span style="color:#75715e">#ceph_target_max_bytes: &#34;&#34;  # 表示每个cache pool最大大小。注意，如果配置了cache盘，此项不配置会导致cache不会自动清空。cache_osd_size*cache_osd_num/replicated/cache_pool_num</span>
-<span style="color:#75715e">#ceph_target_max_objects: &#34;&#34; # 表示cache pool最大的object数量</span>
-glance_backend_ceph: <span style="color:#e6db74">&#34;yes&#34;</span>
-glance_backend_file: <span style="color:#e6db74">&#34;no&#34;</span>
-enable_ceph_rgw_keystone: <span style="color:#e6db74">&#34;yes&#34;</span>
-
-</code></pre></div><p>编辑密码文件，配置keystone管理员用户的密码。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#kolla_internal_vip_address 外部dashboard访问的地址</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#network_interface dashboard对应内部的网卡</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#neutron_external_interface 外部网卡</span>
+</span></span><span style="display:flex;"><span>openstack_release: <span style="color:#e6db74">&#34;queens&#34;</span>
+</span></span><span style="display:flex;"><span>kolla_internal_vip_address: <span style="color:#e6db74">&#34;10.57.26.51&#34;</span>
+</span></span><span style="display:flex;"><span>network_interface: <span style="color:#e6db74">&#34;eth0&#34;</span>
+</span></span><span style="display:flex;"><span>neutron_external_interface: <span style="color:#e6db74">&#34;eth1&#34;</span>
+</span></span><span style="display:flex;"><span>docker_registry: <span style="color:#e6db74">&#34;10.57.30.16:4000&#34;</span>
+</span></span><span style="display:flex;"><span>nova_compute_virt_type: <span style="color:#e6db74">&#34;qemu&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>enable_haproxy: <span style="color:#e6db74">&#34;no&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以下为ceph配置</span>
+</span></span><span style="display:flex;"><span>enable_ceph: <span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>enable_ceph_rgw: <span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>enable_cinder: <span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#如果是使用虚拟化实验环境，那么你需要把nova_compute_virt_type: &#34;qemu&#34; :</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#目前安装kolla-ansible默认使用bluestore得ceph。这里演示使用filestore。需修改文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#vim /usr/share/kolla-ansible/ansible/group_vars/all.yml</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改如下属性：</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ceph_osd_store_type: &#34;filestore&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ceph_osd_store_type: <span style="color:#e6db74">&#34;filestore&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#副本数</span>
+</span></span><span style="display:flex;"><span>osd_pool_default_size: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Total PGs = ((Total_number_of_OSD * 100) / max_replication_count) / pool_count</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ceph_pool_pg_num: <span style="color:#ae81ff">32</span>
+</span></span><span style="display:flex;"><span>ceph_pool_pgp_num: <span style="color:#ae81ff">32</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ceph_target_max_bytes: &#34;&#34;  # 表示每个cache pool最大大小。注意，如果配置了cache盘，此项不配置会导致cache不会自动清空。cache_osd_size*cache_osd_num/replicated/cache_pool_num</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ceph_target_max_objects: &#34;&#34; # 表示cache pool最大的object数量</span>
+</span></span><span style="display:flex;"><span>glance_backend_ceph: <span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span><span style="display:flex;"><span>glance_backend_file: <span style="color:#e6db74">&#34;no&#34;</span>
+</span></span><span style="display:flex;"><span>enable_ceph_rgw_keystone: <span style="color:#e6db74">&#34;yes&#34;</span>
+</span></span></code></pre></div><p>编辑密码文件，配置keystone管理员用户的密码。
 vim /etc/kolla/passwords.yml
 database_password: Td@123
 keystone_admin_password: admin</p>
 <p>vim multinode
-cat multinode|grep -v &ldquo;^#&ldquo;|grep -v &ldquo;^$&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>control<span style="color:#f92672">]</span>
-openstack-ceph-01
-<span style="color:#f92672">[</span>network<span style="color:#f92672">]</span>
-openstack-ceph-01
-<span style="color:#f92672">[</span>inner-compute<span style="color:#f92672">]</span>
-<span style="color:#f92672">[</span>external-compute<span style="color:#f92672">]</span>
-<span style="color:#f92672">[</span>compute:children<span style="color:#f92672">]</span>
-<span style="color:#f92672">[</span>compute<span style="color:#f92672">]</span>
-openstack-ceph-01
-openstack-ceph-02
-openstack-ceph-03
-<span style="color:#f92672">[</span>monitoring<span style="color:#f92672">]</span>
-openstack-ceph-01
-<span style="color:#f92672">[</span>storage:children<span style="color:#f92672">]</span>
-compute
-.....
-</code></pre></div><p>[ml2_type_vlan]
+cat multinode|grep -v &ldquo;^#&quot;|grep -v &ldquo;^$&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>control<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>openstack-ceph-01
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>network<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>openstack-ceph-01
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>inner-compute<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>external-compute<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>compute:children<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>compute<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>openstack-ceph-01
+</span></span><span style="display:flex;"><span>openstack-ceph-02
+</span></span><span style="display:flex;"><span>openstack-ceph-03
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>monitoring<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>openstack-ceph-01
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>storage:children<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>compute
+</span></span><span style="display:flex;"><span>.....
+</span></span></code></pre></div><p>[ml2_type_vlan]
 {% if enable_ironic | bool %}
 network_vlan_ranges = physnet1
 {% else %}
@@ -350,6 +372,8 @@ ceph_mon_config</p>
 route -n
 route del 169.254.169.254 gw 192.168.2.2</p>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -360,145 +384,125 @@ route del 169.254.169.254 gw 192.168.2.2</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/openstack/">openStack</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/openstack/">openStack</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/" data-tooltip="21-kolla对接ceph(all-in-one)">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/" data-tooltip="19-ceph-deploy安装ceph">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/" data-tooltip="21-kolla对接ceph(all-in-one)" aria-label="下一篇: 21-kolla对接ceph(all-in-one)">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/" data-tooltip="19-ceph-deploy安装ceph" aria-label="上一篇: 19-ceph-deploy安装ceph">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/" data-tooltip="21-kolla对接ceph(all-in-one)">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/" data-tooltip="19-ceph-deploy安装ceph">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/21-kolla%E5%AF%B9%E6%8E%A5cephall-in-one/" data-tooltip="21-kolla对接ceph(all-in-one)" aria-label="下一篇: 21-kolla对接ceph(all-in-one)">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/08/19-ceph-deploy%E5%AE%89%E8%A3%85ceph/" data-tooltip="19-ceph-deploy安装ceph" aria-label="上一篇: 19-ceph-deploy安装ceph">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -516,7 +520,7 @@ route del 169.254.169.254 gw 192.168.2.2</p>
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -533,30 +537,16 @@ route del 169.254.169.254 gw 192.168.2.2</p>
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -569,33 +559,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/08\/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4\/';
-          
-            this.page.identifier = '\/2019\/08\/20-kolla%E6%90%AD%E5%BB%BAceph%E9%9B%86%E7%BE%A4\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

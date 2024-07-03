@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003ch2 id=\u0022linux-优化\u0022\u003elinux 优化\u003c\/h2\u003e\n\u003ch3 id=\u00221min_free_kbytes优化\u0022\u003e1.min_free_kbytes优化\u003c\/h3\u003e\n\u003cp\u003emin_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（Kbytes），如果系统可用内存低于该值，默认会启用oom killer 或者强制重启，当耗尽内存直至系统最低保存内存时会有两种现象，根据内核参数vm.panic_on_\\oom 设置值的不同而有不同的行为。\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2022\/03\/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="linux 优化
@@ -19,8 +39,8 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 <meta property="og:type" content="article">
 <meta property="og:title" content="12-Aerospike机器新增">
 <meta name="twitter:title" content="12-Aerospike机器新增">
-<meta property="og:url" content="https://azhegit.gitee.io/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
+<meta property="og:url" content="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
+<meta property="twitter:url" content="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="linux 优化
 1.min_free_kbytes优化
@@ -59,15 +79,15 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20180716212442829.png">
 
 
     <title>12-Aerospike机器新增</title>
@@ -77,20 +97,23 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
+    <link rel="canonical" href="http://localhost:1313/2022/03/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -100,7 +123,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -109,7 +132,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -122,7 +145,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -132,7 +155,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -142,7 +165,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -152,7 +175,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -162,7 +185,7 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -189,19 +212,19 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       12-Aerospike机器新增
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2022-03-04T10:11:41&#43;08:00">
+      <time datetime="2022-03-04T10:11:41&#43;08:00">
         
   
   
@@ -217,9 +240,9 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
     
   
 
@@ -227,54 +250,53 @@ min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（K
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <h2 id="linux-优化">linux 优化</h2>
 <h3 id="1min_free_kbytes优化">1.min_free_kbytes优化</h3>
 <p>min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（Kbytes），如果系统可用内存低于该值，默认会启用oom killer 或者强制重启，当耗尽内存直至系统最低保存内存时会有两种现象，根据内核参数vm.panic_on_\oom 设置值的不同而有不同的行为。</p>
 <p>vm.panic_on_oom=0 系统会提示oom ，并启动oom-killer杀掉占用最高内存的进程 vm.panic_on_oom =1. 系统关闭oom,不会启动oom-killer,而是会自动重启，AS建议设定为1.1～1.25GB。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#ae81ff">3</span> &gt; /proc/sys/vm/drop_caches
-echo <span style="color:#ae81ff">1048576</span> &gt; /proc/sys/vm/min_free_kbytes
-echo <span style="color:#e6db74">&#34;vm.min_free_kbytes=1048576&#34;</span> &gt;&gt; /etc/sysctl.conf
-<span style="color:#75715e"># 查看</span>
-sysctl -a | grep min_free
-</code></pre></div><h3 id="关闭swap">关闭swap</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/vm/swappiness
-echo <span style="color:#e6db74">&#34;vm.swappiness=0&#34;</span> &gt;&gt; /etc/sysctl.conf
-<span style="color:#75715e"># 查看</span>
-sysctl -a | grep swappiness
-</code></pre></div><h3 id="2-关闭thp">2. 关闭THP</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#ae81ff">3</span> &gt; /proc/sys/vm/drop_caches
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">1048576</span> &gt; /proc/sys/vm/min_free_kbytes
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;vm.min_free_kbytes=1048576&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看</span>
+</span></span><span style="display:flex;"><span>sysctl -a | grep min_free
+</span></span></code></pre></div><h3 id="关闭swap">关闭swap</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/vm/swappiness
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;vm.swappiness=0&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看</span>
+</span></span><span style="display:flex;"><span>sysctl -a | grep swappiness
+</span></span></code></pre></div><h3 id="2-关闭thp">2. 关闭THP</h3>
 <p>transparent huge pages 对于AS这种大量并发的小内存分配来说，这个默认启用的THP会导致系统较快的耗尽内存或者产生类似内存泄漏相关的症状。所以建议关闭。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 临时生效</span>
-echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
-echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
-<span style="color:#75715e"># 重启生效</span>
-cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/systemd/system/disable-transparent-huge-pages.service
-</span><span style="color:#e6db74">[Unit]
-</span><span style="color:#e6db74">Description=Disable Transparent Huge Pages
-</span><span style="color:#e6db74">[Service]
-</span><span style="color:#e6db74">Type=oneshot
-</span><span style="color:#e6db74">ExecStart=/bin/bash /etc/init.d/disable-transparent-hugepages start
-</span><span style="color:#e6db74">[Install]
-</span><span style="color:#e6db74">WantedBy=multi-user.target
-</span><span style="color:#e6db74">EOF</span>
-
-systemctl daemon-reload
-systemctl enable disable-transparent-huge-pages.service
-
-</code></pre></div><h3 id="3-max-open-file-limits">3. Max Open File limits</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看打开文件数量限制,默认一般是65535</span>
-ulimit -n
-<span style="color:#75715e"># 临时修改</span>
-ulimit -n <span style="color:#ae81ff">1000000</span>
-<span style="color:#75715e"># 永久修改</span>
-vim /etc/security/limits.conf
-<span style="color:#75715e"># 追加</span>
-root soft nofile <span style="color:#ae81ff">1000000</span>
-root hard nofile <span style="color:#ae81ff">1000000</span>
-* soft nofile <span style="color:#ae81ff">1000000</span>
-* hard nofile <span style="color:#ae81ff">1000000</span>
-</code></pre></div><h3 id="4-java-安装">4. java 安装：</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 临时生效</span>
+</span></span><span style="display:flex;"><span>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+</span></span><span style="display:flex;"><span>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启生效</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/systemd/system/disable-transparent-huge-pages.service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=Disable Transparent Huge Pages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type=oneshot
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/bin/bash /etc/init.d/disable-transparent-hugepages start
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl enable disable-transparent-huge-pages.service
+</span></span></code></pre></div><h3 id="3-max-open-file-limits">3. Max Open File limits</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看打开文件数量限制,默认一般是65535</span>
+</span></span><span style="display:flex;"><span>ulimit -n
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 临时修改</span>
+</span></span><span style="display:flex;"><span>ulimit -n <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 永久修改</span>
+</span></span><span style="display:flex;"><span>vim /etc/security/limits.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 追加</span>
+</span></span><span style="display:flex;"><span>root soft nofile <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span>root hard nofile <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span>* soft nofile <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span>* hard nofile <span style="color:#ae81ff">1000000</span>
+</span></span></code></pre></div><h3 id="4-java-安装">4. java 安装：</h3>
 <p>wget http://172.16.10.98:8086/jst/install/java.sh &amp;&amp; chmod +x java.sh &amp;&amp; ./java.sh</p>
 <h3 id="5-ssd-初始化">5. SSD 初始化</h3>
 <p><a href="https://docs.aerospike.com/docs/operations/plan/ssd/ssd_setup.html">SSD安装步骤</a></p>
@@ -282,72 +304,72 @@ root hard nofile <span style="color:#ae81ff">1000000</span>
 <li>执行dd命令
 磁盘完全 dd 后， dd 将以消息No space left on device或out of space error. 这表明 dd 已成功完成对整个磁盘的写入，并且 dd 已没有剩余空间可以继续。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/dev/vdb bs<span style="color:#f92672">=</span><span style="color:#ae81ff">131072</span> &amp;
-dd: error writing ‘/dev/vdb’: No space left on device
-14647297+0 records in
-14647296+0 records out
-<span style="color:#ae81ff">1919850381312</span> bytes <span style="color:#f92672">(</span>1.9 TB<span style="color:#f92672">)</span> copied, 1733.02 s, 1.1 GB/s
-
-
-<span style="color:#75715e"># 监控dd,23709替换成pid</span>
-<span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
-<span style="color:#66d9ef">do</span> kill -USR1 <span style="color:#ae81ff">15241</span>
-sleep <span style="color:#ae81ff">60</span>
-<span style="color:#66d9ef">done</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>/dev/vdb bs<span style="color:#f92672">=</span><span style="color:#ae81ff">131072</span> &amp;
+</span></span><span style="display:flex;"><span>dd: error writing ‘/dev/vdb’: No space left on device
+</span></span><span style="display:flex;"><span>14647297+0 records in
+</span></span><span style="display:flex;"><span>14647296+0 records out
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1919850381312</span> bytes <span style="color:#f92672">(</span>1.9 TB<span style="color:#f92672">)</span> copied, 1733.02 s, 1.1 GB/s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 监控dd,23709替换成pid</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> kill -USR1 <span style="color:#ae81ff">15241</span>
+</span></span><span style="display:flex;"><span>sleep <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ol start="2">
 <li>磁盘分配（如果单盘，不需要切分，忽略此步骤）</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fdisk /dev/vdb
-Welcome to fdisk <span style="color:#f92672">(</span>util-linux 2.23.2<span style="color:#f92672">)</span>.
-
-Changes will remain in memory only, <span style="color:#66d9ef">until</span> you decide to write them.
-Be careful before using the write command.
-
-Device does not contain a recognized partition table
-Building a new DOS disklabel with disk identifier 0x0b06f23b.
-
-Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: g
-Building a new GPT disklabel <span style="color:#f92672">(</span>GUID: C1926E81-69DA-40A9-917F-73F7A31D98B8<span style="color:#f92672">)</span>
-
-
-Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: o
-Building a new DOS disklabel with disk identifier 0x438e3cec.
-
-Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: n
-Partition type:
-   p   primary <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span> primary, <span style="color:#ae81ff">0</span> extended, <span style="color:#ae81ff">4</span> free<span style="color:#f92672">)</span>
-   e   extended
-Select <span style="color:#f92672">(</span>default p<span style="color:#f92672">)</span>:
-Using default response p
-Partition number <span style="color:#f92672">(</span>1-4, default 1<span style="color:#f92672">)</span>:
-First sector <span style="color:#f92672">(</span>2048-872415231, default 2048<span style="color:#f92672">)</span>:
-Using default value <span style="color:#ae81ff">2048</span>
-Last sector, +sectors or +size<span style="color:#f92672">{</span>K,M,G<span style="color:#f92672">}</span> <span style="color:#f92672">(</span>2048-872415231, default 872415231<span style="color:#f92672">)</span>:
-Using default value <span style="color:#ae81ff">872415231</span>
-Partition <span style="color:#ae81ff">1</span> of type Linux and of size <span style="color:#ae81ff">416</span> GiB is set
-
-Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: w
-The partition table has been altered!
-
-Calling ioctl<span style="color:#f92672">()</span> to re-read partition table.
-Syncing disks.
-</code></pre></div><h2 id="as-安装">As 安装</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ fdisk /dev/vdb
+</span></span><span style="display:flex;"><span>Welcome to fdisk <span style="color:#f92672">(</span>util-linux 2.23.2<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Changes will remain in memory only, <span style="color:#66d9ef">until</span> you decide to write them.
+</span></span><span style="display:flex;"><span>Be careful before using the write command.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Device does not contain a recognized partition table
+</span></span><span style="display:flex;"><span>Building a new DOS disklabel with disk identifier 0x0b06f23b.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: g
+</span></span><span style="display:flex;"><span>Building a new GPT disklabel <span style="color:#f92672">(</span>GUID: C1926E81-69DA-40A9-917F-73F7A31D98B8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: o
+</span></span><span style="display:flex;"><span>Building a new DOS disklabel with disk identifier 0x438e3cec.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: n
+</span></span><span style="display:flex;"><span>Partition type:
+</span></span><span style="display:flex;"><span>   p   primary <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span> primary, <span style="color:#ae81ff">0</span> extended, <span style="color:#ae81ff">4</span> free<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   e   extended
+</span></span><span style="display:flex;"><span>Select <span style="color:#f92672">(</span>default p<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Using default response p
+</span></span><span style="display:flex;"><span>Partition number <span style="color:#f92672">(</span>1-4, default 1<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>First sector <span style="color:#f92672">(</span>2048-872415231, default 2048<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Using default value <span style="color:#ae81ff">2048</span>
+</span></span><span style="display:flex;"><span>Last sector, +sectors or +size<span style="color:#f92672">{</span>K,M,G<span style="color:#f92672">}</span> <span style="color:#f92672">(</span>2048-872415231, default 872415231<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Using default value <span style="color:#ae81ff">872415231</span>
+</span></span><span style="display:flex;"><span>Partition <span style="color:#ae81ff">1</span> of type Linux and of size <span style="color:#ae81ff">416</span> GiB is set
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#f92672">(</span>m <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>: w
+</span></span><span style="display:flex;"><span>The partition table has been altered!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Calling ioctl<span style="color:#f92672">()</span> to re-read partition table.
+</span></span><span style="display:flex;"><span>Syncing disks.
+</span></span></code></pre></div><h2 id="as-安装">As 安装</h2>
 <ol>
 <li>拷贝配置文件</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp aerospike-prometheus-exporter-1.5.0-x86_64.rpm aerospike-server-community-5.7.0.7-el7.tgz root@prod-jstdata-cache-5:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp aerospike-prometheus-exporter-1.5.0-x86_64.rpm aerospike-server-community-5.7.0.7-el7.tgz root@prod-jstdata-cache-5:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><ol start="2">
 <li>解压文件,并安装</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar zxvf aerospike-server-community-5.7.0.7-el7.tgz 
-cd aerospike-server-community-5.7.0.7-el7/
-./asinstall
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar zxvf aerospike-server-community-5.7.0.7-el7.tgz 
+</span></span><span style="display:flex;"><span>cd aerospike-server-community-5.7.0.7-el7/
+</span></span><span style="display:flex;"><span>./asinstall
+</span></span></code></pre></div><ol start="3">
 <li>修改配置文件</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># 增加配置</span>
-mesh-seed-address-port prod-jstdata-cache<span style="color:#ae81ff">-5</span> <span style="color:#ae81ff">3002</span>
-</code></pre></div><p>创建日志目录：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># 增加配置</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">mesh-seed-address-port prod-jstdata-cache-5 3002</span>
+</span></span></code></pre></div><p>创建日志目录：
 mkdir /var/log/aerospike</p>
 <p>启动
 service aerospike start
@@ -364,7 +386,7 @@ telnet localhost 9145
 配置Prometheus</p>
 <h2 id="日志切分">日志切分</h2>
 <p>vim /etc/logrotate.d/aerospike</p>
-<pre><code class="language-config" data-lang="config">/var/log/aerospike/aerospike.log {
+<pre tabindex="0"><code class="language-config" data-lang="config">/var/log/aerospike/aerospike.log {
     daily
     rotate 90
     dateext
@@ -379,10 +401,12 @@ telnet localhost 9145
 <h2 id="删除机器">删除机器</h2>
 <p>要删除的机器先停止 service aerospike stop
 然后在存活节点执行
-asadm+&gt;asinfo -v &lsquo;tip-clear:host-port-list=prod-jstdata-cache-4:3002&rsquo;</p>
+asadm+&gt;asinfo -v &rsquo;tip-clear:host-port-list=prod-jstdata-cache-4:3002'</p>
 <p>修改配置文件，删除之前节点信息，以防止重启的时候，日志一直报连接不上，比如
 Error while connecting socket to 172.16.20.61:3002</p>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -393,145 +417,125 @@ Error while connecting socket to 172.16.20.61:3002</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/aerospike/">Aerospike</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/aerospike/">Aerospike</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" data-tooltip="13-创建索引">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" data-tooltip="13-创建索引" aria-label="下一篇: 13-创建索引">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试" aria-label="上一篇: 2-容灾测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" data-tooltip="13-创建索引">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/03/13-%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95/" data-tooltip="13-创建索引" aria-label="下一篇: 13-创建索引">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/02/2-%E5%AE%B9%E7%81%BE%E6%B5%8B%E8%AF%95/" data-tooltip="2-容灾测试" aria-label="上一篇: 2-容灾测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -549,7 +553,7 @@ Error while connecting socket to 172.16.20.61:3002</p>
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -566,30 +570,16 @@ Error while connecting socket to 172.16.20.61:3002</p>
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -602,33 +592,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2022\/03\/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E\/';
-          
-            this.page.identifier = '\/2022\/03\/12-aerospike%E6%9C%BA%E5%99%A8%E6%96%B0%E5%A2%9E\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

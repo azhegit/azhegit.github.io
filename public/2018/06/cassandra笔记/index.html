@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003eCassandra学习笔记\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2018\/06\/cassandra%E7%AC%94%E8%AE%B0\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="Cassandra学习笔记">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="cassandra笔记">
 <meta name="twitter:title" content="cassandra笔记">
-<meta property="og:url" content="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+<meta property="og:url" content="http://localhost:1313/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+<meta property="twitter:url" content="http://localhost:1313/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="Cassandra学习笔记">
 <meta name="twitter:description" content="Cassandra学习笔记">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
 
 
     <title>cassandra笔记</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
+    <link rel="canonical" href="http://localhost:1313/2018/06/cassandra%E7%AC%94%E8%AE%B0/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       cassandra笔记
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-06-06T18:53:27&#43;08:00">
+      <time datetime="2018-06-06T18:53:27&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>Cassandra学习笔记</p>
 <!-- raw HTML omitted -->
@@ -337,18 +360,18 @@ Cassandra.yml 常用的配置参数：
 <li>CQL基本含义</li>
 </ul>
 <h5 id="概念cql是cassandra-query-language的简称cql由类似sql的语句组成包括修改查询爆粗变更数据的存储方式等等功能每一行语句由结束">概念：CQL是Cassandra Query Language的简称，CQL由类似SQL的语句组成，包括修改，查询，爆粗，变更数据的存储方式等等功能。每一行语句由（；）结束</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> mytable;
-<span style="color:#66d9ef">update</span> mytable <span style="color:#66d9ef">set</span> someColumn<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Some Value&#39;</span> <span style="color:#66d9ef">where</span> columnName<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Something Else&#39;</span>;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> mytable;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> mytable <span style="color:#66d9ef">set</span> someColumn<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Some Value&#39;</span> <span style="color:#66d9ef">where</span> columnName<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Something Else&#39;</span>;
+</span></span></code></pre></div><ul>
 <li>大小写不敏感</li>
 </ul>
 <h5 id="忽略大小写在cql里可以spacecolumn和table的名称是忽略大小写的除非用双引号括起来才是大小写敏感的如果不用双引号括起来即使cql携程大小写也会被保存位小写">忽略大小写：在CQL里，可以space，column和table的名称是忽略大小写的，除非用双引号”括起来，才是大小写敏感的。如果不用双引号括起来，即使CQL携程大小写，也会被保存位小写</h5>
 <h5 id="cql关键字是忽略大小写的例如关键字select和select是等价的用双引号引起来就变成大小写严格区分了">CQL关键字是忽略大小写的，例如，关键字SELECT和select是等价的。用双引号引起来就变成大小写严格区分了</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
-  Foo int <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
-  <span style="color:#e6db74">&#34;Bar&#34;</span> int
-)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+</span></span><span style="display:flex;"><span>  Foo int <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Bar&#34;</span> int
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><ul>
 <li>常用数据类型
 <img src="https://www.azheimage.top/aa08ff827b620e1461730ea7d3c83663.png" alt="leixing"></li>
 <li>CQL命名规则</li>
@@ -363,18 +386,16 @@ Cassandra.yml 常用的配置参数：
 <li>CQL保留字</li>
 </ul>
 <h5 id="正常不使用保留字如果要使用可以用括起来">正常不使用保留字，如果要使用，可以用“”括起来</h5>
-<p><img src="https://www.azheimage.top/ae91ca547e4e53026d9ea6c897cbdf1e.png" alt="baoliuzi"></p>
-</li>
+<img src="https://www.azheimage.top/ae91ca547e4e53026d9ea6c897cbdf1e.png" alt="baoliuzi"></li>
 <li>CQL数据定义语句
 <img src="https://www.azheimage.top/453ba01ed1a4c1019da7a39174550381.png" alt="ddl1">
 <ul>
 <li>CREATE keyspace(创建keyspacce)
 语法：CREATE keyspace (if not exists)? <!-- raw HTML omitted --> with <!-- raw HTML omitted -->
 注意：ID恩替反而长度需要小鱼等于32，大小写敏感，可以使用双引号定义大小写敏感的名字
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> keyspace excelsior <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;simplestrategy&#39;</span>,<span style="color:#e6db74">&#39;replication_factor&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#66d9ef">create</span> keyspace excalibur <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;networktopoligystrategy&#39;</span>,<span style="color:#e6db74">&#39;DC1&#39;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;DC2&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">and</span> durable_writes<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>;
-</code></pre></div><p><img src="https://www.azheimage.top/d559cfcfa9f77ce0396849d3568287fb.png" alt="ddl2"></p>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> keyspace excelsior <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;simplestrategy&#39;</span>,<span style="color:#e6db74">&#39;replication_factor&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> keyspace excalibur <span style="color:#66d9ef">with</span> replication<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span>:<span style="color:#e6db74">&#39;networktopoligystrategy&#39;</span>,<span style="color:#e6db74">&#39;DC1&#39;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;DC2&#39;</span>:<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">and</span> durable_writes<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>;
+</span></span></code></pre></div><img src="https://www.azheimage.top/d559cfcfa9f77ce0396849d3568287fb.png" alt="ddl2"></li>
 <li>use keyspace(切换键空间)</li>
 <li>alter keyspace(修改键空间)
 <code>alter keyspace &lt;identifer&gt; with &lt;proteries&gt;</code>
@@ -393,43 +414,43 @@ Cassandra.yml 常用的配置参数：
 <ul>
 <li>自定义类型使用</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> KEYSPACE complex
-<span style="color:#66d9ef">WITH</span> replication <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span> : <span style="color:#e6db74">&#39;SimpleStrategy&#39;</span>, <span style="color:#e6db74">&#39;replication_factor&#39;</span> :
-
-<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>;
-
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.phone (
-
-<span style="color:#66d9ef">alias</span> text,
-
-number text
-
-);
-
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.address (
-
-street text,
-
-city text,
-
-zip_code int,
-
-phones list<span style="color:#f92672">&lt;</span>frozen<span style="color:#f92672">&lt;</span>phone<span style="color:#f92672">&gt;&gt;</span>
-
-);
-
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> complex.accounts (
-
-email text <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
-
-name text,
-
-addr frozen<span style="color:#f92672">&lt;</span>address<span style="color:#f92672">&gt;</span>
-
-);
-
-<span style="color:#75715e">-- 自定义类型：phone和address。
-</span></code></pre></div><pre><code></code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> KEYSPACE complex
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> replication <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">{</span><span style="color:#e6db74">&#39;class&#39;</span> : <span style="color:#e6db74">&#39;SimpleStrategy&#39;</span>, <span style="color:#e6db74">&#39;replication_factor&#39;</span> :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.phone (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">alias</span> text,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>number text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> complex.address (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>street text,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>city text,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>zip_code int,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>phones list<span style="color:#f92672">&lt;</span>frozen<span style="color:#f92672">&lt;</span>phone<span style="color:#f92672">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> complex.accounts (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>email text <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name text,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addr frozen<span style="color:#f92672">&lt;</span>address<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- 自定义类型：phone和address。
+</span></span></span></code></pre></div></li>
 </ul>
 </li>
 <li>CQL数据操作语句
@@ -452,7 +473,7 @@ addr frozen<span style="color:#f92672">&lt;</span>address<span style="color:#f92
 <ul>
 <li>语法：</li>
 </ul>
-<pre><code>&lt;select-stmt&gt; ::= SELECT ( JSON )? &lt;select-clause&gt;
+<pre tabindex="0"><code>&lt;select-stmt&gt; ::= SELECT ( JSON )? &lt;select-clause&gt;
                   FROM &lt;tablename&gt;
                   ( WHERE &lt;where-clause&gt; )?
                   ( ORDER BY &lt;order-by&gt; )?
@@ -462,98 +483,100 @@ addr frozen<span style="color:#f92672">&lt;</span>address<span style="color:#f92
 
 &lt;select-clause&gt; ::= DISTINCT? &lt;selection-list&gt;
 
-&lt;selection-list&gt; ::= &lt;selector&gt; (AS &lt;identifier&gt;)? ( ',' &lt;selector&gt; (AS &lt;identifier&gt;)? )*
-                   | '*'
+&lt;selection-list&gt; ::= &lt;selector&gt; (AS &lt;identifier&gt;)? ( &#39;,&#39; &lt;selector&gt; (AS &lt;identifier&gt;)? )*
+                   | &#39;*&#39;
 
 &lt;selector&gt; ::= &lt;identifier&gt;
              | &lt;term&gt;
-             | WRITETIME '(' &lt;identifier&gt; ')'
-             | COUNT '(' '*' ')'
-             | TTL '(' &lt;identifier&gt; ')'
-             | CAST '(' &lt;selector&gt; AS &lt;type&gt; ')'
-             | &lt;function&gt; '(' (&lt;selector&gt; (',' &lt;selector&gt;)*)? ')'
+             | WRITETIME &#39;(&#39; &lt;identifier&gt; &#39;)&#39;
+             | COUNT &#39;(&#39; &#39;*&#39; &#39;)&#39;
+             | TTL &#39;(&#39; &lt;identifier&gt; &#39;)&#39;
+             | CAST &#39;(&#39; &lt;selector&gt; AS &lt;type&gt; &#39;)&#39;
+             | &lt;function&gt; &#39;(&#39; (&lt;selector&gt; (&#39;,&#39; &lt;selector&gt;)*)? &#39;)&#39;
 
 &lt;where-clause&gt; ::= &lt;relation&gt; ( AND &lt;relation&gt; )*
 
 &lt;relation&gt; ::= &lt;identifier&gt; &lt;op&gt; &lt;term&gt;
-             | '(' &lt;identifier&gt; (',' &lt;identifier&gt;)* ')' &lt;op&gt; &lt;term-tuple&gt;
-             | &lt;identifier&gt; IN '(' ( &lt;term&gt; ( ',' &lt;term&gt;)* )? ')'
-             | '(' &lt;identifier&gt; (',' &lt;identifier&gt;)* ')' IN '(' ( &lt;term-tuple&gt; ( ',' &lt;term-tuple&gt;)* )? ')'
-             | TOKEN '(' &lt;identifier&gt; ( ',' &lt;identifer&gt;)* ')' &lt;op&gt; &lt;term&gt;
+             | &#39;(&#39; &lt;identifier&gt; (&#39;,&#39; &lt;identifier&gt;)* &#39;)&#39; &lt;op&gt; &lt;term-tuple&gt;
+             | &lt;identifier&gt; IN &#39;(&#39; ( &lt;term&gt; ( &#39;,&#39; &lt;term&gt;)* )? &#39;)&#39;
+             | &#39;(&#39; &lt;identifier&gt; (&#39;,&#39; &lt;identifier&gt;)* &#39;)&#39; IN &#39;(&#39; ( &lt;term-tuple&gt; ( &#39;,&#39; &lt;term-tuple&gt;)* )? &#39;)&#39;
+             | TOKEN &#39;(&#39; &lt;identifier&gt; ( &#39;,&#39; &lt;identifer&gt;)* &#39;)&#39; &lt;op&gt; &lt;term&gt;
 
-&lt;op&gt; ::= '=' | '&lt;' | '&gt;' | '&lt;=' | '&gt;=' | CONTAINS | CONTAINS KEY
-&lt;order-by&gt; ::= &lt;ordering&gt; ( ',' &lt;odering&gt; )*
+&lt;op&gt; ::= &#39;=&#39; | &#39;&lt;&#39; | &#39;&gt;&#39; | &#39;&lt;=&#39; | &#39;&gt;=&#39; | CONTAINS | CONTAINS KEY
+&lt;order-by&gt; ::= &lt;ordering&gt; ( &#39;,&#39; &lt;odering&gt; )*
 &lt;ordering&gt; ::= &lt;identifer&gt; ( ASC | DESC )?
-&lt;term-tuple&gt; ::= '(' &lt;term&gt; (',' &lt;term&gt;)* ')'
+&lt;term-tuple&gt; ::= &#39;(&#39; &lt;term&gt; (&#39;,&#39; &lt;term&gt;)* &#39;)&#39;
 </code></pre><ul>
 <li>例子：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">207</span>);
-
-<span style="color:#66d9ef">SELECT</span> JSON name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#f92672">=</span> <span style="color:#ae81ff">199</span>;
-
-<span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">AS</span> user_name, occupation <span style="color:#66d9ef">AS</span> user_occupation <span style="color:#66d9ef">FROM</span> users;
-
-<span style="color:#66d9ef">SELECT</span> time, value
-<span style="color:#66d9ef">FROM</span> events
-<span style="color:#66d9ef">WHERE</span> event_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;myEvent&#39;</span>
-  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2011-02-03&#39;</span>
-  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2012-01-01&#39;</span>
-
-<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> users;
-
-<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> user_count <span style="color:#66d9ef">FROM</span> users;
-</code></pre></div><h5 id="第一索引查询">第一：索引查询</h5>
-<p>cassandra是支持创建二级索引的，索引可以创建在除了第一个主键之外所有的列上，当然有些类型除外，例如集合类型。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
-a INT,
-b INT,
-<span style="color:#66d9ef">c</span> INT,
-d INT,
-e INT,
-m INT,
-<span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>));
-
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(<span style="color:#66d9ef">c</span>);
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(e);
-</code></pre></div><p>在第一主键a上创建索引是不可以的：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">207</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> JSON name, occupation <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> userid <span style="color:#f92672">=</span> <span style="color:#ae81ff">199</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">AS</span> user_name, occupation <span style="color:#66d9ef">AS</span> user_occupation <span style="color:#66d9ef">FROM</span> users;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> time, value
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> events
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> event_type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;myEvent&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2011-02-03&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">AND</span> time <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;2012-01-01&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">FROM</span> users;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> user_count <span style="color:#66d9ef">FROM</span> users;
+</span></span></code></pre></div><h5 id="第一索引查询">第一：索引查询</h5>
+cassandra是支持创建二级索引的，索引可以创建在除了第一个主键之外所有的列上，当然有些类型除外，例如集合类型。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+</span></span><span style="display:flex;"><span>a INT,
+</span></span><span style="display:flex;"><span>b INT,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">c</span> INT,
+</span></span><span style="display:flex;"><span>d INT,
+</span></span><span style="display:flex;"><span>e INT,
+</span></span><span style="display:flex;"><span>m INT,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(<span style="color:#66d9ef">c</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> test(e);
+</span></span></code></pre></div>在第一主键a上创建索引是不可以的：
 <code>CREATE INDEX ON test(a) //X</code>
-索引列只可以用=号查询，所以</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">是可以</span>
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">就不行了。</span>
-</code></pre></div><p>如果你的查询条件里，有一个是根据索引查询，那其它非索引非主键字段，可以通过加一个ALLOW FILTERING来过滤实现、
-例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">AND</span> m<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">2</span> ALLOW FILTERING;
-</code></pre></div><p>第二：排序
-cassandra也是支持排序的，order by。 当然它的排序也是有条件的，</p>
+索引列只可以用=号查询，所以
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">是可以</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">就不行了。</span>
+</span></span></code></pre></div>如果你的查询条件里，有一个是根据索引查询，那其它非索引非主键字段，可以通过加一个ALLOW FILTERING来过滤实现、
+例如：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">AND</span> m<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">2</span> ALLOW FILTERING;
+</span></span></code></pre></div>第二：排序
+cassandra也是支持排序的，order by。 当然它的排序也是有条件的，
 <ol>
 <li>必须有第一主键的=号查询。cassandra的第一主键是决定记录分布在哪台机器上，也就是说cassandra只支持单台机器上的记录排序。</li>
 <li>那就是只能根据第二、三、四…主键进行有序的，相同的排序。</li>
 <li>不能有索引查询</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>;
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>;
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>;
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>;
-</code></pre></div><p>以上都是可以的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">没有第一主键</span> <span style="color:#960050;background-color:#1e0010">不行</span>
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">必须以第二主键开始排序</span>
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不是相同的排序。</span>
-<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不能有索引。</span>
-</code></pre></div><p>其实cassandra的任何查询，最后的结果都是有序的，默认的是b asc, c asc，因为它内部就是这样存储的。
-当然这个默认存储排序方式，是可以在建表的时候指定的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
-    a INT,
-    b INT,
-    <span style="color:#66d9ef">c</span> INT,
-    d INT,
-    e INT,
-    m INT,
-    <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>))
-<span style="color:#66d9ef">WITH</span> CLUSTERING <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> (b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>);
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">ASC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>;
+</span></span></code></pre></div>以上都是可以的。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">没有第一主键</span> <span style="color:#960050;background-color:#1e0010">不行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">必须以第二主键开始排序</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不是相同的排序。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> test <span style="color:#66d9ef">WHERE</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> b <span style="color:#66d9ef">DESC</span>; <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">不能有索引。</span>
+</span></span></code></pre></div>其实cassandra的任何查询，最后的结果都是有序的，默认的是b asc, c asc，因为它内部就是这样存储的。
+当然这个默认存储排序方式，是可以在建表的时候指定的。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test(
+</span></span><span style="display:flex;"><span>	a INT,
+</span></span><span style="display:flex;"><span>	b INT,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">c</span> INT,
+</span></span><span style="display:flex;"><span>	d INT,
+</span></span><span style="display:flex;"><span>	e INT,
+</span></span><span style="display:flex;"><span>	m INT,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>(a,b,<span style="color:#66d9ef">c</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> CLUSTERING <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> (b <span style="color:#66d9ef">DESC</span>, <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ASC</span>);
+</span></span></code></pre></div></li>
 </ul>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -564,145 +587,125 @@ cassandra也是支持排序的，order by。 当然它的排序也是有条件�
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/cassandra/">cassandra</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/cassandra/">cassandra</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook" aria-label="下一篇: 安装GitBook">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客" aria-label="上一篇: 第一篇博客">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/%E5%AE%89%E8%A3%85gitbook/" data-tooltip="安装GitBook" aria-label="下一篇: 安装GitBook">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2018/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-tooltip="第一篇博客" aria-label="上一篇: 第一篇博客">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -720,7 +723,7 @@ cassandra也是支持排序的，order by。 当然它的排序也是有条件�
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -737,30 +740,16 @@ cassandra也是支持排序的，order by。 当然它的排序也是有条件�
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -773,33 +762,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2018\/06\/cassandra%E7%AC%94%E8%AE%B0\/';
-          
-            this.page.identifier = '\/2018\/06\/cassandra%E7%AC%94%E8%AE%B0\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003ch3 id=\u0022准备工作\u0022\u003e准备工作\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003e机器：newcdh-node5\u003c\/li\u003e\n\u003cli\u003e操作系统版本查看:\u003ccode\u003euname -a\u003c\/code\u003e\u003c\/li\u003e\n\u003c\/ul\u003e",
+  "url":"http:\/\/localhost:1313\/2021\/09\/1-centos7-%E9%83%A8%E7%BD%B2aerospike\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="准备工作
@@ -23,8 +43,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-Centos7 部署Aerospike">
 <meta name="twitter:title" content="1-Centos7 部署Aerospike">
-<meta property="og:url" content="https://azhegit.gitee.io/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
+<meta property="og:url" content="http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
+<meta property="twitter:url" content="http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="准备工作
 
@@ -67,15 +87,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
 
 
     <title>1-Centos7 部署Aerospike</title>
@@ -85,20 +105,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
+    <link rel="canonical" href="http://localhost:1313/2021/09/1-centos7-%E9%83%A8%E7%BD%B2aerospike/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -108,7 +131,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -117,7 +140,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -130,7 +153,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -140,7 +163,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -150,7 +173,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -160,7 +183,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -170,7 +193,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -197,19 +220,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       1-Centos7 部署Aerospike
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-09-22T11:20:55&#43;08:00">
+      <time datetime="2021-09-22T11:20:55&#43;08:00">
         
   
   
@@ -225,9 +248,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
     
   
 
@@ -235,7 +258,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <h3 id="准备工作">准备工作</h3>
 <ul>
@@ -312,83 +335,83 @@ System MetaData 目录包含以分布式、持久方式保存的数据目录。�
 不建议在生产中直接修改这些文件。但是在开发者环境中，为了加快开发周期，可以禁用Lua缓存 ，usr/udf/lua直接修改文件。</li>
 </ul>
 <h4 id="单机版内存磁盘方式配置">单机版，内存+磁盘方式配置</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">service {
-        paxos-single-replica-limit <span style="color:#ae81ff">1</span> <span style="color:#75715e"># Number of nodes where the replica count is automatically reduced to 1.</span>
-        proto-fd-max <span style="color:#ae81ff">15000</span>
-}
-
-logging {
-        console {
-                context any info
-        }
-}
-
-network {
-        service {
-                address any
-                port <span style="color:#ae81ff">3000</span>
-        }
-
-        heartbeat {
-                mode multicast
-                multicast-group <span style="color:#ae81ff">239.1.99.222</span>
-                port <span style="color:#ae81ff">9918</span>
-
-                <span style="color:#75715e"># To use unicast-mesh heartbeats, remove the 3 lines above, and see</span>
-                <span style="color:#75715e"># aerospike_mesh.conf for alternative.</span>
-
-                interval <span style="color:#ae81ff">150</span>
-                timeout <span style="color:#ae81ff">10</span>
-        }
-
-        fabric {
-                port <span style="color:#ae81ff">3001</span>
-                channel-rw-recv-pools <span style="color:#ae81ff">8</span>
-        }
-
-        info {
-                port <span style="color:#ae81ff">3003</span>
-        }
-}
-
-
-namespace test {
-        replication-factor <span style="color:#ae81ff">2</span>
-        memory-size 20G
-        default-ttl 7D
-        allow-ttl-without-nsup <span style="color:#66d9ef">true</span>
-        storage-engine device {         <span style="color:#75715e"># Configure the storage-engine to use</span>
-                                        <span style="color:#75715e"># persistence. Maximum size is 2 TiB</span>
-                 file /data/disk01/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk02/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk03/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk04/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk05/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk06/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk07/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-               <span style="color:#75715e"># file /opt/aerospike/&lt;another&gt; # (optional) Location of data file on server.</span>
-                 filesize 20G                <span style="color:#75715e"># Max size of each file in GiB.</span>
-                 data-in-memory <span style="color:#66d9ef">false</span>             <span style="color:#75715e"># Indicates that all data should also be</span>
-                                                 <span style="color:#75715e"># in memory.</span>
-        }
-
-}
-
-namespace bar {
-        replication-factor <span style="color:#ae81ff">2</span>
-        memory-size 4G
-
-        storage-engine memory
-
-        <span style="color:#75715e"># To use file storage backing, comment out the line above and use the</span>
-        <span style="color:#75715e"># following lines instead.</span>
-<span style="color:#75715e">#       storage-engine device {</span>
-<span style="color:#75715e">#               file /opt/aerospike/data/bar.dat</span>
-<span style="color:#75715e">#               filesize 16G</span>
-<span style="color:#75715e">#               data-in-memory true # Store data in memory in addition to file.</span>
-<span style="color:#75715e">#       }</span>
-}
-</code></pre></div><h2 id="hot-key-问题解决方案">hot key 问题解决方案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">service {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">paxos-single-replica-limit 1</span> <span style="color:#75715e"># Number of nodes where the replica count is automatically reduced to 1.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">proto-fd-max 15000</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">logging {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">console {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">context any info</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">network {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">service {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">address any</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3000</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">heartbeat {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">mode multicast</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">multicast-group 239.1.99.222</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 9918</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># To use unicast-mesh heartbeats, remove the 3 lines above, and see</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># aerospike_mesh.conf for alternative.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">interval 150</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">timeout 10</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">fabric {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3001</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">channel-rw-recv-pools 8</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">info {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3003</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">namespace test {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">replication-factor 2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">memory-size 20G</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">default-ttl 7D</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">allow-ttl-without-nsup true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">storage-engine device {        </span> <span style="color:#75715e"># Configure the storage-engine to use</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#75715e"># persistence. Maximum size is 2 TiB</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk01/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk02/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk03/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk04/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk05/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk06/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk07/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#75715e"># file /opt/aerospike/&lt;another&gt; # (optional) Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">filesize 20G               </span> <span style="color:#75715e"># Max size of each file in GiB.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">data-in-memory false            </span> <span style="color:#75715e"># Indicates that all data should also be</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#75715e"># in memory.</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">namespace bar {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">replication-factor 2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">memory-size 4G</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">storage-engine memory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># To use file storage backing, comment out the line above and use the</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># following lines instead.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       storage-engine device {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               file /opt/aerospike/data/bar.dat</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               filesize 16G</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               data-in-memory true # Store data in memory in addition to file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       }</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="hot-key-问题解决方案">hot key 问题解决方案</h2>
 <p>在namespace 里配置 transaction-pending-limit 0<br>
 asinfo -v &ldquo;set-config:context=namespace;id=large;transaction-pending-limit=0&rdquo;</p>
 <h2 id="centos部署amc">CentOS部署AMC</h2>
@@ -397,90 +420,92 @@ tar zxvf aerospike-amc-community-4.0.27-linux.tar.gz -C /
 启动
 /etc/init.d/amc start</p>
 <h2 id="集群配置">集群配置</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Aerospike database configuration file for use with systemd.</span>
-
-service {
-        paxos-single-replica-limit <span style="color:#ae81ff">1</span> <span style="color:#75715e"># Number of nodes where the replica count is automatically reduced to 1.</span>
-        proto-fd-max <span style="color:#ae81ff">15000</span>
-}
-
-logging {
-        console {
-                context any info
-        }
-}
-
-network {
-        service {
-                address any
-                port <span style="color:#ae81ff">3000</span>
-                <span style="color:#75715e"># add current node address here</span>
-                access-address <span style="color:#ae81ff">172.16.11.113</span>
-        }
-
-        heartbeat {
-                mode mesh
-                <span style="color:#75715e"># add current node address here</span>
-                <span style="color:#75715e">#address 172.16.11.113</span>
-                port <span style="color:#ae81ff">3002</span>
-                <span style="color:#75715e"># add all cluster node address here</span>
-                mesh-seed-address-port <span style="color:#ae81ff">172.16.11.110</span> <span style="color:#ae81ff">3002</span>
-                mesh-seed-address-port <span style="color:#ae81ff">172.16.11.111</span> <span style="color:#ae81ff">3002</span>
-                mesh-seed-address-port <span style="color:#ae81ff">172.16.11.113</span> <span style="color:#ae81ff">3002</span>
-
-                interval <span style="color:#ae81ff">150</span>
-                timeout <span style="color:#ae81ff">10</span>
-        }
-
-        fabric {
-                port <span style="color:#ae81ff">3001</span>
-                channel-rw-recv-pools <span style="color:#ae81ff">8</span>
-        }
-
-        info {
-                port <span style="color:#ae81ff">3003</span>
-        }
-}
-
-
-namespace test {
-        replication-factor <span style="color:#ae81ff">2</span>
-        memory-size 20G
-        default-ttl 7D
-        allow-ttl-without-nsup <span style="color:#66d9ef">true</span>
-        storage-engine device {         <span style="color:#75715e"># Configure the storage-engine to use</span>
-                                        <span style="color:#75715e"># persistence. Maximum size is 2 TiB</span>
-                 file /data/disk01/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk02/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk03/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk04/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk05/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk06/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-                 file /data/disk07/aerospike/aerospike.dat  <span style="color:#75715e"># Location of data file on server.</span>
-               <span style="color:#75715e"># file /opt/aerospike/&lt;another&gt; # (optional) Location of data file on server.</span>
-                 filesize 20G                <span style="color:#75715e"># Max size of each file in GiB.</span>
-                 data-in-memory <span style="color:#66d9ef">false</span>             <span style="color:#75715e"># Indicates that all data should also be</span>
-                                                 <span style="color:#75715e"># in memory.</span>
-        }
-
-}
-
-namespace bar {
-        replication-factor <span style="color:#ae81ff">2</span>
-        memory-size 4G
-
-        storage-engine memory
-
-        <span style="color:#75715e"># To use file storage backing, comment out the line above and use the</span>
-        <span style="color:#75715e"># following lines instead.</span>
-<span style="color:#75715e">#       storage-engine device {</span>
-<span style="color:#75715e">#               file /opt/aerospike/data/bar.dat</span>
-<span style="color:#75715e">#               filesize 16G</span>
-<span style="color:#75715e">#               data-in-memory true # Store data in memory in addition to file.</span>
-<span style="color:#75715e">#       }</span>
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Aerospike database configuration file for use with systemd.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">service {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">paxos-single-replica-limit 1</span> <span style="color:#75715e"># Number of nodes where the replica count is automatically reduced to 1.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">proto-fd-max 15000</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">logging {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">console {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">context any info</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">network {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">service {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">address any</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3000</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># add current node address here</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">access-address 172.16.11.113</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">heartbeat {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">mode mesh</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># add current node address here</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">#address 172.16.11.113</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3002</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># add all cluster node address here</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">mesh-seed-address-port 172.16.11.110 3002</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">mesh-seed-address-port 172.16.11.111 3002</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">mesh-seed-address-port 172.16.11.113 3002</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">interval 150</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">timeout 10</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">fabric {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3001</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">channel-rw-recv-pools 8</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">info {</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">port 3003</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">namespace test {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">replication-factor 2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">memory-size 20G</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">default-ttl 7D</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">allow-ttl-without-nsup true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">storage-engine device {        </span> <span style="color:#75715e"># Configure the storage-engine to use</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#75715e"># persistence. Maximum size is 2 TiB</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk01/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk02/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk03/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk04/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk05/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk06/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">file /data/disk07/aerospike/aerospike.dat </span> <span style="color:#75715e"># Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#75715e"># file /opt/aerospike/&lt;another&gt; # (optional) Location of data file on server.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">filesize 20G               </span> <span style="color:#75715e"># Max size of each file in GiB.</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">data-in-memory false            </span> <span style="color:#75715e"># Indicates that all data should also be</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#75715e"># in memory.</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">namespace bar {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">replication-factor 2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">memory-size 4G</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">storage-engine memory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># To use file storage backing, comment out the line above and use the</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># following lines instead.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       storage-engine device {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               file /opt/aerospike/data/bar.dat</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               filesize 16G</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#               data-in-memory true # Store data in memory in addition to file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       }</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -491,145 +516,125 @@ namespace bar {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/aerospike/">Aerospike</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/aerospike/">Aerospike</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2021/09/3-asadm/" data-tooltip="3-asadm">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2021/09/2-aql/" data-tooltip="2-AQL">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/3-asadm/" data-tooltip="3-asadm" aria-label="下一篇: 3-asadm">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/2-aql/" data-tooltip="2-AQL" aria-label="上一篇: 2-AQL">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2021/09/3-asadm/" data-tooltip="3-asadm">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2021/09/2-aql/" data-tooltip="2-AQL">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/3-asadm/" data-tooltip="3-asadm" aria-label="下一篇: 3-asadm">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2021/09/2-aql/" data-tooltip="2-AQL" aria-label="上一篇: 2-AQL">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -647,7 +652,7 @@ namespace bar {
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -664,30 +669,16 @@ namespace bar {
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -700,33 +691,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2021\/09\/1-centos7-%E9%83%A8%E7%BD%B2aerospike\/';
-          
-            this.page.identifier = '\/2021\/09\/1-centos7-%E9%83%A8%E7%BD%B2aerospike\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

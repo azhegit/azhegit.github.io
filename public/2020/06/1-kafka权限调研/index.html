@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e调研kafka权限相关，并验证，生产级别\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2020\/06\/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="调研kafka权限相关，并验证，生产级别">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-kafka权限调研">
 <meta name="twitter:title" content="1-kafka权限调研">
-<meta property="og:url" content="https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
+<meta property="og:url" content="http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
+<meta property="twitter:url" content="http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="调研kafka权限相关，并验证，生产级别">
 <meta name="twitter:description" content="调研kafka权限相关，并验证，生产级别">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-2019011014402315.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-2019011014402315.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-2019011014402315.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-2019011014402315.png">
 
 
     <title>1-kafka权限调研</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
+    <link rel="canonical" href="http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       1-kafka权限调研
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-06-01T14:51:29&#43;08:00">
+      <time datetime="2020-06-01T14:51:29&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>调研kafka权限相关，并验证，生产级别</p>
 <p>[toc]</p>
@@ -276,17 +299,17 @@ cd opt/zookeeper-3.4.6/conf
 cp zoo_sample.cfg zoo.cfg
 vim zoo.cfg</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tickTime<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
-initLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-syncLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
-<span style="color:#75715e">#修改数据目录</span>
-dataDir<span style="color:#f92672">=</span>/home/admin/data/zookeeper
-clientPort<span style="color:#f92672">=</span><span style="color:#ae81ff">2181</span>
-<span style="color:#75715e">#添加主机配置</span>
-server.1<span style="color:#f92672">=</span>kafka-1:2888:3888
-server.2<span style="color:#f92672">=</span>kafka-2:2888:3888
-server.3<span style="color:#f92672">=</span>kafka-3:2888:3888
-</code></pre></div><p>mkdir ~/data/zookeeper
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tickTime<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span>initLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>syncLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改数据目录</span>
+</span></span><span style="display:flex;"><span>dataDir<span style="color:#f92672">=</span>/home/admin/data/zookeeper
+</span></span><span style="display:flex;"><span>clientPort<span style="color:#f92672">=</span><span style="color:#ae81ff">2181</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加主机配置</span>
+</span></span><span style="display:flex;"><span>server.1<span style="color:#f92672">=</span>kafka-1:2888:3888
+</span></span><span style="display:flex;"><span>server.2<span style="color:#f92672">=</span>kafka-2:2888:3888
+</span></span><span style="display:flex;"><span>server.3<span style="color:#f92672">=</span>kafka-3:2888:3888
+</span></span></code></pre></div><p>mkdir ~/data/zookeeper
 到之前配置的zookeeper数据文件所在的目录下生成一个文件叫myid，其中写上一个数字表明当前机器是哪一个编号的机器。
 echo 1 &gt; ~/data/zookeeper/myid
 3. 拷贝到另外2台服务器
@@ -297,27 +320,27 @@ scp -r zookeeper-3.4.6 admin@kafka-3:<code>pwd</code>
 echo 2 &gt; ~/data/zookeeper/myid
 echo 3 &gt; ~/data/zookeeper/myid
 5. 配置环境变量：vim /etc/profile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">export JAVA_HOME=/home/admin/opt/jdk1.8.0_191
-</span><span style="color:#e6db74">export KAFKA_HOME=/home/admin/opt/kafka_2.11-1.1.1
-</span><span style="color:#e6db74">export ZOOKEEPER_HOME=/home/admin/opt/zookeeper-3.4.6
-</span><span style="color:#e6db74">export PATH=$PATH:$JAVA_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin
-</span><span style="color:#e6db74">&#39;</span> &gt;&gt; ~/.bashrc
-source ~/.bashrc
-java -version
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export JAVA_HOME=/home/admin/opt/jdk1.8.0_191
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export KAFKA_HOME=/home/admin/opt/kafka_2.11-1.1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export ZOOKEEPER_HOME=/home/admin/opt/zookeeper-3.4.6
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export PATH=$PATH:$JAVA_HOME/bin:$KAFKA_HOME/bin:$ZOOKEEPER_HOME/bin
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span>java -version
+</span></span></code></pre></div><ol start="6">
 <li>启动zookeeper
 启动zookeeper的各种命令操作如下，可以使用绝对路径操作这些命令，也可使用相对路径操作这些命令，相对路径需要进到zookeeper服务的bin目录进行操作。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#启动ZK服务:</span> 
-zkServer.sh start
-<span style="color:#75715e">#停止ZK服务:</span> 
-zkServer.sh stop
-<span style="color:#75715e">#重启ZK服务:</span> 
-zkServer.sh restart
-<span style="color:#75715e">#查看ZK服务状态:</span> 
-zkServer.sh status
-</code></pre></div><p>Zookeeper集群需要每台挨个启动。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#启动ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh start
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#停止ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh stop
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#重启ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh restart
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#查看ZK服务状态: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh status
+</span></span></code></pre></div><p>Zookeeper集群需要每台挨个启动。</p>
 <ol>
 <li><a href="http://archive.apache.org/dist/kafka/1.1.1/kafka_2.11-1.1.1.tgz">下载kafka1.1.1</a></li>
 <li>解压
@@ -326,14 +349,14 @@ zkServer.sh status
 <code>cd opt/kafka_2.11-1.1.1/config/</code>
 <code>vim server.properties</code></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># （其他机器为 1/2）</span>
-broker.id <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-<span style="color:#75715e"># zookeeper地址</span>
-zookeeper.connect<span style="color:#f92672">=</span> 10.57.26.110:2181,10.57.26.111:2181,10.57.26.112:2181
-log.dirs <span style="color:#f92672">=</span>/home/admin/data/kafka-logs
-<span style="color:#75715e"># 本机地址</span>
-listeners<span style="color:#f92672">=</span>PLAINTEXT://10.57.26.110:9092
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># （其他机器为 1/2）</span>
+</span></span><span style="display:flex;"><span>broker.id <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># zookeeper地址</span>
+</span></span><span style="display:flex;"><span>zookeeper.connect<span style="color:#f92672">=</span> 10.57.26.110:2181,10.57.26.111:2181,10.57.26.112:2181
+</span></span><span style="display:flex;"><span>log.dirs <span style="color:#f92672">=</span>/home/admin/data/kafka-logs
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 本机地址</span>
+</span></span><span style="display:flex;"><span>listeners<span style="color:#f92672">=</span>PLAINTEXT://10.57.26.110:9092
+</span></span></code></pre></div><ol start="4">
 <li>发送到其他机器并修改对应配置broker .id，listeners</li>
 <li>添加环境变量</li>
 <li>挨个启动kafka
@@ -348,67 +371,67 @@ listeners<span style="color:#f92672">=</span>PLAINTEXT://10.57.26.110:9092
 <ol start="8">
 <li>创建topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test-topic
-</code></pre></div><ol start="9">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test-topic
+</span></span></code></pre></div><ol start="9">
 <li>列出所有topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181
-</code></pre></div><ol start="10">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181
+</span></span></code></pre></div><ol start="10">
 <li>查看列表及具体信息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--describe
-&gt;Topic:test-topic	PartitionCount:1	ReplicationFactor:3	Configs:
-Topic: test-topic	Partition: 0	Leader: 2	Replicas: 1,2,0	Isr: 2,1,0
-</code></pre></div><ol start="11">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--describe
+</span></span><span style="display:flex;"><span>&gt;Topic:test-topic	PartitionCount:1	ReplicationFactor:3	Configs:
+</span></span><span style="display:flex;"><span>Topic: test-topic	Partition: 0	Leader: 2	Replicas: 1,2,0	Isr: 2,1,0
+</span></span></code></pre></div><ol start="11">
 <li>查看topic集群情况：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test-topic
-</code></pre></div><ol start="12">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test-topic
+</span></span></code></pre></div><ol start="12">
 <li>生产消息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-console-producer.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--broker-list 10.57.26.110:9092 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test-topic
-</code></pre></div><ol start="13">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-console-producer.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--broker-list 10.57.26.110:9092 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test-topic
+</span></span></code></pre></div><ol start="13">
 <li>消费消息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-console-consumer.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--from-beginning <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test-topic
-</code></pre></div><ol start="14">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-console-consumer.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--from-beginning <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test-topic
+</span></span></code></pre></div><ol start="14">
 <li>删除topic
 server.properties中配置了delete.topic.enable=true 通过kafka删除 效果显示的只是mark for deletion 并没有删除</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--delete <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test-topic
-</code></pre></div><ol start="15">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--delete <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test-topic
+</span></span></code></pre></div><ol start="15">
 <li>彻底删除topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">zkCli.sh -server 10.57.26.110
-rmr /brokers/topic/test-topic
-rmr /admin/delete_topics/test-topic
-rmr /config/topics/test-topic
-</code></pre></div><ol start="16">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkCli.sh -server 10.57.26.110
+</span></span><span style="display:flex;"><span>rmr /brokers/topic/test-topic
+</span></span><span style="display:flex;"><span>rmr /admin/delete_topics/test-topic
+</span></span><span style="display:flex;"><span>rmr /config/topics/test-topic
+</span></span></code></pre></div><ol start="16">
 <li>重启kafka</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kill -9 <span style="color:#e6db74">`</span>ps -ef | grep kafka | grep -v grep| awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
-nohup kafka-server-start.sh $KAFKA_HOME/config/server.properties &gt; ~/kafka.out 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
-</code></pre></div><h2 id="三安装iptables">三、安装iptables</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kill -9 <span style="color:#e6db74">`</span>ps -ef | grep kafka | grep -v grep| awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>nohup kafka-server-start.sh $KAFKA_HOME/config/server.properties &gt; ~/kafka.out 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+</span></span></code></pre></div><h2 id="三安装iptables">三、安装iptables</h2>
 <ol>
 <li>安装
 sudo yum -y install iptables-services</li>
@@ -421,30 +444,30 @@ sudo systemctl enable iptables</li>
 <li>添加白名单规则及开放指定端口
 sudo vim /etc/sysconfig/iptables</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">*filter
-:INPUT ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
-:FORWARD ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
-:OUTPUT ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
-增加白名单
--N whitelist
--A whitelist -s 10.57.26.110 -j ACCEPT
--A whitelist -s 10.57.26.111 -j ACCEPT
--A whitelist -s 10.57.26.112 -j ACCEPT
-
--A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-所有端口对白名单开放
--A INPUT -m state --state NEW -m tcp -p tcp --dport 1:65535 -j whitelist
--A INPUT -p icmp -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">22</span> -j ACCEPT
-开放kafka端口
--A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">9092</span> -j ACCEPT
-开放kafka jmx端口
--A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">9999</span> -j ACCEPT
--A INPUT -j REJECT --reject-with icmp-host-prohibited
--A FORWARD -j REJECT --reject-with icmp-host-prohibited
-COMMIT
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>*filter
+</span></span><span style="display:flex;"><span>:INPUT ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>:FORWARD ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>:OUTPUT ACCEPT <span style="color:#f92672">[</span>0:0<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>增加白名单
+</span></span><span style="display:flex;"><span>-N whitelist
+</span></span><span style="display:flex;"><span>-A whitelist -s 10.57.26.110 -j ACCEPT
+</span></span><span style="display:flex;"><span>-A whitelist -s 10.57.26.111 -j ACCEPT
+</span></span><span style="display:flex;"><span>-A whitelist -s 10.57.26.112 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+</span></span><span style="display:flex;"><span>所有端口对白名单开放
+</span></span><span style="display:flex;"><span>-A INPUT -m state --state NEW -m tcp -p tcp --dport 1:65535 -j whitelist
+</span></span><span style="display:flex;"><span>-A INPUT -p icmp -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">22</span> -j ACCEPT
+</span></span><span style="display:flex;"><span>开放kafka端口
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">9092</span> -j ACCEPT
+</span></span><span style="display:flex;"><span>开放kafka jmx端口
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW -m tcp --dport <span style="color:#ae81ff">9999</span> -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -j REJECT --reject-with icmp-host-prohibited
+</span></span><span style="display:flex;"><span>-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+</span></span><span style="display:flex;"><span>COMMIT
+</span></span></code></pre></div><ol start="6">
 <li>重启
 sudo service iptables restart</li>
 <li>查看配置规则
@@ -454,20 +477,20 @@ sudo iptables -L -n</li>
 <ol>
 <li>创建topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test
+</span></span></code></pre></div><ol start="2">
 <li>消费</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-console-consumer.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--from-beginning <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-console-consumer.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--from-beginning <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test
+</span></span></code></pre></div><ol start="3">
 <li>启动生产者发送消息</li>
 <li>启动flink程序消费</li>
 </ol>
@@ -477,10 +500,10 @@ sudo iptables -L -n</li>
 <ol>
 <li>为用户<strong>td-kafka</strong>创建SCRAM凭证（密码为<em>tongdun123</em>），该用户作为kafka各broker之间通信的用户：</li>
 </ol>
-<pre><code>kafka-configs.sh \
+<pre tabindex="0"><code>kafka-configs.sh \
 --zookeeper localhost:2181 \
 --alter \
---add-config 'SCRAM-SHA-256=[iterations=8192,password=tongdun123],SCRAM-SHA-512=[password=tongdun123]' \
+--add-config &#39;SCRAM-SHA-256=[iterations=8192,password=tongdun123],SCRAM-SHA-512=[password=tongdun123]&#39; \
 --entity-type users \
 --entity-name td-kafka
 </code></pre><blockquote>
@@ -489,29 +512,29 @@ sudo iptables -L -n</li>
 <ol start="2">
 <li>可以使用&ndash;describe列出现有的证书：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name td-kafka
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name td-kafka
+</span></span></code></pre></div><ol start="3">
 <li>可以使用&ndash;delete为一个或多个SCRAM机制删除证书：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#添加一个admin用户</span>
-kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[iterations=8192,password=tongdun123],SCRAM-SHA-512=[password=tongdun123]&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name admin
-<span style="color:#75715e">#删除admin用户</span>
-kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--delete-config <span style="color:#e6db74">&#39;SCRAM-SHA-512,SCRAM-SHA-256&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name admin
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#添加一个admin用户</span>
+</span></span><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[iterations=8192,password=tongdun123],SCRAM-SHA-512=[password=tongdun123]&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name admin
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#删除admin用户</span>
+</span></span><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--delete-config <span style="color:#e6db74">&#39;SCRAM-SHA-512,SCRAM-SHA-256&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name admin
+</span></span></code></pre></div><ol start="4">
 <li>SCRAM加密信息在zk里面，所以zk需要加固，才能保证密钥不被泄露</li>
 </ol>
 <h3 id="2-配置broker">2. 配置Broker</h3>
@@ -521,25 +544,25 @@ kafka-configs.sh <span style="color:#ae81ff">\
 cd $KAFKA_HOME/config
 vim kafka_server_jaas.conf</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">KafkaServer <span style="color:#f92672">{</span>
- org.apache.kafka.common.security.scram.ScramLoginModule required
- username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;td-kafka&#34;</span>
- password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tongdun123&#34;</span>;
-<span style="color:#f92672">}</span>;
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>KafkaServer <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> org.apache.kafka.common.security.scram.ScramLoginModule required
+</span></span><span style="display:flex;"><span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;td-kafka&#34;</span>
+</span></span><span style="display:flex;"><span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tongdun123&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><ol start="2">
 <li>复制到其他broker节点</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp kafka_server_jaas.conf kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-scp kafka_server_jaas.conf kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-</code></pre></div><p>其中，broker使用KafkaServer中的用户名和密码来和其他broker进行连接。 在这个例子中，td-kafka是broker之间通信的用户。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp kafka_server_jaas.conf kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>scp kafka_server_jaas.conf kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>其中，broker使用KafkaServer中的用户名和密码来和其他broker进行连接。 在这个例子中，td-kafka是broker之间通信的用户。
 3. 修改kafka启动脚本，讲JAAS配置文件的位置作为JVM参数：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $KAFKA_HOME/bin
-vim kafka-server-start.sh
-<span style="color:#75715e">#添加一下内容</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_server_jaas.conf&#34;</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd $KAFKA_HOME/bin
+</span></span><span style="display:flex;"><span>vim kafka-server-start.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加一下内容</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_server_jaas.conf&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><ol start="4">
 <li>
 <p>复制到其他broker节点
 scp kafka-server-start.sh kafka-2:<code>pwd</code>
@@ -549,95 +572,95 @@ scp kafka-server-start.sh kafka-3:<code>pwd</code></p>
 <p>修改server.properties中配置SASL端口和SASL机制。 增加一下三行：</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $KAFKA_HOME/config
-vim server.properties
-<span style="color:#75715e">#修改</span>
-listeners<span style="color:#f92672">=</span>SASL_PLAINTEXT://10.57.26.110:9092
-<span style="color:#75715e">#添加下面内容</span>
-security.inter.broker.protocol<span style="color:#f92672">=</span>SASL_PLAINTEXT
-sasl.mechanism.inter.broker.protocol<span style="color:#f92672">=</span>SCRAM-SHA-256
-sasl.enabled.mechanisms<span style="color:#f92672">=</span>SCRAM-SHA-256
-<span style="color:#75715e">#默认禁止一切操作，必须显式授权</span>
-<span style="color:#75715e">#allow.everyone.if.no.acl.found=false</span>
-<span style="color:#75715e">#管理员用户允许做一切操作</span>
-super.users<span style="color:#f92672">=</span>User:td-kafka;
-authorizer.class.name<span style="color:#f92672">=</span>kafka.security.auth.SimpleAclAuthorizer
-</code></pre></div><h3 id="3-配置kafka客户端">3. 配置kafka客户端</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd $KAFKA_HOME/config
+</span></span><span style="display:flex;"><span>vim server.properties
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改</span>
+</span></span><span style="display:flex;"><span>listeners<span style="color:#f92672">=</span>SASL_PLAINTEXT://10.57.26.110:9092
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加下面内容</span>
+</span></span><span style="display:flex;"><span>security.inter.broker.protocol<span style="color:#f92672">=</span>SASL_PLAINTEXT
+</span></span><span style="display:flex;"><span>sasl.mechanism.inter.broker.protocol<span style="color:#f92672">=</span>SCRAM-SHA-256
+</span></span><span style="display:flex;"><span>sasl.enabled.mechanisms<span style="color:#f92672">=</span>SCRAM-SHA-256
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#默认禁止一切操作，必须显式授权</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#allow.everyone.if.no.acl.found=false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#管理员用户允许做一切操作</span>
+</span></span><span style="display:flex;"><span>super.users<span style="color:#f92672">=</span>User:td-kafka;
+</span></span><span style="display:flex;"><span>authorizer.class.name<span style="color:#f92672">=</span>kafka.security.auth.SimpleAclAuthorizer
+</span></span></code></pre></div><h3 id="3-配置kafka客户端">3. 配置kafka客户端</h3>
 <ol>
 <li>在config目录添加kafka_client_jaas.conf</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $KAFKA_HOME/config
-vim kafka_client_jaas.conf
-<span style="color:#75715e">#添加内容</span>
-KafkaClient <span style="color:#f92672">{</span>
- org.apache.kafka.common.security.scram.ScramLoginModule required
- username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;td-kafka&#34;</span>
- password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tongdun123&#34;</span>;
-<span style="color:#f92672">}</span>;
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd $KAFKA_HOME/config
+</span></span><span style="display:flex;"><span>vim kafka_client_jaas.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加内容</span>
+</span></span><span style="display:flex;"><span>KafkaClient <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> org.apache.kafka.common.security.scram.ScramLoginModule required
+</span></span><span style="display:flex;"><span> username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;td-kafka&#34;</span>
+</span></span><span style="display:flex;"><span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tongdun123&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><ol start="2">
 <li>复制到其他broker节点</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp kafka_client_jaas.conf kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-scp kafka_client_jaas.conf kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp kafka_client_jaas.conf kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>scp kafka_client_jaas.conf kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><ol start="3">
 <li>修改producer.properties,consumer.properties 中配置以下参数,并同步到所有节点</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">security.protocol=SASL_PLAINTEXT
-</span><span style="color:#e6db74">sasl.mechanism=SCRAM-SHA-256
-</span><span style="color:#e6db74">&#39;</span> &gt;&gt; producer.properties
-
-echo <span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">security.protocol=SASL_PLAINTEXT
-</span><span style="color:#e6db74">sasl.mechanism=SCRAM-SHA-256
-</span><span style="color:#e6db74">&#39;</span> &gt;&gt; consumer.properties
-
-scp producer.properties consumer.properties kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-scp producer.properties consumer.properties kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">security.protocol=SASL_PLAINTEXT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sasl.mechanism=SCRAM-SHA-256
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span> &gt;&gt; producer.properties
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">security.protocol=SASL_PLAINTEXT
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sasl.mechanism=SCRAM-SHA-256
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;</span> &gt;&gt; consumer.properties
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scp producer.properties consumer.properties kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>scp producer.properties consumer.properties kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><ol start="4">
 <li>修改<code>kafka-console-producer.sh</code> 和 <code>kafka-console-consumer.sh</code> 文件</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $KAFKA_HOME/bin
-vim kafka-console-producer.sh
-<span style="color:#75715e">#添加一下内容</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_client_jaas.conf&#34;</span>
-<span style="color:#66d9ef">fi</span>
-vim kafka-console-consumer.sh
-<span style="color:#75715e">#添加一下内容</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_client_jaas.conf&#34;</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd $KAFKA_HOME/bin
+</span></span><span style="display:flex;"><span>vim kafka-console-producer.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加一下内容</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_client_jaas.conf&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>vim kafka-console-consumer.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加一下内容</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$KAFKA_OPTS<span style="color:#e6db74">&#34;</span>  <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    export KAFKA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Djava.security.auth.login.config=</span>$KAFKA_HOME<span style="color:#e6db74">/config/kafka_client_jaas.conf&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><ol start="4">
 <li>复制到其他broker节点</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp kafka-console-producer.sh kafka-console-consumer.sh kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-scp kafka-console-producer.sh kafka-console-consumer.sh kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp kafka-console-producer.sh kafka-console-consumer.sh kafka-2:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>scp kafka-console-producer.sh kafka-console-consumer.sh kafka-3:<span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><ol start="5">
 <li>重启kafka集群</li>
 <li>创建topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--replication-factor 1;
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--replication-factor 1;
+</span></span></code></pre></div><ol start="7">
 <li>命令行启动消费者</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-console-consumer.sh  <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--bootstrap-server 10.57.26.110:9092 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--consumer.config $KAFKA_HOME/config/consumer.properties <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test
-</code></pre></div><ol start="8">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-console-consumer.sh  <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--bootstrap-server 10.57.26.110:9092 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--consumer.config $KAFKA_HOME/config/consumer.properties <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test
+</span></span></code></pre></div><ol start="8">
 <li>命令行启动生产者</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-console-producer.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--broker-list 10.57.26.110:9092  <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--producer.config $KAFKA_HOME/config/producer.properties <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test
-</code></pre></div><ol start="9">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-console-producer.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--broker-list 10.57.26.110:9092  <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--producer.config $KAFKA_HOME/config/producer.properties <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test
+</span></span></code></pre></div><ol start="9">
 <li>正常消费</li>
 </ol>
 <h3 id="4权限管理">4.权限管理</h3>
@@ -645,90 +668,90 @@ scp kafka-console-producer.sh kafka-console-consumer.sh kafka-3:<span style="col
 <ol>
 <li>用户创建</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=test123]&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name test
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=test123]&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name test
+</span></span></code></pre></div><ol start="2">
 <li>v查看用户
 ls /config/users</li>
 <li>查看用户信息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#75715e"># 可以不指定用户</span>
---entity-name test
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--describe <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#75715e"># 可以不指定用户</span>
+</span></span><span style="display:flex;"><span>--entity-name test
+</span></span></code></pre></div><ol start="4">
 <li>修改用户密码</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=test1234]&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name test
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=test1234]&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name test
+</span></span></code></pre></div><ol start="4">
 <li>删除用户</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--delete-config <span style="color:#e6db74">&#39;SCRAM-SHA-256&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name test
-</code></pre></div><h4 id="42-topic授权管理">4.2 Topic授权管理</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--delete-config <span style="color:#e6db74">&#39;SCRAM-SHA-256&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name test
+</span></span></code></pre></div><h4 id="42-topic授权管理">4.2 Topic授权管理</h4>
 <ol>
 <li>授予test用户对test topic 写权限, 只允许 10.57.241.* 网段</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-principal User:test <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--operation Write <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-host 10.57.241.161
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-principal User:test <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--operation Write <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-host 10.57.241.161
+</span></span></code></pre></div><ol start="2">
 <li>删除topic权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--remove <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-principal User:test <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--operation Write <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-host 10.57.241.*
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--remove <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-principal User:test <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--operation Write <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-host 10.57.241.*
+</span></span></code></pre></div><ol start="3">
 <li>查看topic权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic test
-</code></pre></div><h2 id="六scalajava-原生权限验证">六、Scala/Java 原生权限验证</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer kafka.security.auth.SimpleAclAuthorizer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic test
+</span></span></code></pre></div><h2 id="六scalajava-原生权限验证">六、Scala/Java 原生权限验证</h2>
 <ol>
 <li>消费及生产程序改造
 kafka的properties需要添加</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>CommonClientConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">SECURITY_PROTOCOL_CONFIG</span><span style="color:#f92672">,</span>SecurityProtocol<span style="color:#f92672">.</span><span style="color:#a6e22e">SASL_PLAINTEXT</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">)</span>
-props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>SaslConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">SASL_JAAS_CONFIG</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;org.apache.kafka.common.security.scram.ScramLoginModule required username=\&#34;dev\&#34; password=\&#34;dev123\&#34;;&#34;</span><span style="color:#f92672">)</span>
-props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>SaslConfigs<span style="color:#f92672">.</span><span style="color:#a6e22e">SASL_MECHANISM</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;SCRAM-SHA-256&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>props.<span style="color:#a6e22e">put</span>(CommonClientConfigs.<span style="color:#a6e22e">SECURITY_PROTOCOL_CONFIG</span>,SecurityProtocol.<span style="color:#a6e22e">SASL_PLAINTEXT</span>.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>props.<span style="color:#a6e22e">put</span>(SaslConfigs.<span style="color:#a6e22e">SASL_JAAS_CONFIG</span>,<span style="color:#e6db74">&#34;org.apache.kafka.common.security.scram.ScramLoginModule required username=\&#34;dev\&#34; password=\&#34;dev123\&#34;;&#34;</span>)
+</span></span><span style="display:flex;"><span>props.<span style="color:#a6e22e">put</span>(SaslConfigs.<span style="color:#a6e22e">SASL_MECHANISM</span>,<span style="color:#e6db74">&#34;SCRAM-SHA-256&#34;</span>)
+</span></span></code></pre></div><ol start="2">
 <li>创建topic</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-topics.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic dev-topic <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">2</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-topics.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper 10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--create <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic dev-topic <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--partitions <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--replication-factor <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><ol start="3">
 <li>启动消费程序跟生产程序都报错</li>
 </ol>
 <blockquote>
@@ -737,58 +760,58 @@ props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><
 <ol start="4">
 <li>查询权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic dev-topic
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic dev-topic
+</span></span></code></pre></div><blockquote>
 <p>Current ACLs for resource <code>Topic:dev-topic</code>:</p>
 </blockquote>
 <ol start="5">
 <li>创建dev用户</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-configs.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=dev123]&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--entity-name dev
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-configs.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--zookeeper localhost:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--alter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add-config <span style="color:#e6db74">&#39;SCRAM-SHA-256=[password=dev123]&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-type users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--entity-name dev
+</span></span></code></pre></div><ol start="6">
 <li>添加写权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties  zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-principal User:dev <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--producer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic dev-topic
-</code></pre></div><p>&ndash;producer实际上在Topic域上创建了(Write/Describe/Create)3个子权限，用户也可以单独创建者三个子权限。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties  zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-principal User:dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--producer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic dev-topic
+</span></span></code></pre></div><p>&ndash;producer实际上在Topic域上创建了(Write/Describe/Create)3个子权限，用户也可以单独创建者三个子权限。</p>
 <ol start="7">
 <li>再次启动生产程序不报错了</li>
 <li>添加读权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties  zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--allow-principal User:dev <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--consumer <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic dev-topic <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--group <span style="color:#e6db74">&#39;*&#39;</span>
-</code></pre></div><p>和producer相比，consumer还有一个额外的参数&ndash;group，如果没有限制，则置成&rsquo;*&lsquo;即可；这个&ndash;consumer的选择实际上在Topic域上创建了(Read/Describe)2个子权限，然后在Group域创建了(Read)1个子权限：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties  zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--add <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--allow-principal User:dev <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--consumer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic dev-topic <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--group <span style="color:#e6db74">&#39;*&#39;</span>
+</span></span></code></pre></div><p>和producer相比，consumer还有一个额外的参数&ndash;group，如果没有限制，则置成&rsquo;*&lsquo;即可；这个&ndash;consumer的选择实际上在Topic域上创建了(Read/Describe)2个子权限，然后在Group域创建了(Read)1个子权限：</p>
 <ol start="9">
 <li>dev用户可以正常消费</li>
 <li>查看dev-topic权限</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kafka-acls.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic dev-topic
-
-&gt;Current ACLs <span style="color:#66d9ef">for</span> resource <span style="color:#e6db74">`</span>Topic:dev-topic<span style="color:#e6db74">`</span>:
- 	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Describe from hosts: *
-	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Write from hosts: *
-	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Read from hosts: *
-</code></pre></div><h2 id="七flinkspark-streamingspring-boot权限验证">七、Flink、Spark Streaming、Spring boot权限验证</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kafka-acls.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--authorizer-properties zookeeper.connect<span style="color:#f92672">=</span>10.57.26.110:2181 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--list <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic dev-topic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;Current ACLs <span style="color:#66d9ef">for</span> resource <span style="color:#e6db74">`</span>Topic:dev-topic<span style="color:#e6db74">`</span>:
+</span></span><span style="display:flex;"><span> 	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Describe from hosts: *
+</span></span><span style="display:flex;"><span>	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Write from hosts: *
+</span></span><span style="display:flex;"><span>	User:dev has Allow permission <span style="color:#66d9ef">for</span> operations: Read from hosts: *
+</span></span></code></pre></div><h2 id="七flinkspark-streamingspring-boot权限验证">七、Flink、Spark Streaming、Spring boot权限验证</h2>
 <h2 id="八kafka-manager部署">八、Kafka-manager部署</h2>
 <ol>
 <li>下载最新<a href="https://yusure.cn/usr/uploads/kafka-manager-1.3.3.23.zip">kafka-manager-1.3.3.23</a>版本</li>
@@ -796,10 +819,10 @@ props<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><
 unzip kafka-manager-1.3.3.23.zip -d ~/opt/</li>
 <li>修改配置文件</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; vim ~/opt/kafka-manager-1.3.3.23/conf
-<span style="color:#75715e">#修改zk ip</span>
-kafka-manager.zkhosts<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stream-server:2181&#34;</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; vim ~/opt/kafka-manager-1.3.3.23/conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改zk ip</span>
+</span></span><span style="display:flex;"><span>kafka-manager.zkhosts<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stream-server:2181&#34;</span>
+</span></span></code></pre></div><ol start="4">
 <li>启动
 nohup kafka-manager &amp;</li>
 <li>页面添加kafka集群
@@ -811,7 +834,7 @@ nohup kafka-manager &amp;</li>
 <ol>
 <li>收集JMX端口打开</li>
 </ol>
-<pre><code class="language-log" data-lang="log">java.lang.IllegalArgumentException: requirement failed: No jmx port but jmx polling enabled!
+<pre tabindex="0"><code class="language-log" data-lang="log">java.lang.IllegalArgumentException: requirement failed: No jmx port but jmx polling enabled!
 </code></pre><p>解决办法：</p>
 <blockquote>
 <p>在<code>kafka-server-start.sh</code>添加export JMX_PORT=9999</p>
@@ -819,11 +842,11 @@ nohup kafka-manager &amp;</li>
 <ol start="2">
 <li>no route to host</li>
 </ol>
-<pre><code class="language-log" data-lang="log">k.m.j.KafkaJMX$ - Failed to connect to service:jmx:rmi:///jndi/rmi://10.57.26.111:9999/jmxrmi
+<pre tabindex="0"><code class="language-log" data-lang="log">k.m.j.KafkaJMX$ - Failed to connect to service:jmx:rmi:///jndi/rmi://10.57.26.111:9999/jmxrmi
 java.io.IOException: Failed to retrieve RMIServer stub: javax.naming.CommunicationException [Root exception is java.rmi.ConnectIOException: Exception creating connection to: 10.57.26.111; nested exception is:
         java.net.NoRouteToHostException: No route to host (Host unreachable)]
 </code></pre><p>解决办法：添加-Djava.rmi.server.hostname=kafka当前主机ip
-KAFKA_JMX_OPTS=&rdquo;-Djava.rmi.server.hostname=10.57.26.110 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false &quot;
+KAFKA_JMX_OPTS=&quot;-Djava.rmi.server.hostname=10.57.26.110 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false &quot;
 修改防火墙规则
 3. Caused by: java.lang.IllegalArgumentException: JAAS config entry not termina
 解决办法：
@@ -832,26 +855,26 @@ kafka配置jaas密码的末尾少一个分号</p>
 <ol>
 <li>修改consumer.properties</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 源kafka集群地址</span>
-bootstrap.servers<span style="color:#f92672">=</span>10.57.26.136:9092
-<span style="color:#75715e"># consumer group id 自定义</span>
-group.id<span style="color:#f92672">=</span>dp-MirrorMaker
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 源kafka集群地址</span>
+</span></span><span style="display:flex;"><span>bootstrap.servers<span style="color:#f92672">=</span>10.57.26.136:9092
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># consumer group id 自定义</span>
+</span></span><span style="display:flex;"><span>group.id<span style="color:#f92672">=</span>dp-MirrorMaker
+</span></span></code></pre></div><ol start="2">
 <li>复制出一个供mirror使用的producer.properties</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;cp producer.properties mirror-producer.properties
-&gt;vim mirror-producer.properties
-<span style="color:#75715e">#修改需要同步的目标集群地址</span>
-bootstrap.servers<span style="color:#f92672">=</span>10.57.26.110:9092,10.57.26.111:9092,10.57.26.112:9092
-<span style="color:#75715e"># 添加SASL配置</span>
-security.protocol<span style="color:#f92672">=</span>SASL_PLAINTEXT
-sasl.mechanism<span style="color:#f92672">=</span>SCRAM-SHA-256
-sasl.jaas.config<span style="color:#f92672">=</span>org.apache.kafka.common.security.scram.ScramLoginModule required username<span style="color:#f92672">=</span>** password<span style="color:#f92672">=</span>”**“;
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;cp producer.properties mirror-producer.properties
+</span></span><span style="display:flex;"><span>&gt;vim mirror-producer.properties
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改需要同步的目标集群地址</span>
+</span></span><span style="display:flex;"><span>bootstrap.servers<span style="color:#f92672">=</span>10.57.26.110:9092,10.57.26.111:9092,10.57.26.112:9092
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加SASL配置</span>
+</span></span><span style="display:flex;"><span>security.protocol<span style="color:#f92672">=</span>SASL_PLAINTEXT
+</span></span><span style="display:flex;"><span>sasl.mechanism<span style="color:#f92672">=</span>SCRAM-SHA-256
+</span></span><span style="display:flex;"><span>sasl.jaas.config<span style="color:#f92672">=</span>org.apache.kafka.common.security.scram.ScramLoginModule required username<span style="color:#f92672">=</span>** password<span style="color:#f92672">=</span>”**“;
+</span></span></code></pre></div><ol start="3">
 <li>启动脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-run-class.sh kafka.tools.MirrorMaker --consumer.config $KAFKA_HOME/config/consumer.properties --producer.config $KAFKA_HOME/config/mirror-producer.properties --num.streams <span style="color:#ae81ff">1</span> —-num.producers <span style="color:#ae81ff">1</span> --whitelist<span style="color:#f92672">=</span>mirror1
-</code></pre></div><h2 id="十kafka-源码阅读及修改">十、Kafka 源码阅读及修改</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-run-class.sh kafka.tools.MirrorMaker --consumer.config $KAFKA_HOME/config/consumer.properties --producer.config $KAFKA_HOME/config/mirror-producer.properties --num.streams <span style="color:#ae81ff">1</span> —-num.producers <span style="color:#ae81ff">1</span> --whitelist<span style="color:#f92672">=</span>mirror1
+</span></span></code></pre></div><h2 id="十kafka-源码阅读及修改">十、Kafka 源码阅读及修改</h2>
 <ol>
 <li>下载kafka1.1.1源码</li>
 <li>下载<a href="https://services.gradle.org/distributions/gradle-4.10.3-bin.zip">gradle-4.10.3</a>并安装</li>
@@ -861,16 +884,16 @@ sasl.jaas.config<span style="color:#f92672">=</span>org.apache.kafka.common.secu
 ./gradlew jar</li>
 <li>为了提高gradle下载依赖速度</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;vim ~/.gradle/init.gradle
-</code></pre></div><pre><code class="language-bsh" data-lang="bsh">#添加一下内容到文件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;vim ~/.gradle/init.gradle
+</span></span></code></pre></div><pre tabindex="0"><code class="language-bsh" data-lang="bsh">#添加一下内容到文件
 allprojects{
     repositories {
-        def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
+        def REPOSITORY_URL = &#39;http://maven.aliyun.com/nexus/content/groups/public/&#39;
         all { ArtifactRepository repo -&gt;
             if(repo instanceof MavenArtifactRepository){
                 def url = repo.url.toString()
-                if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
-                    project.logger.lifecycle &quot;Repository ${repo.url} replaced by $REPOSITORY_URL.&quot;
+                if (url.startsWith(&#39;https://repo1.maven.org/maven2&#39;) || url.startsWith(&#39;https://jcenter.bintray.com/&#39;)) {
+                    project.logger.lifecycle &#34;Repository ${repo.url} replaced by $REPOSITORY_URL.&#34;
                     remove repo
                 }
             }
@@ -884,14 +907,14 @@ allprojects{
 <li>修改后的包替换kafka_2.11-1.1.1.jar</li>
 <li>启动脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-run-class.sh kafka.tools.MirrorMaker <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--consumer.config $KAFKA_HOME/config/consumer.properties <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--producer.config $KAFKA_HOME/config/mirror-producer.properties <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--num.streams <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--message.handler kafka.tools.CustomMirrorMakerMessageHandler <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--whitelist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mirror1|mirror2&#34;</span>  <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--message.handler.args <span style="color:#e6db74">&#34;mirror1-&gt;mirror1,mirror2|mirror2-&gt;mirror2&#34;</span>
-</code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20200610115259114.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-run-class.sh kafka.tools.MirrorMaker <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--consumer.config $KAFKA_HOME/config/consumer.properties <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--producer.config $KAFKA_HOME/config/mirror-producer.properties <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--num.streams <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--message.handler kafka.tools.CustomMirrorMakerMessageHandler <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--whitelist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mirror1|mirror2&#34;</span>  <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--message.handler.args <span style="color:#e6db74">&#34;mirror1-&gt;mirror1,mirror2|mirror2-&gt;mirror2&#34;</span>
+</span></span></code></pre></div><p><img src="https://www.azheimage.top/markdown-img-paste-20200610115259114.png" alt=""></p>
 <h3 id="错误">错误</h3>
 <h5 id="1-kafka源码日志未打印">1. kafka源码日志未打印</h5>
 <p>出现：SLF4J: Failed to load class &ldquo;org.slf4j.impl.StaticLoggerBinder&rdquo;.
@@ -905,12 +928,12 @@ allprojects{
 <p>log4j:WARN No appenders could be found for logger (kafka.utils.Log4jControllerRegistration$).
 解决办法：
 在core-main添加resources目录，新建log4j.properties,并添加以下内容</p>
-<pre><code class="language-properties" data-lang="properties">log4j.rootCategory=info, console
-log4j.appender.console=org.apache.log4j.ConsoleAppender
-log4j.appender.console.target=System.out
-log4j.appender.console.layout=org.apache.log4j.PatternLayout
-log4j.appender.console.layout.ConversionPattern=[%d] %p %m (%c)%n
-</code></pre><h2 id="十一kafka压测脚本">十一、kafka压测脚本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">log4j.rootCategory</span><span style="color:#f92672">=</span><span style="color:#e6db74">info, console</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log4j.appender.console</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.apache.log4j.ConsoleAppender</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log4j.appender.console.target</span><span style="color:#f92672">=</span><span style="color:#e6db74">System.out</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log4j.appender.console.layout</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.apache.log4j.PatternLayout</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log4j.appender.console.layout.ConversionPattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">[%d] %p %m (%c)%n</span>
+</span></span></code></pre></div><h2 id="十一kafka压测脚本">十一、kafka压测脚本</h2>
 <ul>
 <li>topic:test-perf</li>
 <li>分区数:1</li>
@@ -935,13 +958,13 @@ cd sasl_kafka_tools/
 ./pstart.sh mk</li>
 <li>通过脚本发送数据</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kafka-producer-perf-test.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--topic teset-copy <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--num-records <span style="color:#ae81ff">1000000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--record-size <span style="color:#ae81ff">2000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--throughput <span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--producer-props bootstrap.servers<span style="color:#f92672">=</span>10.57.26.136:9092
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kafka-producer-perf-test.sh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--topic teset-copy <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--num-records <span style="color:#ae81ff">1000000</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--record-size <span style="color:#ae81ff">2000</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--throughput <span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--producer-props bootstrap.servers<span style="color:#f92672">=</span>10.57.26.136:9092
+</span></span></code></pre></div><ol start="5">
 <li>源topic数据量2G左右。同步10个副本到二级kafka，数据量10倍，占二级kafka集群磁盘空间20G</li>
 </ol>
 <h2 id="十三机器评估">十三、机器评估</h2>
@@ -953,6 +976,8 @@ cd sasl_kafka_tools/
 </ul>
 <p>二级kafka3台机器，磁盘空间单台1T，可支持扩展</p>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -963,145 +988,125 @@ cd sasl_kafka_tools/
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/kafka/">kafka</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/kafka/">kafka</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试" aria-label="下一篇: 2-kafka权限测试">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求" aria-label="上一篇: 0-kafka需求">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试" aria-label="下一篇: 2-kafka权限测试">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/" data-tooltip="0-kafka需求" aria-label="上一篇: 0-kafka需求">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -1119,7 +1124,7 @@ cd sasl_kafka_tools/
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -1136,30 +1141,16 @@ cd sasl_kafka_tools/
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -1172,33 +1163,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2020\/06\/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94\/';
-          
-            this.page.identifier = '\/2020\/06\/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

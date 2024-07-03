@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kafka on ☀️哲の小窝☀️</title>
-    <link>https://azhegit.gitee.io/tags/kafka/</link>
-    <description>Recent content in kafka on ☀️哲の小窝☀️</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Kafka on ☀️哲の小窝☀️</title>
+    <link>http://localhost:1313/tags/kafka/</link>
+    <description>Recent content in Kafka on ☀️哲の小窝☀️</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 07 Jan 2022 10:18:16 +0800</lastBuildDate>
-    
-	<atom:link href="https://azhegit.gitee.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>4-kafka监控模板</title>
-      <link>https://azhegit.gitee.io/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</link>
+      <link>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Fri, 07 Jan 2022 10:18:16 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</guid>
-      <description>&lt;h2 id=&#34;实例规格&#34;&gt;实例规格&lt;/h2&gt;
-&lt;p&gt;集群流量 = 业务流量 + 集群内副本复制流量，该规格实际业务读流量处理峰值为 240 MB/s，业务写流量处理峰值为 80 MB/s。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</guid>
+      <description>&lt;h2 id=&#34;实例规格&#34;&gt;实例规格&lt;/h2&gt;&#xA;&lt;p&gt;集群流量 = 业务流量 + 集群内副本复制流量，该规格实际业务读流量处理峰值为 240 MB/s，业务写流量处理峰值为 80 MB/s。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>3-监控grafana&#43;prometheus</title>
-      <link>https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</link>
+      <link>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</link>
       <pubDate>Thu, 18 Jun 2020 14:47:05 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</guid>
+      <guid>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</guid>
       <description>&lt;p&gt;配置kafka集群监控，及服务器相关信息监控&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2-kafka权限测试</title>
-      <link>https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</link>
+      <link>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 16 Jun 2020 15:50:46 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</guid>
+      <guid>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</guid>
       <description>&lt;p&gt;测试kafka权限验证&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>1-kafka权限调研</title>
-      <link>https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</link>
+      <link>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</link>
       <pubDate>Mon, 01 Jun 2020 14:51:29 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</guid>
+      <guid>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</guid>
       <description>&lt;p&gt;调研kafka权限相关，并验证，生产级别&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>0-kafka需求</title>
-      <link>https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/</link>
+      <link>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</link>
       <pubDate>Sat, 09 May 2020 16:27:50 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/</guid>
+      <guid>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</guid>
       <description>&lt;p&gt;根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

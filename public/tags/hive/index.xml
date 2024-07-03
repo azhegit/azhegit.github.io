@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hive on ☀️哲の小窝☀️</title>
-    <link>https://azhegit.gitee.io/tags/hive/</link>
-    <description>Recent content in hive on ☀️哲の小窝☀️</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Hive on ☀️哲の小窝☀️</title>
+    <link>http://localhost:1313/tags/hive/</link>
+    <description>Recent content in Hive on ☀️哲の小窝☀️</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 27 Aug 2020 18:20:35 +0800</lastBuildDate>
-    
-	<atom:link href="https://azhegit.gitee.io/tags/hive/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/hive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hive安装(2.3.6 on hadoop2.8.5)</title>
-      <link>https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</link>
+      <link>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</link>
       <pubDate>Thu, 27 Aug 2020 18:20:35 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</guid>
+      <guid>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</guid>
       <description>&lt;p&gt;对接hadoop2.8.5，选择Apache开源版本，下载&lt;a href=&#34;http://archive.apache.org/dist/hive/hive-2.3.6/apache-hive-2.3.6-bin.tar.gz&#34;&gt;hive-2.3.6&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003eApache原生hadoop部署\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2019\/12\/0-hadoop%E5%AE%89%E8%A3%85\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="Apache原生hadoop部署">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="0-hadoop安装">
 <meta name="twitter:title" content="0-hadoop安装">
-<meta property="og:url" content="https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
+<meta property="og:url" content="http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
+<meta property="twitter:url" content="http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="Apache原生hadoop部署">
 <meta name="twitter:description" content="Apache原生hadoop部署">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
-  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
+  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg">
 
 
     <title>0-hadoop安装</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
+    <link rel="canonical" href="http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       0-hadoop安装
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-12-28T18:13:32&#43;08:00">
+      <time datetime="2019-12-28T18:13:32&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>Apache原生hadoop部署</p>
 <h2 id="搭建hadoop277高可用ha">搭建hadoop2.7.7高可用HA</h2>
@@ -243,17 +266,17 @@ cd /opt/zookeeper-3.4.6/conf
 cp zoo_sample.cfg zoo.cfg
 vim zoo.cfg</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tickTime<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
-initLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-syncLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
-<span style="color:#75715e">#修改数据目录</span>
-dataDir<span style="color:#f92672">=</span>/data/zookeeper
-clientPort<span style="color:#f92672">=</span><span style="color:#ae81ff">2181</span>
-<span style="color:#75715e">#添加主机配置</span>
-server.1<span style="color:#f92672">=</span>hadoop-01:2888:3888
-server.2<span style="color:#f92672">=</span>hadoop-02:2888:3888
-server.3<span style="color:#f92672">=</span>hadoop-03:2888:3888
-</code></pre></div><p>mkdir /data/zookeeper
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tickTime<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span>initLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>syncLimit<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#修改数据目录</span>
+</span></span><span style="display:flex;"><span>dataDir<span style="color:#f92672">=</span>/data/zookeeper
+</span></span><span style="display:flex;"><span>clientPort<span style="color:#f92672">=</span><span style="color:#ae81ff">2181</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加主机配置</span>
+</span></span><span style="display:flex;"><span>server.1<span style="color:#f92672">=</span>hadoop-01:2888:3888
+</span></span><span style="display:flex;"><span>server.2<span style="color:#f92672">=</span>hadoop-02:2888:3888
+</span></span><span style="display:flex;"><span>server.3<span style="color:#f92672">=</span>hadoop-03:2888:3888
+</span></span></code></pre></div><p>mkdir /data/zookeeper
 到之前配置的zookeeper数据文件所在的目录下生成一个文件叫myid，其中写上一个数字表明当前机器是哪一个编号的机器。
 echo 1 &gt; /data/zookeeper/myid
 3. 拷贝到另外2台服务器
@@ -262,169 +285,169 @@ scp -r zookeeper-3.4.6 root@hadoop-02:<code>pwd</code>
 scp -r zookeeper-3.4.6 root@hadoop-03:<code>pwd</code>
 4. 修改myid
 5. 配置环境变量：vim /etc/profile</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export JAVA_HOME<span style="color:#f92672">=</span>/opt/jdk1.8.0_171
-export HADOOP_HOME<span style="color:#f92672">=</span>/opt/hadoop-2.7.7
-export ZOOKEEPER_HOME<span style="color:#f92672">=</span>/opt/zookeeper-3.4.6
-export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$ZOOKEEPER_HOME/bin
-</code></pre></div><p>source /etc/profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/opt/jdk1.8.0_171
+</span></span><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/opt/hadoop-2.7.7
+</span></span><span style="display:flex;"><span>export ZOOKEEPER_HOME<span style="color:#f92672">=</span>/opt/zookeeper-3.4.6
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$ZOOKEEPER_HOME/bin
+</span></span></code></pre></div><p>source /etc/profile
 6. 启动zookeeper
 启动zookeeper的各种命令操作如下，可以使用绝对路径操作这些命令，也可使用相对路径操作这些命令，相对路径需要进到zookeeper服务的bin目录进行操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#启动ZK服务:</span> 
-zkServer.sh start
-<span style="color:#75715e">#停止ZK服务:</span> 
-zkServer.sh stop
-<span style="color:#75715e">#重启ZK服务:</span> 
-zkServer.sh restart
-<span style="color:#75715e">#查看ZK服务状态:</span> 
-zkServer.sh status
-</code></pre></div><p>Zookeeper集群需要每台挨个启动。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#启动ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh start
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#停止ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh stop
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#重启ZK服务: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh restart
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#查看ZK服务状态: </span>
+</span></span><span style="display:flex;"><span>zkServer.sh status
+</span></span></code></pre></div><p>Zookeeper集群需要每台挨个启动。</p>
 <h2 id="安装hadoop277">安装hadoop2.7.7</h2>
 <ol>
 <li>配置hadoop-env.sh、mapred-env.sh、yarn-env.sh</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-vim $HADOOP_HOME/etc/hadoop/mapred-env.sh
-vim $HADOOP_HOME/etc/hadoop/yarn-env.sh
-<span style="color:#75715e">#添加JAVA_HOME</span>
-export JAVA_HOME<span style="color:#f92672">=</span>/opt/jdk1.8.0_171
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+</span></span><span style="display:flex;"><span>vim $HADOOP_HOME/etc/hadoop/mapred-env.sh
+</span></span><span style="display:flex;"><span>vim $HADOOP_HOME/etc/hadoop/yarn-env.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加JAVA_HOME</span>
+</span></span><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/opt/jdk1.8.0_171
+</span></span></code></pre></div><ol start="2">
 <li>修改core-site.xml
 vim $HADOOP_HOME/etc/hadoop/core-site.xml</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--集群服务的ID--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>fs.defaultFS<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hdfs://tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--Zookeeper的节点--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>ha.zookeeper.quorum<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:2181,hadoop-02:2181,hadoop-03:2181<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--Hadoop数据的目录--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>hadoop.tmp.dir<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>/data/<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-<span style="color:#f92672">&lt;/configuration&gt;</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--集群服务的ID--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>fs.defaultFS<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hdfs://tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--Zookeeper的节点--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>ha.zookeeper.quorum<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:2181,hadoop-02:2181,hadoop-03:2181<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--Hadoop数据的目录--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>hadoop.tmp.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>/data/<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><ol start="3">
 <li>修改hdfs-site.xml
 vim $HADOOP_HOME/etc/hadoop/hdfs-site.xml</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--服务id--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--配置NameNode节点id--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.tdhdfs<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--配置NameNode1的节点--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.tdhdfs.nn1<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:8020<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--配置NameNode2的节点--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.tdhdfs.nn2<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02:8020<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--配置NameNode1服务器地址--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.tdhdfs.nn1<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:50070<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--配置NameNode2服务器地址--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.tdhdfs.nn2<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02:50070<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--此集群的JournalNode所在的算机--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>qjournal://hadoop-01:8485;hadoop-02:8485;hadoop-03:8485/tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--ZKFC来监听哪个NameNode服务--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.tdhdfs<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--ssh远程私钥--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.ssh.private-key-files<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>/root/.ssh/id_rsa<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--journalnode的数据目录--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>/data/jn<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#75715e">&lt;!--自动故障切换配置--&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-<span style="color:#f92672">&lt;/configuration&gt;</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--服务id--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--配置NameNode节点id--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.tdhdfs<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--配置NameNode1的节点--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.tdhdfs.nn1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:8020<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--配置NameNode2的节点--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.tdhdfs.nn2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02:8020<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--配置NameNode1服务器地址--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.tdhdfs.nn1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:50070<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--配置NameNode2服务器地址--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.tdhdfs.nn2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02:50070<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--此集群的JournalNode所在的算机--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>qjournal://hadoop-01:8485;hadoop-02:8485;hadoop-03:8485/tdhdfs<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--ZKFC来监听哪个NameNode服务--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.tdhdfs<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--ssh远程私钥--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.ssh.private-key-files<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>/root/.ssh/id_rsa<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--journalnode的数据目录--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>/data/jn<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--自动故障切换配置--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><ol start="4">
 <li>修改slaves文件配置datanode节点
 vim $HADOOP_HOME/etc/hadoop/slaves</li>
 <li>修改mapred-site.xml
 cp $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
 vim $HADOOP_HOME/etc/hadoop/mapred-site.xml</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
-    <span style="color:#75715e">&lt;!-- 指定mr框架为yarn方式 --&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>mapreduce.framework.name<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>yarn<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-<span style="color:#f92672">&lt;/configuration&gt;</span>
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 指定mr框架为yarn方式 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>mapreduce.framework.name<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>yarn<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><ol start="6">
 <li>修改yarn-site.xml
 vim $HADOOP_HOME/etc/hadoop/yarn-site.xml</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#75715e">&lt;!--该cluster-id不能与nameService相同--&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.cluster-id<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>tdyarn<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#75715e">&lt;!--指定2台Resource Manager (即Name Node )节点--&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.rm-ids<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>rm1,rm2<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm1<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm2<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-    <span style="color:#75715e">&lt;!--指定zookeeper 节点--&gt;</span>
-    <span style="color:#f92672">&lt;property&gt;</span>
-        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.zk-address<span style="color:#f92672">&lt;/name&gt;</span>
-        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:2181,hadoop-02:2181,hadoop-03:2181<span style="color:#f92672">&lt;/value&gt;</span>
-    <span style="color:#f92672">&lt;/property&gt;</span>
-<span style="color:#f92672">&lt;/configuration&gt;</span>
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--该cluster-id不能与nameService相同--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.cluster-id<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>tdyarn<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--指定2台Resource Manager (即Name Node )节点--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.rm-ids<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>rm1,rm2<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-02<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--指定zookeeper 节点--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.zk-address<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;value&gt;</span>hadoop-01:2181,hadoop-02:2181,hadoop-03:2181<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><ol start="7">
 <li>配置文件拷贝到其他机器</li>
 </ol>
 <h2 id="启动hadoop">启动hadoop</h2>
@@ -475,6 +498,8 @@ iptables -t nat  -L -n &ndash;line-numbers</li>
 iptables -t nat -D PREROUTING 1</li>
 </ol>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -485,145 +510,125 @@ iptables -t nat -D PREROUTING 1</li>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/hadoop/">hadoop</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/hadoop/">hadoop</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" data-tooltip="1.ambari介绍及安装">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark" aria-label="下一篇: 2-水印watermark">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" data-tooltip="1.ambari介绍及安装" aria-label="上一篇: 1.ambari介绍及安装">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" data-tooltip="1.ambari介绍及安装">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/" data-tooltip="2-水印watermark" aria-label="下一篇: 2-水印watermark">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" data-tooltip="1.ambari介绍及安装" aria-label="上一篇: 1.ambari介绍及安装">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -641,7 +646,7 @@ iptables -t nat -D PREROUTING 1</li>
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -658,30 +663,16 @@ iptables -t nat -D PREROUTING 1</li>
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -694,33 +685,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2019\/12\/0-hadoop%E5%AE%89%E8%A3%85\/';
-          
-            this.page.identifier = '\/2019\/12\/0-hadoop%E5%AE%89%E8%A3%85\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

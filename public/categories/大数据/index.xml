@@ -2,332 +2,242 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>大数据 on ☀️哲の小窝☀️</title>
-    <link>https://azhegit.gitee.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+    <link>http://localhost:1313/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
     <description>Recent content in 大数据 on ☀️哲の小窝☀️</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 20 Dec 2022 14:18:16 +0800</lastBuildDate>
-    
-	<atom:link href="https://azhegit.gitee.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>电商风控</title>
-      <link>https://azhegit.gitee.io/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</link>
+      <link>http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</link>
       <pubDate>Tue, 20 Dec 2022 14:18:16 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</guid>
-      <description>&lt;p&gt;风控技术体系&lt;/p&gt;
-&lt;p&gt;设备指纹、风险数据画像、决策引擎、指标平台、智能业务模型、关联图谱、全链路分析&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2022/12/%E7%94%B5%E5%95%86%E9%A3%8E%E6%8E%A7/</guid>
+      <description>&lt;p&gt;风控技术体系&lt;/p&gt;&#xA;&lt;p&gt;设备指纹、风险数据画像、决策引擎、指标平台、智能业务模型、关联图谱、全链路分析&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>多层信息传递模型</title>
-      <link>https://azhegit.gitee.io/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</link>
+      <link>http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Thu, 16 Jun 2022 16:48:11 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</guid>
-      <description>&lt;p&gt;一、 多层信息传递模型&lt;/p&gt;
-&lt;p&gt;库存同步、价格同步本质上都是多层信息传递模型，在供应链这类有关联关系的业务场景中还是比较常见的。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/</guid>
+      <description>&lt;p&gt;一、 多层信息传递模型&lt;/p&gt;&#xA;&lt;p&gt;库存同步、价格同步本质上都是多层信息传递模型，在供应链这类有关联关系的业务场景中还是比较常见的。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>4-kafka监控模板</title>
-      <link>https://azhegit.gitee.io/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</link>
+      <link>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Fri, 07 Jan 2022 10:18:16 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</guid>
-      <description>&lt;h2 id=&#34;实例规格&#34;&gt;实例规格&lt;/h2&gt;
-&lt;p&gt;集群流量 = 业务流量 + 集群内副本复制流量，该规格实际业务读流量处理峰值为 240 MB/s，业务写流量处理峰值为 80 MB/s。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2022/01/4-kafka%E7%9B%91%E6%8E%A7%E6%A8%A1%E6%9D%BF/</guid>
+      <description>&lt;h2 id=&#34;实例规格&#34;&gt;实例规格&lt;/h2&gt;&#xA;&lt;p&gt;集群流量 = 业务流量 + 集群内副本复制流量，该规格实际业务读流量处理峰值为 240 MB/s，业务写流量处理峰值为 80 MB/s。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Flink监控搭建</title>
-      <link>https://azhegit.gitee.io/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</link>
+      <link>http://localhost:1313/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Tue, 03 Aug 2021 14:37:41 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;[toc]
-利用Apache Flink的内置指标系统以及如何使用Prometheus来高效地监控流式应用程序.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2021/08/flink%E7%9B%91%E6%8E%A7%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;[toc]&#xA;利用Apache Flink的内置指标系统以及如何使用Prometheus来高效地监控流式应用程序.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>kafka-flink-iceberg</title>
-      <link>https://azhegit.gitee.io/2021/04/kafka-flink-iceberg/</link>
+      <link>http://localhost:1313/2021/04/kafka-flink-iceberg/</link>
       <pubDate>Tue, 06 Apr 2021 18:53:56 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/04/kafka-flink-iceberg/</guid>
-      <description>&lt;p&gt;kafka-flink-iceberg
-模拟生成数据发送到kafka，读取kafka数据，通过flink写入iceberg&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2021/04/kafka-flink-iceberg/</guid>
+      <description>&lt;p&gt;kafka-flink-iceberg&#xA;模拟生成数据发送到kafka，读取kafka数据，通过flink写入iceberg&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>flink sql写入iceberg</title>
-      <link>https://azhegit.gitee.io/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</link>
+      <link>http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</link>
       <pubDate>Tue, 06 Apr 2021 18:52:02 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</guid>
+      <guid>http://localhost:1313/2021/04/flink-sql%E5%86%99%E5%85%A5iceberg/</guid>
       <description>&lt;p&gt;Flink SQL写入iceberg&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>flink写入clickhouse</title>
-      <link>https://azhegit.gitee.io/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</link>
+      <link>http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</link>
       <pubDate>Thu, 11 Mar 2021 20:41:31 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</guid>
-      <description>&lt;p&gt;flink写入clickhouse&lt;/p&gt;
-&lt;p&gt;flink及clickhouse官方都是没有提供flink写clickhouse的SQL API&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2021/03/flink%E5%86%99%E5%85%A5clickhouse/</guid>
+      <description>&lt;p&gt;flink写入clickhouse&lt;/p&gt;&#xA;&lt;p&gt;flink及clickhouse官方都是没有提供flink写clickhouse的SQL API&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>8-flink sql client使用</title>
-      <link>https://azhegit.gitee.io/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</link>
+      <link>http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Mar 2021 17:18:05 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</guid>
-      <description>&lt;p&gt;SQL 客户端&lt;/p&gt;
-&lt;p&gt;Flink 的 Table &amp;amp; SQL API 可以处理 SQL 语言编写的查询语句，但是这些查询需要嵌入用 Java 或 Scala 编写的表程序中。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2021/03/8-flink-sql-client%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;p&gt;SQL 客户端&lt;/p&gt;&#xA;&lt;p&gt;Flink 的 Table &amp;amp; SQL API 可以处理 SQL 语言编写的查询语句，但是这些查询需要嵌入用 Java 或 Scala 编写的表程序中。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>clickhouse部署</title>
-      <link>https://azhegit.gitee.io/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</link>
+      <link>http://localhost:1313/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Mon, 08 Mar 2021 16:21:31 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</guid>
-      <description>&lt;p&gt;clickhouse 离线安装&lt;/p&gt;
-&lt;p&gt;单机版及集群版&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2021/03/clickhouse%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;clickhouse 离线安装&lt;/p&gt;&#xA;&lt;p&gt;单机版及集群版&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>7-flink日志输出</title>
-      <link>https://azhegit.gitee.io/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</link>
+      <link>http://localhost:1313/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</link>
       <pubDate>Sat, 12 Sep 2020 14:29:08 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</guid>
-      <description>&lt;p&gt;flink日志输出冲突&lt;/p&gt;
-&lt;p&gt;解决flink项目中日志输出有冲突，或者是日志输出配置文件没有生效&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2020/09/7-flink%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA/</guid>
+      <description>&lt;p&gt;flink日志输出冲突&lt;/p&gt;&#xA;&lt;p&gt;解决flink项目中日志输出有冲突，或者是日志输出配置文件没有生效&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>6-flink提交offset源码</title>
-      <link>https://azhegit.gitee.io/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</link>
+      <link>http://localhost:1313/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</link>
       <pubDate>Fri, 11 Sep 2020 14:28:21 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</guid>
-      <description>&lt;p&gt;Flink提交kafka offset源码&lt;/p&gt;
-&lt;p&gt;flink 消费 kafka 数据，提交消费组 offset方式 有三种类型&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2020/09/6-flink%E6%8F%90%E4%BA%A4offset%E6%BA%90%E7%A0%81/</guid>
+      <description>&lt;p&gt;Flink提交kafka offset源码&lt;/p&gt;&#xA;&lt;p&gt;flink 消费 kafka 数据，提交消费组 offset方式 有三种类型&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>hive安装(2.3.6 on hadoop2.8.5)</title>
-      <link>https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</link>
+      <link>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</link>
       <pubDate>Thu, 27 Aug 2020 18:20:35 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</guid>
+      <guid>http://localhost:1313/2020/08/hive%E5%AE%89%E8%A3%852.3.6-on-hadoop2.8.5/</guid>
       <description>&lt;p&gt;对接hadoop2.8.5，选择Apache开源版本，下载&lt;a href=&#34;http://archive.apache.org/dist/hive/hive-2.3.6/apache-hive-2.3.6-bin.tar.gz&#34;&gt;hive-2.3.6&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>5-flinkSQL参数</title>
-      <link>https://azhegit.gitee.io/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</link>
+      <link>http://localhost:1313/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</link>
       <pubDate>Sun, 26 Jul 2020 14:25:31 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</guid>
+      <guid>http://localhost:1313/2020/07/5-flinksql%E5%8F%82%E6%95%B0/</guid>
       <description>&lt;p&gt;FlinkSQL 参数理解&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>4-flink1.11.1对接hive2.3.4</title>
-      <link>https://azhegit.gitee.io/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</link>
+      <link>http://localhost:1313/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</link>
       <pubDate>Thu, 23 Jul 2020 14:23:50 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</guid>
-      <description>&lt;p&gt;flink对接hive&lt;/p&gt;
-&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;MacOS&lt;/li&gt;
-&lt;li&gt;flink1.11.1&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>http://localhost:1313/2020/07/4-flink1.11.1%E5%AF%B9%E6%8E%A5hive2.3.4/</guid>
+      <description>&lt;p&gt;flink对接hive&lt;/p&gt;&#xA;&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MacOS&lt;/li&gt;&#xA;&lt;li&gt;flink1.11.1&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>0-mac安装flink</title>
-      <link>https://azhegit.gitee.io/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</link>
+      <link>http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</link>
       <pubDate>Thu, 16 Jul 2020 11:52:07 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</guid>
+      <guid>http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/</guid>
       <description>&lt;p&gt;Mac环境部署flink&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>3-监控grafana&#43;prometheus</title>
-      <link>https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</link>
+      <link>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</link>
       <pubDate>Thu, 18 Jun 2020 14:47:05 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</guid>
+      <guid>http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/</guid>
       <description>&lt;p&gt;配置kafka集群监控，及服务器相关信息监控&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2-kafka权限测试</title>
-      <link>https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</link>
+      <link>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 16 Jun 2020 15:50:46 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</guid>
+      <guid>http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/</guid>
       <description>&lt;p&gt;测试kafka权限验证&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>1-kafka权限调研</title>
-      <link>https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</link>
+      <link>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</link>
       <pubDate>Mon, 01 Jun 2020 14:51:29 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</guid>
+      <guid>http://localhost:1313/2020/06/1-kafka%E6%9D%83%E9%99%90%E8%B0%83%E7%A0%94/</guid>
       <description>&lt;p&gt;调研kafka权限相关，并验证，生产级别&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>0-kafka需求</title>
-      <link>https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/</link>
+      <link>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</link>
       <pubDate>Sat, 09 May 2020 16:27:50 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/05/0-kafka%E9%9C%80%E6%B1%82/</guid>
+      <guid>http://localhost:1313/2020/05/0-kafka%E9%9C%80%E6%B1%82/</guid>
       <description>&lt;p&gt;根据客户在使用我们部署的Kafka集群进行数据消费的时候，有权限控制及对数据组消费统计的使用场景及相关需求&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>3-flink平台调研</title>
-      <link>https://azhegit.gitee.io/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</link>
+      <link>http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</link>
       <pubDate>Fri, 10 Apr 2020 14:21:41 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</guid>
+      <guid>http://localhost:1313/2020/04/3-flink%E5%B9%B3%E5%8F%B0%E8%B0%83%E7%A0%94/</guid>
       <description>&lt;p&gt;flink相关平台调研&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2-水印watermark</title>
-      <link>https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</link>
+      <link>http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</link>
       <pubDate>Sat, 28 Dec 2019 18:30:02 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</guid>
+      <guid>http://localhost:1313/2019/12/2-%E6%B0%B4%E5%8D%B0watermark/</guid>
       <description>&lt;p&gt;watermark代码测试&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>0-hadoop安装</title>
-      <link>https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</link>
+      <link>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 28 Dec 2019 18:13:32 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</guid>
+      <guid>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;p&gt;Apache原生hadoop部署&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>1.ambari介绍及安装</title>
-      <link>https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</link>
+      <link>http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</link>
       <pubDate>Wed, 11 Dec 2019 17:31:15 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</guid>
-      <description>&lt;h2 id=&#34;1-什么是ambari&#34;&gt;1. 什么是ambari？&lt;/h2&gt;
-&lt;p&gt;Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/2019/12/1.ambari%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;h2 id=&#34;1-什么是ambari&#34;&gt;1. 什么是ambari？&lt;/h2&gt;&#xA;&lt;p&gt;Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari已支持大多数Hadoop组件，包括HDFS、MapReduce、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>1-flink部署</title>
-      <link>https://azhegit.gitee.io/2019/11/1-flink%E9%83%A8%E7%BD%B2/</link>
+      <link>http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Fri, 22 Nov 2019 15:17:47 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/11/1-flink%E9%83%A8%E7%BD%B2/</guid>
+      <guid>http://localhost:1313/2019/11/1-flink%E9%83%A8%E7%BD%B2/</guid>
       <description>&lt;p&gt;flink 部署&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>5-快学presto</title>
-      <link>https://azhegit.gitee.io/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</link>
+      <link>http://localhost:1313/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</link>
       <pubDate>Mon, 15 Jul 2019 20:03:37 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</guid>
+      <guid>http://localhost:1313/2019/07/5-%E5%BF%AB%E5%AD%A6presto/</guid>
       <description>&lt;p&gt;为数据中台新人进行培训，培训内容presto&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>4-快学spark</title>
-      <link>https://azhegit.gitee.io/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</link>
+      <link>http://localhost:1313/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</link>
       <pubDate>Mon, 15 Jul 2019 20:01:21 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</guid>
+      <guid>http://localhost:1313/2019/07/4-%E5%BF%AB%E5%AD%A6spark/</guid>
       <description>&lt;p&gt;为数据中台新人进行培训，培训内容spark&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>3-快学hadoop</title>
-      <link>https://azhegit.gitee.io/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</link>
+      <link>http://localhost:1313/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</link>
       <pubDate>Mon, 15 Jul 2019 19:56:53 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</guid>
+      <guid>http://localhost:1313/2019/07/3-%E5%BF%AB%E5%AD%A6hadoop/</guid>
       <description>&lt;p&gt;为数据中台新人进行培训，培训内容hadoop&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2-快学python</title>
-      <link>https://azhegit.gitee.io/2019/07/2-%E5%BF%AB%E5%AD%A6python/</link>
+      <link>http://localhost:1313/2019/07/2-%E5%BF%AB%E5%AD%A6python/</link>
       <pubDate>Mon, 15 Jul 2019 11:08:44 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/07/2-%E5%BF%AB%E5%AD%A6python/</guid>
+      <guid>http://localhost:1313/2019/07/2-%E5%BF%AB%E5%AD%A6python/</guid>
       <description>&lt;p&gt;为数据中台新人进行培训，培训内容python&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>1-快学Scala</title>
-      <link>https://azhegit.gitee.io/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</link>
+      <link>http://localhost:1313/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</link>
       <pubDate>Mon, 15 Jul 2019 11:06:57 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</guid>
+      <guid>http://localhost:1313/2019/07/1-%E5%BF%AB%E5%AD%A6scala/</guid>
       <description>&lt;p&gt;为数据中台新人进行培训，培训内容scala&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>单机版spark搭建</title>
-      <link>https://azhegit.gitee.io/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</link>
+      <link>http://localhost:1313/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 11 Oct 2018 15:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</guid>
+      <guid>http://localhost:1313/2018/10/%E5%8D%95%E6%9C%BA%E7%89%88spark%E6%90%AD%E5%BB%BA/</guid>
       <description>&lt;h3 id=&#34;单机版spark安装&#34;&gt;单机版spark安装&lt;/h3&gt;</description>
     </item>
-    
     <item>
       <title>新增机器到cdh集群</title>
-      <link>https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</link>
+      <link>http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</link>
       <pubDate>Mon, 13 Aug 2018 15:34:37 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</guid>
-      <description>背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。
-10.57.16.207 10.57.16.168
- 一、准备工作 1. admin用户准备工作  添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin  增加sudo权限 vi /etc/sudoers  ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen  2. 磁盘挂载  查看系统中磁盘信息 sudo fdisk -l   Disk /dev/vdb: 536.9 GB
- 格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh  3.</description>
+      <guid>http://localhost:1313/2018/08/%E6%96%B0%E5%A2%9E%E6%9C%BA%E5%99%A8%E5%88%B0cdh%E9%9B%86%E7%BE%A4/</guid>
+      <description>背景 新增2台机器，没有挂磁盘，需要添加到已有cdh集群。&#xA;10.57.16.207 10.57.16.168&#xA;一、准备工作 1. admin用户准备工作 添加用户 useradd -d /home/admin admin -m 修改密码 passwd admin 增加sudo权限 vi /etc/sudoers ## Allows people in group wheel to run all commands %wheel ALL=(ALL) ALL admin ALL=(ALL) NOPASSWD:ALL 到admin生成密钥 ssh-keygen 2. 磁盘挂载 查看系统中磁盘信息 sudo fdisk -l Disk /dev/vdb: 536.9 GB&#xA;格式化磁盘 sudo mkfs -t xfs /dev/vdb 创建数据目录 sudo mkdir /data02 修改fstab，以便系统启动时自动挂载磁盘，编辑fstab默认启动文件命令：sudo vim /etc/fstab 回车在其中添加一行 /dev/vdb /data02 xfs defaults 0 0 挂载 sudo mount -a 查看磁盘挂载情况 df -lh 3.</description>
     </item>
-    
     <item>
       <title>如何正确下线CDH机器</title>
-      <link>https://azhegit.gitee.io/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</link>
+      <link>http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</link>
       <pubDate>Mon, 13 Aug 2018 15:34:13 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</guid>
-      <description>背景 CDH集群有2台机器因为底层存储损坏，无法恢复，机器脱离cdh的管理，数据也没办法再找回来。 所以需要在CDH管理剔除。
-  登录cdh管理平台，主机列表。 执行停止主机上的角色，由于机器宕机，此处跳过 选中要删除的主机，进入维护模式  4. 保持默认选项 5. 点击进入维护模式，会解除授权 6. 此步骤应该是停止cdh-agent，但是由于机器已经宕机，所以此处跳过 7. 选择主机，从cloudera manager删除  另一种方式： 停止主机上的角色-&amp;gt;从集群中删除-&amp;gt;关闭agent-&amp;gt;remove from cloudera manager  </description>
+      <guid>http://localhost:1313/2018/08/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%B8%8B%E7%BA%BFcdh%E6%9C%BA%E5%99%A8/</guid>
+      <description>背景 CDH集群有2台机器因为底层存储损坏，无法恢复，机器脱离cdh的管理，数据也没办法再找回来。 所以需要在CDH管理剔除。&#xA;登录cdh管理平台，主机列表。 执行停止主机上的角色，由于机器宕机，此处跳过 选中要删除的主机，进入维护模式 4. 保持默认选项 5. 点击进入维护模式，会解除授权 6. 此步骤应该是停止cdh-agent，但是由于机器已经宕机，所以此处跳过 7. 选择主机，从cloudera manager删除 另一种方式： 停止主机上的角色-&amp;gt;从集群中删除-&amp;gt;关闭agent-&amp;gt;remove from cloudera manager </description>
     </item>
-    
     <item>
       <title>cloudera-scm-agent启动报错</title>
-      <link>https://azhegit.gitee.io/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
+      <link>http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Fri, 08 Jun 2018 13:30:51 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
+      <guid>http://localhost:1313/2018/06/cloudera-scm-agent%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;p&gt;CDH报错信息处理&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

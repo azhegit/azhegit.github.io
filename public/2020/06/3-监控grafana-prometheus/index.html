@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003e配置kafka集群监控，及服务器相关信息监控\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2020\/06\/3-%E7%9B%91%E6%8E%A7grafana-prometheus\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="配置kafka集群监控，及服务器相关信息监控">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="3-监控grafana&#43;prometheus">
 <meta name="twitter:title" content="3-监控grafana&#43;prometheus">
-<meta property="og:url" content="https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
+<meta property="og:url" content="http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
+<meta property="twitter:url" content="http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="配置kafka集群监控，及服务器相关信息监控">
 <meta name="twitter:description" content="配置kafka集群监控，及服务器相关信息监控">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110143649189.png">
 
 
     <title>3-监控grafana&#43;prometheus</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
+    <link rel="canonical" href="http://localhost:1313/2020/06/3-%E7%9B%91%E6%8E%A7grafana-prometheus/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       3-监控grafana&#43;prometheus
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-06-18T14:47:05&#43;08:00">
+      <time datetime="2020-06-18T14:47:05&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e5%a4%a7%e6%95%b0%e6%8d%ae">大数据</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>配置kafka集群监控，及服务器相关信息监控</p>
 <h2 id="监控">监控</h2>
@@ -243,34 +266,34 @@ docker load &lt; node-exporter.gz</p>
 <ol>
 <li>启动node_export</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name node_exporter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --net<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --pid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -v <span style="color:#e6db74">&#34;/:/host:ro,rslave&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  prom/node-exporter <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --path.rootfs<span style="color:#f92672">=</span>/host <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --collector.filesystem.ignored-mount-points <span style="color:#e6db74">&#34;^/(sys|proc|dev|host|etc)(</span>$<span style="color:#e6db74">|/)&#34;</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name node_exporter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --net<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --pid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v <span style="color:#e6db74">&#34;/:/host:ro,rslave&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  prom/node-exporter <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --path.rootfs<span style="color:#f92672">=</span>/host <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --collector.filesystem.ignored-mount-points <span style="color:#e6db74">&#34;^/(sys|proc|dev|host|etc)(</span>$<span style="color:#e6db74">|/)&#34;</span>
+</span></span></code></pre></div><ol start="2">
 <li>node_exporter启动脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; run-node-exporter.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
-</span><span style="color:#e6db74">docker stop node_exporter
-</span><span style="color:#e6db74">docker rm node_exporter
-</span><span style="color:#e6db74">docker run -d --name node_exporter \
-</span><span style="color:#e6db74">	--restart=always \
-</span><span style="color:#e6db74">	--net=&#34;host&#34; \
-</span><span style="color:#e6db74">	--pid=&#34;host&#34; \
-</span><span style="color:#e6db74">	-v &#34;/proc:/host/proc:ro&#34; \
-</span><span style="color:#e6db74">	-v &#34;/sys:/host/sys:ro&#34; \
-</span><span style="color:#e6db74">	-v &#34;/:/rootfs:ro&#34; \
-</span><span style="color:#e6db74">	prom/node-exporter \
-</span><span style="color:#e6db74">	--path.procfs=/host/proc \
-</span><span style="color:#e6db74">	--path.rootfs=/rootfs \
-</span><span style="color:#e6db74">	--path.sysfs=/host/sys \
-</span><span style="color:#e6db74">	--collector.filesystem.ignored-mount-points=&#39;^/(sys|proc|dev|host|etc)($$|/)&#39;
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; run-node-exporter.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker stop node_exporter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker rm node_exporter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker run -d --name node_exporter \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--restart=always \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--net=&#34;host&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--pid=&#34;host&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	-v &#34;/proc:/host/proc:ro&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	-v &#34;/sys:/host/sys:ro&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	-v &#34;/:/rootfs:ro&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	prom/node-exporter \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--path.procfs=/host/proc \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--path.rootfs=/rootfs \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--path.sysfs=/host/sys \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	--collector.filesystem.ignored-mount-points=&#39;^/(sys|proc|dev|host|etc)($$|/)&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><ol start="3">
 <li>启动
 chmod +x run-node-exporter.sh
 sh run-node-exporter.sh</li>
@@ -282,40 +305,40 @@ sh run-node-exporter.sh</li>
 <ol>
 <li>创建配置文件及数据目录</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">global</span>:
-  <span style="color:#66d9ef">scrape_interval</span>:     5s
-  <span style="color:#66d9ef">evaluation_interval</span>: 5s
-
-<span style="color:#66d9ef">scrape_configs</span>:
-  - <span style="color:#66d9ef">job_name</span>: prometheus
-    <span style="color:#66d9ef">static_configs</span>:
-      - <span style="color:#66d9ef">targets</span>: [<span style="color:#e6db74">&#39;localhost:9090&#39;</span>]
-        <span style="color:#66d9ef">labels</span>:
-          <span style="color:#66d9ef">instance</span>: prometheus
-
-  - <span style="color:#66d9ef">job_name</span>: linux
-    <span style="color:#66d9ef">static_configs</span>:
-      - <span style="color:#66d9ef">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9100&#39;</span>]
-</code></pre></div><p>mkdir -p /home/admin/data/prometheus/data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">global</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scrape_interval</span>:     <span style="color:#ae81ff">5s</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">evaluation_interval</span>: <span style="color:#ae81ff">5s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">scrape_configs</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">job_name</span>: <span style="color:#ae81ff">prometheus</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;localhost:9090&#39;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">instance</span>: <span style="color:#ae81ff">prometheus</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">job_name</span>: <span style="color:#ae81ff">linux</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9100&#39;</span>]
+</span></span></code></pre></div><p>mkdir -p /home/admin/data/prometheus/data
 sudo chown -R 65534:65534 /home/admin/data/prometheus/data
 2. 编写启动脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; run-prometheus.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
-</span><span style="color:#e6db74">docker stop prometheus
-</span><span style="color:#e6db74">docker rm prometheus
-</span><span style="color:#e6db74">docker run -d --restart=always \
-</span><span style="color:#e6db74">    --name=prometheus \
-</span><span style="color:#e6db74">    -p 9090:9090 \
-</span><span style="color:#e6db74">    -v /home/admin/opt/monitor/configs/prometheus.yml:/etc/prometheus/prometheus.yml \
-</span><span style="color:#e6db74">    -v /home/admin/data/prometheus/data:/prometheus \
-</span><span style="color:#e6db74">    prom/prometheus \
-</span><span style="color:#e6db74">    --config.file=/etc/prometheus/prometheus.yml \
-</span><span style="color:#e6db74">    --storage.tsdb.path=/prometheus \
-</span><span style="color:#e6db74">    --web.console.libraries=/etc/prometheus/console_libraries \
-</span><span style="color:#e6db74">    --web.console.templates=/etc/prometheus/consoles \
-</span><span style="color:#e6db74">    --storage.tsdb.retention.time=168h \
-</span><span style="color:#e6db74">    --web.enable-lifecycle
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; run-prometheus.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker stop prometheus
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker rm prometheus
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker run -d --restart=always \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --name=prometheus \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    -p 9090:9090 \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    -v /home/admin/opt/monitor/configs/prometheus.yml:/etc/prometheus/prometheus.yml \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    -v /home/admin/data/prometheus/data:/prometheus \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    prom/prometheus \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --config.file=/etc/prometheus/prometheus.yml \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --storage.tsdb.path=/prometheus \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --web.console.libraries=/etc/prometheus/console_libraries \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --web.console.templates=/etc/prometheus/consoles \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --storage.tsdb.retention.time=168h \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    --web.enable-lifecycle
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><ol start="3">
 <li>启动脚本
 chmod +x run-prometheus.sh
 ./run-prometheus.sh</li>
@@ -330,18 +353,18 @@ mkdir -p /home/admin/data/grafana-storage
 chmod 777 -R /home/admin/data/grafana-storage</li>
 <li>生成启动脚本</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; run-grafana.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
-</span><span style="color:#e6db74">docker stop grafana
-</span><span style="color:#e6db74">docker rm grafana
-</span><span style="color:#e6db74">docker run -d --restart always \
-</span><span style="color:#e6db74">  -p 3000:3000 \
-</span><span style="color:#e6db74">  --name=grafana \
-</span><span style="color:#e6db74">  -e &#34;GF_SERVER_ROOT_URL=http://192.168.92.25&#34; \
-</span><span style="color:#e6db74">  -e &#34;GF_SECURITY_ADMIN_PASSWORD=admin&#34; \
-</span><span style="color:#e6db74">  -v ~/data/grafana-storage:/var/lib/grafana \
-</span><span style="color:#e6db74">  grafana/grafana
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; run-grafana.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker stop grafana
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker rm grafana
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker run -d --restart always \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -p 3000:3000 \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --name=grafana \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -e &#34;GF_SERVER_ROOT_URL=http://192.168.92.25&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -e &#34;GF_SECURITY_ADMIN_PASSWORD=admin&#34; \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -v ~/data/grafana-storage:/var/lib/grafana \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  grafana/grafana
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><ol start="3">
 <li>
 <p>启动脚本
 chmod +x run-grafana.sh
@@ -383,27 +406,27 @@ nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.136:9092 &raquo; ~/ka
 ss -tunl | grep 9308</li>
 <li>修改prometheus.yml</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">global</span>:
-  <span style="color:#66d9ef">scrape_interval</span>:     5s
-  <span style="color:#66d9ef">evaluation_interval</span>: 5s
-
-<span style="color:#66d9ef">scrape_configs</span>:
-  - <span style="color:#66d9ef">job_name</span>: prometheus
-    <span style="color:#66d9ef">static_configs</span>:
-      - <span style="color:#66d9ef">targets</span>: [<span style="color:#e6db74">&#39;localhost:9090&#39;</span>]
-        <span style="color:#66d9ef">labels</span>:
-          <span style="color:#66d9ef">instance</span>: prometheus
-
-  - <span style="color:#66d9ef">job_name</span>: linux
-    <span style="color:#66d9ef">static_configs</span>:
-      - <span style="color:#66d9ef">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9100&#39;</span>]
-
-  - <span style="color:#66d9ef">job_name</span>: kafka
-    <span style="color:#66d9ef">static_configs</span>:
-      - <span style="color:#66d9ef">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9308&#39;</span>]
-        <span style="color:#66d9ef">labels</span>:
-          <span style="color:#66d9ef">instance</span>: kafka@<span style="color:#ae81ff">10.57.26.136</span>
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">global</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scrape_interval</span>:     <span style="color:#ae81ff">5s</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">evaluation_interval</span>: <span style="color:#ae81ff">5s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">scrape_configs</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">job_name</span>: <span style="color:#ae81ff">prometheus</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;localhost:9090&#39;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">instance</span>: <span style="color:#ae81ff">prometheus</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">job_name</span>: <span style="color:#ae81ff">linux</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9100&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">job_name</span>: <span style="color:#ae81ff">kafka</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">static_configs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">targets</span>: [<span style="color:#e6db74">&#39;10.57.26.136:9308&#39;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">instance</span>: <span style="color:#ae81ff">kafka@10.57.26.136</span>
+</span></span></code></pre></div><ol start="5">
 <li>更新prometheus配置
 curl -X POST http://localhost:9090/-/reload</li>
 <li>启动成功
@@ -412,22 +435,22 @@ curl -X POST http://localhost:9090/-/reload</li>
 <li>导入图表</li>
 <li>查看图表</li>
 <li>添加另一个kafka集群启动
-nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.enabled &ndash;sasl.username=&quot;td-kafka&rdquo; &ndash;sasl.password=&quot;tongdun123&rdquo; &ndash;sasl.mechanism='scram-sha256&rsquo; &raquo; ~/kafka_exporter.out 2&gt;&amp;1 &amp;</li>
+nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.enabled &ndash;sasl.username=&ldquo;td-kafka&rdquo; &ndash;sasl.password=&ldquo;tongdun123&rdquo; &ndash;sasl.mechanism=&lsquo;scram-sha256&rsquo; &raquo; ~/kafka_exporter.out 2&gt;&amp;1 &amp;</li>
 </ol>
 <h2 id="pushgateway">pushgateway</h2>
 <ol>
 <li>docker pull prom/pushgateway</li>
 <li>编写脚本：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; run-pushgateway.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
-</span><span style="color:#e6db74">docker stop pushgateway
-</span><span style="color:#e6db74">docker rm pushgateway
-</span><span style="color:#e6db74">docker run -d --restart always \
-</span><span style="color:#e6db74">  -p 9091:9091 \
-</span><span style="color:#e6db74">  --name=pushgateway \
-</span><span style="color:#e6db74">  prom/pushgateway 
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; run-pushgateway.sh <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker stop pushgateway
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker rm pushgateway
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">docker run -d --restart always \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -p 9091:9091 \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  --name=pushgateway \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  prom/pushgateway 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><ol start="3">
 <li>执行启动脚本</li>
 <li>启动jmx_prometheus_httpserver</li>
 <li>修改prometheus配置</li>
@@ -435,6 +458,8 @@ nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.
 <p>效果
 <img src="https://www.azheimage.top/markdown-img-paste-20200628191122228.png" alt=""></p>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -445,145 +470,125 @@ nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/kafka/">kafka</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/kafka/">kafka</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/07/0-mac%E5%AE%89%E8%A3%85flink/" data-tooltip="0-mac安装flink">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/" data-tooltip="0-mac安装flink" aria-label="下一篇: 0-mac安装flink">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试" aria-label="上一篇: 2-kafka权限测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/07/0-mac%E5%AE%89%E8%A3%85flink/" data-tooltip="0-mac安装flink">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/07/0-mac%E5%AE%89%E8%A3%85flink/" data-tooltip="0-mac安装flink" aria-label="下一篇: 0-mac安装flink">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2020/06/2-kafka%E6%9D%83%E9%99%90%E6%B5%8B%E8%AF%95/" data-tooltip="2-kafka权限测试" aria-label="上一篇: 2-kafka权限测试">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -601,7 +606,7 @@ nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -618,30 +623,16 @@ nohup ./kafka_exporter-master &ndash;kafka.server=10.57.26.110:9092 &ndash;sasl.
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -654,33 +645,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2020\/06\/3-%E7%9B%91%E6%8E%A7grafana-prometheus\/';
-          
-            this.page.identifier = '\/2020\/06\/3-%E7%9B%91%E6%8E%A7grafana-prometheus\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

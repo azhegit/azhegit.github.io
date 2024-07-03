@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hadoop on ☀️哲の小窝☀️</title>
-    <link>https://azhegit.gitee.io/tags/hadoop/</link>
-    <description>Recent content in hadoop on ☀️哲の小窝☀️</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Hadoop on ☀️哲の小窝☀️</title>
+    <link>http://localhost:1313/tags/hadoop/</link>
+    <description>Recent content in Hadoop on ☀️哲の小窝☀️</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 28 Dec 2019 18:13:32 +0800</lastBuildDate>
-    
-	<atom:link href="https://azhegit.gitee.io/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>0-hadoop安装</title>
-      <link>https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</link>
+      <link>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 28 Dec 2019 18:13:32 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</guid>
+      <guid>http://localhost:1313/2019/12/0-hadoop%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;p&gt;Apache原生hadoop部署&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

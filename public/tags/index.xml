@@ -2,275 +2,214 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ☀️哲の小窝☀️</title>
-    <link>https://azhegit.gitee.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on ☀️哲の小窝☀️</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Feb 2023 17:23:26 +0800</lastBuildDate>
-    
-	<atom:link href="https://azhegit.gitee.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>welcome</title>
-      <link>https://azhegit.gitee.io/tags/welcome/</link>
+      <title>Welcome</title>
+      <link>http://localhost:1313/tags/welcome/</link>
       <pubDate>Tue, 07 Feb 2023 17:23:26 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/welcome/</guid>
+      <guid>http://localhost:1313/tags/welcome/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>业务</title>
-      <link>https://azhegit.gitee.io/tags/%E4%B8%9A%E5%8A%A1/</link>
+      <link>http://localhost:1313/tags/%E4%B8%9A%E5%8A%A1/</link>
       <pubDate>Tue, 20 Dec 2022 14:18:16 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/%E4%B8%9A%E5%8A%A1/</guid>
+      <guid>http://localhost:1313/tags/%E4%B8%9A%E5%8A%A1/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Aerospike</title>
-      <link>https://azhegit.gitee.io/tags/aerospike/</link>
+      <link>http://localhost:1313/tags/aerospike/</link>
       <pubDate>Wed, 22 Jun 2022 16:42:49 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/aerospike/</guid>
+      <guid>http://localhost:1313/tags/aerospike/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>StarRocks</title>
-      <link>https://azhegit.gitee.io/tags/starrocks/</link>
+      <link>http://localhost:1313/tags/starrocks/</link>
       <pubDate>Thu, 10 Feb 2022 14:58:47 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/starrocks/</guid>
+      <guid>http://localhost:1313/tags/starrocks/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kafka</title>
-      <link>https://azhegit.gitee.io/tags/kafka/</link>
+      <title>Kafka</title>
+      <link>http://localhost:1313/tags/kafka/</link>
       <pubDate>Fri, 07 Jan 2022 10:18:16 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/kafka/</guid>
+      <guid>http://localhost:1313/tags/kafka/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
-      <link>https://azhegit.gitee.io/tags/hugo/</link>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Mon, 15 Nov 2021 10:35:15 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>redis</title>
-      <link>https://azhegit.gitee.io/tags/redis/</link>
+      <title>Redis</title>
+      <link>http://localhost:1313/tags/redis/</link>
       <pubDate>Tue, 14 Sep 2021 11:13:04 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/redis/</guid>
+      <guid>http://localhost:1313/tags/redis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>flink</title>
-      <link>https://azhegit.gitee.io/tags/flink/</link>
+      <title>Flink</title>
+      <link>http://localhost:1313/tags/flink/</link>
       <pubDate>Tue, 03 Aug 2021 14:37:41 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/flink/</guid>
+      <guid>http://localhost:1313/tags/flink/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>clickhouse</title>
-      <link>https://azhegit.gitee.io/tags/clickhouse/</link>
+      <title>Clickhouse</title>
+      <link>http://localhost:1313/tags/clickhouse/</link>
       <pubDate>Mon, 08 Mar 2021 16:21:31 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/clickhouse/</guid>
+      <guid>http://localhost:1313/tags/clickhouse/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hive</title>
-      <link>https://azhegit.gitee.io/tags/hive/</link>
+      <title>Hive</title>
+      <link>http://localhost:1313/tags/hive/</link>
       <pubDate>Thu, 27 Aug 2020 18:20:35 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/hive/</guid>
+      <guid>http://localhost:1313/tags/hive/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>自动化运维</title>
-      <link>https://azhegit.gitee.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</link>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</link>
       <pubDate>Wed, 26 Aug 2020 12:23:52 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</guid>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hadoop</title>
-      <link>https://azhegit.gitee.io/tags/hadoop/</link>
+      <title>Hadoop</title>
+      <link>http://localhost:1313/tags/hadoop/</link>
       <pubDate>Sat, 28 Dec 2019 18:13:32 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/hadoop/</guid>
+      <guid>http://localhost:1313/tags/hadoop/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ambari</title>
-      <link>https://azhegit.gitee.io/tags/ambari/</link>
+      <title>Ambari</title>
+      <link>http://localhost:1313/tags/ambari/</link>
       <pubDate>Wed, 11 Dec 2019 17:31:15 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/ambari/</guid>
+      <guid>http://localhost:1313/tags/ambari/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>openStack</title>
-      <link>https://azhegit.gitee.io/tags/openstack/</link>
+      <title>OpenStack</title>
+      <link>http://localhost:1313/tags/openstack/</link>
       <pubDate>Mon, 26 Aug 2019 13:53:03 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/openstack/</guid>
+      <guid>http://localhost:1313/tags/openstack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>train</title>
-      <link>https://azhegit.gitee.io/tags/train/</link>
+      <title>Train</title>
+      <link>http://localhost:1313/tags/train/</link>
       <pubDate>Mon, 15 Jul 2019 20:03:37 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/train/</guid>
+      <guid>http://localhost:1313/tags/train/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spark</title>
-      <link>https://azhegit.gitee.io/tags/spark/</link>
+      <title>Spark</title>
+      <link>http://localhost:1313/tags/spark/</link>
       <pubDate>Thu, 04 Apr 2019 14:18:54 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/spark/</guid>
+      <guid>http://localhost:1313/tags/spark/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>neo4j</title>
-      <link>https://azhegit.gitee.io/tags/neo4j/</link>
+      <title>Neo4j</title>
+      <link>http://localhost:1313/tags/neo4j/</link>
       <pubDate>Thu, 10 Jan 2019 10:37:49 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/neo4j/</guid>
+      <guid>http://localhost:1313/tags/neo4j/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>docker</title>
-      <link>https://azhegit.gitee.io/tags/docker/</link>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Fri, 02 Nov 2018 13:50:51 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cdh</title>
-      <link>https://azhegit.gitee.io/tags/cdh/</link>
+      <title>Cdh</title>
+      <link>http://localhost:1313/tags/cdh/</link>
       <pubDate>Mon, 13 Aug 2018 15:34:37 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/cdh/</guid>
+      <guid>http://localhost:1313/tags/cdh/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mysql</title>
-      <link>https://azhegit.gitee.io/tags/mysql/</link>
+      <title>Mysql</title>
+      <link>http://localhost:1313/tags/mysql/</link>
       <pubDate>Sun, 05 Aug 2018 19:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/mysql/</guid>
+      <guid>http://localhost:1313/tags/mysql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
-      <link>https://azhegit.gitee.io/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Tue, 24 Jul 2018 19:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mac</title>
-      <link>https://azhegit.gitee.io/tags/mac/</link>
+      <title>Mac</title>
+      <link>http://localhost:1313/tags/mac/</link>
       <pubDate>Thu, 19 Jul 2018 19:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/mac/</guid>
+      <guid>http://localhost:1313/tags/mac/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>janusgraph</title>
-      <link>https://azhegit.gitee.io/tags/janusgraph/</link>
+      <title>Janusgraph</title>
+      <link>http://localhost:1313/tags/janusgraph/</link>
       <pubDate>Mon, 16 Jul 2018 19:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/janusgraph/</guid>
+      <guid>http://localhost:1313/tags/janusgraph/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>databases</title>
-      <link>https://azhegit.gitee.io/tags/databases/</link>
+      <title>Databases</title>
+      <link>http://localhost:1313/tags/databases/</link>
       <pubDate>Fri, 13 Jul 2018 16:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/databases/</guid>
+      <guid>http://localhost:1313/tags/databases/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hbase</title>
-      <link>https://azhegit.gitee.io/tags/hbase/</link>
+      <title>Hbase</title>
+      <link>http://localhost:1313/tags/hbase/</link>
       <pubDate>Fri, 13 Jul 2018 16:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/hbase/</guid>
+      <guid>http://localhost:1313/tags/hbase/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>elasticsearch</title>
-      <link>https://azhegit.gitee.io/tags/elasticsearch/</link>
+      <title>Elasticsearch</title>
+      <link>http://localhost:1313/tags/elasticsearch/</link>
       <pubDate>Fri, 13 Jul 2018 15:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/elasticsearch/</guid>
+      <guid>http://localhost:1313/tags/elasticsearch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>react</title>
-      <link>https://azhegit.gitee.io/tags/react/</link>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
       <pubDate>Wed, 11 Jul 2018 15:18:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/react/</guid>
+      <guid>http://localhost:1313/tags/react/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>git</title>
-      <link>https://azhegit.gitee.io/tags/git/</link>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Thu, 05 Jul 2018 16:35:38 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cassandra</title>
-      <link>https://azhegit.gitee.io/tags/cassandra/</link>
+      <title>Cassandra</title>
+      <link>http://localhost:1313/tags/cassandra/</link>
       <pubDate>Wed, 06 Jun 2018 18:53:27 +0800</pubDate>
-      
-      <guid>https://azhegit.gitee.io/tags/cassandra/</guid>
+      <guid>http://localhost:1313/tags/cassandra/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"http:\/\/localhost:1313\/",
+  "author": {
+    "@type": "Person",
+    "name": "阿·哲",
+    
+    "image": "https://www.azheimage.top/markdown-img-paste-20200805194639512.png"
+    
+  },
+  "name":"☀️哲の小窝☀️",
+  "description":"\u003cp\u003eAerospike 数据库Linux优化\u003c\/p\u003e",
+  "url":"http:\/\/localhost:1313\/2022\/06\/16-linux%E4%BC%98%E5%8C%96\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.128.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="阿·哲">
 <meta name="keywords" content="">
 <meta name="description" content="Aerospike 数据库Linux优化">
@@ -15,8 +35,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="16-linux优化">
 <meta name="twitter:title" content="16-linux优化">
-<meta property="og:url" content="https://azhegit.gitee.io/2022/06/16-linux%E4%BC%98%E5%8C%96/">
-<meta property="twitter:url" content="https://azhegit.gitee.io/2022/06/16-linux%E4%BC%98%E5%8C%96/">
+<meta property="og:url" content="http://localhost:1313/2022/06/16-linux%E4%BC%98%E5%8C%96/">
+<meta property="twitter:url" content="http://localhost:1313/2022/06/16-linux%E4%BC%98%E5%8C%96/">
 <meta property="og:site_name" content="☀️哲の小窝☀️">
 <meta property="og:description" content="Aerospike 数据库Linux优化">
 <meta name="twitter:description" content="Aerospike 数据库Linux优化">
@@ -51,15 +71,15 @@
 
 
 
-  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
-
-
-
-
-
   <meta property="og:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
   <meta property="twitter:image" content="https://www.azheimage.top/markdown-img-paste-20200805194639512.png">
+
+
+
+
+
+  <meta property="og:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
+  <meta property="twitter:image" content="//www.azheimage.top/markdown-img-paste-20190110144117219.png">
 
 
     <title>16-linux优化</title>
@@ -69,20 +89,23 @@
 
     
 
-    <link rel="canonical" href="https://azhegit.gitee.io/2022/06/16-linux%E4%BC%98%E5%8C%96/">
+    <link rel="canonical" href="http://localhost:1313/2022/06/16-linux%E4%BC%98%E5%8C%96/">
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="https://azhegit.gitee.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
     
       
+  
+
+
     
     
   </head>
@@ -92,7 +115,7 @@
       <header id="header" data-behavior="2">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://azhegit.gitee.io/">☀️哲の小窝☀️</a>
+    <a class="header-title-link" href="http://localhost:1313/" aria-label="去首页">☀️哲の小窝☀️</a>
   </div>
   
 </header>
@@ -101,7 +124,7 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://azhegit.gitee.io/#about">
+        <a href="http://localhost:1313/#about" aria-label="阅读有关作者的更多信息">
           <img class="sidebar-profile-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
         </a>
         <h4 class="sidebar-profile-name">阿·哲</h4>
@@ -114,7 +137,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/">
+      <a class="sidebar-button-link " href="http://localhost:1313/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -124,7 +147,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/categories">
+      <a class="sidebar-button-link " href="http://localhost:1313/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -134,7 +157,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/tags">
+      <a class="sidebar-button-link " href="http://localhost:1313/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -144,7 +167,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/archives">
+      <a class="sidebar-button-link " href="http://localhost:1313/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -154,7 +177,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://azhegit.gitee.io/#about">
+      <a class="sidebar-button-link " href="http://localhost:1313/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,19 +204,19 @@
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
             <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       16-linux优化
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2022-06-14T20:53:06&#43;08:00">
+      <time datetime="2022-06-14T20:53:06&#43;08:00">
         
   
   
@@ -209,9 +232,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%8a%80%e6%9c%af">技术</a>, 
+      <a class="category-link" href="http://localhost:1313/categories/%e6%8a%80%e6%9c%af">技术</a>, 
     
-      <a class="category-link" href="https://azhegit.gitee.io/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
+      <a class="category-link" href="http://localhost:1313/categories/%e6%95%b0%e6%8d%ae%e5%ba%93">数据库</a>
     
   
 
@@ -219,7 +242,7 @@
 
 </div>
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>Aerospike 数据库Linux优化</p>
 <h2 id="服务">服务</h2>
@@ -234,96 +257,98 @@
 <h3 id="min_free_kbytes">min_free_kbytes</h3>
 <p>内核参数控制有min_free_kbytes 多少内存应该保持空闲并且不被文件系统缓存占用。通常，内核占用几乎所有带有文件系统缓存的空闲 RAM，并根据需要由进程分配空闲内存。由于 Aerospike 在共享内存（1GB 块）中执行大量分配，默认内核值可能会导致意外的 OOM（内存不足终止）。建议将参数配置为至少 1.1GB，如果使用云供应商驱动程序，最好配置为 1.25GB - 因为这些也可以进行大量分配。这可确保 Linux 始终保持足够的可用内存，并为大量分配提供空闲空间。</p>
 <p>检查参数值：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /proc/sys/vm/min_free_kbytes
-</code></pre></div><p>如果该值较低，请根据正在运行的内核对其进行相应调整，并在重新启动后保持不变：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#ae81ff">3</span> &gt; /proc/sys/vm/drop_caches
-echo <span style="color:#ae81ff">1310720</span> &gt; /proc/sys/vm/min_free_kbytes
-echo <span style="color:#e6db74">&#34;vm.min_free_kbytes=1310720&#34;</span> &gt;&gt; /etc/sysctl.conf
-</code></pre></div><p>在min_free_kbytes服务器启动时检查最佳实践。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /proc/sys/vm/min_free_kbytes
+</span></span></code></pre></div><p>如果该值较低，请根据正在运行的内核对其进行相应调整，并在重新启动后保持不变：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#ae81ff">3</span> &gt; /proc/sys/vm/drop_caches
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">1310720</span> &gt; /proc/sys/vm/min_free_kbytes
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;vm.min_free_kbytes=1310720&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span></code></pre></div><p>在min_free_kbytes服务器启动时检查最佳实践。</p>
 <h3 id="swap关闭">swap关闭</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/vm/swappiness
-$ echo <span style="color:#e6db74">&#34;vm.swappiness=0&#34;</span> &gt;&gt; /etc/sysctl.conf
-</code></pre></div><h3 id="关闭thp">关闭THP</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#ae81ff">0</span> &gt; /proc/sys/vm/swappiness
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;vm.swappiness=0&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span></code></pre></div><h3 id="关闭thp">关闭THP</h3>
 <p>临时关闭
 echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
 echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</p>
 <p>创建脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt;/etc/init.d/disable-transparent-hugepages
-</span><span style="color:#e6db74">#!/bin/bash
-</span><span style="color:#e6db74">### BEGIN INIT INFO
-</span><span style="color:#e6db74"># Provides:          disable-transparent-hugepages
-</span><span style="color:#e6db74"># Required-Start:    $local_fs
-</span><span style="color:#e6db74"># Required-Stop:
-</span><span style="color:#e6db74"># X-Start-Before:    aerospike
-</span><span style="color:#e6db74"># Default-Start:     2 3 4 5
-</span><span style="color:#e6db74"># Default-Stop:      0 1 6
-</span><span style="color:#e6db74"># Short-Description: Disable Linux transparent huge pages
-</span><span style="color:#e6db74"># Description:       Disable Linux transparent huge pages, to improve
-</span><span style="color:#e6db74">#                    database performance.
-</span><span style="color:#e6db74">### END INIT INFO
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">case $1 in
-</span><span style="color:#e6db74">  start)
-</span><span style="color:#e6db74">    if [ -d /sys/kernel/mm/transparent_hugepage ]; then
-</span><span style="color:#e6db74">      thp_path=/sys/kernel/mm/transparent_hugepage
-</span><span style="color:#e6db74">    elif [ -d /sys/kernel/mm/redhat_transparent_hugepage ]; then
-</span><span style="color:#e6db74">      thp_path=/sys/kernel/mm/redhat_transparent_hugepage
-</span><span style="color:#e6db74">    else
-</span><span style="color:#e6db74">      return 0
-</span><span style="color:#e6db74">    fi
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    echo &#39;never&#39; &gt; ${thp_path}/enabled
-</span><span style="color:#e6db74">    echo &#39;never&#39; &gt; ${thp_path}/defrag
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    re=&#39;^[0-1]+$&#39;
-</span><span style="color:#e6db74">    if [[ $(cat ${thp_path}/khugepaged/defrag) =~ $re ]]
-</span><span style="color:#e6db74">    then
-</span><span style="color:#e6db74">      echo 0  &gt; ${thp_path}/khugepaged/defrag
-</span><span style="color:#e6db74">    else
-</span><span style="color:#e6db74">      echo &#39;no&#39; &gt; ${thp_path}/khugepaged/defrag
-</span><span style="color:#e6db74">    fi
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">    unset re
-</span><span style="color:#e6db74">    unset thp_path
-</span><span style="color:#e6db74">    ;;
-</span><span style="color:#e6db74">esac
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><p>赋予执行权
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt;/etc/init.d/disable-transparent-hugepages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">### BEGIN INIT INFO
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Provides:          disable-transparent-hugepages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Required-Start:    $local_fs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Required-Stop:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># X-Start-Before:    aerospike
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Default-Start:     2 3 4 5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Default-Stop:      0 1 6
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Short-Description: Disable Linux transparent huge pages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Description:       Disable Linux transparent huge pages, to improve
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#                    database performance.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">### END INIT INFO
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">case $1 in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  start)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if [ -d /sys/kernel/mm/transparent_hugepage ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      thp_path=/sys/kernel/mm/transparent_hugepage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    elif [ -d /sys/kernel/mm/redhat_transparent_hugepage ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      thp_path=/sys/kernel/mm/redhat_transparent_hugepage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    else
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      return 0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    echo &#39;never&#39; &gt; ${thp_path}/enabled
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    echo &#39;never&#39; &gt; ${thp_path}/defrag
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    re=&#39;^[0-1]+$&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if [[ $(cat ${thp_path}/khugepaged/defrag) =~ $re ]]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      echo 0  &gt; ${thp_path}/khugepaged/defrag
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    else
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      echo &#39;no&#39; &gt; ${thp_path}/khugepaged/defrag
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    unset re
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    unset thp_path
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">esac
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>赋予执行权
 <code>chmod +x /etc/init.d/disable-transparent-hugepages</code>
 创建系统执行脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt; /etc/systemd/system/disable-transparent-huge-pages.service
-</span><span style="color:#e6db74">[Unit]
-</span><span style="color:#e6db74">Description=Disable Transparent Huge Pages
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">[Service]
-</span><span style="color:#e6db74">Type=oneshot
-</span><span style="color:#e6db74">ExecStart=/bin/bash /etc/init.d/disable-transparent-hugepages start
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">[Install]
-</span><span style="color:#e6db74">WantedBy=multi-user.target
-</span><span style="color:#e6db74">EOF</span>
-</code></pre></div><p>启动脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload
-systemctl enable disable-transparent-huge-pages.service
-</code></pre></div><h3 id="禁用区域回收">禁用区域回收</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt; /etc/systemd/system/disable-transparent-huge-pages.service
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=Disable Transparent Huge Pages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type=oneshot
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/bin/bash /etc/init.d/disable-transparent-hugepages start
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>启动脚本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl enable disable-transparent-huge-pages.service
+</span></span></code></pre></div><h3 id="禁用区域回收">禁用区域回收</h3>
 <p>echo 0 &gt; /proc/sys/vm/zone_reclaim_mode
 cat /proc/sys/vm/zone_reclaim_mode</p>
 <h3 id="nvme-ssd优化-做分区">NVMe SSD优化 做分区</h3>
 <p>根据Core数以及磁盘块数做分区</p>
 <h3 id="文件打开句柄数">文件打开句柄数</h3>
 <p>系统修改重启生效</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/security/limits.conf
-
-root soft nofile <span style="color:#ae81ff">200000</span>
-root hard nofile <span style="color:#ae81ff">200000</span>
-* soft nofile <span style="color:#ae81ff">200000</span>
-* hard nofile <span style="color:#ae81ff">200000</span>
-</code></pre></div><p>临时生效
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/security/limits.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root soft nofile <span style="color:#ae81ff">200000</span>
+</span></span><span style="display:flex;"><span>root hard nofile <span style="color:#ae81ff">200000</span>
+</span></span><span style="display:flex;"><span>* soft nofile <span style="color:#ae81ff">200000</span>
+</span></span><span style="display:flex;"><span>* hard nofile <span style="color:#ae81ff">200000</span>
+</span></span></code></pre></div><p>临时生效
 ulimit -SHn 200000</p>
 <blockquote>
 <p>参考 <a href="https://docs.aerospike.com/server/operations/install/linux/bestpractices">https://docs.aerospike.com/server/operations/install/linux/bestpractices</a></p>
 </blockquote>
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -334,145 +359,125 @@ ulimit -SHn 200000</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://azhegit.gitee.io/tags/aerospike/">Aerospike</a>
+  <a class="tag tag--primary tag--small" href="http://localhost:1313/tags/aerospike/">Aerospike</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/" data-tooltip="多层信息传递模型">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" data-tooltip="15- 加速同步">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-      
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/" data-tooltip="多层信息传递模型" aria-label="下一篇: 多层信息传递模型">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" data-tooltip="15- 加速同步" aria-label="上一篇: 15- 加速同步">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 阿·哲. All Rights Reserved
+    &copy; 2024 阿·哲. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/" data-tooltip="多层信息传递模型">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://azhegit.gitee.io/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" data-tooltip="15- 加速同步">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-      
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
       
         <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/06/%E5%A4%9A%E5%B1%82%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B/" data-tooltip="多层信息传递模型" aria-label="下一篇: 多层信息传递模型">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="http://localhost:1313/2022/06/15-%E5%8A%A0%E9%80%9F%E5%90%8C%E6%AD%A5/" data-tooltip="15- 加速同步" aria-label="上一篇: 15- 加速同步">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
     </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
+
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
       <img id="about-card-picture" src="https://www.azheimage.top/markdown-img-paste-20200805194639512.png" alt="作者的图片" />
@@ -490,7 +495,7 @@ ulimit -SHn 200000</p>
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         杭州
       </div>
@@ -507,30 +512,16 @@ ulimit -SHn 200000</p>
 
 
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="https://azhegit.gitee.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
+<script src="http://localhost:1313/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
 
 <script>
 $(document).ready(function() {
@@ -543,33 +534,6 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/azhegit.gitee.io\/2022\/06\/16-linux%E4%BC%98%E5%8C%96\/';
-          
-            this.page.identifier = '\/2022\/06\/16-linux%E4%BC%98%E5%8C%96\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 
