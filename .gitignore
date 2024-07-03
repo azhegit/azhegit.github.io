@@ -4,5 +4,6 @@ config.toml.backup
 !themes/readme*
 /layouts
 /static
+/public
 .idea
 .DS_Store
