@@ -1,10 +1,10 @@
 ---
 categories:
-  - 技术
-  - 开发环境
+- 技术
+- 开发环境
 date: 2018-06-08 13:30:51+08:00
 tags:
-  - mac
+- mac
 thumbnailImage: //www.azheimage.top/markdown-img-paste-2019011014402315.png
 title: 安装GitBook
 ---

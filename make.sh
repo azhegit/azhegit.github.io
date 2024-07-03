@@ -19,7 +19,7 @@ if [ ! -d "themes/$theme" ];then
   esac
 fi
 
-python3 parse_blog.py
+python3 parse_blog_v3.py
 
 hugo --theme=hugo-tranquilpeak-theme
 hugo server
