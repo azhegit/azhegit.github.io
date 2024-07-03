@@ -15,7 +15,7 @@
 baseURL = "https://azhegit.github.io/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
-title = "☀️哲の小窝☀️"
+title = "☀️哲の博客☀️"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
