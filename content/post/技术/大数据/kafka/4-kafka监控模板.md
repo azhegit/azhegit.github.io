@@ -1,10 +1,10 @@
 ---
 categories:
-  - 技术
-  - 大数据
-date: "2022-01-07 10:18:16+08:00"
+- 技术
+- 大数据
+date: '2022-01-07 10:18:16+08:00'
 tags:
-  - kafka
+- kafka
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716211900993.png
 title: 4-kafka监控模板
 ---

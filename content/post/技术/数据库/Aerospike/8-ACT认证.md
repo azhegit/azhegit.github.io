@@ -1,10 +1,10 @@
 ---
 categories:
-  - 技术
-  - 数据库
-date: "2021-10-26 16:53:06+08:00"
+- 技术
+- 数据库
+date: '2021-10-26 16:53:06+08:00'
 tags:
-  - Aerospike
+- Aerospike
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20190110153448285.png
 title: 8-ACT认证
 ---

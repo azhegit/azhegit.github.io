@@ -1,10 +1,10 @@
 ---
 categories:
-  - 技术
-  - 大数据
-date: "2022-01-15 23:56:27+08:00"
+- 技术
+- 大数据
+date: '2022-01-15 23:56:27+08:00'
 tags:
-  - 业务
+- 业务
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20181113165255716.png
 title: 智能物流业务流程图及useCase
 ---

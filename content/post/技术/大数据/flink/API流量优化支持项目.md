@@ -1,12 +1,12 @@
 ---
 categories:
-  - 技术
-  - 大数据
-date: "2020-07-03 22:55:42+08:00"
+- 技术
+- 大数据
+date: '2020-07-03 22:55:42+08:00'
 tags:
-  - flink
+- flink
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716211711809.png
-title: API优化方案
+title: API流量优化支持项目
 ---
 
 API 流量优化支持项目

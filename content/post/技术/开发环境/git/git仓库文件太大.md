@@ -1,10 +1,10 @@
 ---
 categories:
-  - 技术
-  - 开发环境
-date: "2021-08-03 23:50:06+08:00"
+- 技术
+- 开发环境
+date: '2021-08-03 23:50:06+08:00'
 tags:
-  - git
+- git
 thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/welcome-to-tranquilpeak/city-750.jpg
 title: git仓库文件太大
 ---
