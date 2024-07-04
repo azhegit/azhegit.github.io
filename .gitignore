@@ -7,3 +7,4 @@ config.toml.backup
 public
 .idea
 .DS_Store
+.hugo_build.lock
