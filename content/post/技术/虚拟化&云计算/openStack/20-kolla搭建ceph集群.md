@@ -8,6 +8,7 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180831191146955.png
 title: 20-kolla搭建ceph集群
 ---
+openstack 通过 kolla 搭建ceph 集群
 <!--more-->
 
 ### 1. 安装docker及相关的环境（所有节点）

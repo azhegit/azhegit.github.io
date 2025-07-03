@@ -8,12 +8,14 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180725100954649.png
 title: 2-AQL
 ---
+
+AQL 是一个命令行工具，用于浏览数据并为 Aerospike 数据库开发用户定义函数。
+<!--more-->
 ## AQL - [aerospike的语法](https://docs.aerospike.com/docs/tools/aql/record_operations.html)
 
 
 ### 数据插入
 命令
-<!--more-->
 `INSERT INTO <ns>[.<set>] (PK, <bins>) VALUES (<key>, <values>)`
 - <ns> 是记录的命名空间。
 - <set> 是记录的集合名称。

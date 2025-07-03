@@ -8,12 +8,11 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716211711809.png
 title: pregel
 ---
+Pregel 是 google 提出的用于大规模分布式图计算框架。主要用于图遍历（BFS）、最短路径（SSSP）、PageRank 计算等等计算。
+<!--more-->
 
 ## Pregel
 
-###### Pregel 是 google 提出的用于大规模分布式图计算框架。主要用于图遍历（BFS）、最短路径（SSSP）、PageRank 计算等等计算。
-
-<!--more-->
 
 ### 简介
 

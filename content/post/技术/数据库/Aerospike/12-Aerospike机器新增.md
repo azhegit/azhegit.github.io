@@ -8,11 +8,13 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716212442829.png
 title: 12-Aerospike机器新增
 ---
+Aerospike机器新增节点，机器优化以及部署操作流程
+<!--more-->
+
 ## linux 优化
 
 ### 1.min_free_kbytes优化
 min_free_kbytes 该参数即强制Linux 系统最低保留多少空闲内存（Kbytes），如果系统可用内存低于该值，默认会启用oom killer 或者强制重启，当耗尽内存直至系统最低保存内存时会有两种现象，根据内核参数vm.panic_on_\oom 设置值的不同而有不同的行为。
-<!--more-->
 vm.panic_on_oom=0 系统会提示oom ，并启动oom-killer杀掉占用最高内存的进程 vm.panic_on_oom =1. 系统关闭oom,不会启动oom-killer,而是会自动重启，AS建议设定为1.1～1.25GB。
 
 ```bash

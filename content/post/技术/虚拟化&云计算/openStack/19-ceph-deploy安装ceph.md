@@ -8,6 +8,7 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180725100954649.png
 title: 19-ceph-deploy安装ceph
 ---
+openstack 通过ceph-deploy安装ceph
 <!--more-->
 
 1. 配置yum源

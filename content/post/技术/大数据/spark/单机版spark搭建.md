@@ -8,8 +8,10 @@ tags:
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180725100954649.png
 title: 单机版spark搭建
 ---
-### 单机版spark安装
+快速搭建单机版spark
 <!--more-->
+### 单机版spark安装
+
 1. 安装jdk
 2. 安装Scala
 3. 安装spark：

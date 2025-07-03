@@ -12,5 +12,5 @@ fi
 git add .
 git commit -m "$comment"
 echo "正在开始提交代码..."
-git push origin master
+git push
 echo "代码提交成功，正在关闭..."

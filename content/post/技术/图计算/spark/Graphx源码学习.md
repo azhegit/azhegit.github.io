@@ -6,14 +6,14 @@ date: '2019-07-04 13:16:16+08:00'
 tags:
 - spark
 thumbnailImage: //www.azheimage.top/markdown-img-paste-20180716211900993.png
-title: 源码学习
+title: Graphx源码学习
 ---
 
-<!--more-->
 
 一、什么是 GraphX？
 
 Graphx 利用了 Spark 这样了一个并行处理框架来实现了图上的一些可并行化执行的算法。
+<!--more-->
 
 mapReduceTriplets
 joinVertices
